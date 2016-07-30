@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package uranium.common;
+
+message TableName {
+  string name = 1;
+}
+
+enum Status {
+  OK = 0;
+  INTERNAL_ERROR = 1;
+  NOT_FOUND = 2;
+  ALREADY_EXISTS = 3;
+}
+
+message Result {
+  Status status = 1;
+}
+
+message ColumnName {
+  string name = 1;
+}
+
+enum ColumnType {
+  BYTE = 0;
+  SHORT = 1;
+  INT = 2;
+  LONG = 3;
+  FLOAT = 4;
+  DOUBLE = 5;
+  STRING = 6;
+  DATE = 7;
+  DATETIME = 8;
+}
+
+message ColumnValue {
+  oneof value {
+    sint64 integer = 1;
+    float flt = 2;
+    double dbl = 3;
+    bytes other = 4;
+  }
+}
+
+message ColumnDefination {
+  ColumnName column_name = 1;
+  ColumnType column_type = 2;
+  ColumnValue default_value = 3;
+  bool not_null = 4;
+}
+
