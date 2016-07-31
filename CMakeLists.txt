@@ -62,6 +62,7 @@ set(SOURCE_FILES
   "src/common/slice.h"
   "src/common/status.h"
   "src/db/table.h"
+  "src/db/table_manager.h"
   "src/network/cpp/common.pb.cc"
   "src/network/cpp/common.pb.h"
   "src/network/cpp/uranium.grpc.pb.cc"

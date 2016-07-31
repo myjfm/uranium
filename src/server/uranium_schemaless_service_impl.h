@@ -1,7 +1,9 @@
 #ifndef URANIUM_SERVER_URANIUM_SCHEMALESS_SERVICE_IMPL_H_
 #define URANIUM_SERVER_URANIUM_SCHEMALESS_SERVICE_IMPL_H_
 
+#include <memory>
 #include "common/status.h"
+#include "db/table_manager.h"
 #include "network/cpp/uranium.grpc.pb.h"
 
 namespace uranium {
@@ -11,7 +13,15 @@ class UraniumSchemalessServiceImpl
  public:
   UraniumSchemalessServiceImpl() {}
   virtual ~UraniumSchemalessServiceImpl() {}
-  Status Init() { return Status::OK(); }
+
+  UraniumSchemalessServiceImpl(const UraniumSchemalessServiceImpl&) = delete;
+  UraniumSchemalessServiceImpl& operator=(UraniumSchemalessServiceImpl&) = delete;
+
+  Status Init(std::shared_ptr<TableManager> table_manager) {
+    assert(table_manager.get());
+    table_manager_ = table_manager;
+    return Status::OK();
+  }
 
   virtual grpc::Status KVGet(grpc::ServerContext* context,
                              const api::KVGetRequest* request,
@@ -198,6 +208,9 @@ class UraniumSchemalessServiceImpl
       api::SetRemoveAllResponse* response) override {
     return grpc::Status::OK;
   }
+
+ private:
+  std::shared_ptr<TableManager> table_manager_;
 };
 
 }  // namespace uranium

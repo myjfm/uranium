@@ -10,12 +10,14 @@
 #include <grpc++/security/server_credentials.h>
 
 #include "common/status.h"
+#include "db/table_manager.h"
 #include "network/cpp/uranium.grpc.pb.h"
 #include "server/uranium_schema_service_impl.h"
 #include "server/uranium_schemaless_service_impl.h"
 #include "server/uranium_admin_service_impl.h"
 
 DEFINE_int32(port, -1, "What port the uranium to listen on.");
+DEFINE_string(db_paths, "", "the directorys all tables are in, quote separated");
 
 static bool ValidatePort(const char* flagname, int32_t value) {
   if (value > 0 && value <= 65535) {  // value is ok
@@ -35,29 +37,37 @@ int main(int argc, char* argv[]) {
   std::string server_address = "localhost:";
   server_address += std::to_string(FLAGS_port);
 
+  auto table_manager = std::make_shared<uranium::TableManager>();
+  uranium::Status status = table_manager->Init(FLAGS_db_paths);
+  if (!status.ok()) {
+    std::cout << status.ToString() << std::endl;
+    return -1;
+  }
+
   uranium::UraniumSchemalessServiceImpl schemaless_service;
-  uranium::Status status = schemaless_service.Init();
+  status = schemaless_service.Init(table_manager);
   if (!status.ok()) {
     std::cout << status.ToString() << std::endl;
     return -1;
   }
 
   uranium::UraniumSchemaServiceImpl schema_service;
-  status = schema_service.Init();
+  status = schema_service.Init(table_manager);
   if (!status.ok()) {
     std::cout << status.ToString() << std::endl;
     return -1;
   }
 
   uranium::UraniumAdminServiceImpl admin_service;
-  status = admin_service.Init();
+  status = admin_service.Init(table_manager);
   if (!status.ok()) {
     std::cout << status.ToString() << std::endl;
     return -1;
   }
 
   grpc::ServerBuilder server_builder;
-  server_builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+  server_builder.AddListeningPort(server_address,
+                                  grpc::InsecureServerCredentials());
   server_builder.RegisterService(&schemaless_service);
   server_builder.RegisterService(&schema_service);
   server_builder.RegisterService(&admin_service);
