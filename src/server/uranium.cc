@@ -11,6 +11,7 @@
 
 #include "common/status.h"
 #include "db/table_manager.h"
+#include "db/table_manager_impl.h"
 #include "network/cpp/uranium.grpc.pb.h"
 #include "server/uranium_schema_service_impl.h"
 #include "server/uranium_schemaless_service_impl.h"
@@ -32,12 +33,15 @@ static const bool port_dummy = gflags::RegisterFlagValidator(
     &ValidatePort);
 
 int main(int argc, char* argv[]) {
+  gflags::SetUsageMessage("Usage: ./uranium ");
+  gflags::SetVersionString("0.0.1");
   gflags::ParseCommandLineFlags(&argc, &argv, true);
 
   std::string server_address = "localhost:";
   server_address += std::to_string(FLAGS_port);
 
-  auto table_manager = std::make_shared<uranium::TableManager>();
+  auto table_manager =
+    std::shared_ptr<uranium::TableManager>(new uranium::TableManagerImpl());
   uranium::Status status = table_manager->Init(FLAGS_db_paths);
   if (!status.ok()) {
     std::cout << status.ToString() << std::endl;
@@ -74,6 +78,8 @@ int main(int argc, char* argv[]) {
   std::unique_ptr<grpc::Server> server(server_builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << std::endl;
   server->Wait();
+
+  gflags::ShutDownCommandLineFlags();
   return 0;
 }
 

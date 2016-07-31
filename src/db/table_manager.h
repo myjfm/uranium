@@ -5,7 +5,11 @@
 #ifndef URANIUM_DB_TABLE_MANAGER_H_
 #define URANIUM_DB_TABLE_MANAGER_H_
 
+#include <memory>
+
 #include "common/status.h"
+#include "schema_table.h"
+#include "schemaless_table.h"
 
 namespace uranium {
 
@@ -17,10 +21,13 @@ class TableManager {
   TableManager(const TableManager&) = delete;
   TableManager& operator=(const TableManager&) = delete;
 
-  Status Init(const std::string& db_path) {
-    (void) db_path;
-    return Status::OK();
-  }
+  virtual Status Init(const std::string& db_paths) = 0;
+  virtual Status Close() = 0;
+
+  virtual std::shared_ptr<SchemalessTable> GetSchemalessTable(
+      const std::string& name) = 0;
+  virtual std::shared_ptr<SchemaTable> GetSchemaTable(
+      const std::string& name) = 0;
 };
 
 }  // namespace uranium

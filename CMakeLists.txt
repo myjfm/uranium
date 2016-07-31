@@ -52,6 +52,34 @@ ELSE()
   MESSAGE(STATUS "libz library: " ${LIBZ})
 ENDIF()
 
+find_library(LZ4 NAMES lz4 PATHS /usr/local/lib)
+IF(NOT LZ4)
+  MESSAGE(FATAL_ERROR "could not find lz4 library")
+ELSE()
+  MESSAGE(STATUS "lz4 library: " ${LZ4})
+ENDIF()
+
+find_library(BZ2 NAMES bz2 PATHS /usr/local/lib)
+IF(NOT BZ2)
+  MESSAGE(FATAL_ERROR "could not find bz2 library")
+ELSE()
+  MESSAGE(STATUS "bz2 library: " ${BZ2})
+ENDIF()
+
+find_library(SNAPPY NAMES snappy PATHS /usr/local/lib)
+IF(NOT SNAPPY)
+  MESSAGE(FATAL_ERROR "could not find snappy library")
+ELSE()
+  MESSAGE(STATUS "snappy library: " ${SNAPPY})
+ENDIF()
+
+find_library(ROCKSDB NAMES rocksdb PATHS /usr/local/lib)
+IF(NOT ROCKSDB)
+  MESSAGE(FATAL_ERROR "could not find rocksdb library")
+ELSE()
+  MESSAGE(STATUS "rocksdb library: " ${ROCKSDB})
+ENDIF()
+
 #find_package(gflags REQUIRED)
 #find_package(grpc REQUIRED)
 #find_package(grpc++ REQUIRED)
@@ -62,7 +90,11 @@ set(SOURCE_FILES
   "src/common/slice.h"
   "src/common/status.h"
   "src/db/table.h"
+  "src/db/schemaless_table.h"
+  "src/db/schema_table.h"
+  "src/db/table_options.h"
   "src/db/table_manager.h"
+  "src/db/table_manager_impl.h"
   "src/network/cpp/common.pb.cc"
   "src/network/cpp/common.pb.h"
   "src/network/cpp/uranium.grpc.pb.cc"
@@ -80,5 +112,5 @@ set(SOURCE_FILES
 
 add_executable(uranium ${SOURCE_FILES})
 set_target_properties(uranium PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(uranium ${SSL} ${CRYPTO} ${LIBZ} ${GFLAGS} ${PROTOBUF} ${GRPC} ${GRPCPP})
+target_link_libraries(uranium ${SSL} ${CRYPTO} ${LIBZ} ${LZ4} ${SNAPPY} ${BZ2} ${GFLAGS} ${PROTOBUF} ${GRPC} ${GRPCPP} ${ROCKSDB})
 

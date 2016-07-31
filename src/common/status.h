@@ -14,6 +14,7 @@
 
 #include <string>
 #include "slice.h"
+#include <rocksdb/status.h>
 
 namespace uranium {
 
@@ -21,6 +22,10 @@ class Status final {
  public:
   Status() : code_(kOk), state_(nullptr) { }
   ~Status() { delete[] state_; }
+
+  Status(const rocksdb::Status& s) {
+    new (this) Status(static_cast<Code>(static_cast<int>(s.code())));
+  }
 
   Status(const Status& s);
   void operator=(const Status& s);
