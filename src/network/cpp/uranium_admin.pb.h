@@ -39,6 +39,7 @@ void protobuf_AddDesc_uranium_5fadmin_2eproto();
 void protobuf_AssignDesc_uranium_5fadmin_2eproto();
 void protobuf_ShutdownFile_uranium_5fadmin_2eproto();
 
+class GetTableOptionsResponse;
 class SchemaTableOptions;
 class SchemalessTableOptions;
 class TableOptions;
@@ -353,6 +354,94 @@ class SchemalessTableOptions : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static SchemalessTableOptions* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class GetTableOptionsResponse : public ::google::protobuf::Message {
+ public:
+  GetTableOptionsResponse();
+  virtual ~GetTableOptionsResponse();
+
+  GetTableOptionsResponse(const GetTableOptionsResponse& from);
+
+  inline GetTableOptionsResponse& operator=(const GetTableOptionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetTableOptionsResponse& default_instance();
+
+  void Swap(GetTableOptionsResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  inline GetTableOptionsResponse* New() const { return New(NULL); }
+
+  GetTableOptionsResponse* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const GetTableOptionsResponse& from);
+  void MergeFrom(const GetTableOptionsResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(GetTableOptionsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .uranium.common.Status status = 1;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::uranium::common::Status status() const;
+  void set_status(::uranium::common::Status value);
+
+  // optional .uranium.admin.TableOptions options = 2;
+  bool has_options() const;
+  void clear_options();
+  static const int kOptionsFieldNumber = 2;
+  const ::uranium::admin::TableOptions& options() const;
+  ::uranium::admin::TableOptions* mutable_options();
+  ::uranium::admin::TableOptions* release_options();
+  void set_allocated_options(::uranium::admin::TableOptions* options);
+
+  // @@protoc_insertion_point(class_scope:uranium.admin.GetTableOptionsResponse)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool _is_default_instance_;
+  ::uranium::admin::TableOptions* options_;
+  int status_;
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_uranium_5fadmin_2eproto();
+  friend void protobuf_AssignDesc_uranium_5fadmin_2eproto();
+  friend void protobuf_ShutdownFile_uranium_5fadmin_2eproto();
+
+  void InitAsDefaultInstance();
+  static GetTableOptionsResponse* default_instance_;
+};
 // ===================================================================
 
 
@@ -570,7 +659,65 @@ inline void SchemalessTableOptions::set_type(::uranium::admin::StorageType value
   // @@protoc_insertion_point(field_set:uranium.admin.SchemalessTableOptions.type)
 }
 
+// -------------------------------------------------------------------
+
+// GetTableOptionsResponse
+
+// optional .uranium.common.Status status = 1;
+inline void GetTableOptionsResponse::clear_status() {
+  status_ = 0;
+}
+inline ::uranium::common::Status GetTableOptionsResponse::status() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.GetTableOptionsResponse.status)
+  return static_cast< ::uranium::common::Status >(status_);
+}
+inline void GetTableOptionsResponse::set_status(::uranium::common::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.GetTableOptionsResponse.status)
+}
+
+// optional .uranium.admin.TableOptions options = 2;
+inline bool GetTableOptionsResponse::has_options() const {
+  return !_is_default_instance_ && options_ != NULL;
+}
+inline void GetTableOptionsResponse::clear_options() {
+  if (GetArenaNoVirtual() == NULL && options_ != NULL) delete options_;
+  options_ = NULL;
+}
+inline const ::uranium::admin::TableOptions& GetTableOptionsResponse::options() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.GetTableOptionsResponse.options)
+  return options_ != NULL ? *options_ : *default_instance_->options_;
+}
+inline ::uranium::admin::TableOptions* GetTableOptionsResponse::mutable_options() {
+  
+  if (options_ == NULL) {
+    options_ = new ::uranium::admin::TableOptions;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.admin.GetTableOptionsResponse.options)
+  return options_;
+}
+inline ::uranium::admin::TableOptions* GetTableOptionsResponse::release_options() {
+  // @@protoc_insertion_point(field_release:uranium.admin.GetTableOptionsResponse.options)
+  
+  ::uranium::admin::TableOptions* temp = options_;
+  options_ = NULL;
+  return temp;
+}
+inline void GetTableOptionsResponse::set_allocated_options(::uranium::admin::TableOptions* options) {
+  delete options_;
+  options_ = options;
+  if (options) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.admin.GetTableOptionsResponse.options)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

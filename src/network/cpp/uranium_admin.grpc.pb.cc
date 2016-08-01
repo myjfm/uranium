@@ -59,12 +59,12 @@ UraniumAdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
   return new ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>(channel_.get(), cq, rpcmethod_DropTable_, context, request);
 }
 
-::grpc::Status UraniumAdminService::Stub::GetTableOptions(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::uranium::admin::TableOptions* response) {
+::grpc::Status UraniumAdminService::Stub::GetTableOptions(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::uranium::admin::GetTableOptionsResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetTableOptions_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::admin::TableOptions>* UraniumAdminService::Stub::AsyncGetTableOptionsRaw(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::uranium::admin::TableOptions>(channel_.get(), cq, rpcmethod_GetTableOptions_, context, request);
+::grpc::ClientAsyncResponseReader< ::uranium::admin::GetTableOptionsResponse>* UraniumAdminService::Stub::AsyncGetTableOptionsRaw(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) {
+  return new ::grpc::ClientAsyncResponseReader< ::uranium::admin::GetTableOptionsResponse>(channel_.get(), cq, rpcmethod_GetTableOptions_, context, request);
 }
 
 UraniumAdminService::Service::Service() {
@@ -87,7 +87,7 @@ UraniumAdminService::Service::Service() {
   AddMethod(new ::grpc::RpcServiceMethod(
       UraniumAdminService_method_names[3],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumAdminService::Service, ::uranium::common::TableName, ::uranium::admin::TableOptions>(
+      new ::grpc::RpcMethodHandler< UraniumAdminService::Service, ::uranium::common::TableName, ::uranium::admin::GetTableOptionsResponse>(
           std::mem_fn(&UraniumAdminService::Service::GetTableOptions), this)));
 }
 
@@ -115,7 +115,7 @@ UraniumAdminService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumAdminService::Service::GetTableOptions(::grpc::ServerContext* context, const ::uranium::common::TableName* request, ::uranium::admin::TableOptions* response) {
+::grpc::Status UraniumAdminService::Service::GetTableOptions(::grpc::ServerContext* context, const ::uranium::common::TableName* request, ::uranium::admin::GetTableOptionsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

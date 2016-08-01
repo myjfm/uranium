@@ -30,6 +30,12 @@ class TableManager {
       const std::string& name) = 0;
   virtual std::shared_ptr<SchemaTable> GetSchemaTable(
       const std::string& name) = 0;
+
+  virtual Status CreateTable(const admin::TableOptions& options) = 0;
+  virtual Status UpdateTable(const admin::TableOptions& options) = 0;
+  virtual Status DropTable(const std::string& table_name) = 0;
+  virtual Status GetTableOptions(const std::string& table_name,
+                                 admin::TableOptions* options) = 0;
 };
 
 }  // namespace uranium

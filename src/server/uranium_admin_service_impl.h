@@ -27,21 +27,51 @@ class UraniumAdminServiceImpl : public admin::UraniumAdminService::Service {
   virtual grpc::Status CreateTable(grpc::ServerContext* context,
                                    const admin::TableOptions* request,
                                    common::Result* response) override {
+    assert(table_manager_.get());
+    auto s = table_manager_->CreateTable(*request);
+    if (!s.ok()) {
+      response->set_status(common::Status::INTERNAL_ERROR);
+    } else {
+      response->set_status(common::Status::OK);
+    }
     return grpc::Status::OK;
   }
   virtual grpc::Status UpdateTable(grpc::ServerContext* context,
                                    const admin::TableOptions* request,
                                    common::Result* response) override {
+    assert(table_manager_.get());
+    auto s = table_manager_->UpdateTable(*request);
+    if (!s.ok()) {
+      response->set_status(common::Status::INTERNAL_ERROR);
+    } else {
+      response->set_status(common::Status::OK);
+    }
     return grpc::Status::OK;
   }
   virtual grpc::Status DropTable(grpc::ServerContext* context,
                                  const common::TableName* request,
                                  common::Result* response) override {
+    assert(table_manager_.get());
+    auto s = table_manager_->DropTable(request->name());
+    if (!s.ok()) {
+      response->set_status(common::Status::INTERNAL_ERROR);
+    } else {
+      response->set_status(common::Status::OK);
+    }
     return grpc::Status::OK;
   }
-  virtual grpc::Status GetTableOptions(grpc::ServerContext* context,
-                                       const common::TableName* request,
-                                       admin::TableOptions* response) override {
+  virtual grpc::Status GetTableOptions(
+      grpc::ServerContext* context,
+      const common::TableName* request,
+      admin::GetTableOptionsResponse* response) override {
+    assert(table_manager_.get());
+    auto s = table_manager_->GetTableOptions(request->name(),
+                                             response->mutable_options());
+    if (!s.ok()) {
+      response->set_status(common::Status::INTERNAL_ERROR);
+    } else {
+      response->set_status(common::Status::OK);
+    }
     return grpc::Status::OK;
   }
 

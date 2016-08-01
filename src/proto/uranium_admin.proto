@@ -6,7 +6,7 @@ service UraniumAdminService {
   rpc CreateTable(TableOptions) returns (common.Result) {}
   rpc UpdateTable(TableOptions) returns (common.Result) {}
   rpc DropTable(common.TableName) returns (common.Result) {}
-  rpc GetTableOptions(common.TableName) returns(TableOptions) {}
+  rpc GetTableOptions(common.TableName) returns(GetTableOptionsResponse) {}
 }
 
 message TableOptions {
@@ -30,5 +30,10 @@ message SchemaTableOptions {
 
 message SchemalessTableOptions {
   StorageType type = 1;
+}
+
+message GetTableOptionsResponse {
+  common.Status status = 1;
+  TableOptions options = 2;
 }
 

@@ -114,6 +114,23 @@ class TableManagerImpl : public TableManager {
     return itr->second;
   }
 
+  virtual Status CreateTable(const admin::TableOptions& options) override {
+    return Status::OK();
+  }
+
+  virtual Status UpdateTable(const admin::TableOptions& options) override {
+    return Status::OK();
+  }
+
+  virtual Status DropTable(const std::string& table_name) override {
+    return Status::OK();
+  }
+
+  virtual Status GetTableOptions(const std::string& table_name,
+                                 admin::TableOptions* options) override {
+    return Status::OK();
+  }
+
  private:
   void CloseSchemalessTables() {
     auto tables = schemaless_tables_.load(std::memory_order_relaxed);
