@@ -13,7 +13,7 @@
 #define URANIUM_COMMON_STATUS_H_
 
 #include <string>
-#include "slice.h"
+#include "string_piece.h"
 #include <rocksdb/status.h>
 
 namespace uranium {
@@ -32,7 +32,7 @@ class Status final {
 
   static Status OK() { return Status(); }
 
-  static Status NotFound(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status NotFound(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kNotFound, msg, msg2);
   }
 
@@ -40,41 +40,41 @@ class Status final {
   static Status NotFound() {
     return Status(kNotFound);
   }
-  static Status Corruption(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status Corruption(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kCorruption, msg, msg2);
   }
-  static Status NotSupported(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status NotSupported(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kNotSupported, msg, msg2);
   }
-  static Status InvalidArgument(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status InvalidArgument(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kInvalidArgument, msg, msg2);
   }
-  static Status IOError(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status IOError(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kIOError, msg, msg2);
   }
-  static Status MergeInProgress(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status MergeInProgress(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kMergeInProgress, msg, msg2);
   }
-  static Status Incomplete(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status Incomplete(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kIncomplete, msg, msg2);
   }
   static Status ShutdownInProgress() {
     return Status(kShutdownInProgress);
   }
-  static Status ShutdownInProgress(const Slice& msg,
-                                   const Slice& msg2 = Slice()) {
+  static Status ShutdownInProgress(const StringPiece& msg,
+                                   const StringPiece& msg2 = StringPiece()) {
     return Status(kShutdownInProgress, msg, msg2);
   }
   static Status TimedOut() {
     return Status(kTimedOut);
   }
-  static Status TimedOut(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status TimedOut(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kTimedOut, msg, msg2);
   }
   static Status Aborted() {
     return Status(kAborted);
   }
-  static Status Aborted(const Slice& msg, const Slice& msg2 = Slice()) {
+  static Status Aborted(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
     return Status(kAborted, msg, msg2);
   }
 
@@ -189,7 +189,7 @@ class Status final {
   const char* state_;
 
   explicit Status(Code _code) : code_(_code), state_(nullptr) {}
-  Status(Code _code, const Slice& msg, const Slice& msg2) {
+  Status(Code _code, const StringPiece& msg, const StringPiece& msg2) {
     assert(code_ != kOk);
     const uint32_t len1 = static_cast<uint32_t>(msg.size());
     const uint32_t len2 = static_cast<uint32_t>(msg2.size());

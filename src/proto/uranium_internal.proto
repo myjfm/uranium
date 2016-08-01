@@ -1,0 +1,16 @@
+syntax = "proto3";
+package uranium.internal;
+import "uranium_admin.proto";
+
+enum TableStatus {
+  USING     = 0;
+  UPDATING  = 1;
+  REMOVING  = 2;
+}
+
+message TableOptions {
+  string table_path           = 1;
+  TableStatus status          = 2;
+  admin.TableOptions options  = 3;
+}
+

@@ -10,22 +10,22 @@ service UraniumAdminService {
 }
 
 message TableOptions {
-  common.TableName table_name = 1;
+  common.TableName table_name                       = 1;
   oneof options {
-    SchemaTableOptions schema_table_options = 2;
+    SchemaTableOptions schema_table_options         = 2;
     SchemalessTableOptions schemaless_table_options = 3;
   }
 }
 
 enum StorageType {
-  FLAT = 0;
-  COLUMN_SEPARATED = 1;
-  COLUMN_GROUP = 2;
+  FLAT              = 0;
+  COLUMN_SEPARATED  = 1;
+  COLUMN_GROUP      = 2;
 }
 
 message SchemaTableOptions {
-  StorageType type = 1;
-  repeated common.ColumnDefination columns = 3;
+  StorageType type                          = 1;
+  repeated common.ColumnDefination columns  = 3;
 }
 
 message SchemalessTableOptions {

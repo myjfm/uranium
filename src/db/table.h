@@ -6,7 +6,7 @@
 #define URANIUM_DB_TABLE_H_
 
 #include "common/status.h"
-#include "table_options.h"
+#include "network/cpp/uranium_internal.pb.h"
 
 namespace uranium {
 
@@ -18,7 +18,7 @@ class Table {
   Table(const Table&) = delete;
   Table& operator=(const Table&) = delete;
 
-  virtual Status Init(const TableOptions& config) = 0;
+  virtual Status Init(const internal::TableOptions& config) = 0;
   virtual Status Close() = 0;
 
 };

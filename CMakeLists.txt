@@ -87,12 +87,16 @@ ENDIF()
 INCLUDE_DIRECTORIES(AFTER "src")
 
 set(SOURCE_FILES
-  "src/common/slice.h"
+  "src/common/string_piece.h"
+  "src/common/string_piece.cc"
+  "src/common/string_utils.h"
+  "src/common/string_utils.cc"
   "src/common/status.h"
   "src/db/table.h"
+  "src/db/db_path_info.h"
   "src/db/schemaless_table.h"
   "src/db/schema_table.h"
-  "src/db/table_options.h"
+  "src/db/meta_table.h"
   "src/db/table_manager.h"
   "src/db/table_manager_impl.h"
   "src/network/cpp/common.pb.cc"
@@ -105,6 +109,8 @@ set(SOURCE_FILES
   "src/network/cpp/uranium_admin.grpc.pb.h"
   "src/network/cpp/uranium_admin.pb.cc"
   "src/network/cpp/uranium_admin.pb.h"
+  "src/network/cpp/uranium_internal.pb.cc"
+  "src/network/cpp/uranium_internal.pb.h"
   "src/server/uranium.cc"
   "src/server/uranium_schema_service_impl.h"
   "src/server/uranium_schemaless_service_impl.h"

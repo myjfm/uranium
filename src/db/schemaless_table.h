@@ -9,7 +9,7 @@
 
 #include "common/status.h"
 #include "table.h"
-#include "table_options.h"
+#include "network/cpp/uranium_internal.pb.h"
 
 namespace uranium {
 
@@ -21,13 +21,15 @@ class SchemalessTable : public Table {
   SchemalessTable(const SchemalessTable&) = delete;
   SchemalessTable& operator=(const SchemalessTable&) = delete;
 
-  Status Init(const TableOptions& config) override {
+  Status Init(const internal::TableOptions& config) override {
     std::vector<rocksdb::ColumnFamilyDescriptor> cfds;
     rocksdb::Options opt;
     cfds.push_back(rocksdb::ColumnFamilyDescriptor(
           rocksdb::kDefaultColumnFamilyName, opt));
     std::vector<rocksdb::ColumnFamilyHandle*> cfhs;
-    rocksdb::Status s = rocksdb::DB::Open(opt, config.name, cfds, &cfhs, &db_);
+    std::string name =
+      config.table_path() + config.options().table_name().name();
+    rocksdb::Status s = rocksdb::DB::Open(opt, name, cfds, &cfhs, &db_);
     if (!s.ok()) {
       return Status(s);
     }

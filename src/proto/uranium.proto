@@ -202,30 +202,30 @@ message Value {
   bytes value = 1;
 }
 message KeyValue {
-  Key key = 1;
+  Key key     = 1;
   Value value = 2;
 }
 message Field {
   bytes field = 1;
 }
 message FieldValue {
-  Field key = 1;
+  Field key   = 1;
   Value value = 2;
 }
 
 ////// request definitions of k-v structure
 message KVGetRequest {
   common.TableName table_name = 1;
-  repeated Key keys = 2;
+  repeated Key keys           = 2;
 }
 message KVGetResponse {
-  common.Status status = 1;
+  common.Status status  = 1;
   repeated KeyValue kvs = 2;
 }
 
 message KVSetRequest {
   common.TableName table_name = 1;
-  repeated KeyValue kvs = 2;
+  repeated KeyValue kvs       = 2;
 }
 message KVSetResponse {
   common.Status status = 1;
@@ -233,7 +233,7 @@ message KVSetResponse {
 
 message KVRemoveRequest {
   common.TableName table_name = 1;
-  repeated Key keys = 2;
+  repeated Key keys           = 2;
 }
 message KVRemoveResponse {
   common.Status status = 1;
@@ -242,8 +242,8 @@ message KVRemoveResponse {
 ////// request definitions of list structure
 message ListLPushRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Value values = 3;
+  Key key                     = 2;
+  repeated Value values       = 3;
 }
 message ListLPushResponse {
   common.Status status = 1;
@@ -251,17 +251,17 @@ message ListLPushResponse {
 
 message ListLPopRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message ListLPopResponse {
-  common.Status status = 1;
-  Value value = 2;
+  common.Status status  = 1;
+  Value value           = 2;
 }
 
 message ListRPushRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Value values = 3;
+  Key key                     = 2;
+  repeated Value values       = 3;
 }
 message ListRPushResponse {
   common.Status status = 1;
@@ -269,17 +269,17 @@ message ListRPushResponse {
 
 message ListRPopRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message ListRPopResponse {
-  common.Status status = 1;
-  Value value = 2;
+  common.Status status  = 1;
+  Value value           = 2;
 }
 
 message ListLPushXRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Value values = 3;
+  Key key                     = 2;
+  repeated Value values       = 3;
 }
 message ListLPushXResponse {
   common.Status status = 1;
@@ -287,8 +287,8 @@ message ListLPushXResponse {
 
 message ListRPushXRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Value values = 3;
+  Key key                     = 2;
+  repeated Value values       = 3;
 }
 message ListRPushXResponse {
   common.Status status = 1;
@@ -296,19 +296,19 @@ message ListRPushXResponse {
 
 message ListIndexRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  int64 index = 3;
+  Key key                     = 2;
+  int64 index                 = 3;
 }
 message ListIndexResponse {
-  common.Status status = 1;
-  Value value = 2;
+  common.Status status  = 1;
+  Value value           = 2;
 }
 
 message ListSetRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  int64 index = 3;
-  Value value = 4;
+  Key key                     = 2;
+  int64 index                 = 3;
+  Value value                 = 4;
 }
 message ListSetResponse {
   common.Status status = 1;
@@ -316,27 +316,27 @@ message ListSetResponse {
 
 message ListRangeRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  int64 start = 3;
-  int64 end = 4;
+  Key key                     = 2;
+  int64 start                 = 3;
+  int64 end                   = 4;
 }
 message ListRangeResponse {
-  common.Status status = 1;
+  common.Status status  = 1;
   repeated Value values = 2;
 }
 
 message ListLengthRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message ListLengthResponse {
-  common.Status status = 1;
-  int64 length = 2;
+  common.Status status  = 1;
+  int64 length          = 2;
 }
 
 message ListRemoveAllRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message ListRemoveAllResponse {
   common.Status status = 1;
@@ -345,54 +345,54 @@ message ListRemoveAllResponse {
 ////// request definitions of Hash structure
 message HashGetRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Field fields = 3;
+  Key key                     = 2;
+  repeated Field fields       = 3;
 }
 message HashGetResponse {
-  common.Status status = 1;
+  common.Status status    = 1;
   repeated FieldValue fvs = 2;
 }
 
 message HashGetAllRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message HashGetAllResponse {
-  common.Status status = 1;
+  common.Status status    = 1;
   repeated FieldValue fvs = 2;
 }
 
 message HashGetAllFieldsRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message HashGetAllFieldsResponse {
-  common.Status status = 1;
+  common.Status status  = 1;
   repeated Field fields = 2;
 }
 
 message HashGetAllValuesRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message HashGetAllValuesResponse {
-  common.Status status = 1;
+  common.Status status  = 1;
   repeated Value values = 2;
 }
 
 message HashLengthRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message HashLengthResponse {
-  common.Status status = 1;
-  int64 length = 2;
+  common.Status status  = 1;
+  int64 length          = 2;
 }
 
 message HashSetRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated FieldValue fvs = 3;
+  Key key                     = 2;
+  repeated FieldValue fvs     = 3;
 }
 message HashSetResponse {
   common.Status status = 1;
@@ -400,8 +400,8 @@ message HashSetResponse {
 
 message HashSetXRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  FieldValue fv = 3;
+  Key key                     = 2;
+  FieldValue fv               = 3;
 }
 message HashSetXResponse {
   common.Status status = 1;
@@ -409,8 +409,8 @@ message HashSetXResponse {
 
 message HashRemoveRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Field fields = 3;
+  Key key                     = 2;
+  repeated Field fields       = 3;
 }
 message HashRemoveResponse {
   common.Status status = 1;
@@ -418,17 +418,17 @@ message HashRemoveResponse {
 
 message HashExistsRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  Field field = 3;
+  Key key                     = 2;
+  Field field                 = 3;
 }
 message HashExistsResponse {
-  common.Status status = 1;
-  bool exists = 2;
+  common.Status status  = 1;
+  bool exists           = 2;
 }
 
 message HashRemoveAllRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message HashRemoveAllResponse {
   common.Status status = 1;
@@ -437,8 +437,8 @@ message HashRemoveAllResponse {
 ////// request definitions of set structure
 message SetAddRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Value values = 3;
+  Key key                     = 2;
+  repeated Value values       = 3;
 }
 message SetAddResponse {
   common.Status status = 1;
@@ -446,36 +446,36 @@ message SetAddResponse {
 
 message SetLengthRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message SetLengthResponse {
-  common.Status status = 1;
-  int64 length = 2;
+  common.Status status  = 1;
+  int64 length          = 2;
 }
 
 message SetIsMemberRequest {
-  common.Status status = 1;
-  Key key = 2;
-  Value value = 3;
+  common.Status status  = 1;
+  Key key               = 2;
+  Value value           = 3;
 }
 message SetIsMemberResponse {
-  common.Status status = 1;
-  bool yes = 2;
+  common.Status status  = 1;
+  bool yes              = 2;
 }
 
 message SetGetAllRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message SetGetAllResponse {
-  common.Status status = 1;
+  common.Status status  = 1;
   repeated Value values = 2;
 }
 
 message SetRemoveRequest {
   common.TableName table_name = 1;
-  Key key = 2;
-  repeated Value values = 3;
+  Key key                     = 2;
+  repeated Value values       = 3;
 }
 message SetRemoveResponse {
   common.Status status = 1;
@@ -483,7 +483,7 @@ message SetRemoveResponse {
 
 message SetRemoveAllRequest {
   common.TableName table_name = 1;
-  Key key = 2;
+  Key key                     = 2;
 }
 message SetRemoveAllResponse {
   common.Status status = 1;

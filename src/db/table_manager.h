@@ -22,6 +22,8 @@ class TableManager {
   TableManager& operator=(const TableManager&) = delete;
 
   virtual Status Init(const std::string& db_paths) = 0;
+
+  // There should have no thread accessing tables before you call this method.
   virtual Status Close() = 0;
 
   virtual std::shared_ptr<SchemalessTable> GetSchemalessTable(
