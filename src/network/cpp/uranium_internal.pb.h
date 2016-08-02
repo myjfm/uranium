@@ -40,6 +40,7 @@ void protobuf_AssignDesc_uranium_5finternal_2eproto();
 void protobuf_ShutdownFile_uranium_5finternal_2eproto();
 
 class TableOptions;
+class TableOptionsList;
 
 enum TableStatus {
   USING = 0,
@@ -163,6 +164,90 @@ class TableOptions : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static TableOptions* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class TableOptionsList : public ::google::protobuf::Message {
+ public:
+  TableOptionsList();
+  virtual ~TableOptionsList();
+
+  TableOptionsList(const TableOptionsList& from);
+
+  inline TableOptionsList& operator=(const TableOptionsList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TableOptionsList& default_instance();
+
+  void Swap(TableOptionsList* other);
+
+  // implements Message ----------------------------------------------
+
+  inline TableOptionsList* New() const { return New(NULL); }
+
+  TableOptionsList* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const TableOptionsList& from);
+  void MergeFrom(const TableOptionsList& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(TableOptionsList* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .uranium.internal.TableOptions options_list = 1;
+  int options_list_size() const;
+  void clear_options_list();
+  static const int kOptionsListFieldNumber = 1;
+  const ::uranium::internal::TableOptions& options_list(int index) const;
+  ::uranium::internal::TableOptions* mutable_options_list(int index);
+  ::uranium::internal::TableOptions* add_options_list();
+  ::google::protobuf::RepeatedPtrField< ::uranium::internal::TableOptions >*
+      mutable_options_list();
+  const ::google::protobuf::RepeatedPtrField< ::uranium::internal::TableOptions >&
+      options_list() const;
+
+  // @@protoc_insertion_point(class_scope:uranium.internal.TableOptionsList)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool _is_default_instance_;
+  ::google::protobuf::RepeatedPtrField< ::uranium::internal::TableOptions > options_list_;
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_uranium_5finternal_2eproto();
+  friend void protobuf_AssignDesc_uranium_5finternal_2eproto();
+  friend void protobuf_ShutdownFile_uranium_5finternal_2eproto();
+
+  void InitAsDefaultInstance();
+  static TableOptionsList* default_instance_;
+};
 // ===================================================================
 
 
@@ -267,7 +352,43 @@ inline void TableOptions::set_allocated_options(::uranium::admin::TableOptions* 
   // @@protoc_insertion_point(field_set_allocated:uranium.internal.TableOptions.options)
 }
 
+// -------------------------------------------------------------------
+
+// TableOptionsList
+
+// repeated .uranium.internal.TableOptions options_list = 1;
+inline int TableOptionsList::options_list_size() const {
+  return options_list_.size();
+}
+inline void TableOptionsList::clear_options_list() {
+  options_list_.Clear();
+}
+inline const ::uranium::internal::TableOptions& TableOptionsList::options_list(int index) const {
+  // @@protoc_insertion_point(field_get:uranium.internal.TableOptionsList.options_list)
+  return options_list_.Get(index);
+}
+inline ::uranium::internal::TableOptions* TableOptionsList::mutable_options_list(int index) {
+  // @@protoc_insertion_point(field_mutable:uranium.internal.TableOptionsList.options_list)
+  return options_list_.Mutable(index);
+}
+inline ::uranium::internal::TableOptions* TableOptionsList::add_options_list() {
+  // @@protoc_insertion_point(field_add:uranium.internal.TableOptionsList.options_list)
+  return options_list_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::uranium::internal::TableOptions >*
+TableOptionsList::mutable_options_list() {
+  // @@protoc_insertion_point(field_mutable_list:uranium.internal.TableOptionsList.options_list)
+  return &options_list_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::uranium::internal::TableOptions >&
+TableOptionsList::options_list() const {
+  // @@protoc_insertion_point(field_list:uranium.internal.TableOptionsList.options_list)
+  return options_list_;
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

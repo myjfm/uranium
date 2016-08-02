@@ -39,6 +39,7 @@ void protobuf_AddDesc_uranium_5fadmin_2eproto();
 void protobuf_AssignDesc_uranium_5fadmin_2eproto();
 void protobuf_ShutdownFile_uranium_5fadmin_2eproto();
 
+class GetTableOptionsRequest;
 class GetTableOptionsResponse;
 class SchemaTableOptions;
 class SchemalessTableOptions;
@@ -356,6 +357,94 @@ class SchemalessTableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class GetTableOptionsRequest : public ::google::protobuf::Message {
+ public:
+  GetTableOptionsRequest();
+  virtual ~GetTableOptionsRequest();
+
+  GetTableOptionsRequest(const GetTableOptionsRequest& from);
+
+  inline GetTableOptionsRequest& operator=(const GetTableOptionsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetTableOptionsRequest& default_instance();
+
+  void Swap(GetTableOptionsRequest* other);
+
+  // implements Message ----------------------------------------------
+
+  inline GetTableOptionsRequest* New() const { return New(NULL); }
+
+  GetTableOptionsRequest* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const GetTableOptionsRequest& from);
+  void MergeFrom(const GetTableOptionsRequest& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(GetTableOptionsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .uranium.common.TableType table_type = 1;
+  void clear_table_type();
+  static const int kTableTypeFieldNumber = 1;
+  ::uranium::common::TableType table_type() const;
+  void set_table_type(::uranium::common::TableType value);
+
+  // optional .uranium.common.TableName table_name = 2;
+  bool has_table_name() const;
+  void clear_table_name();
+  static const int kTableNameFieldNumber = 2;
+  const ::uranium::common::TableName& table_name() const;
+  ::uranium::common::TableName* mutable_table_name();
+  ::uranium::common::TableName* release_table_name();
+  void set_allocated_table_name(::uranium::common::TableName* table_name);
+
+  // @@protoc_insertion_point(class_scope:uranium.admin.GetTableOptionsRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool _is_default_instance_;
+  ::uranium::common::TableName* table_name_;
+  int table_type_;
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_uranium_5fadmin_2eproto();
+  friend void protobuf_AssignDesc_uranium_5fadmin_2eproto();
+  friend void protobuf_ShutdownFile_uranium_5fadmin_2eproto();
+
+  void InitAsDefaultInstance();
+  static GetTableOptionsRequest* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class GetTableOptionsResponse : public ::google::protobuf::Message {
  public:
   GetTableOptionsResponse();
@@ -661,6 +750,62 @@ inline void SchemalessTableOptions::set_type(::uranium::admin::StorageType value
 
 // -------------------------------------------------------------------
 
+// GetTableOptionsRequest
+
+// optional .uranium.common.TableType table_type = 1;
+inline void GetTableOptionsRequest::clear_table_type() {
+  table_type_ = 0;
+}
+inline ::uranium::common::TableType GetTableOptionsRequest::table_type() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.GetTableOptionsRequest.table_type)
+  return static_cast< ::uranium::common::TableType >(table_type_);
+}
+inline void GetTableOptionsRequest::set_table_type(::uranium::common::TableType value) {
+  
+  table_type_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.GetTableOptionsRequest.table_type)
+}
+
+// optional .uranium.common.TableName table_name = 2;
+inline bool GetTableOptionsRequest::has_table_name() const {
+  return !_is_default_instance_ && table_name_ != NULL;
+}
+inline void GetTableOptionsRequest::clear_table_name() {
+  if (GetArenaNoVirtual() == NULL && table_name_ != NULL) delete table_name_;
+  table_name_ = NULL;
+}
+inline const ::uranium::common::TableName& GetTableOptionsRequest::table_name() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.GetTableOptionsRequest.table_name)
+  return table_name_ != NULL ? *table_name_ : *default_instance_->table_name_;
+}
+inline ::uranium::common::TableName* GetTableOptionsRequest::mutable_table_name() {
+  
+  if (table_name_ == NULL) {
+    table_name_ = new ::uranium::common::TableName;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.admin.GetTableOptionsRequest.table_name)
+  return table_name_;
+}
+inline ::uranium::common::TableName* GetTableOptionsRequest::release_table_name() {
+  // @@protoc_insertion_point(field_release:uranium.admin.GetTableOptionsRequest.table_name)
+  
+  ::uranium::common::TableName* temp = table_name_;
+  table_name_ = NULL;
+  return temp;
+}
+inline void GetTableOptionsRequest::set_allocated_table_name(::uranium::common::TableName* table_name) {
+  delete table_name_;
+  table_name_ = table_name;
+  if (table_name) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.admin.GetTableOptionsRequest.table_name)
+}
+
+// -------------------------------------------------------------------
+
 // GetTableOptionsResponse
 
 // optional .uranium.common.Status status = 1;
@@ -716,6 +861,8 @@ inline void GetTableOptionsResponse::set_allocated_options(::uranium::admin::Tab
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

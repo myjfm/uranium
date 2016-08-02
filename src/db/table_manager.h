@@ -34,8 +34,10 @@ class TableManager {
   virtual Status CreateTable(const admin::TableOptions& options) = 0;
   virtual Status UpdateTable(const admin::TableOptions& options) = 0;
   virtual Status DropTable(const std::string& table_name) = 0;
-  virtual Status GetTableOptions(const std::string& table_name,
-                                 admin::TableOptions* options) = 0;
+  virtual Status GetSchemalessTableOptions(const std::string& table_name,
+                                           admin::TableOptions* options) = 0;
+  virtual Status GetSchemaTableOptions(const std::string& table_name,
+                                       admin::TableOptions* options) = 0;
 };
 
 }  // namespace uranium

@@ -35,6 +35,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* SchemalessTableOptions_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   SchemalessTableOptions_reflection_ = NULL;
+const ::google::protobuf::Descriptor* GetTableOptionsRequest_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  GetTableOptionsRequest_reflection_ = NULL;
 const ::google::protobuf::Descriptor* GetTableOptionsResponse_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   GetTableOptionsResponse_reflection_ = NULL;
@@ -100,7 +103,23 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(SchemalessTableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SchemalessTableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SchemalessTableOptions, _is_default_instance_));
-  GetTableOptionsResponse_descriptor_ = file->message_type(3);
+  GetTableOptionsRequest_descriptor_ = file->message_type(3);
+  static const int GetTableOptionsRequest_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, table_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, table_name_),
+  };
+  GetTableOptionsRequest_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      GetTableOptionsRequest_descriptor_,
+      GetTableOptionsRequest::default_instance_,
+      GetTableOptionsRequest_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(GetTableOptionsRequest),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, _is_default_instance_));
+  GetTableOptionsResponse_descriptor_ = file->message_type(4);
   static const int GetTableOptionsResponse_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsResponse, status_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsResponse, options_),
@@ -136,6 +155,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       SchemalessTableOptions_descriptor_, &SchemalessTableOptions::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      GetTableOptionsRequest_descriptor_, &GetTableOptionsRequest::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       GetTableOptionsResponse_descriptor_, &GetTableOptionsResponse::default_instance());
 }
 
@@ -149,6 +170,8 @@ void protobuf_ShutdownFile_uranium_5fadmin_2eproto() {
   delete SchemaTableOptions_reflection_;
   delete SchemalessTableOptions::default_instance_;
   delete SchemalessTableOptions_reflection_;
+  delete GetTableOptionsRequest::default_instance_;
+  delete GetTableOptionsRequest_reflection_;
   delete GetTableOptionsResponse::default_instance_;
   delete GetTableOptionsResponse_reflection_;
 }
@@ -172,29 +195,35 @@ void protobuf_AddDesc_uranium_5fadmin_2eproto() {
     "StorageType\0221\n\007columns\030\003 \003(\0132 .uranium.c"
     "ommon.ColumnDefination\"B\n\026SchemalessTabl"
     "eOptions\022(\n\004type\030\001 \001(\0162\032.uranium.admin.S"
-    "torageType\"o\n\027GetTableOptionsResponse\022&\n"
+    "torageType\"v\n\026GetTableOptionsRequest\022-\n\n"
+    "table_type\030\001 \001(\0162\031.uranium.common.TableT"
+    "ype\022-\n\ntable_name\030\002 \001(\0132\031.uranium.common"
+    ".TableName\"o\n\027GetTableOptionsResponse\022&\n"
     "\006status\030\001 \001(\0162\026.uranium.common.Status\022,\n"
     "\007options\030\002 \001(\0132\033.uranium.admin.TableOpti"
     "ons*\?\n\013StorageType\022\010\n\004FLAT\020\000\022\024\n\020COLUMN_S"
-    "EPARATED\020\001\022\020\n\014COLUMN_GROUP\020\0022\273\002\n\023Uranium"
+    "EPARATED\020\001\022\020\n\014COLUMN_GROUP\020\0022\307\002\n\023Uranium"
     "AdminService\022D\n\013CreateTable\022\033.uranium.ad"
     "min.TableOptions\032\026.uranium.common.Result"
     "\"\000\022D\n\013UpdateTable\022\033.uranium.admin.TableO"
     "ptions\032\026.uranium.common.Result\"\000\022@\n\tDrop"
     "Table\022\031.uranium.common.TableName\032\026.urani"
-    "um.common.Result\"\000\022V\n\017GetTableOptions\022\031."
-    "uranium.common.TableName\032&.uranium.admin"
-    ".GetTableOptionsResponse\"\000b\006proto3", 954);
+    "um.common.Result\"\000\022b\n\017GetTableOptions\022%."
+    "uranium.admin.GetTableOptionsRequest\032&.u"
+    "ranium.admin.GetTableOptionsResponse\"\000b\006"
+    "proto3", 1086);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "uranium_admin.proto", &protobuf_RegisterTypes);
   TableOptions::default_instance_ = new TableOptions();
   TableOptions_default_oneof_instance_ = new TableOptionsOneofInstance();
   SchemaTableOptions::default_instance_ = new SchemaTableOptions();
   SchemalessTableOptions::default_instance_ = new SchemalessTableOptions();
+  GetTableOptionsRequest::default_instance_ = new GetTableOptionsRequest();
   GetTableOptionsResponse::default_instance_ = new GetTableOptionsResponse();
   TableOptions::default_instance_->InitAsDefaultInstance();
   SchemaTableOptions::default_instance_->InitAsDefaultInstance();
   SchemalessTableOptions::default_instance_->InitAsDefaultInstance();
+  GetTableOptionsRequest::default_instance_->InitAsDefaultInstance();
   GetTableOptionsResponse::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_uranium_5fadmin_2eproto);
 }
@@ -1252,6 +1281,323 @@ void SchemalessTableOptions::clear_type() {
   
   type_ = value;
   // @@protoc_insertion_point(field_set:uranium.admin.SchemalessTableOptions.type)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GetTableOptionsRequest::kTableTypeFieldNumber;
+const int GetTableOptionsRequest::kTableNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GetTableOptionsRequest::GetTableOptionsRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:uranium.admin.GetTableOptionsRequest)
+}
+
+void GetTableOptionsRequest::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+  table_name_ = const_cast< ::uranium::common::TableName*>(&::uranium::common::TableName::default_instance());
+}
+
+GetTableOptionsRequest::GetTableOptionsRequest(const GetTableOptionsRequest& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:uranium.admin.GetTableOptionsRequest)
+}
+
+void GetTableOptionsRequest::SharedCtor() {
+    _is_default_instance_ = false;
+  _cached_size_ = 0;
+  table_type_ = 0;
+  table_name_ = NULL;
+}
+
+GetTableOptionsRequest::~GetTableOptionsRequest() {
+  // @@protoc_insertion_point(destructor:uranium.admin.GetTableOptionsRequest)
+  SharedDtor();
+}
+
+void GetTableOptionsRequest::SharedDtor() {
+  if (this != default_instance_) {
+    delete table_name_;
+  }
+}
+
+void GetTableOptionsRequest::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* GetTableOptionsRequest::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return GetTableOptionsRequest_descriptor_;
+}
+
+const GetTableOptionsRequest& GetTableOptionsRequest::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_uranium_5fadmin_2eproto();
+  return *default_instance_;
+}
+
+GetTableOptionsRequest* GetTableOptionsRequest::default_instance_ = NULL;
+
+GetTableOptionsRequest* GetTableOptionsRequest::New(::google::protobuf::Arena* arena) const {
+  GetTableOptionsRequest* n = new GetTableOptionsRequest;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void GetTableOptionsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:uranium.admin.GetTableOptionsRequest)
+  table_type_ = 0;
+  if (GetArenaNoVirtual() == NULL && table_name_ != NULL) delete table_name_;
+  table_name_ = NULL;
+}
+
+bool GetTableOptionsRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:uranium.admin.GetTableOptionsRequest)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .uranium.common.TableType table_type = 1;
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_table_type(static_cast< ::uranium::common::TableType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_table_name;
+        break;
+      }
+
+      // optional .uranium.common.TableName table_name = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_table_name:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_table_name()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:uranium.admin.GetTableOptionsRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:uranium.admin.GetTableOptionsRequest)
+  return false;
+#undef DO_
+}
+
+void GetTableOptionsRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:uranium.admin.GetTableOptionsRequest)
+  // optional .uranium.common.TableType table_type = 1;
+  if (this->table_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->table_type(), output);
+  }
+
+  // optional .uranium.common.TableName table_name = 2;
+  if (this->has_table_name()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->table_name_, output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:uranium.admin.GetTableOptionsRequest)
+}
+
+::google::protobuf::uint8* GetTableOptionsRequest::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uranium.admin.GetTableOptionsRequest)
+  // optional .uranium.common.TableType table_type = 1;
+  if (this->table_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->table_type(), target);
+  }
+
+  // optional .uranium.common.TableName table_name = 2;
+  if (this->has_table_name()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, *this->table_name_, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:uranium.admin.GetTableOptionsRequest)
+  return target;
+}
+
+int GetTableOptionsRequest::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:uranium.admin.GetTableOptionsRequest)
+  int total_size = 0;
+
+  // optional .uranium.common.TableType table_type = 1;
+  if (this->table_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->table_type());
+  }
+
+  // optional .uranium.common.TableName table_name = 2;
+  if (this->has_table_name()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->table_name_);
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void GetTableOptionsRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:uranium.admin.GetTableOptionsRequest)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const GetTableOptionsRequest* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const GetTableOptionsRequest>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:uranium.admin.GetTableOptionsRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:uranium.admin.GetTableOptionsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetTableOptionsRequest::MergeFrom(const GetTableOptionsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uranium.admin.GetTableOptionsRequest)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from.table_type() != 0) {
+    set_table_type(from.table_type());
+  }
+  if (from.has_table_name()) {
+    mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
+  }
+}
+
+void GetTableOptionsRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:uranium.admin.GetTableOptionsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetTableOptionsRequest::CopyFrom(const GetTableOptionsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uranium.admin.GetTableOptionsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetTableOptionsRequest::IsInitialized() const {
+
+  return true;
+}
+
+void GetTableOptionsRequest::Swap(GetTableOptionsRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GetTableOptionsRequest::InternalSwap(GetTableOptionsRequest* other) {
+  std::swap(table_type_, other->table_type_);
+  std::swap(table_name_, other->table_name_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata GetTableOptionsRequest::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = GetTableOptionsRequest_descriptor_;
+  metadata.reflection = GetTableOptionsRequest_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// GetTableOptionsRequest
+
+// optional .uranium.common.TableType table_type = 1;
+void GetTableOptionsRequest::clear_table_type() {
+  table_type_ = 0;
+}
+ ::uranium::common::TableType GetTableOptionsRequest::table_type() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.GetTableOptionsRequest.table_type)
+  return static_cast< ::uranium::common::TableType >(table_type_);
+}
+ void GetTableOptionsRequest::set_table_type(::uranium::common::TableType value) {
+  
+  table_type_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.GetTableOptionsRequest.table_type)
+}
+
+// optional .uranium.common.TableName table_name = 2;
+bool GetTableOptionsRequest::has_table_name() const {
+  return !_is_default_instance_ && table_name_ != NULL;
+}
+void GetTableOptionsRequest::clear_table_name() {
+  if (GetArenaNoVirtual() == NULL && table_name_ != NULL) delete table_name_;
+  table_name_ = NULL;
+}
+const ::uranium::common::TableName& GetTableOptionsRequest::table_name() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.GetTableOptionsRequest.table_name)
+  return table_name_ != NULL ? *table_name_ : *default_instance_->table_name_;
+}
+::uranium::common::TableName* GetTableOptionsRequest::mutable_table_name() {
+  
+  if (table_name_ == NULL) {
+    table_name_ = new ::uranium::common::TableName;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.admin.GetTableOptionsRequest.table_name)
+  return table_name_;
+}
+::uranium::common::TableName* GetTableOptionsRequest::release_table_name() {
+  // @@protoc_insertion_point(field_release:uranium.admin.GetTableOptionsRequest.table_name)
+  
+  ::uranium::common::TableName* temp = table_name_;
+  table_name_ = NULL;
+  return temp;
+}
+void GetTableOptionsRequest::set_allocated_table_name(::uranium::common::TableName* table_name) {
+  delete table_name_;
+  table_name_ = table_name;
+  if (table_name) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.admin.GetTableOptionsRequest.table_name)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

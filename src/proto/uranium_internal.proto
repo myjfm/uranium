@@ -14,3 +14,7 @@ message TableOptions {
   admin.TableOptions options  = 3;
 }
 
+message TableOptionsList {
+  repeated TableOptions options_list = 1;
+}
+

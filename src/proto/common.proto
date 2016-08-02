@@ -2,6 +2,11 @@ syntax = "proto3";
 
 package uranium.common;
 
+enum TableType {
+  SCHEMALESS  = 0;
+  SCHEMA      = 1;
+}
+
 message TableName {
   string name = 1;
 }

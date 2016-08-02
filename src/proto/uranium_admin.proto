@@ -6,7 +6,7 @@ service UraniumAdminService {
   rpc CreateTable(TableOptions) returns (common.Result) {}
   rpc UpdateTable(TableOptions) returns (common.Result) {}
   rpc DropTable(common.TableName) returns (common.Result) {}
-  rpc GetTableOptions(common.TableName) returns(GetTableOptionsResponse) {}
+  rpc GetTableOptions(GetTableOptionsRequest) returns(GetTableOptionsResponse) {}
 }
 
 message TableOptions {
@@ -19,8 +19,8 @@ message TableOptions {
 
 enum StorageType {
   FLAT              = 0;
-  COLUMN_SEPARATED  = 1;
-  COLUMN_GROUP      = 2;
+  COLUMN_SEPARATED  = 1;  // currently not supported
+  COLUMN_GROUP      = 2;  // currently not supported
 }
 
 message SchemaTableOptions {
@@ -32,6 +32,10 @@ message SchemalessTableOptions {
   StorageType type = 1;
 }
 
+message GetTableOptionsRequest {
+  common.TableType table_type = 1;
+  common.TableName table_name = 2;
+}
 message GetTableOptionsResponse {
   common.Status status = 1;
   TableOptions options = 2;

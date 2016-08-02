@@ -32,7 +32,8 @@ class Status final {
 
   static Status OK() { return Status(); }
 
-  static Status NotFound(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status NotFound(const StringPiece& msg,
+                         const StringPiece& msg2 = StringPiece()) {
     return Status(kNotFound, msg, msg2);
   }
 
@@ -40,22 +41,28 @@ class Status final {
   static Status NotFound() {
     return Status(kNotFound);
   }
-  static Status Corruption(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status Corruption(const StringPiece& msg,
+                           const StringPiece& msg2 = StringPiece()) {
     return Status(kCorruption, msg, msg2);
   }
-  static Status NotSupported(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status NotSupported(const StringPiece& msg,
+                             const StringPiece& msg2 = StringPiece()) {
     return Status(kNotSupported, msg, msg2);
   }
-  static Status InvalidArgument(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status InvalidArgument(const StringPiece& msg,
+                                const StringPiece& msg2 = StringPiece()) {
     return Status(kInvalidArgument, msg, msg2);
   }
-  static Status IOError(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status IOError(const StringPiece& msg,
+                        const StringPiece& msg2 = StringPiece()) {
     return Status(kIOError, msg, msg2);
   }
-  static Status MergeInProgress(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status MergeInProgress(const StringPiece& msg,
+                                const StringPiece& msg2 = StringPiece()) {
     return Status(kMergeInProgress, msg, msg2);
   }
-  static Status Incomplete(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status Incomplete(const StringPiece& msg,
+                           const StringPiece& msg2 = StringPiece()) {
     return Status(kIncomplete, msg, msg2);
   }
   static Status ShutdownInProgress() {
@@ -68,14 +75,21 @@ class Status final {
   static Status TimedOut() {
     return Status(kTimedOut);
   }
-  static Status TimedOut(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status TimedOut(const StringPiece& msg,
+                         const StringPiece& msg2 = StringPiece()) {
     return Status(kTimedOut, msg, msg2);
   }
   static Status Aborted() {
     return Status(kAborted);
   }
-  static Status Aborted(const StringPiece& msg, const StringPiece& msg2 = StringPiece()) {
+  static Status Aborted(const StringPiece& msg,
+                        const StringPiece& msg2 = StringPiece()) {
     return Status(kAborted, msg, msg2);
+  }
+
+  static Status TableAlreadyExists(const StringPiece& msg,
+                                   const StringPiece& msg2 = StringPiece()) {
+    return Status(kTableAlreadyExists, msg, msg2);
   }
 
   // Returns true iff the status indicates success.
@@ -108,6 +122,8 @@ class Status final {
   bool IsTimedOut() const { return code() == kTimedOut; }
 
   bool IsAborted() const { return code() == kAborted; }
+
+  bool IsTableAlreadyExists() const { return code() == kTableAlreadyExists; }
 
   // Return a string representation of this status suitable for printing.
   // Returns the string "OK" for success.
@@ -147,6 +163,9 @@ class Status final {
       case kAborted:
         type = "Operation aborted: ";
         break;
+      case kTableAlreadyExists:
+        type = "Table already exists: ";
+        break;
       default:
         snprintf(tmp, sizeof(tmp), "Unknown code(%d): ",
             static_cast<int>(code()));
@@ -173,7 +192,8 @@ class Status final {
     kIncomplete = 7,
     kShutdownInProgress = 8,
     kTimedOut = 9,
-    kAborted = 10
+    kAborted = 10,
+    kTableAlreadyExists = 11,
   };
 
   Code code() const {

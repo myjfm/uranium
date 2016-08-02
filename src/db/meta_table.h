@@ -13,6 +13,11 @@
 
 namespace uranium {
 
+// This is a light-weighted RocksDB instance, which is used to stores all
+// meta data of uranium.
+// NOTE:
+// This class is not thread safe, needs external lock protected when accessing
+// by multiple threads.
 class MetaTable final {
  public:
   MetaTable() {}
@@ -39,24 +44,81 @@ class MetaTable final {
 
   Status LoadAllTables(std::vector<internal::TableOptions>* tables) {
     assert(db_);
-    auto itr = std::unique_ptr<rocksdb::Iterator>(
-        db_->NewIterator(rocksdb::ReadOptions()));
-    for (itr->Seek(""); itr->Valid(); itr->Next()) {
-      std::string table_name = itr->key().ToString();
-      internal::TableOptions option;
-      if (!option.ParseFromString(itr->value().ToString()) ||
-          option.options().table_name().name() != table_name) {
-        // TODO
-        // log an error
-        return Status::Corruption("meta db corrupts");
-      }
-      tables->push_back(std::move(option));
+    std::string str_schemaless_table_options_list;
+    auto rs = db_->Get(rocksdb::ReadOptions(),
+                       "schemaless_tables",
+                       &str_schemaless_table_options_list);
+    if (!rs.ok()) {
+      return Status(rs);
+    }
+    if (!schemaless_table_options_list_.ParseFromString(
+          str_schemaless_table_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0;
+         i < schemaless_table_options_list_.options_list_size();
+         ++i) {
+      tables->push_back(schemaless_table_options_list_.options_list(i));
+    }
+
+    std::string str_schema_table_options_list;
+    rs = db_->Get(rocksdb::ReadOptions(),
+                  "schema_tables",
+                  &str_schema_table_options_list);
+    if (!rs.ok()) {
+      return Status(rs);
+    }
+    if (!schema_table_options_list_.ParseFromString(
+          str_schema_table_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0; i < schema_table_options_list_.options_list_size(); ++i) {
+      tables->push_back(schema_table_options_list_.options_list(i));
     }
     return Status::OK();
   }
 
+  Status CreateTable(const internal::TableOptions& table) {
+    if (table.options().has_schema_table_options()) {
+      internal::TableOptionsList tmp_schema_table_options_list;
+      tmp_schema_table_options_list.CopyFrom(schema_table_options_list_);
+      tmp_schema_table_options_list.add_options_list()->CopyFrom(table);
+      std::string str_schema_table_options_list;
+      tmp_schema_table_options_list.SerializeToString(
+          &str_schema_table_options_list);
+      auto rs = db_->Put(rocksdb::WriteOptions(),
+                         "schema_tables",
+                         str_schema_table_options_list);
+      if (!rs.ok()) {
+        return Status(rs);
+      }
+      schema_table_options_list_.add_options_list()->CopyFrom(table);
+      return Status::OK();
+    } else if (table.options().has_schemaless_table_options()) {
+      internal::TableOptionsList tmp_schemaless_table_options_list;
+      tmp_schemaless_table_options_list.CopyFrom(schemaless_table_options_list_);
+      tmp_schemaless_table_options_list.add_options_list()->CopyFrom(table);
+      std::string str_schemaless_table_options_list;
+      tmp_schemaless_table_options_list.SerializeToString(
+          &str_schemaless_table_options_list);
+      auto rs = db_->Put(rocksdb::WriteOptions(),
+                         "schemaless_tables",
+                         str_schemaless_table_options_list);
+      if (!rs.ok()) {
+        return Status(rs);
+      }
+      schemaless_table_options_list_.add_options_list()->CopyFrom(table);
+      return Status::OK();
+    }/* else { */
+      return Status::InvalidArgument("unknown table type");
+    /*}*/
+  }
+
  private:
   rocksdb::DB* db_ { nullptr };
+
+  internal::TableOptionsList schemaless_table_options_list_;
+  internal::TableOptionsList schema_table_options_list_;
 };
 
 }  // namespace uranium

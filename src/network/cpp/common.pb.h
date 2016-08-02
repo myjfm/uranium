@@ -44,6 +44,27 @@ class ColumnValue;
 class Result;
 class TableName;
 
+enum TableType {
+  SCHEMALESS = 0,
+  SCHEMA = 1,
+  TableType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  TableType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool TableType_IsValid(int value);
+const TableType TableType_MIN = SCHEMALESS;
+const TableType TableType_MAX = SCHEMA;
+const int TableType_ARRAYSIZE = TableType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* TableType_descriptor();
+inline const ::std::string& TableType_Name(TableType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    TableType_descriptor(), value);
+}
+inline bool TableType_Parse(
+    const ::std::string& name, TableType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<TableType>(
+    TableType_descriptor(), name, value);
+}
 enum Status {
   OK = 0,
   INTERNAL_ERROR = 1,
@@ -1008,6 +1029,11 @@ inline void ColumnDefination::set_not_null(bool value) {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::uranium::common::TableType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::uranium::common::TableType>() {
+  return ::uranium::common::TableType_descriptor();
+}
 template <> struct is_proto_enum< ::uranium::common::Status> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::uranium::common::Status>() {

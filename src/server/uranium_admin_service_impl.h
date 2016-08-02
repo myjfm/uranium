@@ -62,11 +62,18 @@ class UraniumAdminServiceImpl : public admin::UraniumAdminService::Service {
   }
   virtual grpc::Status GetTableOptions(
       grpc::ServerContext* context,
-      const common::TableName* request,
+      const admin::GetTableOptionsRequest* request,
       admin::GetTableOptionsResponse* response) override {
     assert(table_manager_.get());
-    auto s = table_manager_->GetTableOptions(request->name(),
-                                             response->mutable_options());
+    Status s;
+    if (request->table_type() == common::TableType::SCHEMALESS) {
+      s = table_manager_->GetSchemalessTableOptions(
+          request->table_name().name(),
+          response->mutable_options());
+    } else {
+      s = table_manager_->GetSchemaTableOptions(request->table_name().name(),
+                                                response->mutable_options());
+    }
     if (!s.ok()) {
       response->set_status(common::Status::INTERNAL_ERROR);
     } else {

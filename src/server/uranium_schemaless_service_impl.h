@@ -26,13 +26,39 @@ class UraniumSchemalessServiceImpl
   virtual grpc::Status KVGet(grpc::ServerContext* context,
                              const api::KVGetRequest* request,
                              api::KVGetResponse* response) override {
-    return grpc::Status::OK;
+    auto table =
+        table_manager_->GetSchemalessTable(request->table_name().name());
+    if (!table.get()) {
+      response->set_status(common::Status::NOT_FOUND);
+      return grpc::Status::OK;
+    } else {
+      auto s = table->KVGet(request->keys(), response->mutable_kvs());
+      if (!s.ok()) {
+        response->set_status(common::Status::INTERNAL_ERROR);
+      } else {
+        response->set_status(common::Status::OK);
+      }
+      return grpc::Status::OK;
+    }
   }
 
   virtual grpc::Status KVSet(grpc::ServerContext* context,
                              const api::KVSetRequest* request,
                              api::KVSetResponse* response) override {
-    return grpc::Status::OK;
+    auto table =
+        table_manager_->GetSchemalessTable(request->table_name().name());
+    if (!table.get()) {
+      response->set_status(common::Status::NOT_FOUND);
+      return grpc::Status::OK;
+    } else {
+      auto s = table->KVSet(request->kvs());
+      if (!s.ok()) {
+        response->set_status(common::Status::INTERNAL_ERROR);
+      } else {
+        response->set_status(common::Status::OK);
+      }
+      return grpc::Status::OK;
+    }
   }
 
   virtual grpc::Status KVRemove(grpc::ServerContext* context,

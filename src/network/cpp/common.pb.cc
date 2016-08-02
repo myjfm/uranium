@@ -43,6 +43,7 @@ struct ColumnValueOneofInstance {
 const ::google::protobuf::Descriptor* ColumnDefination_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ColumnDefination_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* TableType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* Status_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* ColumnType_descriptor_ = NULL;
 
@@ -139,8 +140,9 @@ void protobuf_AssignDesc_common_2eproto() {
       sizeof(ColumnDefination),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ColumnDefination, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ColumnDefination, _is_default_instance_));
-  Status_descriptor_ = file->enum_type(0);
-  ColumnType_descriptor_ = file->enum_type(1);
+  TableType_descriptor_ = file->enum_type(0);
+  Status_descriptor_ = file->enum_type(1);
+  ColumnType_descriptor_ = file->enum_type(2);
 }
 
 namespace {
@@ -198,12 +200,13 @@ void protobuf_AddDesc_common_2eproto() {
     "mmon.ColumnName\022/\n\013column_type\030\002 \001(\0162\032.u"
     "ranium.common.ColumnType\0222\n\rdefault_valu"
     "e\030\003 \001(\0132\033.uranium.common.ColumnValue\022\020\n\010"
-    "not_null\030\004 \001(\010*G\n\006Status\022\006\n\002OK\020\000\022\022\n\016INTE"
-    "RNAL_ERROR\020\001\022\r\n\tNOT_FOUND\020\002\022\022\n\016ALREADY_E"
-    "XISTS\020\003*o\n\nColumnType\022\010\n\004BYTE\020\000\022\t\n\005SHORT"
-    "\020\001\022\007\n\003INT\020\002\022\010\n\004LONG\020\003\022\t\n\005FLOAT\020\004\022\n\n\006DOUB"
-    "LE\020\005\022\n\n\006STRING\020\006\022\010\n\004DATE\020\007\022\014\n\010DATETIME\020\010"
-    "b\006proto3", 608);
+    "not_null\030\004 \001(\010*\'\n\tTableType\022\016\n\nSCHEMALES"
+    "S\020\000\022\n\n\006SCHEMA\020\001*G\n\006Status\022\006\n\002OK\020\000\022\022\n\016INT"
+    "ERNAL_ERROR\020\001\022\r\n\tNOT_FOUND\020\002\022\022\n\016ALREADY_"
+    "EXISTS\020\003*o\n\nColumnType\022\010\n\004BYTE\020\000\022\t\n\005SHOR"
+    "T\020\001\022\007\n\003INT\020\002\022\010\n\004LONG\020\003\022\t\n\005FLOAT\020\004\022\n\n\006DOU"
+    "BLE\020\005\022\n\n\006STRING\020\006\022\010\n\004DATE\020\007\022\014\n\010DATETIME\020"
+    "\010b\006proto3", 649);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "common.proto", &protobuf_RegisterTypes);
   TableName::default_instance_ = new TableName();
@@ -226,6 +229,20 @@ struct StaticDescriptorInitializer_common_2eproto {
     protobuf_AddDesc_common_2eproto();
   }
 } static_descriptor_initializer_common_2eproto_;
+const ::google::protobuf::EnumDescriptor* TableType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TableType_descriptor_;
+}
+bool TableType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 const ::google::protobuf::EnumDescriptor* Status_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return Status_descriptor_;

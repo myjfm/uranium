@@ -5,6 +5,7 @@
 #ifndef URANIUM_DB_PATH_INFO_H_
 #define URANIUM_DB_PATH_INFO_H_
 
+#include <map>
 #include <string>
 #include <vector>
 
@@ -29,6 +30,7 @@ class DbPathInfo {
           db_path += "/";
         }
         db_paths_.push_back(db_path);
+        weighted_db_paths_[db_path] = 0;
       }
     }
     return Status::OK();
@@ -47,8 +49,29 @@ class DbPathInfo {
     return db_paths_;
   }
 
+  std::string GetLowestWeightPath() {
+    std::string result;
+    int weight = INT_MAX;
+    for (auto& weighted_path : weighted_db_paths_) {
+      if (weight > weighted_path.second) {
+        result = weighted_path.first;
+        weight = weighted_path.second;
+      }
+    }
+    return result;
+  }
+
+  void IncreasePathWeight(const std::string& path) {
+    weighted_db_paths_[path]++;
+  }
+
+  bool PathExists(const std::string& path) {
+    return (weighted_db_paths_.find(path) != weighted_db_paths_.end());
+  }
+
  private:
   std::vector<std::string> db_paths_;
+  std::map<std::string, int> weighted_db_paths_;
 };
 
 }  // namespace uranium

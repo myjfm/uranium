@@ -7,7 +7,10 @@
 
 #include "table_manager.h"
 
+#include <unistd.h>
+
 #include <atomic>
+#include <mutex>
 
 #include "common/status.h"
 #include "db_path_info.h"
@@ -26,8 +29,7 @@ class TableManagerImpl : public TableManager {
   TableManagerImpl() {
     schemaless_tables_.store(new SchemalessTableMapType,
                              std::memory_order_relaxed);
-    schema_tables_.store(new SchemaTableMapType,
-                         std::memory_order_relaxed);
+    schema_tables_.store(new SchemaTableMapType, std::memory_order_relaxed);
   }
 
   virtual ~TableManagerImpl() {
@@ -71,6 +73,9 @@ class TableManagerImpl : public TableManager {
         }
         auto stables = schema_tables_.load(std::memory_order_relaxed);
         (*stables)[table_option.options().table_name().name()] = stable;
+        if (db_path_info_.PathExists(table_option.table_path())) {
+          db_path_info_.IncreasePathWeight(table_option.table_path());
+        }
       } else if (table_option.options().has_schemaless_table_options()) {
         auto sltable = std::shared_ptr<SchemalessTable>(new SchemalessTable());
         s = sltable->Init(table_option);
@@ -79,6 +84,9 @@ class TableManagerImpl : public TableManager {
         }
         auto sltables = schemaless_tables_.load(std::memory_order_relaxed);
         (*sltables)[table_option.options().table_name().name()] = sltable;
+        if (db_path_info_.PathExists(table_option.table_path())) {
+          db_path_info_.IncreasePathWeight(table_option.table_path());
+        }
       } else {
         return Status::NotSupported("unknown table type");
       }
@@ -98,7 +106,7 @@ class TableManagerImpl : public TableManager {
     assert(tables);
     auto itr = tables->find(name);
     if (itr == tables->end()) {
-      return std::shared_ptr<SchemalessTable>(nullptr);
+      return std::shared_ptr<SchemalessTable>();
     }
     return itr->second;
   }
@@ -109,25 +117,87 @@ class TableManagerImpl : public TableManager {
     assert(tables);
     auto itr = tables->find(name);
     if (itr == tables->end()) {
-      return std::shared_ptr<SchemaTable>(nullptr);
+      return std::shared_ptr<SchemaTable>();
     }
     return itr->second;
   }
 
   virtual Status CreateTable(const admin::TableOptions& options) override {
+    internal::TableOptions internal_table_options;
+    internal_table_options.mutable_options()->CopyFrom(options);
+
+    std::unique_lock<std::mutex> guard(table_admin_mutex_);
+    std::string table_path = db_path_info_.GetLowestWeightPath();
+    if (table_path.empty()) {
+      return Status::IOError("no suitable table_path to create table");
+    }
+    internal_table_options.set_table_path(table_path);
+    internal_table_options.set_status(internal::TableStatus::USING);
+    if (options.has_schema_table_options()) {
+      if (GetSchemaTable(options.table_name().name()).get()) {
+        return Status::TableAlreadyExists("table already exists");
+      }
+      auto s = meta_table_.CreateTable(internal_table_options);
+      if (!s.ok()) {
+        return s;
+      }
+      db_path_info_.IncreasePathWeight(table_path);
+      auto stable = std::shared_ptr<SchemaTable>(new SchemaTable());
+      s = stable->Init(internal_table_options);
+      if (!s.ok()) {
+        return s;
+      }
+      auto tables = schema_tables_.load(std::memory_order_relaxed);
+      auto new_tables = new SchemaTableMapType(*tables);
+      (*new_tables)[options.table_name().name()] = stable;
+      schema_tables_.store(new_tables, std::memory_order_relaxed);
+      guard.unlock();
+      // wait for enough time to make sure the reader released the table map
+      usleep(1000);
+      delete tables;
+    } else if (options.has_schemaless_table_options()) {
+      if (GetSchemalessTable(options.table_name().name()).get()) {
+        return Status::TableAlreadyExists("table already exists");
+      }
+      auto s = meta_table_.CreateTable(internal_table_options);
+      if (!s.ok()) {
+        return s;
+      }
+      db_path_info_.IncreasePathWeight(table_path);
+      auto sltable = std::shared_ptr<SchemalessTable>(new SchemalessTable());
+      s = sltable->Init(internal_table_options);
+      if (!s.ok()) {
+        return s;
+      }
+      auto tables = schemaless_tables_.load(std::memory_order_relaxed);
+      auto new_tables = new SchemalessTableMapType(*tables);
+      (*new_tables)[options.table_name().name()] = sltable;
+      schemaless_tables_.store(new_tables, std::memory_order_relaxed);
+      guard.unlock();
+      // wait for enough time to make sure the reader released the table map
+      usleep(1000);
+      delete tables;
+    } else {
+      return Status::InvalidArgument("unknown table type");
+    }
     return Status::OK();
   }
 
   virtual Status UpdateTable(const admin::TableOptions& options) override {
-    return Status::OK();
+    return Status::NotSupported("update table is not yet supported");
   }
 
   virtual Status DropTable(const std::string& table_name) override {
+    return Status::NotSupported("drop table is not yet supported");
+  }
+
+  virtual Status GetSchemalessTableOptions(const std::string& table_name,
+                                           admin::TableOptions* options) override {
     return Status::OK();
   }
 
-  virtual Status GetTableOptions(const std::string& table_name,
-                                 admin::TableOptions* options) override {
+  virtual Status GetSchemaTableOptions(const std::string& table_name,
+                                       admin::TableOptions* options) override {
     return Status::OK();
   }
 
@@ -152,7 +222,9 @@ class TableManagerImpl : public TableManager {
     std::map<std::string, std::shared_ptr<SchemalessTable>>;
   using SchemaTableMapType =
     std::map<std::string, std::shared_ptr<SchemaTable>>;
-  // avoid lock required when adding a table or removing a table
+  // Make sure lock is held when adding or removing a table
+  // But no need lock held when read or write some tables
+  std::mutex table_admin_mutex_;
   std::atomic<SchemalessTableMapType*> schemaless_tables_ { nullptr };
   std::atomic<SchemaTableMapType*> schema_tables_ { nullptr };
 
