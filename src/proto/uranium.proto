@@ -4,60 +4,52 @@ package uranium.api;
 
 import "common.proto";
 
-service UraniumSchemalessService {
-  ////// interfaces for k-v pair data structure
+////// interfaces for k-v pair data structure
+service UraniumKVService {
   // get the value of a key
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a k-v pair value.
-  rpc KVGet(KVGetRequest) returns (KVGetResponse) {}
+  rpc KVGet (KVGetRequest) returns (KVGetResponse) {}
   // set the value of a key
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a k-v pair value.
-  rpc KVSet(KVSetRequest) returns (KVSetResponse) {}
+  rpc KVSet (KVSetRequest) returns (KVSetResponse) {}
   // remove the value of a key, equal to set empty value of a key
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a k-v pair value.
-  rpc KVRemove(KVRemoveRequest) returns (KVRemoveResponse) {}
+  rpc KVRemove (KVRemoveRequest) returns (KVRemoveResponse) {}
+}
 
-  ////// interfaces for list data structure
-  // insert all the specified values at the head of the list stored at key.
+////// interfaces for list data structure
+service UraniumListService {
+  // Insert all the specified values at the head of the list stored at key.
+  // First the first value, then the second value, and one by one.
   // If key does not exist, it is created as empty list before performing the
   // push operations.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListLPush(ListLPushRequest) returns (ListLPushResponse) {}
+  rpc ListLPush (ListLPushRequest) returns (ListLPushResponse) {}
   // Removes and returns the first element of the list stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListLPop(ListLPopRequest) returns (ListLPopResponse) {}
+  rpc ListLPop (ListLPopRequest) returns (ListLPopResponse) {}
   // append one or multiple values to a list
   // insert all the specified values at the tail of the list stored at key.
   // If key does not exist, it is created as empty list before performing the
   // push operation.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListRPush(ListRPushRequest) returns (ListRPushResponse) {}
+  rpc ListRPush (ListRPushRequest) returns (ListRPushResponse) {}
   // Removes and returns the last element of the list stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListRPop(ListRPopRequest) returns (ListRPopResponse) {}
+  rpc ListRPop (ListRPopRequest) returns (ListRPopResponse) {}
   // Inserts value at the head of the list stored at key, only if key already
   // exists and holds a list. In contrary to ListLPush, no operation will be
   // performed when key does not yet exist.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListLPushX(ListLPushXRequest) returns (ListLPushXResponse) {}
+  rpc ListLPushX (ListLPushXRequest) returns (ListLPushXResponse) {}
   // Inserts value at the tail of the list stored at key, only if key already
   // exists and holds a list. In contrary to ListRPush, no operation will be
   // performed when key does not yet exist.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListRPushX(ListRPushXRequest) returns (ListRPushXResponse) {}
+  rpc ListRPushX (ListRPushXRequest) returns (ListRPushXResponse) {}
   // Returns the element at index index in the list stored at key. The index
   // is zero-based, so 0 means the first element, 1 the second element and
   // so on. Negative indices can be used to designate elements starting at the
@@ -66,128 +58,113 @@ service UraniumSchemalessService {
   // an error is returned.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListIndex(ListIndexRequest) returns (ListIndexResponse) {}
+  // OUT_OF_RANGE error is returned when index is out of range.
+  rpc ListIndex (ListIndexRequest) returns (ListIndexResponse) {}
   // Set the list element at index to value.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
   // OUT_OF_RANGE error is return for out of range indexes.
-  rpc ListSet(ListSetRequest) returns (ListSetResponse) {}
+  rpc ListSet (ListSetRequest) returns (ListSetResponse) {}
   // Returns the specified elements of the list stored at key. The offsets start
   // and stop are zero-based indexes, with 0 being the first element of the
   // list (the head of the list), 1 being the next element and so on.
   // These offsets can also be negative numbers indicating offsets starting at
   // the end of the list. For example, -1 is the last element of the list,
   // -2 the penultimate, and so on.
-  // Out of range indexes will not produce an error. If start is larger than
-  // the end of the list, an empty list is returned. If stop is larger than
-  // the actual end of the list, Redis will treat it like the last element of
-  // the list.
+  // If start is larger than the end of the list, out of range error is
+  // produced. If stop is larger than the actual end of the list, we will treat
+  // it like the last element of the list. If start is larger than stop, out of
+  // range is produced.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when key does not hold a list.
-  rpc ListRange(ListRangeRequest) returns (ListRangeResponse) {}
+  // OUT_OF_RANGE error is returned when out of range.
+  rpc ListRange (ListRangeRequest) returns (ListRangeResponse) {}
   // Returns the length of the list stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a list.
-  rpc ListLength(ListLengthRequest) returns (ListLengthResponse) {}
+  rpc ListLength (ListLengthRequest) returns (ListLengthResponse) {}
   // Remove the whole list.
   // It will not produce an error if the key does not exist.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when key does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a list.
-  rpc ListRemoveAll(ListRemoveAllRequest) returns (ListRemoveAllResponse) {}
+  rpc ListRemoveAll (ListRemoveAllRequest) returns (ListRemoveAllResponse) {}
+}
 
-  ////// interfaces for hash data structure
+////// interfaces for hash data structure
+service UraniumHashService {
   // Returns the values associated with the specified fields in the hash stored
   // at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the field does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashGet(HashGetRequest) returns (HashGetResponse) {}
+  rpc HashGet (HashGetRequest) returns (HashGetResponse) {}
   // Returns all fields and values of the hash stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the field does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashGetAll(HashGetAllRequest) returns (HashGetAllResponse) {}
+  rpc HashGetAll (HashGetAllRequest) returns (HashGetAllResponse) {}
   // Returns all fields of the hash stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the field does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashGetAllFields(HashGetAllFieldsRequest) returns (HashGetAllFieldsResponse) {}
+  rpc HashGetAllFields (HashGetAllFieldsRequest) returns (HashGetAllFieldsResponse) {}
   // Returns all values in the hash stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the field does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashGetAllValues(HashGetAllValuesRequest) returns (HashGetAllValuesResponse) {}
+  rpc HashGetAllValues (HashGetAllValuesRequest) returns (HashGetAllValuesResponse) {}
   // Returns the number of fields contained in the hash stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the field does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashLength(HashLengthRequest) returns (HashLengthResponse) {}
+  rpc HashLength (HashLengthRequest) returns (HashLengthResponse) {}
   // Sets field in the hash stored at key to value. If key does not exist, a new
   // key holding a hash is created. If field already exists in the hash, it is
   // overwritten.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashSet(HashSetRequest) returns (HashSetResponse) {}
+  rpc HashSet (HashSetRequest) returns (HashSetResponse) {}
   // Sets field in the hash stored at key to value, only if field does not yet
   // exist. If key does not exist, a new key holding a hash is created.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // FIELD_ALREADY_EXISTS error is returned when the field already exists.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashSetX(HashSetXRequest) returns (HashSetXResponse) {}
+  rpc HashSetX (HashSetXRequest) returns (HashSetXResponse) {}
   // Removes the specified fields from the hash stored at key. Specified fields
   // that do not exist within this hash are ignored.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashRemove(HashRemoveRequest) returns (HashRemoveResponse) {}
+  rpc HashRemove (HashRemoveRequest) returns (HashRemoveResponse) {}
   // Returns if field is an existing field in the hash stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashExists(HashExistsRequest) returns (HashExistsResponse) {}
+  rpc HashExists (HashExistsRequest) returns (HashExistsResponse) {}
   // Remove the whole hash.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a hash.
-  rpc HashRemoveAll(HashRemoveAllRequest) returns (HashRemoveAllResponse) {}
+  rpc HashRemoveAll (HashRemoveAllRequest) returns (HashRemoveAllResponse) {}
+}
 
-  ////// interfaces for set data structure
+////// interfaces for set data structure
+service UraniumSetService {
   // Add the specified members to the set stored at key. Specified members that
   // are already a member of this set are ignored. If key does not exist, a new
   // set is created before adding the specified members.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a set.
   rpc SetAdd(SetAddRequest) returns (SetAddResponse) {}
   // Returns the set cardinality (number of elements) of the set stored at key.
   // If key does not exist, it is interpreted as an empty set and 0 is returned.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
-  // INVALID_TYPE error is returned when the key does not hold a set.
   rpc SetLength(SetLengthRequest) returns (SetLengthResponse) {}
   // Returns if member is a member of the set stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a set.
   rpc SetIsMember(SetIsMemberRequest) returns (SetIsMemberResponse) {}
   // Returns all the members of the set value stored at key.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a set.
   rpc SetGetAll(SetGetAllRequest) returns (SetGetAllResponse) {}
   // Remove the specified members from the set stored at key. Specified members
   // that are not a member of this set are ignored.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a set.
   rpc SetRemove(SetRemoveRequest) returns (SetRemoveResponse) {}
   // Remove the whole set.
   // TABLE_NOT_FOUND error is returned when the table does not yet exist.
   // KEY_NOT_FOUND error is returned when the key does not exist.
-  // INVALID_TYPE error is returned when the key does not hold a set.
   rpc SetRemoveAll(SetRemoveAllRequest) returns (SetRemoveAllResponse) {}
 }
 
@@ -219,7 +196,7 @@ message KVGetRequest {
   repeated Key keys           = 2;
 }
 message KVGetResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   repeated KeyValue kvs = 2;
 }
 
@@ -228,7 +205,7 @@ message KVSetRequest {
   repeated KeyValue kvs       = 2;
 }
 message KVSetResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message KVRemoveRequest {
@@ -236,7 +213,7 @@ message KVRemoveRequest {
   repeated Key keys           = 2;
 }
 message KVRemoveResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 ////// request definitions of list structure
@@ -246,7 +223,7 @@ message ListLPushRequest {
   repeated Value values       = 3;
 }
 message ListLPushResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message ListLPopRequest {
@@ -254,7 +231,7 @@ message ListLPopRequest {
   Key key                     = 2;
 }
 message ListLPopResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   Value value           = 2;
 }
 
@@ -264,7 +241,7 @@ message ListRPushRequest {
   repeated Value values       = 3;
 }
 message ListRPushResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message ListRPopRequest {
@@ -272,7 +249,7 @@ message ListRPopRequest {
   Key key                     = 2;
 }
 message ListRPopResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   Value value           = 2;
 }
 
@@ -282,7 +259,7 @@ message ListLPushXRequest {
   repeated Value values       = 3;
 }
 message ListLPushXResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message ListRPushXRequest {
@@ -291,7 +268,7 @@ message ListRPushXRequest {
   repeated Value values       = 3;
 }
 message ListRPushXResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message ListIndexRequest {
@@ -300,7 +277,7 @@ message ListIndexRequest {
   int64 index                 = 3;
 }
 message ListIndexResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   Value value           = 2;
 }
 
@@ -311,7 +288,7 @@ message ListSetRequest {
   Value value                 = 4;
 }
 message ListSetResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message ListRangeRequest {
@@ -321,7 +298,7 @@ message ListRangeRequest {
   int64 end                   = 4;
 }
 message ListRangeResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   repeated Value values = 2;
 }
 
@@ -330,7 +307,7 @@ message ListLengthRequest {
   Key key                     = 2;
 }
 message ListLengthResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   int64 length          = 2;
 }
 
@@ -339,7 +316,7 @@ message ListRemoveAllRequest {
   Key key                     = 2;
 }
 message ListRemoveAllResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 ////// request definitions of Hash structure
@@ -349,7 +326,7 @@ message HashGetRequest {
   repeated Field fields       = 3;
 }
 message HashGetResponse {
-  common.Status status    = 1;
+  common.Result result    = 1;
   repeated FieldValue fvs = 2;
 }
 
@@ -358,7 +335,7 @@ message HashGetAllRequest {
   Key key                     = 2;
 }
 message HashGetAllResponse {
-  common.Status status    = 1;
+  common.Result result    = 1;
   repeated FieldValue fvs = 2;
 }
 
@@ -367,7 +344,7 @@ message HashGetAllFieldsRequest {
   Key key                     = 2;
 }
 message HashGetAllFieldsResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   repeated Field fields = 2;
 }
 
@@ -376,7 +353,7 @@ message HashGetAllValuesRequest {
   Key key                     = 2;
 }
 message HashGetAllValuesResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   repeated Value values = 2;
 }
 
@@ -385,7 +362,7 @@ message HashLengthRequest {
   Key key                     = 2;
 }
 message HashLengthResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   int64 length          = 2;
 }
 
@@ -395,7 +372,7 @@ message HashSetRequest {
   repeated FieldValue fvs     = 3;
 }
 message HashSetResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message HashSetXRequest {
@@ -404,7 +381,7 @@ message HashSetXRequest {
   FieldValue fv               = 3;
 }
 message HashSetXResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message HashRemoveRequest {
@@ -413,7 +390,7 @@ message HashRemoveRequest {
   repeated Field fields       = 3;
 }
 message HashRemoveResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message HashExistsRequest {
@@ -422,7 +399,7 @@ message HashExistsRequest {
   Field field                 = 3;
 }
 message HashExistsResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   bool exists           = 2;
 }
 
@@ -431,7 +408,7 @@ message HashRemoveAllRequest {
   Key key                     = 2;
 }
 message HashRemoveAllResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 ////// request definitions of set structure
@@ -441,7 +418,7 @@ message SetAddRequest {
   repeated Value values       = 3;
 }
 message SetAddResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message SetLengthRequest {
@@ -449,7 +426,7 @@ message SetLengthRequest {
   Key key                     = 2;
 }
 message SetLengthResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   int64 length          = 2;
 }
 
@@ -459,7 +436,7 @@ message SetIsMemberRequest {
   Value value           = 3;
 }
 message SetIsMemberResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   bool yes              = 2;
 }
 
@@ -468,7 +445,7 @@ message SetGetAllRequest {
   Key key                     = 2;
 }
 message SetGetAllResponse {
-  common.Status status  = 1;
+  common.Result result  = 1;
   repeated Value values = 2;
 }
 
@@ -478,7 +455,7 @@ message SetRemoveRequest {
   repeated Value values       = 3;
 }
 message SetRemoveResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 
 message SetRemoveAllRequest {
@@ -486,6 +463,6 @@ message SetRemoveAllRequest {
   Key key                     = 2;
 }
 message SetRemoveAllResponse {
-  common.Status status = 1;
+  common.Result result = 1;
 }
 

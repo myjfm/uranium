@@ -322,7 +322,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVGetRequest, _is_default_instance_));
   KVGetResponse_descriptor_ = file->message_type(6);
   static const int KVGetResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVGetResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVGetResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVGetResponse, kvs_),
   };
   KVGetResponse_reflection_ =
@@ -354,7 +354,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVSetRequest, _is_default_instance_));
   KVSetResponse_descriptor_ = file->message_type(8);
   static const int KVSetResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVSetResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVSetResponse, result_),
   };
   KVSetResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -385,7 +385,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVRemoveRequest, _is_default_instance_));
   KVRemoveResponse_descriptor_ = file->message_type(10);
   static const int KVRemoveResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVRemoveResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVRemoveResponse, result_),
   };
   KVRemoveResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -417,7 +417,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPushRequest, _is_default_instance_));
   ListLPushResponse_descriptor_ = file->message_type(12);
   static const int ListLPushResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPushResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPushResponse, result_),
   };
   ListLPushResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -448,7 +448,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPopRequest, _is_default_instance_));
   ListLPopResponse_descriptor_ = file->message_type(14);
   static const int ListLPopResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPopResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPopResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPopResponse, value_),
   };
   ListLPopResponse_reflection_ =
@@ -481,7 +481,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPushRequest, _is_default_instance_));
   ListRPushResponse_descriptor_ = file->message_type(16);
   static const int ListRPushResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPushResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPushResponse, result_),
   };
   ListRPushResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -512,7 +512,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPopRequest, _is_default_instance_));
   ListRPopResponse_descriptor_ = file->message_type(18);
   static const int ListRPopResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPopResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPopResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPopResponse, value_),
   };
   ListRPopResponse_reflection_ =
@@ -545,7 +545,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPushXRequest, _is_default_instance_));
   ListLPushXResponse_descriptor_ = file->message_type(20);
   static const int ListLPushXResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPushXResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLPushXResponse, result_),
   };
   ListLPushXResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -577,7 +577,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPushXRequest, _is_default_instance_));
   ListRPushXResponse_descriptor_ = file->message_type(22);
   static const int ListRPushXResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPushXResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRPushXResponse, result_),
   };
   ListRPushXResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -609,7 +609,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListIndexRequest, _is_default_instance_));
   ListIndexResponse_descriptor_ = file->message_type(24);
   static const int ListIndexResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListIndexResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListIndexResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListIndexResponse, value_),
   };
   ListIndexResponse_reflection_ =
@@ -643,7 +643,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListSetRequest, _is_default_instance_));
   ListSetResponse_descriptor_ = file->message_type(26);
   static const int ListSetResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListSetResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListSetResponse, result_),
   };
   ListSetResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -676,7 +676,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRangeRequest, _is_default_instance_));
   ListRangeResponse_descriptor_ = file->message_type(28);
   static const int ListRangeResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRangeResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRangeResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRangeResponse, values_),
   };
   ListRangeResponse_reflection_ =
@@ -708,7 +708,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLengthRequest, _is_default_instance_));
   ListLengthResponse_descriptor_ = file->message_type(30);
   static const int ListLengthResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLengthResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLengthResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListLengthResponse, length_),
   };
   ListLengthResponse_reflection_ =
@@ -740,7 +740,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRemoveAllRequest, _is_default_instance_));
   ListRemoveAllResponse_descriptor_ = file->message_type(32);
   static const int ListRemoveAllResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRemoveAllResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListRemoveAllResponse, result_),
   };
   ListRemoveAllResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -772,7 +772,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetRequest, _is_default_instance_));
   HashGetResponse_descriptor_ = file->message_type(34);
   static const int HashGetResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetResponse, fvs_),
   };
   HashGetResponse_reflection_ =
@@ -804,7 +804,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllRequest, _is_default_instance_));
   HashGetAllResponse_descriptor_ = file->message_type(36);
   static const int HashGetAllResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllResponse, fvs_),
   };
   HashGetAllResponse_reflection_ =
@@ -836,7 +836,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllFieldsRequest, _is_default_instance_));
   HashGetAllFieldsResponse_descriptor_ = file->message_type(38);
   static const int HashGetAllFieldsResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllFieldsResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllFieldsResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllFieldsResponse, fields_),
   };
   HashGetAllFieldsResponse_reflection_ =
@@ -868,7 +868,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllValuesRequest, _is_default_instance_));
   HashGetAllValuesResponse_descriptor_ = file->message_type(40);
   static const int HashGetAllValuesResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllValuesResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllValuesResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashGetAllValuesResponse, values_),
   };
   HashGetAllValuesResponse_reflection_ =
@@ -900,7 +900,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashLengthRequest, _is_default_instance_));
   HashLengthResponse_descriptor_ = file->message_type(42);
   static const int HashLengthResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashLengthResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashLengthResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashLengthResponse, length_),
   };
   HashLengthResponse_reflection_ =
@@ -933,7 +933,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashSetRequest, _is_default_instance_));
   HashSetResponse_descriptor_ = file->message_type(44);
   static const int HashSetResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashSetResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashSetResponse, result_),
   };
   HashSetResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -965,7 +965,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashSetXRequest, _is_default_instance_));
   HashSetXResponse_descriptor_ = file->message_type(46);
   static const int HashSetXResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashSetXResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashSetXResponse, result_),
   };
   HashSetXResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -997,7 +997,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashRemoveRequest, _is_default_instance_));
   HashRemoveResponse_descriptor_ = file->message_type(48);
   static const int HashRemoveResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashRemoveResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashRemoveResponse, result_),
   };
   HashRemoveResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -1029,7 +1029,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashExistsRequest, _is_default_instance_));
   HashExistsResponse_descriptor_ = file->message_type(50);
   static const int HashExistsResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashExistsResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashExistsResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashExistsResponse, exists_),
   };
   HashExistsResponse_reflection_ =
@@ -1061,7 +1061,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashRemoveAllRequest, _is_default_instance_));
   HashRemoveAllResponse_descriptor_ = file->message_type(52);
   static const int HashRemoveAllResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashRemoveAllResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashRemoveAllResponse, result_),
   };
   HashRemoveAllResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -1093,7 +1093,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetAddRequest, _is_default_instance_));
   SetAddResponse_descriptor_ = file->message_type(54);
   static const int SetAddResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetAddResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetAddResponse, result_),
   };
   SetAddResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -1124,7 +1124,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetLengthRequest, _is_default_instance_));
   SetLengthResponse_descriptor_ = file->message_type(56);
   static const int SetLengthResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetLengthResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetLengthResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetLengthResponse, length_),
   };
   SetLengthResponse_reflection_ =
@@ -1157,7 +1157,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberRequest, _is_default_instance_));
   SetIsMemberResponse_descriptor_ = file->message_type(58);
   static const int SetIsMemberResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberResponse, yes_),
   };
   SetIsMemberResponse_reflection_ =
@@ -1189,7 +1189,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetGetAllRequest, _is_default_instance_));
   SetGetAllResponse_descriptor_ = file->message_type(60);
   static const int SetGetAllResponse_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetGetAllResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetGetAllResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetGetAllResponse, values_),
   };
   SetGetAllResponse_reflection_ =
@@ -1222,7 +1222,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetRemoveRequest, _is_default_instance_));
   SetRemoveResponse_descriptor_ = file->message_type(62);
   static const int SetRemoveResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetRemoveResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetRemoveResponse, result_),
   };
   SetRemoveResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -1253,7 +1253,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetRemoveAllRequest, _is_default_instance_));
   SetRemoveAllResponse_descriptor_ = file->message_type(64);
   static const int SetRemoveAllResponse_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetRemoveAllResponse, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetRemoveAllResponse, result_),
   };
   SetRemoveAllResponse_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -1562,210 +1562,211 @@ void protobuf_AddDesc_uranium_2eproto() {
     "alue\030\002 \001(\0132\022.uranium.api.Value\"]\n\014KVGetR"
     "equest\022-\n\ntable_name\030\001 \001(\0132\031.uranium.com"
     "mon.TableName\022\036\n\004keys\030\002 \003(\0132\020.uranium.ap"
-    "i.Key\"[\n\rKVGetResponse\022&\n\006status\030\001 \001(\0162\026"
-    ".uranium.common.Status\022\"\n\003kvs\030\002 \003(\0132\025.ur"
+    "i.Key\"[\n\rKVGetResponse\022&\n\006result\030\001 \001(\0132\026"
+    ".uranium.common.Result\022\"\n\003kvs\030\002 \003(\0132\025.ur"
     "anium.api.KeyValue\"a\n\014KVSetRequest\022-\n\nta"
     "ble_name\030\001 \001(\0132\031.uranium.common.TableNam"
     "e\022\"\n\003kvs\030\002 \003(\0132\025.uranium.api.KeyValue\"7\n"
-    "\rKVSetResponse\022&\n\006status\030\001 \001(\0162\026.uranium"
-    ".common.Status\"`\n\017KVRemoveRequest\022-\n\ntab"
+    "\rKVSetResponse\022&\n\006result\030\001 \001(\0132\026.uranium"
+    ".common.Result\"`\n\017KVRemoveRequest\022-\n\ntab"
     "le_name\030\001 \001(\0132\031.uranium.common.TableName"
     "\022\036\n\004keys\030\002 \003(\0132\020.uranium.api.Key\":\n\020KVRe"
-    "moveResponse\022&\n\006status\030\001 \001(\0162\026.uranium.c"
-    "ommon.Status\"\204\001\n\020ListLPushRequest\022-\n\ntab"
+    "moveResponse\022&\n\006result\030\001 \001(\0132\026.uranium.c"
+    "ommon.Result\"\204\001\n\020ListLPushRequest\022-\n\ntab"
     "le_name\030\001 \001(\0132\031.uranium.common.TableName"
     "\022\035\n\003key\030\002 \001(\0132\020.uranium.api.Key\022\"\n\006value"
     "s\030\003 \003(\0132\022.uranium.api.Value\";\n\021ListLPush"
-    "Response\022&\n\006status\030\001 \001(\0162\026.uranium.commo"
-    "n.Status\"_\n\017ListLPopRequest\022-\n\ntable_nam"
+    "Response\022&\n\006result\030\001 \001(\0132\026.uranium.commo"
+    "n.Result\"_\n\017ListLPopRequest\022-\n\ntable_nam"
     "e\030\001 \001(\0132\031.uranium.common.TableName\022\035\n\003ke"
     "y\030\002 \001(\0132\020.uranium.api.Key\"]\n\020ListLPopRes"
-    "ponse\022&\n\006status\030\001 \001(\0162\026.uranium.common.S"
-    "tatus\022!\n\005value\030\002 \001(\0132\022.uranium.api.Value"
+    "ponse\022&\n\006result\030\001 \001(\0132\026.uranium.common.R"
+    "esult\022!\n\005value\030\002 \001(\0132\022.uranium.api.Value"
     "\"\204\001\n\020ListRPushRequest\022-\n\ntable_name\030\001 \001("
     "\0132\031.uranium.common.TableName\022\035\n\003key\030\002 \001("
     "\0132\020.uranium.api.Key\022\"\n\006values\030\003 \003(\0132\022.ur"
     "anium.api.Value\";\n\021ListRPushResponse\022&\n\006"
-    "status\030\001 \001(\0162\026.uranium.common.Status\"_\n\017"
+    "result\030\001 \001(\0132\026.uranium.common.Result\"_\n\017"
     "ListRPopRequest\022-\n\ntable_name\030\001 \001(\0132\031.ur"
     "anium.common.TableName\022\035\n\003key\030\002 \001(\0132\020.ur"
-    "anium.api.Key\"]\n\020ListRPopResponse\022&\n\006sta"
-    "tus\030\001 \001(\0162\026.uranium.common.Status\022!\n\005val"
+    "anium.api.Key\"]\n\020ListRPopResponse\022&\n\006res"
+    "ult\030\001 \001(\0132\026.uranium.common.Result\022!\n\005val"
     "ue\030\002 \001(\0132\022.uranium.api.Value\"\205\001\n\021ListLPu"
     "shXRequest\022-\n\ntable_name\030\001 \001(\0132\031.uranium"
     ".common.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium"
     ".api.Key\022\"\n\006values\030\003 \003(\0132\022.uranium.api.V"
-    "alue\"<\n\022ListLPushXResponse\022&\n\006status\030\001 \001"
-    "(\0162\026.uranium.common.Status\"\205\001\n\021ListRPush"
+    "alue\"<\n\022ListLPushXResponse\022&\n\006result\030\001 \001"
+    "(\0132\026.uranium.common.Result\"\205\001\n\021ListRPush"
     "XRequest\022-\n\ntable_name\030\001 \001(\0132\031.uranium.c"
     "ommon.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium.a"
     "pi.Key\022\"\n\006values\030\003 \003(\0132\022.uranium.api.Val"
-    "ue\"<\n\022ListRPushXResponse\022&\n\006status\030\001 \001(\016"
-    "2\026.uranium.common.Status\"o\n\020ListIndexReq"
+    "ue\"<\n\022ListRPushXResponse\022&\n\006result\030\001 \001(\013"
+    "2\026.uranium.common.Result\"o\n\020ListIndexReq"
     "uest\022-\n\ntable_name\030\001 \001(\0132\031.uranium.commo"
     "n.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium.api.K"
     "ey\022\r\n\005index\030\003 \001(\003\"^\n\021ListIndexResponse\022&"
-    "\n\006status\030\001 \001(\0162\026.uranium.common.Status\022!"
+    "\n\006result\030\001 \001(\0132\026.uranium.common.Result\022!"
     "\n\005value\030\002 \001(\0132\022.uranium.api.Value\"\220\001\n\016Li"
     "stSetRequest\022-\n\ntable_name\030\001 \001(\0132\031.urani"
     "um.common.TableName\022\035\n\003key\030\002 \001(\0132\020.urani"
     "um.api.Key\022\r\n\005index\030\003 \001(\003\022!\n\005value\030\004 \001(\013"
     "2\022.uranium.api.Value\"9\n\017ListSetResponse\022"
-    "&\n\006status\030\001 \001(\0162\026.uranium.common.Status\""
+    "&\n\006result\030\001 \001(\0132\026.uranium.common.Result\""
     "|\n\020ListRangeRequest\022-\n\ntable_name\030\001 \001(\0132"
     "\031.uranium.common.TableName\022\035\n\003key\030\002 \001(\0132"
     "\020.uranium.api.Key\022\r\n\005start\030\003 \001(\003\022\013\n\003end\030"
-    "\004 \001(\003\"_\n\021ListRangeResponse\022&\n\006status\030\001 \001"
-    "(\0162\026.uranium.common.Status\022\"\n\006values\030\002 \003"
+    "\004 \001(\003\"_\n\021ListRangeResponse\022&\n\006result\030\001 \001"
+    "(\0132\026.uranium.common.Result\022\"\n\006values\030\002 \003"
     "(\0132\022.uranium.api.Value\"a\n\021ListLengthRequ"
     "est\022-\n\ntable_name\030\001 \001(\0132\031.uranium.common"
     ".TableName\022\035\n\003key\030\002 \001(\0132\020.uranium.api.Ke"
-    "y\"L\n\022ListLengthResponse\022&\n\006status\030\001 \001(\0162"
-    "\026.uranium.common.Status\022\016\n\006length\030\002 \001(\003\""
+    "y\"L\n\022ListLengthResponse\022&\n\006result\030\001 \001(\0132"
+    "\026.uranium.common.Result\022\016\n\006length\030\002 \001(\003\""
     "d\n\024ListRemoveAllRequest\022-\n\ntable_name\030\001 "
     "\001(\0132\031.uranium.common.TableName\022\035\n\003key\030\002 "
     "\001(\0132\020.uranium.api.Key\"\?\n\025ListRemoveAllRe"
-    "sponse\022&\n\006status\030\001 \001(\0162\026.uranium.common."
-    "Status\"\202\001\n\016HashGetRequest\022-\n\ntable_name\030"
+    "sponse\022&\n\006result\030\001 \001(\0132\026.uranium.common."
+    "Result\"\202\001\n\016HashGetRequest\022-\n\ntable_name\030"
     "\001 \001(\0132\031.uranium.common.TableName\022\035\n\003key\030"
     "\002 \001(\0132\020.uranium.api.Key\022\"\n\006fields\030\003 \003(\0132"
     "\022.uranium.api.Field\"_\n\017HashGetResponse\022&"
-    "\n\006status\030\001 \001(\0162\026.uranium.common.Status\022$"
+    "\n\006result\030\001 \001(\0132\026.uranium.common.Result\022$"
     "\n\003fvs\030\002 \003(\0132\027.uranium.api.FieldValue\"a\n\021"
     "HashGetAllRequest\022-\n\ntable_name\030\001 \001(\0132\031."
     "uranium.common.TableName\022\035\n\003key\030\002 \001(\0132\020."
     "uranium.api.Key\"b\n\022HashGetAllResponse\022&\n"
-    "\006status\030\001 \001(\0162\026.uranium.common.Status\022$\n"
+    "\006result\030\001 \001(\0132\026.uranium.common.Result\022$\n"
     "\003fvs\030\002 \003(\0132\027.uranium.api.FieldValue\"g\n\027H"
     "ashGetAllFieldsRequest\022-\n\ntable_name\030\001 \001"
     "(\0132\031.uranium.common.TableName\022\035\n\003key\030\002 \001"
     "(\0132\020.uranium.api.Key\"f\n\030HashGetAllFields"
-    "Response\022&\n\006status\030\001 \001(\0162\026.uranium.commo"
-    "n.Status\022\"\n\006fields\030\002 \003(\0132\022.uranium.api.F"
+    "Response\022&\n\006result\030\001 \001(\0132\026.uranium.commo"
+    "n.Result\022\"\n\006fields\030\002 \003(\0132\022.uranium.api.F"
     "ield\"g\n\027HashGetAllValuesRequest\022-\n\ntable"
     "_name\030\001 \001(\0132\031.uranium.common.TableName\022\035"
     "\n\003key\030\002 \001(\0132\020.uranium.api.Key\"f\n\030HashGet"
-    "AllValuesResponse\022&\n\006status\030\001 \001(\0162\026.uran"
-    "ium.common.Status\022\"\n\006values\030\002 \003(\0132\022.uran"
+    "AllValuesResponse\022&\n\006result\030\001 \001(\0132\026.uran"
+    "ium.common.Result\022\"\n\006values\030\002 \003(\0132\022.uran"
     "ium.api.Value\"a\n\021HashLengthRequest\022-\n\nta"
     "ble_name\030\001 \001(\0132\031.uranium.common.TableNam"
     "e\022\035\n\003key\030\002 \001(\0132\020.uranium.api.Key\"L\n\022Hash"
-    "LengthResponse\022&\n\006status\030\001 \001(\0162\026.uranium"
-    ".common.Status\022\016\n\006length\030\002 \001(\003\"\204\001\n\016HashS"
+    "LengthResponse\022&\n\006result\030\001 \001(\0132\026.uranium"
+    ".common.Result\022\016\n\006length\030\002 \001(\003\"\204\001\n\016HashS"
     "etRequest\022-\n\ntable_name\030\001 \001(\0132\031.uranium."
     "common.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium."
     "api.Key\022$\n\003fvs\030\003 \003(\0132\027.uranium.api.Field"
-    "Value\"9\n\017HashSetResponse\022&\n\006status\030\001 \001(\016"
-    "2\026.uranium.common.Status\"\204\001\n\017HashSetXReq"
+    "Value\"9\n\017HashSetResponse\022&\n\006result\030\001 \001(\013"
+    "2\026.uranium.common.Result\"\204\001\n\017HashSetXReq"
     "uest\022-\n\ntable_name\030\001 \001(\0132\031.uranium.commo"
     "n.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium.api.K"
     "ey\022#\n\002fv\030\003 \001(\0132\027.uranium.api.FieldValue\""
-    ":\n\020HashSetXResponse\022&\n\006status\030\001 \001(\0162\026.ur"
-    "anium.common.Status\"\205\001\n\021HashRemoveReques"
+    ":\n\020HashSetXResponse\022&\n\006result\030\001 \001(\0132\026.ur"
+    "anium.common.Result\"\205\001\n\021HashRemoveReques"
     "t\022-\n\ntable_name\030\001 \001(\0132\031.uranium.common.T"
     "ableName\022\035\n\003key\030\002 \001(\0132\020.uranium.api.Key\022"
     "\"\n\006fields\030\003 \003(\0132\022.uranium.api.Field\"<\n\022H"
-    "ashRemoveResponse\022&\n\006status\030\001 \001(\0162\026.uran"
-    "ium.common.Status\"\204\001\n\021HashExistsRequest\022"
+    "ashRemoveResponse\022&\n\006result\030\001 \001(\0132\026.uran"
+    "ium.common.Result\"\204\001\n\021HashExistsRequest\022"
     "-\n\ntable_name\030\001 \001(\0132\031.uranium.common.Tab"
     "leName\022\035\n\003key\030\002 \001(\0132\020.uranium.api.Key\022!\n"
     "\005field\030\003 \001(\0132\022.uranium.api.Field\"L\n\022Hash"
-    "ExistsResponse\022&\n\006status\030\001 \001(\0162\026.uranium"
-    ".common.Status\022\016\n\006exists\030\002 \001(\010\"d\n\024HashRe"
+    "ExistsResponse\022&\n\006result\030\001 \001(\0132\026.uranium"
+    ".common.Result\022\016\n\006exists\030\002 \001(\010\"d\n\024HashRe"
     "moveAllRequest\022-\n\ntable_name\030\001 \001(\0132\031.ura"
     "nium.common.TableName\022\035\n\003key\030\002 \001(\0132\020.ura"
     "nium.api.Key\"\?\n\025HashRemoveAllResponse\022&\n"
-    "\006status\030\001 \001(\0162\026.uranium.common.Status\"\201\001"
+    "\006result\030\001 \001(\0132\026.uranium.common.Result\"\201\001"
     "\n\rSetAddRequest\022-\n\ntable_name\030\001 \001(\0132\031.ur"
     "anium.common.TableName\022\035\n\003key\030\002 \001(\0132\020.ur"
     "anium.api.Key\022\"\n\006values\030\003 \003(\0132\022.uranium."
-    "api.Value\"8\n\016SetAddResponse\022&\n\006status\030\001 "
-    "\001(\0162\026.uranium.common.Status\"`\n\020SetLength"
+    "api.Value\"8\n\016SetAddResponse\022&\n\006result\030\001 "
+    "\001(\0132\026.uranium.common.Result\"`\n\020SetLength"
     "Request\022-\n\ntable_name\030\001 \001(\0132\031.uranium.co"
     "mmon.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium.ap"
-    "i.Key\"K\n\021SetLengthResponse\022&\n\006status\030\001 \001"
-    "(\0162\026.uranium.common.Status\022\016\n\006length\030\002 \001"
+    "i.Key\"K\n\021SetLengthResponse\022&\n\006result\030\001 \001"
+    "(\0132\026.uranium.common.Result\022\016\n\006length\030\002 \001"
     "(\003\"~\n\022SetIsMemberRequest\022&\n\006status\030\001 \001(\016"
     "2\026.uranium.common.Status\022\035\n\003key\030\002 \001(\0132\020."
     "uranium.api.Key\022!\n\005value\030\003 \001(\0132\022.uranium"
-    ".api.Value\"J\n\023SetIsMemberResponse\022&\n\006sta"
-    "tus\030\001 \001(\0162\026.uranium.common.Status\022\013\n\003yes"
+    ".api.Value\"J\n\023SetIsMemberResponse\022&\n\006res"
+    "ult\030\001 \001(\0132\026.uranium.common.Result\022\013\n\003yes"
     "\030\002 \001(\010\"`\n\020SetGetAllRequest\022-\n\ntable_name"
     "\030\001 \001(\0132\031.uranium.common.TableName\022\035\n\003key"
     "\030\002 \001(\0132\020.uranium.api.Key\"_\n\021SetGetAllRes"
-    "ponse\022&\n\006status\030\001 \001(\0162\026.uranium.common.S"
-    "tatus\022\"\n\006values\030\002 \003(\0132\022.uranium.api.Valu"
+    "ponse\022&\n\006result\030\001 \001(\0132\026.uranium.common.R"
+    "esult\022\"\n\006values\030\002 \003(\0132\022.uranium.api.Valu"
     "e\"\204\001\n\020SetRemoveRequest\022-\n\ntable_name\030\001 \001"
     "(\0132\031.uranium.common.TableName\022\035\n\003key\030\002 \001"
     "(\0132\020.uranium.api.Key\022\"\n\006values\030\003 \003(\0132\022.u"
     "ranium.api.Value\";\n\021SetRemoveResponse\022&\n"
-    "\006status\030\001 \001(\0162\026.uranium.common.Status\"c\n"
+    "\006result\030\001 \001(\0132\026.uranium.common.Result\"c\n"
     "\023SetRemoveAllRequest\022-\n\ntable_name\030\001 \001(\013"
     "2\031.uranium.common.TableName\022\035\n\003key\030\002 \001(\013"
     "2\020.uranium.api.Key\">\n\024SetRemoveAllRespon"
-    "se\022&\n\006status\030\001 \001(\0162\026.uranium.common.Stat"
-    "us2\345\022\n\030UraniumSchemalessService\022@\n\005KVGet"
-    "\022\031.uranium.api.KVGetRequest\032\032.uranium.ap"
-    "i.KVGetResponse\"\000\022@\n\005KVSet\022\031.uranium.api"
-    ".KVSetRequest\032\032.uranium.api.KVSetRespons"
-    "e\"\000\022I\n\010KVRemove\022\034.uranium.api.KVRemoveRe"
-    "quest\032\035.uranium.api.KVRemoveResponse\"\000\022L"
-    "\n\tListLPush\022\035.uranium.api.ListLPushReque"
-    "st\032\036.uranium.api.ListLPushResponse\"\000\022I\n\010"
-    "ListLPop\022\034.uranium.api.ListLPopRequest\032\035"
-    ".uranium.api.ListLPopResponse\"\000\022L\n\tListR"
-    "Push\022\035.uranium.api.ListRPushRequest\032\036.ur"
-    "anium.api.ListRPushResponse\"\000\022I\n\010ListRPo"
-    "p\022\034.uranium.api.ListRPopRequest\032\035.uraniu"
-    "m.api.ListRPopResponse\"\000\022O\n\nListLPushX\022\036"
-    ".uranium.api.ListLPushXRequest\032\037.uranium"
-    ".api.ListLPushXResponse\"\000\022O\n\nListRPushX\022"
-    "\036.uranium.api.ListRPushXRequest\032\037.uraniu"
-    "m.api.ListRPushXResponse\"\000\022L\n\tListIndex\022"
-    "\035.uranium.api.ListIndexRequest\032\036.uranium"
-    ".api.ListIndexResponse\"\000\022F\n\007ListSet\022\033.ur"
-    "anium.api.ListSetRequest\032\034.uranium.api.L"
-    "istSetResponse\"\000\022L\n\tListRange\022\035.uranium."
-    "api.ListRangeRequest\032\036.uranium.api.ListR"
-    "angeResponse\"\000\022O\n\nListLength\022\036.uranium.a"
-    "pi.ListLengthRequest\032\037.uranium.api.ListL"
-    "engthResponse\"\000\022X\n\rListRemoveAll\022!.urani"
-    "um.api.ListRemoveAllRequest\032\".uranium.ap"
-    "i.ListRemoveAllResponse\"\000\022F\n\007HashGet\022\033.u"
-    "ranium.api.HashGetRequest\032\034.uranium.api."
-    "HashGetResponse\"\000\022O\n\nHashGetAll\022\036.uraniu"
-    "m.api.HashGetAllRequest\032\037.uranium.api.Ha"
-    "shGetAllResponse\"\000\022a\n\020HashGetAllFields\022$"
-    ".uranium.api.HashGetAllFieldsRequest\032%.u"
-    "ranium.api.HashGetAllFieldsResponse\"\000\022a\n"
-    "\020HashGetAllValues\022$.uranium.api.HashGetA"
-    "llValuesRequest\032%.uranium.api.HashGetAll"
-    "ValuesResponse\"\000\022O\n\nHashLength\022\036.uranium"
-    ".api.HashLengthRequest\032\037.uranium.api.Has"
-    "hLengthResponse\"\000\022F\n\007HashSet\022\033.uranium.a"
-    "pi.HashSetRequest\032\034.uranium.api.HashSetR"
-    "esponse\"\000\022I\n\010HashSetX\022\034.uranium.api.Hash"
-    "SetXRequest\032\035.uranium.api.HashSetXRespon"
-    "se\"\000\022O\n\nHashRemove\022\036.uranium.api.HashRem"
-    "oveRequest\032\037.uranium.api.HashRemoveRespo"
-    "nse\"\000\022O\n\nHashExists\022\036.uranium.api.HashEx"
-    "istsRequest\032\037.uranium.api.HashExistsResp"
-    "onse\"\000\022X\n\rHashRemoveAll\022!.uranium.api.Ha"
-    "shRemoveAllRequest\032\".uranium.api.HashRem"
-    "oveAllResponse\"\000\022C\n\006SetAdd\022\032.uranium.api"
-    ".SetAddRequest\032\033.uranium.api.SetAddRespo"
-    "nse\"\000\022L\n\tSetLength\022\035.uranium.api.SetLeng"
-    "thRequest\032\036.uranium.api.SetLengthRespons"
-    "e\"\000\022R\n\013SetIsMember\022\037.uranium.api.SetIsMe"
-    "mberRequest\032 .uranium.api.SetIsMemberRes"
-    "ponse\"\000\022L\n\tSetGetAll\022\035.uranium.api.SetGe"
-    "tAllRequest\032\036.uranium.api.SetGetAllRespo"
-    "nse\"\000\022L\n\tSetRemove\022\035.uranium.api.SetRemo"
-    "veRequest\032\036.uranium.api.SetRemoveRespons"
-    "e\"\000\022U\n\014SetRemoveAll\022 .uranium.api.SetRem"
-    "oveAllRequest\032!.uranium.api.SetRemoveAll"
-    "Response\"\0002\026\n\024UraniumSchemaServiceb\006prot"
-    "o3", 8482);
+    "se\022&\n\006result\030\001 \001(\0132\026.uranium.common.Resu"
+    "lt2\341\001\n\020UraniumKVService\022@\n\005KVGet\022\031.urani"
+    "um.api.KVGetRequest\032\032.uranium.api.KVGetR"
+    "esponse\"\000\022@\n\005KVSet\022\031.uranium.api.KVSetRe"
+    "quest\032\032.uranium.api.KVSetResponse\"\000\022I\n\010K"
+    "VRemove\022\034.uranium.api.KVRemoveRequest\032\035."
+    "uranium.api.KVRemoveResponse\"\0002\367\006\n\022Urani"
+    "umListService\022L\n\tListLPush\022\035.uranium.api"
+    ".ListLPushRequest\032\036.uranium.api.ListLPus"
+    "hResponse\"\000\022I\n\010ListLPop\022\034.uranium.api.Li"
+    "stLPopRequest\032\035.uranium.api.ListLPopResp"
+    "onse\"\000\022L\n\tListRPush\022\035.uranium.api.ListRP"
+    "ushRequest\032\036.uranium.api.ListRPushRespon"
+    "se\"\000\022I\n\010ListRPop\022\034.uranium.api.ListRPopR"
+    "equest\032\035.uranium.api.ListRPopResponse\"\000\022"
+    "O\n\nListLPushX\022\036.uranium.api.ListLPushXRe"
+    "quest\032\037.uranium.api.ListLPushXResponse\"\000"
+    "\022O\n\nListRPushX\022\036.uranium.api.ListRPushXR"
+    "equest\032\037.uranium.api.ListRPushXResponse\""
+    "\000\022L\n\tListIndex\022\035.uranium.api.ListIndexRe"
+    "quest\032\036.uranium.api.ListIndexResponse\"\000\022"
+    "F\n\007ListSet\022\033.uranium.api.ListSetRequest\032"
+    "\034.uranium.api.ListSetResponse\"\000\022L\n\tListR"
+    "ange\022\035.uranium.api.ListRangeRequest\032\036.ur"
+    "anium.api.ListRangeResponse\"\000\022O\n\nListLen"
+    "gth\022\036.uranium.api.ListLengthRequest\032\037.ur"
+    "anium.api.ListLengthResponse\"\000\022X\n\rListRe"
+    "moveAll\022!.uranium.api.ListRemoveAllReque"
+    "st\032\".uranium.api.ListRemoveAllResponse\"\000"
+    "2\323\006\n\022UraniumHashService\022F\n\007HashGet\022\033.ura"
+    "nium.api.HashGetRequest\032\034.uranium.api.Ha"
+    "shGetResponse\"\000\022O\n\nHashGetAll\022\036.uranium."
+    "api.HashGetAllRequest\032\037.uranium.api.Hash"
+    "GetAllResponse\"\000\022a\n\020HashGetAllFields\022$.u"
+    "ranium.api.HashGetAllFieldsRequest\032%.ura"
+    "nium.api.HashGetAllFieldsResponse\"\000\022a\n\020H"
+    "ashGetAllValues\022$.uranium.api.HashGetAll"
+    "ValuesRequest\032%.uranium.api.HashGetAllVa"
+    "luesResponse\"\000\022O\n\nHashLength\022\036.uranium.a"
+    "pi.HashLengthRequest\032\037.uranium.api.HashL"
+    "engthResponse\"\000\022F\n\007HashSet\022\033.uranium.api"
+    ".HashSetRequest\032\034.uranium.api.HashSetRes"
+    "ponse\"\000\022I\n\010HashSetX\022\034.uranium.api.HashSe"
+    "tXRequest\032\035.uranium.api.HashSetXResponse"
+    "\"\000\022O\n\nHashRemove\022\036.uranium.api.HashRemov"
+    "eRequest\032\037.uranium.api.HashRemoveRespons"
+    "e\"\000\022O\n\nHashExists\022\036.uranium.api.HashExis"
+    "tsRequest\032\037.uranium.api.HashExistsRespon"
+    "se\"\000\022X\n\rHashRemoveAll\022!.uranium.api.Hash"
+    "RemoveAllRequest\032\".uranium.api.HashRemov"
+    "eAllResponse\"\0002\355\003\n\021UraniumSetService\022C\n\006"
+    "SetAdd\022\032.uranium.api.SetAddRequest\032\033.ura"
+    "nium.api.SetAddResponse\"\000\022L\n\tSetLength\022\035"
+    ".uranium.api.SetLengthRequest\032\036.uranium."
+    "api.SetLengthResponse\"\000\022R\n\013SetIsMember\022\037"
+    ".uranium.api.SetIsMemberRequest\032 .uraniu"
+    "m.api.SetIsMemberResponse\"\000\022L\n\tSetGetAll"
+    "\022\035.uranium.api.SetGetAllRequest\032\036.uraniu"
+    "m.api.SetGetAllResponse\"\000\022L\n\tSetRemove\022\035"
+    ".uranium.api.SetRemoveRequest\032\036.uranium."
+    "api.SetRemoveResponse\"\000\022U\n\014SetRemoveAll\022"
+    " .uranium.api.SetRemoveAllRequest\032!.uran"
+    "ium.api.SetRemoveAllResponse\"\0002\026\n\024Uraniu"
+    "mSchemaServiceb\006proto3", 8542);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "uranium.proto", &protobuf_RegisterTypes);
   Key::default_instance_ = new Key();
@@ -3745,7 +3746,7 @@ KVGetRequest::keys() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int KVGetResponse::kStatusFieldNumber;
+const int KVGetResponse::kResultFieldNumber;
 const int KVGetResponse::kKvsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -3757,6 +3758,7 @@ KVGetResponse::KVGetResponse()
 
 void KVGetResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 KVGetResponse::KVGetResponse(const KVGetResponse& from)
@@ -3770,7 +3772,7 @@ KVGetResponse::KVGetResponse(const KVGetResponse& from)
 void KVGetResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 KVGetResponse::~KVGetResponse() {
@@ -3780,6 +3782,7 @@ KVGetResponse::~KVGetResponse() {
 
 void KVGetResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -3810,7 +3813,8 @@ KVGetResponse* KVGetResponse::New(::google::protobuf::Arena* arena) const {
 
 void KVGetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.KVGetResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   kvs_.Clear();
 }
 
@@ -3824,14 +3828,11 @@ bool KVGetResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -3880,10 +3881,10 @@ failure:
 void KVGetResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.KVGetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.KeyValue kvs = 2;
@@ -3898,10 +3899,11 @@ void KVGetResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* KVGetResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVGetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.KeyValue kvs = 2;
@@ -3919,10 +3921,11 @@ int KVGetResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.KVGetResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.KeyValue kvs = 2;
@@ -3958,8 +3961,8 @@ void KVGetResponse::MergeFrom(const KVGetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVGetResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   kvs_.MergeFrom(from.kvs_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -3987,7 +3990,7 @@ void KVGetResponse::Swap(KVGetResponse* other) {
   InternalSwap(other);
 }
 void KVGetResponse::InternalSwap(KVGetResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   kvs_.UnsafeArenaSwap(&other->kvs_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -4004,18 +4007,42 @@ void KVGetResponse::InternalSwap(KVGetResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // KVGetResponse
 
-// optional .uranium.common.Status status = 1;
-void KVGetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool KVGetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status KVGetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.KVGetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void KVGetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void KVGetResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& KVGetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.KVGetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* KVGetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.KVGetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.KVGetResponse.result)
+  return result_;
+}
+::uranium::common::Result* KVGetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.KVGetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void KVGetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.KVGetResponse.result)
 }
 
 // repeated .uranium.api.KeyValue kvs = 2;
@@ -4387,7 +4414,7 @@ KVSetRequest::kvs() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int KVSetResponse::kStatusFieldNumber;
+const int KVSetResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 KVSetResponse::KVSetResponse()
@@ -4398,6 +4425,7 @@ KVSetResponse::KVSetResponse()
 
 void KVSetResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 KVSetResponse::KVSetResponse(const KVSetResponse& from)
@@ -4411,7 +4439,7 @@ KVSetResponse::KVSetResponse(const KVSetResponse& from)
 void KVSetResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 KVSetResponse::~KVSetResponse() {
@@ -4421,6 +4449,7 @@ KVSetResponse::~KVSetResponse() {
 
 void KVSetResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -4451,7 +4480,8 @@ KVSetResponse* KVSetResponse::New(::google::protobuf::Arena* arena) const {
 
 void KVSetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.KVSetResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool KVSetResponse::MergePartialFromCodedStream(
@@ -4464,14 +4494,11 @@ bool KVSetResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -4503,10 +4530,10 @@ failure:
 void KVSetResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.KVSetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.KVSetResponse)
@@ -4515,10 +4542,11 @@ void KVSetResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* KVSetResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVSetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVSetResponse)
@@ -4529,10 +4557,11 @@ int KVSetResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.KVSetResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -4559,8 +4588,8 @@ void KVSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void KVSetResponse::MergeFrom(const KVSetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVSetResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -4588,7 +4617,7 @@ void KVSetResponse::Swap(KVSetResponse* other) {
   InternalSwap(other);
 }
 void KVSetResponse::InternalSwap(KVSetResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -4604,18 +4633,42 @@ void KVSetResponse::InternalSwap(KVSetResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // KVSetResponse
 
-// optional .uranium.common.Status status = 1;
-void KVSetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool KVSetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status KVSetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.KVSetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void KVSetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void KVSetResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& KVSetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.KVSetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* KVSetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.KVSetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.KVSetResponse.result)
+  return result_;
+}
+::uranium::common::Result* KVSetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.KVSetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void KVSetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.KVSetResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -4957,7 +5010,7 @@ KVRemoveRequest::keys() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int KVRemoveResponse::kStatusFieldNumber;
+const int KVRemoveResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 KVRemoveResponse::KVRemoveResponse()
@@ -4968,6 +5021,7 @@ KVRemoveResponse::KVRemoveResponse()
 
 void KVRemoveResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 KVRemoveResponse::KVRemoveResponse(const KVRemoveResponse& from)
@@ -4981,7 +5035,7 @@ KVRemoveResponse::KVRemoveResponse(const KVRemoveResponse& from)
 void KVRemoveResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 KVRemoveResponse::~KVRemoveResponse() {
@@ -4991,6 +5045,7 @@ KVRemoveResponse::~KVRemoveResponse() {
 
 void KVRemoveResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -5021,7 +5076,8 @@ KVRemoveResponse* KVRemoveResponse::New(::google::protobuf::Arena* arena) const 
 
 void KVRemoveResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.KVRemoveResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool KVRemoveResponse::MergePartialFromCodedStream(
@@ -5034,14 +5090,11 @@ bool KVRemoveResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -5073,10 +5126,10 @@ failure:
 void KVRemoveResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.KVRemoveResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.KVRemoveResponse)
@@ -5085,10 +5138,11 @@ void KVRemoveResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* KVRemoveResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVRemoveResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVRemoveResponse)
@@ -5099,10 +5153,11 @@ int KVRemoveResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.KVRemoveResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -5129,8 +5184,8 @@ void KVRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void KVRemoveResponse::MergeFrom(const KVRemoveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVRemoveResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -5158,7 +5213,7 @@ void KVRemoveResponse::Swap(KVRemoveResponse* other) {
   InternalSwap(other);
 }
 void KVRemoveResponse::InternalSwap(KVRemoveResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -5174,18 +5229,42 @@ void KVRemoveResponse::InternalSwap(KVRemoveResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // KVRemoveResponse
 
-// optional .uranium.common.Status status = 1;
-void KVRemoveResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool KVRemoveResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status KVRemoveResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.KVRemoveResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void KVRemoveResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void KVRemoveResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& KVRemoveResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.KVRemoveResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* KVRemoveResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.KVRemoveResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.KVRemoveResponse.result)
+  return result_;
+}
+::uranium::common::Result* KVRemoveResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.KVRemoveResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void KVRemoveResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.KVRemoveResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -5608,7 +5687,7 @@ ListLPushRequest::values() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListLPushResponse::kStatusFieldNumber;
+const int ListLPushResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListLPushResponse::ListLPushResponse()
@@ -5619,6 +5698,7 @@ ListLPushResponse::ListLPushResponse()
 
 void ListLPushResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListLPushResponse::ListLPushResponse(const ListLPushResponse& from)
@@ -5632,7 +5712,7 @@ ListLPushResponse::ListLPushResponse(const ListLPushResponse& from)
 void ListLPushResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListLPushResponse::~ListLPushResponse() {
@@ -5642,6 +5722,7 @@ ListLPushResponse::~ListLPushResponse() {
 
 void ListLPushResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -5672,7 +5753,8 @@ ListLPushResponse* ListLPushResponse::New(::google::protobuf::Arena* arena) cons
 
 void ListLPushResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListLPushResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool ListLPushResponse::MergePartialFromCodedStream(
@@ -5685,14 +5767,11 @@ bool ListLPushResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -5724,10 +5803,10 @@ failure:
 void ListLPushResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListLPushResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPushResponse)
@@ -5736,10 +5815,11 @@ void ListLPushResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListLPushResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPushResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPushResponse)
@@ -5750,10 +5830,11 @@ int ListLPushResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListLPushResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -5780,8 +5861,8 @@ void ListLPushResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListLPushResponse::MergeFrom(const ListLPushResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPushResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -5809,7 +5890,7 @@ void ListLPushResponse::Swap(ListLPushResponse* other) {
   InternalSwap(other);
 }
 void ListLPushResponse::InternalSwap(ListLPushResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -5825,18 +5906,42 @@ void ListLPushResponse::InternalSwap(ListLPushResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListLPushResponse
 
-// optional .uranium.common.Status status = 1;
-void ListLPushResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListLPushResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListLPushResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLPushResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListLPushResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListLPushResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListLPushResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLPushResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListLPushResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLPushResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLPushResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListLPushResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLPushResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListLPushResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLPushResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -6187,7 +6292,7 @@ void ListLPopRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListLPopResponse::kStatusFieldNumber;
+const int ListLPopResponse::kResultFieldNumber;
 const int ListLPopResponse::kValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -6199,6 +6304,7 @@ ListLPopResponse::ListLPopResponse()
 
 void ListLPopResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
   value_ = const_cast< ::uranium::api::Value*>(&::uranium::api::Value::default_instance());
 }
 
@@ -6213,7 +6319,7 @@ ListLPopResponse::ListLPopResponse(const ListLPopResponse& from)
 void ListLPopResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   value_ = NULL;
 }
 
@@ -6224,6 +6330,7 @@ ListLPopResponse::~ListLPopResponse() {
 
 void ListLPopResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
     delete value_;
   }
 }
@@ -6255,7 +6362,8 @@ ListLPopResponse* ListLPopResponse::New(::google::protobuf::Arena* arena) const 
 
 void ListLPopResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListLPopResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   if (GetArenaNoVirtual() == NULL && value_ != NULL) delete value_;
   value_ = NULL;
 }
@@ -6270,14 +6378,11 @@ bool ListLPopResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -6322,10 +6427,10 @@ failure:
 void ListLPopResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListLPopResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -6340,10 +6445,11 @@ void ListLPopResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListLPopResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPopResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -6361,10 +6467,11 @@ int ListLPopResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListLPopResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -6398,8 +6505,8 @@ void ListLPopResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListLPopResponse::MergeFrom(const ListLPopResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPopResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.has_value()) {
     mutable_value()->::uranium::api::Value::MergeFrom(from.value());
@@ -6430,7 +6537,7 @@ void ListLPopResponse::Swap(ListLPopResponse* other) {
   InternalSwap(other);
 }
 void ListLPopResponse::InternalSwap(ListLPopResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(value_, other->value_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -6447,18 +6554,42 @@ void ListLPopResponse::InternalSwap(ListLPopResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListLPopResponse
 
-// optional .uranium.common.Status status = 1;
-void ListLPopResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListLPopResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListLPopResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLPopResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListLPopResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListLPopResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListLPopResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLPopResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListLPopResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLPopResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLPopResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListLPopResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLPopResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListLPopResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLPopResponse.result)
 }
 
 // optional .uranium.api.Value value = 2;
@@ -6919,7 +7050,7 @@ ListRPushRequest::values() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListRPushResponse::kStatusFieldNumber;
+const int ListRPushResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListRPushResponse::ListRPushResponse()
@@ -6930,6 +7061,7 @@ ListRPushResponse::ListRPushResponse()
 
 void ListRPushResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListRPushResponse::ListRPushResponse(const ListRPushResponse& from)
@@ -6943,7 +7075,7 @@ ListRPushResponse::ListRPushResponse(const ListRPushResponse& from)
 void ListRPushResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListRPushResponse::~ListRPushResponse() {
@@ -6953,6 +7085,7 @@ ListRPushResponse::~ListRPushResponse() {
 
 void ListRPushResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -6983,7 +7116,8 @@ ListRPushResponse* ListRPushResponse::New(::google::protobuf::Arena* arena) cons
 
 void ListRPushResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListRPushResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool ListRPushResponse::MergePartialFromCodedStream(
@@ -6996,14 +7130,11 @@ bool ListRPushResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -7035,10 +7166,10 @@ failure:
 void ListRPushResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListRPushResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPushResponse)
@@ -7047,10 +7178,11 @@ void ListRPushResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListRPushResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPushResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPushResponse)
@@ -7061,10 +7193,11 @@ int ListRPushResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListRPushResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -7091,8 +7224,8 @@ void ListRPushResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListRPushResponse::MergeFrom(const ListRPushResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPushResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -7120,7 +7253,7 @@ void ListRPushResponse::Swap(ListRPushResponse* other) {
   InternalSwap(other);
 }
 void ListRPushResponse::InternalSwap(ListRPushResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -7136,18 +7269,42 @@ void ListRPushResponse::InternalSwap(ListRPushResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListRPushResponse
 
-// optional .uranium.common.Status status = 1;
-void ListRPushResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListRPushResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListRPushResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRPushResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListRPushResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListRPushResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListRPushResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRPushResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListRPushResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRPushResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRPushResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListRPushResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRPushResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListRPushResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRPushResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -7498,7 +7655,7 @@ void ListRPopRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListRPopResponse::kStatusFieldNumber;
+const int ListRPopResponse::kResultFieldNumber;
 const int ListRPopResponse::kValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -7510,6 +7667,7 @@ ListRPopResponse::ListRPopResponse()
 
 void ListRPopResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
   value_ = const_cast< ::uranium::api::Value*>(&::uranium::api::Value::default_instance());
 }
 
@@ -7524,7 +7682,7 @@ ListRPopResponse::ListRPopResponse(const ListRPopResponse& from)
 void ListRPopResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   value_ = NULL;
 }
 
@@ -7535,6 +7693,7 @@ ListRPopResponse::~ListRPopResponse() {
 
 void ListRPopResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
     delete value_;
   }
 }
@@ -7566,7 +7725,8 @@ ListRPopResponse* ListRPopResponse::New(::google::protobuf::Arena* arena) const 
 
 void ListRPopResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListRPopResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   if (GetArenaNoVirtual() == NULL && value_ != NULL) delete value_;
   value_ = NULL;
 }
@@ -7581,14 +7741,11 @@ bool ListRPopResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -7633,10 +7790,10 @@ failure:
 void ListRPopResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListRPopResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -7651,10 +7808,11 @@ void ListRPopResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListRPopResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPopResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -7672,10 +7830,11 @@ int ListRPopResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListRPopResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -7709,8 +7868,8 @@ void ListRPopResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListRPopResponse::MergeFrom(const ListRPopResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPopResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.has_value()) {
     mutable_value()->::uranium::api::Value::MergeFrom(from.value());
@@ -7741,7 +7900,7 @@ void ListRPopResponse::Swap(ListRPopResponse* other) {
   InternalSwap(other);
 }
 void ListRPopResponse::InternalSwap(ListRPopResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(value_, other->value_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -7758,18 +7917,42 @@ void ListRPopResponse::InternalSwap(ListRPopResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListRPopResponse
 
-// optional .uranium.common.Status status = 1;
-void ListRPopResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListRPopResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListRPopResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRPopResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListRPopResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListRPopResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListRPopResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRPopResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListRPopResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRPopResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRPopResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListRPopResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRPopResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListRPopResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRPopResponse.result)
 }
 
 // optional .uranium.api.Value value = 2;
@@ -8230,7 +8413,7 @@ ListLPushXRequest::values() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListLPushXResponse::kStatusFieldNumber;
+const int ListLPushXResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListLPushXResponse::ListLPushXResponse()
@@ -8241,6 +8424,7 @@ ListLPushXResponse::ListLPushXResponse()
 
 void ListLPushXResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListLPushXResponse::ListLPushXResponse(const ListLPushXResponse& from)
@@ -8254,7 +8438,7 @@ ListLPushXResponse::ListLPushXResponse(const ListLPushXResponse& from)
 void ListLPushXResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListLPushXResponse::~ListLPushXResponse() {
@@ -8264,6 +8448,7 @@ ListLPushXResponse::~ListLPushXResponse() {
 
 void ListLPushXResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -8294,7 +8479,8 @@ ListLPushXResponse* ListLPushXResponse::New(::google::protobuf::Arena* arena) co
 
 void ListLPushXResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListLPushXResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool ListLPushXResponse::MergePartialFromCodedStream(
@@ -8307,14 +8493,11 @@ bool ListLPushXResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -8346,10 +8529,10 @@ failure:
 void ListLPushXResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListLPushXResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPushXResponse)
@@ -8358,10 +8541,11 @@ void ListLPushXResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListLPushXResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPushXResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPushXResponse)
@@ -8372,10 +8556,11 @@ int ListLPushXResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListLPushXResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -8402,8 +8587,8 @@ void ListLPushXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListLPushXResponse::MergeFrom(const ListLPushXResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPushXResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -8431,7 +8616,7 @@ void ListLPushXResponse::Swap(ListLPushXResponse* other) {
   InternalSwap(other);
 }
 void ListLPushXResponse::InternalSwap(ListLPushXResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -8447,18 +8632,42 @@ void ListLPushXResponse::InternalSwap(ListLPushXResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListLPushXResponse
 
-// optional .uranium.common.Status status = 1;
-void ListLPushXResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListLPushXResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListLPushXResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLPushXResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListLPushXResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListLPushXResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListLPushXResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLPushXResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListLPushXResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLPushXResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLPushXResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListLPushXResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLPushXResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListLPushXResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLPushXResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -8881,7 +9090,7 @@ ListRPushXRequest::values() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListRPushXResponse::kStatusFieldNumber;
+const int ListRPushXResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListRPushXResponse::ListRPushXResponse()
@@ -8892,6 +9101,7 @@ ListRPushXResponse::ListRPushXResponse()
 
 void ListRPushXResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListRPushXResponse::ListRPushXResponse(const ListRPushXResponse& from)
@@ -8905,7 +9115,7 @@ ListRPushXResponse::ListRPushXResponse(const ListRPushXResponse& from)
 void ListRPushXResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListRPushXResponse::~ListRPushXResponse() {
@@ -8915,6 +9125,7 @@ ListRPushXResponse::~ListRPushXResponse() {
 
 void ListRPushXResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -8945,7 +9156,8 @@ ListRPushXResponse* ListRPushXResponse::New(::google::protobuf::Arena* arena) co
 
 void ListRPushXResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListRPushXResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool ListRPushXResponse::MergePartialFromCodedStream(
@@ -8958,14 +9170,11 @@ bool ListRPushXResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -8997,10 +9206,10 @@ failure:
 void ListRPushXResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListRPushXResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPushXResponse)
@@ -9009,10 +9218,11 @@ void ListRPushXResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListRPushXResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPushXResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPushXResponse)
@@ -9023,10 +9233,11 @@ int ListRPushXResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListRPushXResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -9053,8 +9264,8 @@ void ListRPushXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListRPushXResponse::MergeFrom(const ListRPushXResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPushXResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -9082,7 +9293,7 @@ void ListRPushXResponse::Swap(ListRPushXResponse* other) {
   InternalSwap(other);
 }
 void ListRPushXResponse::InternalSwap(ListRPushXResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -9098,18 +9309,42 @@ void ListRPushXResponse::InternalSwap(ListRPushXResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListRPushXResponse
 
-// optional .uranium.common.Status status = 1;
-void ListRPushXResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListRPushXResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListRPushXResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRPushXResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListRPushXResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListRPushXResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListRPushXResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRPushXResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListRPushXResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRPushXResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRPushXResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListRPushXResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRPushXResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListRPushXResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRPushXResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -9513,7 +9748,7 @@ void ListIndexRequest::clear_index() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListIndexResponse::kStatusFieldNumber;
+const int ListIndexResponse::kResultFieldNumber;
 const int ListIndexResponse::kValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -9525,6 +9760,7 @@ ListIndexResponse::ListIndexResponse()
 
 void ListIndexResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
   value_ = const_cast< ::uranium::api::Value*>(&::uranium::api::Value::default_instance());
 }
 
@@ -9539,7 +9775,7 @@ ListIndexResponse::ListIndexResponse(const ListIndexResponse& from)
 void ListIndexResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   value_ = NULL;
 }
 
@@ -9550,6 +9786,7 @@ ListIndexResponse::~ListIndexResponse() {
 
 void ListIndexResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
     delete value_;
   }
 }
@@ -9581,7 +9818,8 @@ ListIndexResponse* ListIndexResponse::New(::google::protobuf::Arena* arena) cons
 
 void ListIndexResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListIndexResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   if (GetArenaNoVirtual() == NULL && value_ != NULL) delete value_;
   value_ = NULL;
 }
@@ -9596,14 +9834,11 @@ bool ListIndexResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -9648,10 +9883,10 @@ failure:
 void ListIndexResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListIndexResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -9666,10 +9901,11 @@ void ListIndexResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListIndexResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListIndexResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -9687,10 +9923,11 @@ int ListIndexResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListIndexResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional .uranium.api.Value value = 2;
@@ -9724,8 +9961,8 @@ void ListIndexResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListIndexResponse::MergeFrom(const ListIndexResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListIndexResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.has_value()) {
     mutable_value()->::uranium::api::Value::MergeFrom(from.value());
@@ -9756,7 +9993,7 @@ void ListIndexResponse::Swap(ListIndexResponse* other) {
   InternalSwap(other);
 }
 void ListIndexResponse::InternalSwap(ListIndexResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(value_, other->value_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -9773,18 +10010,42 @@ void ListIndexResponse::InternalSwap(ListIndexResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListIndexResponse
 
-// optional .uranium.common.Status status = 1;
-void ListIndexResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListIndexResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListIndexResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListIndexResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListIndexResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListIndexResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListIndexResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListIndexResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListIndexResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListIndexResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListIndexResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListIndexResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListIndexResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListIndexResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListIndexResponse.result)
 }
 
 // optional .uranium.api.Value value = 2;
@@ -10307,7 +10568,7 @@ void ListSetRequest::set_allocated_value(::uranium::api::Value* value) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListSetResponse::kStatusFieldNumber;
+const int ListSetResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListSetResponse::ListSetResponse()
@@ -10318,6 +10579,7 @@ ListSetResponse::ListSetResponse()
 
 void ListSetResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListSetResponse::ListSetResponse(const ListSetResponse& from)
@@ -10331,7 +10593,7 @@ ListSetResponse::ListSetResponse(const ListSetResponse& from)
 void ListSetResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListSetResponse::~ListSetResponse() {
@@ -10341,6 +10603,7 @@ ListSetResponse::~ListSetResponse() {
 
 void ListSetResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -10371,7 +10634,8 @@ ListSetResponse* ListSetResponse::New(::google::protobuf::Arena* arena) const {
 
 void ListSetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListSetResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool ListSetResponse::MergePartialFromCodedStream(
@@ -10384,14 +10648,11 @@ bool ListSetResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -10423,10 +10684,10 @@ failure:
 void ListSetResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListSetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.ListSetResponse)
@@ -10435,10 +10696,11 @@ void ListSetResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListSetResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListSetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListSetResponse)
@@ -10449,10 +10711,11 @@ int ListSetResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListSetResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -10479,8 +10742,8 @@ void ListSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListSetResponse::MergeFrom(const ListSetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListSetResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -10508,7 +10771,7 @@ void ListSetResponse::Swap(ListSetResponse* other) {
   InternalSwap(other);
 }
 void ListSetResponse::InternalSwap(ListSetResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -10524,18 +10787,42 @@ void ListSetResponse::InternalSwap(ListSetResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListSetResponse
 
-// optional .uranium.common.Status status = 1;
-void ListSetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListSetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListSetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListSetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListSetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListSetResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListSetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListSetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListSetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListSetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListSetResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListSetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListSetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListSetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListSetResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -11011,7 +11298,7 @@ void ListRangeRequest::clear_end() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListRangeResponse::kStatusFieldNumber;
+const int ListRangeResponse::kResultFieldNumber;
 const int ListRangeResponse::kValuesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -11023,6 +11310,7 @@ ListRangeResponse::ListRangeResponse()
 
 void ListRangeResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListRangeResponse::ListRangeResponse(const ListRangeResponse& from)
@@ -11036,7 +11324,7 @@ ListRangeResponse::ListRangeResponse(const ListRangeResponse& from)
 void ListRangeResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListRangeResponse::~ListRangeResponse() {
@@ -11046,6 +11334,7 @@ ListRangeResponse::~ListRangeResponse() {
 
 void ListRangeResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -11076,7 +11365,8 @@ ListRangeResponse* ListRangeResponse::New(::google::protobuf::Arena* arena) cons
 
 void ListRangeResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListRangeResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   values_.Clear();
 }
 
@@ -11090,14 +11380,11 @@ bool ListRangeResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -11146,10 +11433,10 @@ failure:
 void ListRangeResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListRangeResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -11164,10 +11451,11 @@ void ListRangeResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListRangeResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRangeResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -11185,10 +11473,11 @@ int ListRangeResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListRangeResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -11224,8 +11513,8 @@ void ListRangeResponse::MergeFrom(const ListRangeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRangeResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   values_.MergeFrom(from.values_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -11253,7 +11542,7 @@ void ListRangeResponse::Swap(ListRangeResponse* other) {
   InternalSwap(other);
 }
 void ListRangeResponse::InternalSwap(ListRangeResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   values_.UnsafeArenaSwap(&other->values_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -11270,18 +11559,42 @@ void ListRangeResponse::InternalSwap(ListRangeResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListRangeResponse
 
-// optional .uranium.common.Status status = 1;
-void ListRangeResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListRangeResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListRangeResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRangeResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListRangeResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListRangeResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListRangeResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRangeResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListRangeResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRangeResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRangeResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListRangeResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRangeResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListRangeResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRangeResponse.result)
 }
 
 // repeated .uranium.api.Value values = 2;
@@ -11662,7 +11975,7 @@ void ListLengthRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListLengthResponse::kStatusFieldNumber;
+const int ListLengthResponse::kResultFieldNumber;
 const int ListLengthResponse::kLengthFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -11674,6 +11987,7 @@ ListLengthResponse::ListLengthResponse()
 
 void ListLengthResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListLengthResponse::ListLengthResponse(const ListLengthResponse& from)
@@ -11687,7 +12001,7 @@ ListLengthResponse::ListLengthResponse(const ListLengthResponse& from)
 void ListLengthResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   length_ = GOOGLE_LONGLONG(0);
 }
 
@@ -11698,6 +12012,7 @@ ListLengthResponse::~ListLengthResponse() {
 
 void ListLengthResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -11728,27 +12043,9 @@ ListLengthResponse* ListLengthResponse::New(::google::protobuf::Arena* arena) co
 
 void ListLengthResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListLengthResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(ListLengthResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<ListLengthResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(length_, status_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
+  length_ = GOOGLE_LONGLONG(0);
 }
 
 bool ListLengthResponse::MergePartialFromCodedStream(
@@ -11761,14 +12058,11 @@ bool ListLengthResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -11815,10 +12109,10 @@ failure:
 void ListLengthResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListLengthResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional int64 length = 2;
@@ -11832,10 +12126,11 @@ void ListLengthResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListLengthResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLengthResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional int64 length = 2;
@@ -11851,10 +12146,11 @@ int ListLengthResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListLengthResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional int64 length = 2;
@@ -11888,8 +12184,8 @@ void ListLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListLengthResponse::MergeFrom(const ListLengthResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLengthResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.length() != 0) {
     set_length(from.length());
@@ -11920,7 +12216,7 @@ void ListLengthResponse::Swap(ListLengthResponse* other) {
   InternalSwap(other);
 }
 void ListLengthResponse::InternalSwap(ListLengthResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(length_, other->length_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -11937,18 +12233,42 @@ void ListLengthResponse::InternalSwap(ListLengthResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListLengthResponse
 
-// optional .uranium.common.Status status = 1;
-void ListLengthResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListLengthResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListLengthResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLengthResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListLengthResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListLengthResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListLengthResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLengthResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListLengthResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLengthResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLengthResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListLengthResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLengthResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListLengthResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLengthResponse.result)
 }
 
 // optional int64 length = 2;
@@ -12313,7 +12633,7 @@ void ListRemoveAllRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListRemoveAllResponse::kStatusFieldNumber;
+const int ListRemoveAllResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListRemoveAllResponse::ListRemoveAllResponse()
@@ -12324,6 +12644,7 @@ ListRemoveAllResponse::ListRemoveAllResponse()
 
 void ListRemoveAllResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 ListRemoveAllResponse::ListRemoveAllResponse(const ListRemoveAllResponse& from)
@@ -12337,7 +12658,7 @@ ListRemoveAllResponse::ListRemoveAllResponse(const ListRemoveAllResponse& from)
 void ListRemoveAllResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 ListRemoveAllResponse::~ListRemoveAllResponse() {
@@ -12347,6 +12668,7 @@ ListRemoveAllResponse::~ListRemoveAllResponse() {
 
 void ListRemoveAllResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -12377,7 +12699,8 @@ ListRemoveAllResponse* ListRemoveAllResponse::New(::google::protobuf::Arena* are
 
 void ListRemoveAllResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.ListRemoveAllResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool ListRemoveAllResponse::MergePartialFromCodedStream(
@@ -12390,14 +12713,11 @@ bool ListRemoveAllResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -12429,10 +12749,10 @@ failure:
 void ListRemoveAllResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.ListRemoveAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRemoveAllResponse)
@@ -12441,10 +12761,11 @@ void ListRemoveAllResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* ListRemoveAllResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRemoveAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRemoveAllResponse)
@@ -12455,10 +12776,11 @@ int ListRemoveAllResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.ListRemoveAllResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -12485,8 +12807,8 @@ void ListRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void ListRemoveAllResponse::MergeFrom(const ListRemoveAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRemoveAllResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -12514,7 +12836,7 @@ void ListRemoveAllResponse::Swap(ListRemoveAllResponse* other) {
   InternalSwap(other);
 }
 void ListRemoveAllResponse::InternalSwap(ListRemoveAllResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -12530,18 +12852,42 @@ void ListRemoveAllResponse::InternalSwap(ListRemoveAllResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // ListRemoveAllResponse
 
-// optional .uranium.common.Status status = 1;
-void ListRemoveAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool ListRemoveAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status ListRemoveAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRemoveAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void ListRemoveAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void ListRemoveAllResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& ListRemoveAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRemoveAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* ListRemoveAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRemoveAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRemoveAllResponse.result)
+  return result_;
+}
+::uranium::common::Result* ListRemoveAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRemoveAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void ListRemoveAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRemoveAllResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -12964,7 +13310,7 @@ HashGetRequest::fields() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashGetResponse::kStatusFieldNumber;
+const int HashGetResponse::kResultFieldNumber;
 const int HashGetResponse::kFvsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -12976,6 +13322,7 @@ HashGetResponse::HashGetResponse()
 
 void HashGetResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashGetResponse::HashGetResponse(const HashGetResponse& from)
@@ -12989,7 +13336,7 @@ HashGetResponse::HashGetResponse(const HashGetResponse& from)
 void HashGetResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashGetResponse::~HashGetResponse() {
@@ -12999,6 +13346,7 @@ HashGetResponse::~HashGetResponse() {
 
 void HashGetResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -13029,7 +13377,8 @@ HashGetResponse* HashGetResponse::New(::google::protobuf::Arena* arena) const {
 
 void HashGetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashGetResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   fvs_.Clear();
 }
 
@@ -13043,14 +13392,11 @@ bool HashGetResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -13099,10 +13445,10 @@ failure:
 void HashGetResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashGetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
@@ -13117,10 +13463,11 @@ void HashGetResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashGetResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
@@ -13138,10 +13485,11 @@ int HashGetResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashGetResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
@@ -13177,8 +13525,8 @@ void HashGetResponse::MergeFrom(const HashGetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   fvs_.MergeFrom(from.fvs_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -13206,7 +13554,7 @@ void HashGetResponse::Swap(HashGetResponse* other) {
   InternalSwap(other);
 }
 void HashGetResponse::InternalSwap(HashGetResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   fvs_.UnsafeArenaSwap(&other->fvs_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -13223,18 +13571,42 @@ void HashGetResponse::InternalSwap(HashGetResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashGetResponse
 
-// optional .uranium.common.Status status = 1;
-void HashGetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashGetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashGetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashGetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashGetResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashGetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashGetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashGetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashGetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetResponse.result)
 }
 
 // repeated .uranium.api.FieldValue fvs = 2;
@@ -13615,7 +13987,7 @@ void HashGetAllRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashGetAllResponse::kStatusFieldNumber;
+const int HashGetAllResponse::kResultFieldNumber;
 const int HashGetAllResponse::kFvsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -13627,6 +13999,7 @@ HashGetAllResponse::HashGetAllResponse()
 
 void HashGetAllResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashGetAllResponse::HashGetAllResponse(const HashGetAllResponse& from)
@@ -13640,7 +14013,7 @@ HashGetAllResponse::HashGetAllResponse(const HashGetAllResponse& from)
 void HashGetAllResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashGetAllResponse::~HashGetAllResponse() {
@@ -13650,6 +14023,7 @@ HashGetAllResponse::~HashGetAllResponse() {
 
 void HashGetAllResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -13680,7 +14054,8 @@ HashGetAllResponse* HashGetAllResponse::New(::google::protobuf::Arena* arena) co
 
 void HashGetAllResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashGetAllResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   fvs_.Clear();
 }
 
@@ -13694,14 +14069,11 @@ bool HashGetAllResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -13750,10 +14122,10 @@ failure:
 void HashGetAllResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashGetAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
@@ -13768,10 +14140,11 @@ void HashGetAllResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashGetAllResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
@@ -13789,10 +14162,11 @@ int HashGetAllResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashGetAllResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
@@ -13828,8 +14202,8 @@ void HashGetAllResponse::MergeFrom(const HashGetAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   fvs_.MergeFrom(from.fvs_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -13857,7 +14231,7 @@ void HashGetAllResponse::Swap(HashGetAllResponse* other) {
   InternalSwap(other);
 }
 void HashGetAllResponse::InternalSwap(HashGetAllResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   fvs_.UnsafeArenaSwap(&other->fvs_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -13874,18 +14248,42 @@ void HashGetAllResponse::InternalSwap(HashGetAllResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashGetAllResponse
 
-// optional .uranium.common.Status status = 1;
-void HashGetAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashGetAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashGetAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashGetAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashGetAllResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashGetAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashGetAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetAllResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashGetAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashGetAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetAllResponse.result)
 }
 
 // repeated .uranium.api.FieldValue fvs = 2;
@@ -14266,7 +14664,7 @@ void HashGetAllFieldsRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashGetAllFieldsResponse::kStatusFieldNumber;
+const int HashGetAllFieldsResponse::kResultFieldNumber;
 const int HashGetAllFieldsResponse::kFieldsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -14278,6 +14676,7 @@ HashGetAllFieldsResponse::HashGetAllFieldsResponse()
 
 void HashGetAllFieldsResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashGetAllFieldsResponse::HashGetAllFieldsResponse(const HashGetAllFieldsResponse& from)
@@ -14291,7 +14690,7 @@ HashGetAllFieldsResponse::HashGetAllFieldsResponse(const HashGetAllFieldsRespons
 void HashGetAllFieldsResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashGetAllFieldsResponse::~HashGetAllFieldsResponse() {
@@ -14301,6 +14700,7 @@ HashGetAllFieldsResponse::~HashGetAllFieldsResponse() {
 
 void HashGetAllFieldsResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -14331,7 +14731,8 @@ HashGetAllFieldsResponse* HashGetAllFieldsResponse::New(::google::protobuf::Aren
 
 void HashGetAllFieldsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashGetAllFieldsResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   fields_.Clear();
 }
 
@@ -14345,14 +14746,11 @@ bool HashGetAllFieldsResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -14401,10 +14799,10 @@ failure:
 void HashGetAllFieldsResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashGetAllFieldsResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.Field fields = 2;
@@ -14419,10 +14817,11 @@ void HashGetAllFieldsResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashGetAllFieldsResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllFieldsResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.Field fields = 2;
@@ -14440,10 +14839,11 @@ int HashGetAllFieldsResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashGetAllFieldsResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.Field fields = 2;
@@ -14479,8 +14879,8 @@ void HashGetAllFieldsResponse::MergeFrom(const HashGetAllFieldsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllFieldsResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   fields_.MergeFrom(from.fields_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -14508,7 +14908,7 @@ void HashGetAllFieldsResponse::Swap(HashGetAllFieldsResponse* other) {
   InternalSwap(other);
 }
 void HashGetAllFieldsResponse::InternalSwap(HashGetAllFieldsResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   fields_.UnsafeArenaSwap(&other->fields_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -14525,18 +14925,42 @@ void HashGetAllFieldsResponse::InternalSwap(HashGetAllFieldsResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashGetAllFieldsResponse
 
-// optional .uranium.common.Status status = 1;
-void HashGetAllFieldsResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashGetAllFieldsResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashGetAllFieldsResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllFieldsResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashGetAllFieldsResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashGetAllFieldsResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashGetAllFieldsResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllFieldsResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashGetAllFieldsResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetAllFieldsResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetAllFieldsResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashGetAllFieldsResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetAllFieldsResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashGetAllFieldsResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetAllFieldsResponse.result)
 }
 
 // repeated .uranium.api.Field fields = 2;
@@ -14917,7 +15341,7 @@ void HashGetAllValuesRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashGetAllValuesResponse::kStatusFieldNumber;
+const int HashGetAllValuesResponse::kResultFieldNumber;
 const int HashGetAllValuesResponse::kValuesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -14929,6 +15353,7 @@ HashGetAllValuesResponse::HashGetAllValuesResponse()
 
 void HashGetAllValuesResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashGetAllValuesResponse::HashGetAllValuesResponse(const HashGetAllValuesResponse& from)
@@ -14942,7 +15367,7 @@ HashGetAllValuesResponse::HashGetAllValuesResponse(const HashGetAllValuesRespons
 void HashGetAllValuesResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashGetAllValuesResponse::~HashGetAllValuesResponse() {
@@ -14952,6 +15377,7 @@ HashGetAllValuesResponse::~HashGetAllValuesResponse() {
 
 void HashGetAllValuesResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -14982,7 +15408,8 @@ HashGetAllValuesResponse* HashGetAllValuesResponse::New(::google::protobuf::Aren
 
 void HashGetAllValuesResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashGetAllValuesResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   values_.Clear();
 }
 
@@ -14996,14 +15423,11 @@ bool HashGetAllValuesResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -15052,10 +15476,10 @@ failure:
 void HashGetAllValuesResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashGetAllValuesResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -15070,10 +15494,11 @@ void HashGetAllValuesResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashGetAllValuesResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllValuesResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -15091,10 +15516,11 @@ int HashGetAllValuesResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashGetAllValuesResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -15130,8 +15556,8 @@ void HashGetAllValuesResponse::MergeFrom(const HashGetAllValuesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllValuesResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   values_.MergeFrom(from.values_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -15159,7 +15585,7 @@ void HashGetAllValuesResponse::Swap(HashGetAllValuesResponse* other) {
   InternalSwap(other);
 }
 void HashGetAllValuesResponse::InternalSwap(HashGetAllValuesResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   values_.UnsafeArenaSwap(&other->values_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -15176,18 +15602,42 @@ void HashGetAllValuesResponse::InternalSwap(HashGetAllValuesResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashGetAllValuesResponse
 
-// optional .uranium.common.Status status = 1;
-void HashGetAllValuesResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashGetAllValuesResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashGetAllValuesResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllValuesResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashGetAllValuesResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashGetAllValuesResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashGetAllValuesResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllValuesResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashGetAllValuesResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetAllValuesResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetAllValuesResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashGetAllValuesResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetAllValuesResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashGetAllValuesResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetAllValuesResponse.result)
 }
 
 // repeated .uranium.api.Value values = 2;
@@ -15568,7 +16018,7 @@ void HashLengthRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashLengthResponse::kStatusFieldNumber;
+const int HashLengthResponse::kResultFieldNumber;
 const int HashLengthResponse::kLengthFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -15580,6 +16030,7 @@ HashLengthResponse::HashLengthResponse()
 
 void HashLengthResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashLengthResponse::HashLengthResponse(const HashLengthResponse& from)
@@ -15593,7 +16044,7 @@ HashLengthResponse::HashLengthResponse(const HashLengthResponse& from)
 void HashLengthResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   length_ = GOOGLE_LONGLONG(0);
 }
 
@@ -15604,6 +16055,7 @@ HashLengthResponse::~HashLengthResponse() {
 
 void HashLengthResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -15634,27 +16086,9 @@ HashLengthResponse* HashLengthResponse::New(::google::protobuf::Arena* arena) co
 
 void HashLengthResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashLengthResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(HashLengthResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<HashLengthResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(length_, status_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
+  length_ = GOOGLE_LONGLONG(0);
 }
 
 bool HashLengthResponse::MergePartialFromCodedStream(
@@ -15667,14 +16101,11 @@ bool HashLengthResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -15721,10 +16152,10 @@ failure:
 void HashLengthResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashLengthResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional int64 length = 2;
@@ -15738,10 +16169,11 @@ void HashLengthResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashLengthResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashLengthResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional int64 length = 2;
@@ -15757,10 +16189,11 @@ int HashLengthResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashLengthResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional int64 length = 2;
@@ -15794,8 +16227,8 @@ void HashLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void HashLengthResponse::MergeFrom(const HashLengthResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashLengthResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.length() != 0) {
     set_length(from.length());
@@ -15826,7 +16259,7 @@ void HashLengthResponse::Swap(HashLengthResponse* other) {
   InternalSwap(other);
 }
 void HashLengthResponse::InternalSwap(HashLengthResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(length_, other->length_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -15843,18 +16276,42 @@ void HashLengthResponse::InternalSwap(HashLengthResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashLengthResponse
 
-// optional .uranium.common.Status status = 1;
-void HashLengthResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashLengthResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashLengthResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashLengthResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashLengthResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashLengthResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashLengthResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashLengthResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashLengthResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashLengthResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashLengthResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashLengthResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashLengthResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashLengthResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashLengthResponse.result)
 }
 
 // optional int64 length = 2;
@@ -16291,7 +16748,7 @@ HashSetRequest::fvs() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashSetResponse::kStatusFieldNumber;
+const int HashSetResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HashSetResponse::HashSetResponse()
@@ -16302,6 +16759,7 @@ HashSetResponse::HashSetResponse()
 
 void HashSetResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashSetResponse::HashSetResponse(const HashSetResponse& from)
@@ -16315,7 +16773,7 @@ HashSetResponse::HashSetResponse(const HashSetResponse& from)
 void HashSetResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashSetResponse::~HashSetResponse() {
@@ -16325,6 +16783,7 @@ HashSetResponse::~HashSetResponse() {
 
 void HashSetResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -16355,7 +16814,8 @@ HashSetResponse* HashSetResponse::New(::google::protobuf::Arena* arena) const {
 
 void HashSetResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashSetResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool HashSetResponse::MergePartialFromCodedStream(
@@ -16368,14 +16828,11 @@ bool HashSetResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -16407,10 +16864,10 @@ failure:
 void HashSetResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashSetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.HashSetResponse)
@@ -16419,10 +16876,11 @@ void HashSetResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashSetResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashSetResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashSetResponse)
@@ -16433,10 +16891,11 @@ int HashSetResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashSetResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -16463,8 +16922,8 @@ void HashSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void HashSetResponse::MergeFrom(const HashSetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashSetResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -16492,7 +16951,7 @@ void HashSetResponse::Swap(HashSetResponse* other) {
   InternalSwap(other);
 }
 void HashSetResponse::InternalSwap(HashSetResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -16508,18 +16967,42 @@ void HashSetResponse::InternalSwap(HashSetResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashSetResponse
 
-// optional .uranium.common.Status status = 1;
-void HashSetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashSetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashSetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashSetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashSetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashSetResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashSetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashSetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashSetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashSetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashSetResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashSetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashSetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashSetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashSetResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -16951,7 +17434,7 @@ void HashSetXRequest::set_allocated_fv(::uranium::api::FieldValue* fv) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashSetXResponse::kStatusFieldNumber;
+const int HashSetXResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HashSetXResponse::HashSetXResponse()
@@ -16962,6 +17445,7 @@ HashSetXResponse::HashSetXResponse()
 
 void HashSetXResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashSetXResponse::HashSetXResponse(const HashSetXResponse& from)
@@ -16975,7 +17459,7 @@ HashSetXResponse::HashSetXResponse(const HashSetXResponse& from)
 void HashSetXResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashSetXResponse::~HashSetXResponse() {
@@ -16985,6 +17469,7 @@ HashSetXResponse::~HashSetXResponse() {
 
 void HashSetXResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -17015,7 +17500,8 @@ HashSetXResponse* HashSetXResponse::New(::google::protobuf::Arena* arena) const 
 
 void HashSetXResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashSetXResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool HashSetXResponse::MergePartialFromCodedStream(
@@ -17028,14 +17514,11 @@ bool HashSetXResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -17067,10 +17550,10 @@ failure:
 void HashSetXResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashSetXResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.HashSetXResponse)
@@ -17079,10 +17562,11 @@ void HashSetXResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashSetXResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashSetXResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashSetXResponse)
@@ -17093,10 +17577,11 @@ int HashSetXResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashSetXResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -17123,8 +17608,8 @@ void HashSetXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void HashSetXResponse::MergeFrom(const HashSetXResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashSetXResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -17152,7 +17637,7 @@ void HashSetXResponse::Swap(HashSetXResponse* other) {
   InternalSwap(other);
 }
 void HashSetXResponse::InternalSwap(HashSetXResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -17168,18 +17653,42 @@ void HashSetXResponse::InternalSwap(HashSetXResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashSetXResponse
 
-// optional .uranium.common.Status status = 1;
-void HashSetXResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashSetXResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashSetXResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashSetXResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashSetXResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashSetXResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashSetXResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashSetXResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashSetXResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashSetXResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashSetXResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashSetXResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashSetXResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashSetXResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashSetXResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -17602,7 +18111,7 @@ HashRemoveRequest::fields() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashRemoveResponse::kStatusFieldNumber;
+const int HashRemoveResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HashRemoveResponse::HashRemoveResponse()
@@ -17613,6 +18122,7 @@ HashRemoveResponse::HashRemoveResponse()
 
 void HashRemoveResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashRemoveResponse::HashRemoveResponse(const HashRemoveResponse& from)
@@ -17626,7 +18136,7 @@ HashRemoveResponse::HashRemoveResponse(const HashRemoveResponse& from)
 void HashRemoveResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashRemoveResponse::~HashRemoveResponse() {
@@ -17636,6 +18146,7 @@ HashRemoveResponse::~HashRemoveResponse() {
 
 void HashRemoveResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -17666,7 +18177,8 @@ HashRemoveResponse* HashRemoveResponse::New(::google::protobuf::Arena* arena) co
 
 void HashRemoveResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashRemoveResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool HashRemoveResponse::MergePartialFromCodedStream(
@@ -17679,14 +18191,11 @@ bool HashRemoveResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -17718,10 +18227,10 @@ failure:
 void HashRemoveResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashRemoveResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.HashRemoveResponse)
@@ -17730,10 +18239,11 @@ void HashRemoveResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashRemoveResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashRemoveResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashRemoveResponse)
@@ -17744,10 +18254,11 @@ int HashRemoveResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashRemoveResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -17774,8 +18285,8 @@ void HashRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void HashRemoveResponse::MergeFrom(const HashRemoveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashRemoveResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -17803,7 +18314,7 @@ void HashRemoveResponse::Swap(HashRemoveResponse* other) {
   InternalSwap(other);
 }
 void HashRemoveResponse::InternalSwap(HashRemoveResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -17819,18 +18330,42 @@ void HashRemoveResponse::InternalSwap(HashRemoveResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashRemoveResponse
 
-// optional .uranium.common.Status status = 1;
-void HashRemoveResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashRemoveResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashRemoveResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashRemoveResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashRemoveResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashRemoveResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashRemoveResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashRemoveResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashRemoveResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashRemoveResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashRemoveResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashRemoveResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashRemoveResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -18262,7 +18797,7 @@ void HashExistsRequest::set_allocated_field(::uranium::api::Field* field) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashExistsResponse::kStatusFieldNumber;
+const int HashExistsResponse::kResultFieldNumber;
 const int HashExistsResponse::kExistsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -18274,6 +18809,7 @@ HashExistsResponse::HashExistsResponse()
 
 void HashExistsResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashExistsResponse::HashExistsResponse(const HashExistsResponse& from)
@@ -18287,7 +18823,7 @@ HashExistsResponse::HashExistsResponse(const HashExistsResponse& from)
 void HashExistsResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   exists_ = false;
 }
 
@@ -18298,6 +18834,7 @@ HashExistsResponse::~HashExistsResponse() {
 
 void HashExistsResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -18328,27 +18865,9 @@ HashExistsResponse* HashExistsResponse::New(::google::protobuf::Arena* arena) co
 
 void HashExistsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashExistsResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(HashExistsResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<HashExistsResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(status_, exists_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
+  exists_ = false;
 }
 
 bool HashExistsResponse::MergePartialFromCodedStream(
@@ -18361,14 +18880,11 @@ bool HashExistsResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -18415,10 +18931,10 @@ failure:
 void HashExistsResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashExistsResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional bool exists = 2;
@@ -18432,10 +18948,11 @@ void HashExistsResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashExistsResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashExistsResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional bool exists = 2;
@@ -18451,10 +18968,11 @@ int HashExistsResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashExistsResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional bool exists = 2;
@@ -18486,8 +19004,8 @@ void HashExistsResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void HashExistsResponse::MergeFrom(const HashExistsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashExistsResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.exists() != 0) {
     set_exists(from.exists());
@@ -18518,7 +19036,7 @@ void HashExistsResponse::Swap(HashExistsResponse* other) {
   InternalSwap(other);
 }
 void HashExistsResponse::InternalSwap(HashExistsResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(exists_, other->exists_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -18535,18 +19053,42 @@ void HashExistsResponse::InternalSwap(HashExistsResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashExistsResponse
 
-// optional .uranium.common.Status status = 1;
-void HashExistsResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashExistsResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashExistsResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashExistsResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashExistsResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashExistsResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashExistsResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashExistsResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashExistsResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashExistsResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashExistsResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashExistsResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashExistsResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashExistsResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashExistsResponse.result)
 }
 
 // optional bool exists = 2;
@@ -18911,7 +19453,7 @@ void HashRemoveAllRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HashRemoveAllResponse::kStatusFieldNumber;
+const int HashRemoveAllResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HashRemoveAllResponse::HashRemoveAllResponse()
@@ -18922,6 +19464,7 @@ HashRemoveAllResponse::HashRemoveAllResponse()
 
 void HashRemoveAllResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 HashRemoveAllResponse::HashRemoveAllResponse(const HashRemoveAllResponse& from)
@@ -18935,7 +19478,7 @@ HashRemoveAllResponse::HashRemoveAllResponse(const HashRemoveAllResponse& from)
 void HashRemoveAllResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 HashRemoveAllResponse::~HashRemoveAllResponse() {
@@ -18945,6 +19488,7 @@ HashRemoveAllResponse::~HashRemoveAllResponse() {
 
 void HashRemoveAllResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -18975,7 +19519,8 @@ HashRemoveAllResponse* HashRemoveAllResponse::New(::google::protobuf::Arena* are
 
 void HashRemoveAllResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.HashRemoveAllResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool HashRemoveAllResponse::MergePartialFromCodedStream(
@@ -18988,14 +19533,11 @@ bool HashRemoveAllResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -19027,10 +19569,10 @@ failure:
 void HashRemoveAllResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.HashRemoveAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.HashRemoveAllResponse)
@@ -19039,10 +19581,11 @@ void HashRemoveAllResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* HashRemoveAllResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashRemoveAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashRemoveAllResponse)
@@ -19053,10 +19596,11 @@ int HashRemoveAllResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.HashRemoveAllResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -19083,8 +19627,8 @@ void HashRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void HashRemoveAllResponse::MergeFrom(const HashRemoveAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashRemoveAllResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -19112,7 +19656,7 @@ void HashRemoveAllResponse::Swap(HashRemoveAllResponse* other) {
   InternalSwap(other);
 }
 void HashRemoveAllResponse::InternalSwap(HashRemoveAllResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -19128,18 +19672,42 @@ void HashRemoveAllResponse::InternalSwap(HashRemoveAllResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // HashRemoveAllResponse
 
-// optional .uranium.common.Status status = 1;
-void HashRemoveAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool HashRemoveAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status HashRemoveAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void HashRemoveAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void HashRemoveAllResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& HashRemoveAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* HashRemoveAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashRemoveAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashRemoveAllResponse.result)
+  return result_;
+}
+::uranium::common::Result* HashRemoveAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashRemoveAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void HashRemoveAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashRemoveAllResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -19562,7 +20130,7 @@ SetAddRequest::values() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetAddResponse::kStatusFieldNumber;
+const int SetAddResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SetAddResponse::SetAddResponse()
@@ -19573,6 +20141,7 @@ SetAddResponse::SetAddResponse()
 
 void SetAddResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 SetAddResponse::SetAddResponse(const SetAddResponse& from)
@@ -19586,7 +20155,7 @@ SetAddResponse::SetAddResponse(const SetAddResponse& from)
 void SetAddResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 SetAddResponse::~SetAddResponse() {
@@ -19596,6 +20165,7 @@ SetAddResponse::~SetAddResponse() {
 
 void SetAddResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -19626,7 +20196,8 @@ SetAddResponse* SetAddResponse::New(::google::protobuf::Arena* arena) const {
 
 void SetAddResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetAddResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool SetAddResponse::MergePartialFromCodedStream(
@@ -19639,14 +20210,11 @@ bool SetAddResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -19678,10 +20246,10 @@ failure:
 void SetAddResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetAddResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.SetAddResponse)
@@ -19690,10 +20258,11 @@ void SetAddResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SetAddResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetAddResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetAddResponse)
@@ -19704,10 +20273,11 @@ int SetAddResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetAddResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -19734,8 +20304,8 @@ void SetAddResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void SetAddResponse::MergeFrom(const SetAddResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetAddResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -19763,7 +20333,7 @@ void SetAddResponse::Swap(SetAddResponse* other) {
   InternalSwap(other);
 }
 void SetAddResponse::InternalSwap(SetAddResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -19779,18 +20349,42 @@ void SetAddResponse::InternalSwap(SetAddResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetAddResponse
 
-// optional .uranium.common.Status status = 1;
-void SetAddResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool SetAddResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status SetAddResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetAddResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetAddResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void SetAddResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& SetAddResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetAddResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* SetAddResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetAddResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetAddResponse.result)
+  return result_;
+}
+::uranium::common::Result* SetAddResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetAddResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void SetAddResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetAddResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -20141,7 +20735,7 @@ void SetLengthRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetLengthResponse::kStatusFieldNumber;
+const int SetLengthResponse::kResultFieldNumber;
 const int SetLengthResponse::kLengthFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -20153,6 +20747,7 @@ SetLengthResponse::SetLengthResponse()
 
 void SetLengthResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 SetLengthResponse::SetLengthResponse(const SetLengthResponse& from)
@@ -20166,7 +20761,7 @@ SetLengthResponse::SetLengthResponse(const SetLengthResponse& from)
 void SetLengthResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   length_ = GOOGLE_LONGLONG(0);
 }
 
@@ -20177,6 +20772,7 @@ SetLengthResponse::~SetLengthResponse() {
 
 void SetLengthResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -20207,27 +20803,9 @@ SetLengthResponse* SetLengthResponse::New(::google::protobuf::Arena* arena) cons
 
 void SetLengthResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetLengthResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(SetLengthResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<SetLengthResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(length_, status_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
+  length_ = GOOGLE_LONGLONG(0);
 }
 
 bool SetLengthResponse::MergePartialFromCodedStream(
@@ -20240,14 +20818,11 @@ bool SetLengthResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -20294,10 +20869,10 @@ failure:
 void SetLengthResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetLengthResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional int64 length = 2;
@@ -20311,10 +20886,11 @@ void SetLengthResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SetLengthResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetLengthResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional int64 length = 2;
@@ -20330,10 +20906,11 @@ int SetLengthResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetLengthResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional int64 length = 2;
@@ -20367,8 +20944,8 @@ void SetLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void SetLengthResponse::MergeFrom(const SetLengthResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetLengthResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.length() != 0) {
     set_length(from.length());
@@ -20399,7 +20976,7 @@ void SetLengthResponse::Swap(SetLengthResponse* other) {
   InternalSwap(other);
 }
 void SetLengthResponse::InternalSwap(SetLengthResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(length_, other->length_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -20416,18 +20993,42 @@ void SetLengthResponse::InternalSwap(SetLengthResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetLengthResponse
 
-// optional .uranium.common.Status status = 1;
-void SetLengthResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool SetLengthResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status SetLengthResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetLengthResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetLengthResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void SetLengthResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& SetLengthResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetLengthResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* SetLengthResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetLengthResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetLengthResponse.result)
+  return result_;
+}
+::uranium::common::Result* SetLengthResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetLengthResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void SetLengthResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetLengthResponse.result)
 }
 
 // optional int64 length = 2;
@@ -20847,7 +21448,7 @@ void SetIsMemberRequest::set_allocated_value(::uranium::api::Value* value) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetIsMemberResponse::kStatusFieldNumber;
+const int SetIsMemberResponse::kResultFieldNumber;
 const int SetIsMemberResponse::kYesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -20859,6 +21460,7 @@ SetIsMemberResponse::SetIsMemberResponse()
 
 void SetIsMemberResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 SetIsMemberResponse::SetIsMemberResponse(const SetIsMemberResponse& from)
@@ -20872,7 +21474,7 @@ SetIsMemberResponse::SetIsMemberResponse(const SetIsMemberResponse& from)
 void SetIsMemberResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
   yes_ = false;
 }
 
@@ -20883,6 +21485,7 @@ SetIsMemberResponse::~SetIsMemberResponse() {
 
 void SetIsMemberResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -20913,27 +21516,9 @@ SetIsMemberResponse* SetIsMemberResponse::New(::google::protobuf::Arena* arena) 
 
 void SetIsMemberResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetIsMemberResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(SetIsMemberResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<SetIsMemberResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(status_, yes_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
+  yes_ = false;
 }
 
 bool SetIsMemberResponse::MergePartialFromCodedStream(
@@ -20946,14 +21531,11 @@ bool SetIsMemberResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -21000,10 +21582,10 @@ failure:
 void SetIsMemberResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetIsMemberResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // optional bool yes = 2;
@@ -21017,10 +21599,11 @@ void SetIsMemberResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SetIsMemberResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetIsMemberResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // optional bool yes = 2;
@@ -21036,10 +21619,11 @@ int SetIsMemberResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetIsMemberResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // optional bool yes = 2;
@@ -21071,8 +21655,8 @@ void SetIsMemberResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void SetIsMemberResponse::MergeFrom(const SetIsMemberResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetIsMemberResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
   if (from.yes() != 0) {
     set_yes(from.yes());
@@ -21103,7 +21687,7 @@ void SetIsMemberResponse::Swap(SetIsMemberResponse* other) {
   InternalSwap(other);
 }
 void SetIsMemberResponse::InternalSwap(SetIsMemberResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   std::swap(yes_, other->yes_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -21120,18 +21704,42 @@ void SetIsMemberResponse::InternalSwap(SetIsMemberResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetIsMemberResponse
 
-// optional .uranium.common.Status status = 1;
-void SetIsMemberResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool SetIsMemberResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status SetIsMemberResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetIsMemberResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetIsMemberResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void SetIsMemberResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& SetIsMemberResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetIsMemberResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* SetIsMemberResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetIsMemberResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetIsMemberResponse.result)
+  return result_;
+}
+::uranium::common::Result* SetIsMemberResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetIsMemberResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void SetIsMemberResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetIsMemberResponse.result)
 }
 
 // optional bool yes = 2;
@@ -21496,7 +22104,7 @@ void SetGetAllRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetGetAllResponse::kStatusFieldNumber;
+const int SetGetAllResponse::kResultFieldNumber;
 const int SetGetAllResponse::kValuesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -21508,6 +22116,7 @@ SetGetAllResponse::SetGetAllResponse()
 
 void SetGetAllResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 SetGetAllResponse::SetGetAllResponse(const SetGetAllResponse& from)
@@ -21521,7 +22130,7 @@ SetGetAllResponse::SetGetAllResponse(const SetGetAllResponse& from)
 void SetGetAllResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 SetGetAllResponse::~SetGetAllResponse() {
@@ -21531,6 +22140,7 @@ SetGetAllResponse::~SetGetAllResponse() {
 
 void SetGetAllResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -21561,7 +22171,8 @@ SetGetAllResponse* SetGetAllResponse::New(::google::protobuf::Arena* arena) cons
 
 void SetGetAllResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetGetAllResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
   values_.Clear();
 }
 
@@ -21575,14 +22186,11 @@ bool SetGetAllResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -21631,10 +22239,10 @@ failure:
 void SetGetAllResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetGetAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -21649,10 +22257,11 @@ void SetGetAllResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SetGetAllResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetGetAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -21670,10 +22279,11 @@ int SetGetAllResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetGetAllResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   // repeated .uranium.api.Value values = 2;
@@ -21709,8 +22319,8 @@ void SetGetAllResponse::MergeFrom(const SetGetAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetGetAllResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   values_.MergeFrom(from.values_);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -21738,7 +22348,7 @@ void SetGetAllResponse::Swap(SetGetAllResponse* other) {
   InternalSwap(other);
 }
 void SetGetAllResponse::InternalSwap(SetGetAllResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   values_.UnsafeArenaSwap(&other->values_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -21755,18 +22365,42 @@ void SetGetAllResponse::InternalSwap(SetGetAllResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetGetAllResponse
 
-// optional .uranium.common.Status status = 1;
-void SetGetAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool SetGetAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status SetGetAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetGetAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetGetAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void SetGetAllResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& SetGetAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetGetAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* SetGetAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetGetAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetGetAllResponse.result)
+  return result_;
+}
+::uranium::common::Result* SetGetAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetGetAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void SetGetAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetGetAllResponse.result)
 }
 
 // repeated .uranium.api.Value values = 2;
@@ -22219,7 +22853,7 @@ SetRemoveRequest::values() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetRemoveResponse::kStatusFieldNumber;
+const int SetRemoveResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SetRemoveResponse::SetRemoveResponse()
@@ -22230,6 +22864,7 @@ SetRemoveResponse::SetRemoveResponse()
 
 void SetRemoveResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 SetRemoveResponse::SetRemoveResponse(const SetRemoveResponse& from)
@@ -22243,7 +22878,7 @@ SetRemoveResponse::SetRemoveResponse(const SetRemoveResponse& from)
 void SetRemoveResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 SetRemoveResponse::~SetRemoveResponse() {
@@ -22253,6 +22888,7 @@ SetRemoveResponse::~SetRemoveResponse() {
 
 void SetRemoveResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -22283,7 +22919,8 @@ SetRemoveResponse* SetRemoveResponse::New(::google::protobuf::Arena* arena) cons
 
 void SetRemoveResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetRemoveResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool SetRemoveResponse::MergePartialFromCodedStream(
@@ -22296,14 +22933,11 @@ bool SetRemoveResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -22335,10 +22969,10 @@ failure:
 void SetRemoveResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetRemoveResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.SetRemoveResponse)
@@ -22347,10 +22981,11 @@ void SetRemoveResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SetRemoveResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetRemoveResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetRemoveResponse)
@@ -22361,10 +22996,11 @@ int SetRemoveResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetRemoveResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -22391,8 +23027,8 @@ void SetRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void SetRemoveResponse::MergeFrom(const SetRemoveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetRemoveResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -22420,7 +23056,7 @@ void SetRemoveResponse::Swap(SetRemoveResponse* other) {
   InternalSwap(other);
 }
 void SetRemoveResponse::InternalSwap(SetRemoveResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -22436,18 +23072,42 @@ void SetRemoveResponse::InternalSwap(SetRemoveResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetRemoveResponse
 
-// optional .uranium.common.Status status = 1;
-void SetRemoveResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool SetRemoveResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status SetRemoveResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetRemoveResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void SetRemoveResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& SetRemoveResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* SetRemoveResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetRemoveResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetRemoveResponse.result)
+  return result_;
+}
+::uranium::common::Result* SetRemoveResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetRemoveResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void SetRemoveResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetRemoveResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -22798,7 +23458,7 @@ void SetRemoveAllRequest::set_allocated_key(::uranium::api::Key* key) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetRemoveAllResponse::kStatusFieldNumber;
+const int SetRemoveAllResponse::kResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SetRemoveAllResponse::SetRemoveAllResponse()
@@ -22809,6 +23469,7 @@ SetRemoveAllResponse::SetRemoveAllResponse()
 
 void SetRemoveAllResponse::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  result_ = const_cast< ::uranium::common::Result*>(&::uranium::common::Result::default_instance());
 }
 
 SetRemoveAllResponse::SetRemoveAllResponse(const SetRemoveAllResponse& from)
@@ -22822,7 +23483,7 @@ SetRemoveAllResponse::SetRemoveAllResponse(const SetRemoveAllResponse& from)
 void SetRemoveAllResponse::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  result_ = NULL;
 }
 
 SetRemoveAllResponse::~SetRemoveAllResponse() {
@@ -22832,6 +23493,7 @@ SetRemoveAllResponse::~SetRemoveAllResponse() {
 
 void SetRemoveAllResponse::SharedDtor() {
   if (this != default_instance_) {
+    delete result_;
   }
 }
 
@@ -22862,7 +23524,8 @@ SetRemoveAllResponse* SetRemoveAllResponse::New(::google::protobuf::Arena* arena
 
 void SetRemoveAllResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetRemoveAllResponse)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
 
 bool SetRemoveAllResponse::MergePartialFromCodedStream(
@@ -22875,14 +23538,11 @@ bool SetRemoveAllResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.Result result = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_result()));
         } else {
           goto handle_unusual;
         }
@@ -22914,10 +23574,10 @@ failure:
 void SetRemoveAllResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetRemoveAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->result_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.api.SetRemoveAllResponse)
@@ -22926,10 +23586,11 @@ void SetRemoveAllResponse::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SetRemoveAllResponse::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetRemoveAllResponse)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->result_, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetRemoveAllResponse)
@@ -22940,10 +23601,11 @@ int SetRemoveAllResponse::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetRemoveAllResponse)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.Result result = 1;
+  if (this->has_result()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->result_);
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -22970,8 +23632,8 @@ void SetRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 void SetRemoveAllResponse::MergeFrom(const SetRemoveAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetRemoveAllResponse)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (from.has_result()) {
+    mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
 }
 
@@ -22999,7 +23661,7 @@ void SetRemoveAllResponse::Swap(SetRemoveAllResponse* other) {
   InternalSwap(other);
 }
 void SetRemoveAllResponse::InternalSwap(SetRemoveAllResponse* other) {
-  std::swap(status_, other->status_);
+  std::swap(result_, other->result_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -23015,18 +23677,42 @@ void SetRemoveAllResponse::InternalSwap(SetRemoveAllResponse* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetRemoveAllResponse
 
-// optional .uranium.common.Status status = 1;
-void SetRemoveAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+bool SetRemoveAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
- ::uranium::common::Status SetRemoveAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetRemoveAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
- void SetRemoveAllResponse::set_status(::uranium::common::Status value) {
+const ::uranium::common::Result& SetRemoveAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+::uranium::common::Result* SetRemoveAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetRemoveAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetRemoveAllResponse.result)
+  return result_;
+}
+::uranium::common::Result* SetRemoveAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetRemoveAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+void SetRemoveAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetRemoveAllResponse.result)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

@@ -13,8 +13,11 @@
 #include "db/table_manager.h"
 #include "db/table_manager_impl.h"
 #include "network/cpp/uranium.grpc.pb.h"
+#include "server/uranium_kv_service_impl.h"
+#include "server/uranium_list_service_impl.h"
+#include "server/uranium_hash_service_impl.h"
+#include "server/uranium_set_service_impl.h"
 #include "server/uranium_schema_service_impl.h"
-#include "server/uranium_schemaless_service_impl.h"
 #include "server/uranium_admin_service_impl.h"
 
 DEFINE_int32(port, -1, "What port the uranium to listen on.");
@@ -48,8 +51,29 @@ int main(int argc, char* argv[]) {
     return -1;
   }
 
-  uranium::UraniumSchemalessServiceImpl schemaless_service;
-  status = schemaless_service.Init(table_manager);
+  uranium::UraniumKVServiceImpl kv_service;
+  status = kv_service.Init(table_manager);
+  if (!status.ok()) {
+    std::cout << status.ToString() << std::endl;
+    return -1;
+  }
+
+  uranium::UraniumListServiceImpl list_service;
+  status = list_service.Init(table_manager);
+  if (!status.ok()) {
+    std::cout << status.ToString() << std::endl;
+    return -1;
+  }
+
+  uranium::UraniumHashServiceImpl hash_service;
+  status = hash_service.Init(table_manager);
+  if (!status.ok()) {
+    std::cout << status.ToString() << std::endl;
+    return -1;
+  }
+
+  uranium::UraniumSetServiceImpl set_service;
+  status = set_service.Init(table_manager);
   if (!status.ok()) {
     std::cout << status.ToString() << std::endl;
     return -1;
@@ -72,7 +96,10 @@ int main(int argc, char* argv[]) {
   grpc::ServerBuilder server_builder;
   server_builder.AddListeningPort(server_address,
                                   grpc::InsecureServerCredentials());
-  server_builder.RegisterService(&schemaless_service);
+  server_builder.RegisterService(&kv_service);
+  server_builder.RegisterService(&list_service);
+  server_builder.RegisterService(&hash_service);
+  server_builder.RegisterService(&set_service);
   server_builder.RegisterService(&schema_service);
   server_builder.RegisterService(&admin_service);
   std::unique_ptr<grpc::Server> server(server_builder.BuildAndStart());

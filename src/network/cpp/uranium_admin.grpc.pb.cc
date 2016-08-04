@@ -51,11 +51,11 @@ UraniumAdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
   return new ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>(channel_.get(), cq, rpcmethod_UpdateTable_, context, request);
 }
 
-::grpc::Status UraniumAdminService::Stub::DropTable(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::uranium::common::Result* response) {
+::grpc::Status UraniumAdminService::Stub::DropTable(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::uranium::common::Result* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_DropTable_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::common::Result>* UraniumAdminService::Stub::AsyncDropTableRaw(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::common::Result>* UraniumAdminService::Stub::AsyncDropTableRaw(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>(channel_.get(), cq, rpcmethod_DropTable_, context, request);
 }
 
@@ -82,7 +82,7 @@ UraniumAdminService::Service::Service() {
   AddMethod(new ::grpc::RpcServiceMethod(
       UraniumAdminService_method_names[2],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumAdminService::Service, ::uranium::common::TableName, ::uranium::common::Result>(
+      new ::grpc::RpcMethodHandler< UraniumAdminService::Service, ::uranium::admin::DropTableRequest, ::uranium::common::Result>(
           std::mem_fn(&UraniumAdminService::Service::DropTable), this)));
   AddMethod(new ::grpc::RpcServiceMethod(
       UraniumAdminService_method_names[3],
@@ -108,7 +108,7 @@ UraniumAdminService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumAdminService::Service::DropTable(::grpc::ServerContext* context, const ::uranium::common::TableName* request, ::uranium::common::Result* response) {
+::grpc::Status UraniumAdminService::Service::DropTable(::grpc::ServerContext* context, const ::uranium::admin::DropTableRequest* request, ::uranium::common::Result* response) {
   (void) context;
   (void) request;
   (void) response;

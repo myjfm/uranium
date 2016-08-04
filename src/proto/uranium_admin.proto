@@ -5,15 +5,19 @@ import "common.proto";
 service UraniumAdminService {
   rpc CreateTable(TableOptions) returns (common.Result) {}
   rpc UpdateTable(TableOptions) returns (common.Result) {}
-  rpc DropTable(common.TableName) returns (common.Result) {}
+  rpc DropTable(DropTableRequest) returns (common.Result) {}
   rpc GetTableOptions(GetTableOptionsRequest) returns(GetTableOptionsResponse) {}
 }
 
 message TableOptions {
-  common.TableName table_name                       = 1;
+  common.TableName table_name               = 1;
+  common.TableType table_type               = 2;
   oneof options {
-    SchemaTableOptions schema_table_options         = 2;
-    SchemalessTableOptions schemaless_table_options = 3;
+    KVTableOptions kv_table_options         = 3;
+    ListTableOptions list_table_options     = 4;
+    HashTableOptions hash_table_options     = 5;
+    SetTableOptions set_table_options       = 6;
+    SchemaTableOptions schema_table_options = 7;
   }
 }
 
@@ -23,21 +27,38 @@ enum StorageType {
   COLUMN_GROUP      = 2;  // currently not supported
 }
 
-message SchemaTableOptions {
-  StorageType type                          = 1;
-  repeated common.ColumnDefination columns  = 3;
-}
-
-message SchemalessTableOptions {
+message KVTableOptions {
   StorageType type = 1;
 }
 
+message ListTableOptions {
+  StorageType type = 1;
+}
+
+message HashTableOptions {
+  StorageType type = 1;
+}
+
+message SetTableOptions {
+  StorageType type = 1;
+}
+
+message SchemaTableOptions {
+  StorageType type                          = 1;
+  repeated common.ColumnDefination columns  = 2;
+}
+
+message DropTableRequest {
+  common.TableName table_name = 1;
+  common.TableType table_type = 2;
+}
+
 message GetTableOptionsRequest {
-  common.TableType table_type = 1;
-  common.TableName table_name = 2;
+  common.TableName table_name = 1;
+  common.TableType table_type = 2;
 }
 message GetTableOptionsResponse {
-  common.Status status = 1;
+  common.Result result = 1;
   TableOptions options = 2;
 }
 

@@ -2,8 +2,8 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree. An additional grant
 //
-#ifndef URANIUM_DB_SCHEMALESS_TABLE_H_
-#define URANIUM_DB_SCHEMALESS_TABLE_H_
+#ifndef URANIUM_DB_KV_TABLE_H_
+#define URANIUM_DB_KV_TABLE_H_
 
 #include <rocksdb/db.h>
 #include <rocksdb/write_batch.h>
@@ -15,18 +15,20 @@
 
 namespace uranium {
 
-class SchemalessTable : public Table {
+class KVTable : public Table {
  public:
-  SchemalessTable() {}
-  virtual ~SchemalessTable() {}
+  KVTable() {}
+  virtual ~KVTable() {}
 
-  SchemalessTable(const SchemalessTable&) = delete;
-  SchemalessTable& operator=(const SchemalessTable&) = delete;
+  KVTable(const KVTable&) = delete;
+  KVTable& operator=(const KVTable&) = delete;
 
   Status Init(const internal::TableOptions& config) override {
-    assert(config.options().has_schemaless_table_options());
-    if (config.options().schemaless_table_options().type() !=
+    assert(config.options().table_type() == common::TableType::KV);
+    assert(config.options().has_kv_table_options());
+    if (config.options().kv_table_options().type() !=
         admin::StorageType::FLAT) {
+      // currently we only support FLAT storage type
       return Status::NotSupported("Not supported storage type");
     }
 
@@ -53,7 +55,7 @@ class SchemalessTable : public Table {
     return Status::OK();
   }
 
-  Status KVGet(
+  Status Get(
       const google::protobuf::RepeatedPtrField<api::Key>& keys,
       google::protobuf::RepeatedPtrField<api::KeyValue>* values) {
     assert(db_);
@@ -73,11 +75,24 @@ class SchemalessTable : public Table {
     return Status::OK();
   }
 
-  Status KVSet(const google::protobuf::RepeatedPtrField<api::KeyValue>& kvs) {
+  Status Set(const google::protobuf::RepeatedPtrField<api::KeyValue>& kvs) {
     assert(db_);
     rocksdb::WriteBatch wb;
     for (auto itr = kvs.begin(); itr != kvs.end(); ++itr) {
       wb.Put(itr->key().key(), itr->value().value());
+    }
+    auto rs = db_->Write(rocksdb::WriteOptions(), &wb);
+    if (!rs.ok()) {
+      return Status(rs);
+    }
+    return Status::OK();
+  }
+
+  Status Remove(const google::protobuf::RepeatedPtrField<api::Key>& keys) {
+    assert(db_);
+    rocksdb::WriteBatch wb;
+    for (auto itr = keys.begin(); itr != keys.end(); ++itr) {
+      wb.Delete(itr->key());
     }
     auto rs = db_->Write(rocksdb::WriteOptions(), &wb);
     if (!rs.ok()) {
@@ -93,4 +108,4 @@ class SchemalessTable : public Table {
 
 }  // namespace uranium
 
-#endif  // URANIUM_DB_SCHEMALESS_TABLE_H_
+#endif  // URANIUM_DB_KV_TABLE_H_

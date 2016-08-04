@@ -3,8 +3,11 @@ syntax = "proto3";
 package uranium.common;
 
 enum TableType {
-  SCHEMALESS  = 0;
-  SCHEMA      = 1;
+  KV      = 0;
+  LIST    = 1;
+  HASH    = 2;
+  SET     = 3;
+  SCHEMA  = 4;
 }
 
 message TableName {
@@ -12,14 +15,19 @@ message TableName {
 }
 
 enum Status {
-  OK              = 0;
-  INTERNAL_ERROR  = 1;
-  NOT_FOUND       = 2;
-  ALREADY_EXISTS  = 3;
+  OK                    = 0;
+  INTERNAL_ERROR        = 1;
+  TABLE_NOT_FOUND       = 2;
+  KEY_NOT_FOUND         = 3;
+  TABLE_ALREADY_EXISTS  = 4;
+  KEY_ALREADY_EXISTS    = 5;
+  INVALID_ARGUMENT      = 6;
+  OUT_OF_RANGE          = 7;
 }
 
 message Result {
-  Status status = 1;
+  Status status   = 1;
+  string message  = 2;
 }
 
 message ColumnName {

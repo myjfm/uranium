@@ -45,13 +45,16 @@ class Result;
 class TableName;
 
 enum TableType {
-  SCHEMALESS = 0,
-  SCHEMA = 1,
+  KV = 0,
+  LIST = 1,
+  HASH = 2,
+  SET = 3,
+  SCHEMA = 4,
   TableType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   TableType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool TableType_IsValid(int value);
-const TableType TableType_MIN = SCHEMALESS;
+const TableType TableType_MIN = KV;
 const TableType TableType_MAX = SCHEMA;
 const int TableType_ARRAYSIZE = TableType_MAX + 1;
 
@@ -68,14 +71,18 @@ inline bool TableType_Parse(
 enum Status {
   OK = 0,
   INTERNAL_ERROR = 1,
-  NOT_FOUND = 2,
-  ALREADY_EXISTS = 3,
+  TABLE_NOT_FOUND = 2,
+  KEY_NOT_FOUND = 3,
+  TABLE_ALREADY_EXISTS = 4,
+  KEY_ALREADY_EXISTS = 5,
+  INVALID_ARGUMENT = 6,
+  OUT_OF_RANGE = 7,
   Status_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Status_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Status_IsValid(int value);
 const Status Status_MIN = OK;
-const Status Status_MAX = ALREADY_EXISTS;
+const Status Status_MAX = OUT_OF_RANGE;
 const int Status_ARRAYSIZE = Status_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Status_descriptor();
@@ -263,11 +270,23 @@ class Result : public ::google::protobuf::Message {
   ::uranium::common::Status status() const;
   void set_status(::uranium::common::Status value);
 
+  // optional string message = 2;
+  void clear_message();
+  static const int kMessageFieldNumber = 2;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+
   // @@protoc_insertion_point(class_scope:uranium.common.Result)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
   int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_common_2eproto();
@@ -671,6 +690,50 @@ inline void Result::set_status(::uranium::common::Status value) {
   
   status_ = value;
   // @@protoc_insertion_point(field_set:uranium.common.Result.status)
+}
+
+// optional string message = 2;
+inline void Result::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Result::message() const {
+  // @@protoc_insertion_point(field_get:uranium.common.Result.message)
+  return message_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Result::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:uranium.common.Result.message)
+}
+inline void Result::set_message(const char* value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:uranium.common.Result.message)
+}
+inline void Result::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:uranium.common.Result.message)
+}
+inline ::std::string* Result::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:uranium.common.Result.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Result::release_message() {
+  // @@protoc_insertion_point(field_release:uranium.common.Result.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Result::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:uranium.common.Result.message)
 }
 
 // -------------------------------------------------------------------

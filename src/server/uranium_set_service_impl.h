@@ -1,0 +1,72 @@
+#ifndef URANIUM_SERVER_URANIUM_SET_SERVICE_IMPL_H_
+#define URANIUM_SERVER_URANIUM_SET_SERVICE_IMPL_H_
+
+#include <memory>
+
+#include "common/status.h"
+#include "db/table_manager.h"
+#include "network/cpp/uranium.grpc.pb.h"
+
+namespace uranium {
+
+class UraniumSetServiceImpl
+    : public api::UraniumSetService::Service {
+ public:
+  UraniumSetServiceImpl() {}
+  virtual ~UraniumSetServiceImpl() {}
+
+  UraniumSetServiceImpl(const UraniumSetServiceImpl&) = delete;
+  UraniumSetServiceImpl& operator=(UraniumSetServiceImpl&) = delete;
+
+  Status Init(std::shared_ptr<TableManager> table_manager) {
+    assert(table_manager.get());
+    table_manager_ = table_manager;
+    return Status::OK();
+  }
+
+  virtual grpc::Status SetAdd(grpc::ServerContext* context,
+                              const api::SetAddRequest* request,
+                              api::SetAddResponse* response) override {
+    return grpc::Status::OK;
+  }
+
+  virtual grpc::Status SetLength(grpc::ServerContext* context,
+                                 const api::SetLengthRequest* request,
+                                 api::SetLengthResponse* response) override {
+    return grpc::Status::OK;
+  }
+
+  virtual grpc::Status SetIsMember(
+      grpc::ServerContext* context,
+      const api::SetIsMemberRequest* request,
+      api::SetIsMemberResponse* response) override {
+    return grpc::Status::OK;
+  }
+
+  virtual grpc::Status SetGetAll(grpc::ServerContext* context,
+                                 const api::SetGetAllRequest* request,
+                                 api::SetGetAllResponse* response) override {
+    return grpc::Status::OK;
+  }
+
+  virtual grpc::Status SetRemove(grpc::ServerContext* context,
+                                 const api::SetRemoveRequest* request,
+                                 api::SetRemoveResponse* response) override {
+    return grpc::Status::OK;
+  }
+
+  virtual grpc::Status SetRemoveAll(
+      grpc::ServerContext* context,
+      const api::SetRemoveAllRequest* request,
+      api::SetRemoveAllResponse* response) override {
+    return grpc::Status::OK;
+  }
+
+ private:
+  std::shared_ptr<TableManager> table_manager_;
+};
+
+}  // namespace uranium
+
+#endif  // URANIUM_SERVER_URANIUM_SET_SERVICE_IMPL_H_
+

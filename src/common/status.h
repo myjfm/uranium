@@ -13,8 +13,11 @@
 #define URANIUM_COMMON_STATUS_H_
 
 #include <string>
-#include "string_piece.h"
+
 #include <rocksdb/status.h>
+
+#include "network/cpp/common.pb.h"
+#include "string_piece.h"
 
 namespace uranium {
 
@@ -92,6 +95,32 @@ class Status final {
     return Status(kTableAlreadyExists, msg, msg2);
   }
 
+  static Status OutOfRange(const StringPiece& msg,
+                           const StringPiece& msg2 = StringPiece()) {
+    return Status(kOutOfRange, msg, msg2);
+  }
+
+  static void TABLE_NOT_FOUND(common::Result* result) {
+    result->set_status(common::Status::TABLE_NOT_FOUND);
+    result->set_message("table not found");
+  }
+
+  static void RESULT(const Status& s, common::Result* result) {
+    switch (s.code()) {
+      case kOk:
+        result->set_status(common::Status::OK);
+        break;
+      case kTableAlreadyExists:
+        result->set_status(common::Status::TABLE_ALREADY_EXISTS);
+        result->set_message("table already exists");
+        break;
+      default:
+        result->set_status(common::Status::INTERNAL_ERROR);
+        result->set_message("server internal error");
+        break;
+    }
+  }
+
   // Returns true iff the status indicates success.
   bool ok() const { return code() == kOk; }
 
@@ -125,6 +154,7 @@ class Status final {
 
   bool IsTableAlreadyExists() const { return code() == kTableAlreadyExists; }
 
+  bool IsOutOfRange() const { return code() == kOutOfRange; }
   // Return a string representation of this status suitable for printing.
   // Returns the string "OK" for success.
   std::string ToString() const {
@@ -166,6 +196,9 @@ class Status final {
       case kTableAlreadyExists:
         type = "Table already exists: ";
         break;
+      case kOutOfRange:
+        type = "Out of range: ";
+        break;
       default:
         snprintf(tmp, sizeof(tmp), "Unknown code(%d): ",
             static_cast<int>(code()));
@@ -194,6 +227,7 @@ class Status final {
     kTimedOut = 9,
     kAborted = 10,
     kTableAlreadyExists = 11,
+    kOutOfRange = 12,
   };
 
   Code code() const {

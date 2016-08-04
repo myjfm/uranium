@@ -39,8 +39,8 @@ class UraniumAdminService GRPC_FINAL {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>> AsyncUpdateTable(::grpc::ClientContext* context, const ::uranium::admin::TableOptions& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>>(AsyncUpdateTableRaw(context, request, cq));
     }
-    virtual ::grpc::Status DropTable(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::uranium::common::Result* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>> AsyncDropTable(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status DropTable(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::uranium::common::Result* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>> AsyncDropTable(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>>(AsyncDropTableRaw(context, request, cq));
     }
     virtual ::grpc::Status GetTableOptions(::grpc::ClientContext* context, const ::uranium::admin::GetTableOptionsRequest& request, ::uranium::admin::GetTableOptionsResponse* response) = 0;
@@ -50,7 +50,7 @@ class UraniumAdminService GRPC_FINAL {
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>* AsyncCreateTableRaw(::grpc::ClientContext* context, const ::uranium::admin::TableOptions& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>* AsyncUpdateTableRaw(::grpc::ClientContext* context, const ::uranium::admin::TableOptions& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>* AsyncDropTableRaw(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::uranium::common::Result>* AsyncDropTableRaw(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::uranium::admin::GetTableOptionsResponse>* AsyncGetTableOptionsRaw(::grpc::ClientContext* context, const ::uranium::admin::GetTableOptionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub GRPC_FINAL : public StubInterface {
@@ -64,8 +64,8 @@ class UraniumAdminService GRPC_FINAL {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>> AsyncUpdateTable(::grpc::ClientContext* context, const ::uranium::admin::TableOptions& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>>(AsyncUpdateTableRaw(context, request, cq));
     }
-    ::grpc::Status DropTable(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::uranium::common::Result* response) GRPC_OVERRIDE;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>> AsyncDropTable(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status DropTable(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::uranium::common::Result* response) GRPC_OVERRIDE;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>> AsyncDropTable(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>>(AsyncDropTableRaw(context, request, cq));
     }
     ::grpc::Status GetTableOptions(::grpc::ClientContext* context, const ::uranium::admin::GetTableOptionsRequest& request, ::uranium::admin::GetTableOptionsResponse* response) GRPC_OVERRIDE;
@@ -77,7 +77,7 @@ class UraniumAdminService GRPC_FINAL {
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>* AsyncCreateTableRaw(::grpc::ClientContext* context, const ::uranium::admin::TableOptions& request, ::grpc::CompletionQueue* cq) GRPC_OVERRIDE;
     ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>* AsyncUpdateTableRaw(::grpc::ClientContext* context, const ::uranium::admin::TableOptions& request, ::grpc::CompletionQueue* cq) GRPC_OVERRIDE;
-    ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>* AsyncDropTableRaw(::grpc::ClientContext* context, const ::uranium::common::TableName& request, ::grpc::CompletionQueue* cq) GRPC_OVERRIDE;
+    ::grpc::ClientAsyncResponseReader< ::uranium::common::Result>* AsyncDropTableRaw(::grpc::ClientContext* context, const ::uranium::admin::DropTableRequest& request, ::grpc::CompletionQueue* cq) GRPC_OVERRIDE;
     ::grpc::ClientAsyncResponseReader< ::uranium::admin::GetTableOptionsResponse>* AsyncGetTableOptionsRaw(::grpc::ClientContext* context, const ::uranium::admin::GetTableOptionsRequest& request, ::grpc::CompletionQueue* cq) GRPC_OVERRIDE;
     const ::grpc::RpcMethod rpcmethod_CreateTable_;
     const ::grpc::RpcMethod rpcmethod_UpdateTable_;
@@ -92,7 +92,7 @@ class UraniumAdminService GRPC_FINAL {
     virtual ~Service();
     virtual ::grpc::Status CreateTable(::grpc::ServerContext* context, const ::uranium::admin::TableOptions* request, ::uranium::common::Result* response);
     virtual ::grpc::Status UpdateTable(::grpc::ServerContext* context, const ::uranium::admin::TableOptions* request, ::uranium::common::Result* response);
-    virtual ::grpc::Status DropTable(::grpc::ServerContext* context, const ::uranium::common::TableName* request, ::uranium::common::Result* response);
+    virtual ::grpc::Status DropTable(::grpc::ServerContext* context, const ::uranium::admin::DropTableRequest* request, ::uranium::common::Result* response);
     virtual ::grpc::Status GetTableOptions(::grpc::ServerContext* context, const ::uranium::admin::GetTableOptionsRequest* request, ::uranium::admin::GetTableOptionsResponse* response);
   };
   template <class BaseClass>
@@ -147,11 +147,11 @@ class UraniumAdminService GRPC_FINAL {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DropTable(::grpc::ServerContext* context, const ::uranium::common::TableName* request, ::uranium::common::Result* response) GRPC_FINAL GRPC_OVERRIDE {
+    ::grpc::Status DropTable(::grpc::ServerContext* context, const ::uranium::admin::DropTableRequest* request, ::uranium::common::Result* response) GRPC_FINAL GRPC_OVERRIDE {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDropTable(::grpc::ServerContext* context, ::uranium::common::TableName* request, ::grpc::ServerAsyncResponseWriter< ::uranium::common::Result>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDropTable(::grpc::ServerContext* context, ::uranium::admin::DropTableRequest* request, ::grpc::ServerAsyncResponseWriter< ::uranium::common::Result>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -222,7 +222,7 @@ class UraniumAdminService GRPC_FINAL {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DropTable(::grpc::ServerContext* context, const ::uranium::common::TableName* request, ::uranium::common::Result* response) GRPC_FINAL GRPC_OVERRIDE {
+    ::grpc::Status DropTable(::grpc::ServerContext* context, const ::uranium::admin::DropTableRequest* request, ::uranium::common::Result* response) GRPC_FINAL GRPC_OVERRIDE {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }

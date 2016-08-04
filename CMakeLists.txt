@@ -87,6 +87,9 @@ ENDIF()
 INCLUDE_DIRECTORIES(AFTER "src")
 
 set(SOURCE_FILES
+  "src/common/coding.h"
+  "src/common/coding.cc"
+  "src/common/endian.h"
   "src/common/string_piece.h"
   "src/common/string_piece.cc"
   "src/common/string_utils.h"
@@ -94,7 +97,10 @@ set(SOURCE_FILES
   "src/common/status.h"
   "src/db/table.h"
   "src/db/db_path_info.h"
-  "src/db/schemaless_table.h"
+  "src/db/kv_table.h"
+  "src/db/list_table.h"
+  "src/db/hash_table.h"
+  "src/db/set_table.h"
   "src/db/schema_table.h"
   "src/db/meta_table.h"
   "src/db/table_manager.h"
@@ -112,8 +118,11 @@ set(SOURCE_FILES
   "src/network/cpp/uranium_internal.pb.cc"
   "src/network/cpp/uranium_internal.pb.h"
   "src/server/uranium.cc"
+  "src/server/uranium_kv_service_impl.h"
+  "src/server/uranium_list_service_impl.h"
+  "src/server/uranium_hash_service_impl.h"
+  "src/server/uranium_set_service_impl.h"
   "src/server/uranium_schema_service_impl.h"
-  "src/server/uranium_schemaless_service_impl.h"
   "src/server/uranium_admin_service_impl.h")
 
 add_executable(uranium ${SOURCE_FILES})

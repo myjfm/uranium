@@ -16,678 +16,735 @@
 namespace uranium {
 namespace api {
 
-static const char* UraniumSchemalessService_method_names[] = {
-  "/uranium.api.UraniumSchemalessService/KVGet",
-  "/uranium.api.UraniumSchemalessService/KVSet",
-  "/uranium.api.UraniumSchemalessService/KVRemove",
-  "/uranium.api.UraniumSchemalessService/ListLPush",
-  "/uranium.api.UraniumSchemalessService/ListLPop",
-  "/uranium.api.UraniumSchemalessService/ListRPush",
-  "/uranium.api.UraniumSchemalessService/ListRPop",
-  "/uranium.api.UraniumSchemalessService/ListLPushX",
-  "/uranium.api.UraniumSchemalessService/ListRPushX",
-  "/uranium.api.UraniumSchemalessService/ListIndex",
-  "/uranium.api.UraniumSchemalessService/ListSet",
-  "/uranium.api.UraniumSchemalessService/ListRange",
-  "/uranium.api.UraniumSchemalessService/ListLength",
-  "/uranium.api.UraniumSchemalessService/ListRemoveAll",
-  "/uranium.api.UraniumSchemalessService/HashGet",
-  "/uranium.api.UraniumSchemalessService/HashGetAll",
-  "/uranium.api.UraniumSchemalessService/HashGetAllFields",
-  "/uranium.api.UraniumSchemalessService/HashGetAllValues",
-  "/uranium.api.UraniumSchemalessService/HashLength",
-  "/uranium.api.UraniumSchemalessService/HashSet",
-  "/uranium.api.UraniumSchemalessService/HashSetX",
-  "/uranium.api.UraniumSchemalessService/HashRemove",
-  "/uranium.api.UraniumSchemalessService/HashExists",
-  "/uranium.api.UraniumSchemalessService/HashRemoveAll",
-  "/uranium.api.UraniumSchemalessService/SetAdd",
-  "/uranium.api.UraniumSchemalessService/SetLength",
-  "/uranium.api.UraniumSchemalessService/SetIsMember",
-  "/uranium.api.UraniumSchemalessService/SetGetAll",
-  "/uranium.api.UraniumSchemalessService/SetRemove",
-  "/uranium.api.UraniumSchemalessService/SetRemoveAll",
+static const char* UraniumKVService_method_names[] = {
+  "/uranium.api.UraniumKVService/KVGet",
+  "/uranium.api.UraniumKVService/KVSet",
+  "/uranium.api.UraniumKVService/KVRemove",
 };
 
-std::unique_ptr< UraniumSchemalessService::Stub> UraniumSchemalessService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
-  std::unique_ptr< UraniumSchemalessService::Stub> stub(new UraniumSchemalessService::Stub(channel));
+std::unique_ptr< UraniumKVService::Stub> UraniumKVService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  std::unique_ptr< UraniumKVService::Stub> stub(new UraniumKVService::Stub(channel));
   return stub;
 }
 
-UraniumSchemalessService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_KVGet_(UraniumSchemalessService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_KVSet_(UraniumSchemalessService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_KVRemove_(UraniumSchemalessService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListLPush_(UraniumSchemalessService_method_names[3], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListLPop_(UraniumSchemalessService_method_names[4], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRPush_(UraniumSchemalessService_method_names[5], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRPop_(UraniumSchemalessService_method_names[6], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListLPushX_(UraniumSchemalessService_method_names[7], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRPushX_(UraniumSchemalessService_method_names[8], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListIndex_(UraniumSchemalessService_method_names[9], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListSet_(UraniumSchemalessService_method_names[10], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRange_(UraniumSchemalessService_method_names[11], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListLength_(UraniumSchemalessService_method_names[12], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListRemoveAll_(UraniumSchemalessService_method_names[13], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashGet_(UraniumSchemalessService_method_names[14], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashGetAll_(UraniumSchemalessService_method_names[15], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashGetAllFields_(UraniumSchemalessService_method_names[16], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashGetAllValues_(UraniumSchemalessService_method_names[17], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashLength_(UraniumSchemalessService_method_names[18], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashSet_(UraniumSchemalessService_method_names[19], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashSetX_(UraniumSchemalessService_method_names[20], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashRemove_(UraniumSchemalessService_method_names[21], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashExists_(UraniumSchemalessService_method_names[22], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_HashRemoveAll_(UraniumSchemalessService_method_names[23], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetAdd_(UraniumSchemalessService_method_names[24], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetLength_(UraniumSchemalessService_method_names[25], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetIsMember_(UraniumSchemalessService_method_names[26], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetGetAll_(UraniumSchemalessService_method_names[27], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetRemove_(UraniumSchemalessService_method_names[28], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetRemoveAll_(UraniumSchemalessService_method_names[29], ::grpc::RpcMethod::NORMAL_RPC, channel)
+UraniumKVService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_KVGet_(UraniumKVService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_KVSet_(UraniumKVService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_KVRemove_(UraniumKVService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status UraniumSchemalessService::Stub::KVGet(::grpc::ClientContext* context, const ::uranium::api::KVGetRequest& request, ::uranium::api::KVGetResponse* response) {
+::grpc::Status UraniumKVService::Stub::KVGet(::grpc::ClientContext* context, const ::uranium::api::KVGetRequest& request, ::uranium::api::KVGetResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_KVGet_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::KVGetResponse>* UraniumSchemalessService::Stub::AsyncKVGetRaw(::grpc::ClientContext* context, const ::uranium::api::KVGetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::KVGetResponse>* UraniumKVService::Stub::AsyncKVGetRaw(::grpc::ClientContext* context, const ::uranium::api::KVGetRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::KVGetResponse>(channel_.get(), cq, rpcmethod_KVGet_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::KVSet(::grpc::ClientContext* context, const ::uranium::api::KVSetRequest& request, ::uranium::api::KVSetResponse* response) {
+::grpc::Status UraniumKVService::Stub::KVSet(::grpc::ClientContext* context, const ::uranium::api::KVSetRequest& request, ::uranium::api::KVSetResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_KVSet_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::KVSetResponse>* UraniumSchemalessService::Stub::AsyncKVSetRaw(::grpc::ClientContext* context, const ::uranium::api::KVSetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::KVSetResponse>* UraniumKVService::Stub::AsyncKVSetRaw(::grpc::ClientContext* context, const ::uranium::api::KVSetRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::KVSetResponse>(channel_.get(), cq, rpcmethod_KVSet_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::KVRemove(::grpc::ClientContext* context, const ::uranium::api::KVRemoveRequest& request, ::uranium::api::KVRemoveResponse* response) {
+::grpc::Status UraniumKVService::Stub::KVRemove(::grpc::ClientContext* context, const ::uranium::api::KVRemoveRequest& request, ::uranium::api::KVRemoveResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_KVRemove_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::KVRemoveResponse>* UraniumSchemalessService::Stub::AsyncKVRemoveRaw(::grpc::ClientContext* context, const ::uranium::api::KVRemoveRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::KVRemoveResponse>* UraniumKVService::Stub::AsyncKVRemoveRaw(::grpc::ClientContext* context, const ::uranium::api::KVRemoveRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::KVRemoveResponse>(channel_.get(), cq, rpcmethod_KVRemove_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListLPush(::grpc::ClientContext* context, const ::uranium::api::ListLPushRequest& request, ::uranium::api::ListLPushResponse* response) {
+UraniumKVService::Service::Service() {
+  (void)UraniumKVService_method_names;
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumKVService_method_names[0],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumKVService::Service, ::uranium::api::KVGetRequest, ::uranium::api::KVGetResponse>(
+          std::mem_fn(&UraniumKVService::Service::KVGet), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumKVService_method_names[1],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumKVService::Service, ::uranium::api::KVSetRequest, ::uranium::api::KVSetResponse>(
+          std::mem_fn(&UraniumKVService::Service::KVSet), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumKVService_method_names[2],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumKVService::Service, ::uranium::api::KVRemoveRequest, ::uranium::api::KVRemoveResponse>(
+          std::mem_fn(&UraniumKVService::Service::KVRemove), this)));
+}
+
+UraniumKVService::Service::~Service() {
+}
+
+::grpc::Status UraniumKVService::Service::KVGet(::grpc::ServerContext* context, const ::uranium::api::KVGetRequest* request, ::uranium::api::KVGetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumKVService::Service::KVSet(::grpc::ServerContext* context, const ::uranium::api::KVSetRequest* request, ::uranium::api::KVSetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumKVService::Service::KVRemove(::grpc::ServerContext* context, const ::uranium::api::KVRemoveRequest* request, ::uranium::api::KVRemoveResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+static const char* UraniumListService_method_names[] = {
+  "/uranium.api.UraniumListService/ListLPush",
+  "/uranium.api.UraniumListService/ListLPop",
+  "/uranium.api.UraniumListService/ListRPush",
+  "/uranium.api.UraniumListService/ListRPop",
+  "/uranium.api.UraniumListService/ListLPushX",
+  "/uranium.api.UraniumListService/ListRPushX",
+  "/uranium.api.UraniumListService/ListIndex",
+  "/uranium.api.UraniumListService/ListSet",
+  "/uranium.api.UraniumListService/ListRange",
+  "/uranium.api.UraniumListService/ListLength",
+  "/uranium.api.UraniumListService/ListRemoveAll",
+};
+
+std::unique_ptr< UraniumListService::Stub> UraniumListService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  std::unique_ptr< UraniumListService::Stub> stub(new UraniumListService::Stub(channel));
+  return stub;
+}
+
+UraniumListService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_ListLPush_(UraniumListService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListLPop_(UraniumListService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRPush_(UraniumListService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRPop_(UraniumListService_method_names[3], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListLPushX_(UraniumListService_method_names[4], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRPushX_(UraniumListService_method_names[5], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListIndex_(UraniumListService_method_names[6], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListSet_(UraniumListService_method_names[7], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRange_(UraniumListService_method_names[8], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListLength_(UraniumListService_method_names[9], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListRemoveAll_(UraniumListService_method_names[10], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  {}
+
+::grpc::Status UraniumListService::Stub::ListLPush(::grpc::ClientContext* context, const ::uranium::api::ListLPushRequest& request, ::uranium::api::ListLPushResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListLPush_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPushResponse>* UraniumSchemalessService::Stub::AsyncListLPushRaw(::grpc::ClientContext* context, const ::uranium::api::ListLPushRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPushResponse>* UraniumListService::Stub::AsyncListLPushRaw(::grpc::ClientContext* context, const ::uranium::api::ListLPushRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPushResponse>(channel_.get(), cq, rpcmethod_ListLPush_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListLPop(::grpc::ClientContext* context, const ::uranium::api::ListLPopRequest& request, ::uranium::api::ListLPopResponse* response) {
+::grpc::Status UraniumListService::Stub::ListLPop(::grpc::ClientContext* context, const ::uranium::api::ListLPopRequest& request, ::uranium::api::ListLPopResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListLPop_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPopResponse>* UraniumSchemalessService::Stub::AsyncListLPopRaw(::grpc::ClientContext* context, const ::uranium::api::ListLPopRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPopResponse>* UraniumListService::Stub::AsyncListLPopRaw(::grpc::ClientContext* context, const ::uranium::api::ListLPopRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPopResponse>(channel_.get(), cq, rpcmethod_ListLPop_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListRPush(::grpc::ClientContext* context, const ::uranium::api::ListRPushRequest& request, ::uranium::api::ListRPushResponse* response) {
+::grpc::Status UraniumListService::Stub::ListRPush(::grpc::ClientContext* context, const ::uranium::api::ListRPushRequest& request, ::uranium::api::ListRPushResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListRPush_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPushResponse>* UraniumSchemalessService::Stub::AsyncListRPushRaw(::grpc::ClientContext* context, const ::uranium::api::ListRPushRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPushResponse>* UraniumListService::Stub::AsyncListRPushRaw(::grpc::ClientContext* context, const ::uranium::api::ListRPushRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPushResponse>(channel_.get(), cq, rpcmethod_ListRPush_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListRPop(::grpc::ClientContext* context, const ::uranium::api::ListRPopRequest& request, ::uranium::api::ListRPopResponse* response) {
+::grpc::Status UraniumListService::Stub::ListRPop(::grpc::ClientContext* context, const ::uranium::api::ListRPopRequest& request, ::uranium::api::ListRPopResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListRPop_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPopResponse>* UraniumSchemalessService::Stub::AsyncListRPopRaw(::grpc::ClientContext* context, const ::uranium::api::ListRPopRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPopResponse>* UraniumListService::Stub::AsyncListRPopRaw(::grpc::ClientContext* context, const ::uranium::api::ListRPopRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPopResponse>(channel_.get(), cq, rpcmethod_ListRPop_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListLPushX(::grpc::ClientContext* context, const ::uranium::api::ListLPushXRequest& request, ::uranium::api::ListLPushXResponse* response) {
+::grpc::Status UraniumListService::Stub::ListLPushX(::grpc::ClientContext* context, const ::uranium::api::ListLPushXRequest& request, ::uranium::api::ListLPushXResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListLPushX_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPushXResponse>* UraniumSchemalessService::Stub::AsyncListLPushXRaw(::grpc::ClientContext* context, const ::uranium::api::ListLPushXRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPushXResponse>* UraniumListService::Stub::AsyncListLPushXRaw(::grpc::ClientContext* context, const ::uranium::api::ListLPushXRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListLPushXResponse>(channel_.get(), cq, rpcmethod_ListLPushX_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListRPushX(::grpc::ClientContext* context, const ::uranium::api::ListRPushXRequest& request, ::uranium::api::ListRPushXResponse* response) {
+::grpc::Status UraniumListService::Stub::ListRPushX(::grpc::ClientContext* context, const ::uranium::api::ListRPushXRequest& request, ::uranium::api::ListRPushXResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListRPushX_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPushXResponse>* UraniumSchemalessService::Stub::AsyncListRPushXRaw(::grpc::ClientContext* context, const ::uranium::api::ListRPushXRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPushXResponse>* UraniumListService::Stub::AsyncListRPushXRaw(::grpc::ClientContext* context, const ::uranium::api::ListRPushXRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListRPushXResponse>(channel_.get(), cq, rpcmethod_ListRPushX_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListIndex(::grpc::ClientContext* context, const ::uranium::api::ListIndexRequest& request, ::uranium::api::ListIndexResponse* response) {
+::grpc::Status UraniumListService::Stub::ListIndex(::grpc::ClientContext* context, const ::uranium::api::ListIndexRequest& request, ::uranium::api::ListIndexResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListIndex_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListIndexResponse>* UraniumSchemalessService::Stub::AsyncListIndexRaw(::grpc::ClientContext* context, const ::uranium::api::ListIndexRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListIndexResponse>* UraniumListService::Stub::AsyncListIndexRaw(::grpc::ClientContext* context, const ::uranium::api::ListIndexRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListIndexResponse>(channel_.get(), cq, rpcmethod_ListIndex_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListSet(::grpc::ClientContext* context, const ::uranium::api::ListSetRequest& request, ::uranium::api::ListSetResponse* response) {
+::grpc::Status UraniumListService::Stub::ListSet(::grpc::ClientContext* context, const ::uranium::api::ListSetRequest& request, ::uranium::api::ListSetResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListSet_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListSetResponse>* UraniumSchemalessService::Stub::AsyncListSetRaw(::grpc::ClientContext* context, const ::uranium::api::ListSetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListSetResponse>* UraniumListService::Stub::AsyncListSetRaw(::grpc::ClientContext* context, const ::uranium::api::ListSetRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListSetResponse>(channel_.get(), cq, rpcmethod_ListSet_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListRange(::grpc::ClientContext* context, const ::uranium::api::ListRangeRequest& request, ::uranium::api::ListRangeResponse* response) {
+::grpc::Status UraniumListService::Stub::ListRange(::grpc::ClientContext* context, const ::uranium::api::ListRangeRequest& request, ::uranium::api::ListRangeResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListRange_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListRangeResponse>* UraniumSchemalessService::Stub::AsyncListRangeRaw(::grpc::ClientContext* context, const ::uranium::api::ListRangeRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListRangeResponse>* UraniumListService::Stub::AsyncListRangeRaw(::grpc::ClientContext* context, const ::uranium::api::ListRangeRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListRangeResponse>(channel_.get(), cq, rpcmethod_ListRange_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListLength(::grpc::ClientContext* context, const ::uranium::api::ListLengthRequest& request, ::uranium::api::ListLengthResponse* response) {
+::grpc::Status UraniumListService::Stub::ListLength(::grpc::ClientContext* context, const ::uranium::api::ListLengthRequest& request, ::uranium::api::ListLengthResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListLength_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListLengthResponse>* UraniumSchemalessService::Stub::AsyncListLengthRaw(::grpc::ClientContext* context, const ::uranium::api::ListLengthRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListLengthResponse>* UraniumListService::Stub::AsyncListLengthRaw(::grpc::ClientContext* context, const ::uranium::api::ListLengthRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListLengthResponse>(channel_.get(), cq, rpcmethod_ListLength_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::ListRemoveAll(::grpc::ClientContext* context, const ::uranium::api::ListRemoveAllRequest& request, ::uranium::api::ListRemoveAllResponse* response) {
+::grpc::Status UraniumListService::Stub::ListRemoveAll(::grpc::ClientContext* context, const ::uranium::api::ListRemoveAllRequest& request, ::uranium::api::ListRemoveAllResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListRemoveAll_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::ListRemoveAllResponse>* UraniumSchemalessService::Stub::AsyncListRemoveAllRaw(::grpc::ClientContext* context, const ::uranium::api::ListRemoveAllRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::ListRemoveAllResponse>* UraniumListService::Stub::AsyncListRemoveAllRaw(::grpc::ClientContext* context, const ::uranium::api::ListRemoveAllRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::ListRemoveAllResponse>(channel_.get(), cq, rpcmethod_ListRemoveAll_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashGet(::grpc::ClientContext* context, const ::uranium::api::HashGetRequest& request, ::uranium::api::HashGetResponse* response) {
+UraniumListService::Service::Service() {
+  (void)UraniumListService_method_names;
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[0],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListLPushRequest, ::uranium::api::ListLPushResponse>(
+          std::mem_fn(&UraniumListService::Service::ListLPush), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[1],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListLPopRequest, ::uranium::api::ListLPopResponse>(
+          std::mem_fn(&UraniumListService::Service::ListLPop), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[2],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListRPushRequest, ::uranium::api::ListRPushResponse>(
+          std::mem_fn(&UraniumListService::Service::ListRPush), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[3],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListRPopRequest, ::uranium::api::ListRPopResponse>(
+          std::mem_fn(&UraniumListService::Service::ListRPop), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[4],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListLPushXRequest, ::uranium::api::ListLPushXResponse>(
+          std::mem_fn(&UraniumListService::Service::ListLPushX), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[5],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListRPushXRequest, ::uranium::api::ListRPushXResponse>(
+          std::mem_fn(&UraniumListService::Service::ListRPushX), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[6],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListIndexRequest, ::uranium::api::ListIndexResponse>(
+          std::mem_fn(&UraniumListService::Service::ListIndex), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[7],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListSetRequest, ::uranium::api::ListSetResponse>(
+          std::mem_fn(&UraniumListService::Service::ListSet), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[8],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListRangeRequest, ::uranium::api::ListRangeResponse>(
+          std::mem_fn(&UraniumListService::Service::ListRange), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[9],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListLengthRequest, ::uranium::api::ListLengthResponse>(
+          std::mem_fn(&UraniumListService::Service::ListLength), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumListService_method_names[10],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumListService::Service, ::uranium::api::ListRemoveAllRequest, ::uranium::api::ListRemoveAllResponse>(
+          std::mem_fn(&UraniumListService::Service::ListRemoveAll), this)));
+}
+
+UraniumListService::Service::~Service() {
+}
+
+::grpc::Status UraniumListService::Service::ListLPush(::grpc::ServerContext* context, const ::uranium::api::ListLPushRequest* request, ::uranium::api::ListLPushResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListLPop(::grpc::ServerContext* context, const ::uranium::api::ListLPopRequest* request, ::uranium::api::ListLPopResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListRPush(::grpc::ServerContext* context, const ::uranium::api::ListRPushRequest* request, ::uranium::api::ListRPushResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListRPop(::grpc::ServerContext* context, const ::uranium::api::ListRPopRequest* request, ::uranium::api::ListRPopResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListLPushX(::grpc::ServerContext* context, const ::uranium::api::ListLPushXRequest* request, ::uranium::api::ListLPushXResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListRPushX(::grpc::ServerContext* context, const ::uranium::api::ListRPushXRequest* request, ::uranium::api::ListRPushXResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListIndex(::grpc::ServerContext* context, const ::uranium::api::ListIndexRequest* request, ::uranium::api::ListIndexResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListSet(::grpc::ServerContext* context, const ::uranium::api::ListSetRequest* request, ::uranium::api::ListSetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListRange(::grpc::ServerContext* context, const ::uranium::api::ListRangeRequest* request, ::uranium::api::ListRangeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListLength(::grpc::ServerContext* context, const ::uranium::api::ListLengthRequest* request, ::uranium::api::ListLengthResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumListService::Service::ListRemoveAll(::grpc::ServerContext* context, const ::uranium::api::ListRemoveAllRequest* request, ::uranium::api::ListRemoveAllResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+static const char* UraniumHashService_method_names[] = {
+  "/uranium.api.UraniumHashService/HashGet",
+  "/uranium.api.UraniumHashService/HashGetAll",
+  "/uranium.api.UraniumHashService/HashGetAllFields",
+  "/uranium.api.UraniumHashService/HashGetAllValues",
+  "/uranium.api.UraniumHashService/HashLength",
+  "/uranium.api.UraniumHashService/HashSet",
+  "/uranium.api.UraniumHashService/HashSetX",
+  "/uranium.api.UraniumHashService/HashRemove",
+  "/uranium.api.UraniumHashService/HashExists",
+  "/uranium.api.UraniumHashService/HashRemoveAll",
+};
+
+std::unique_ptr< UraniumHashService::Stub> UraniumHashService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  std::unique_ptr< UraniumHashService::Stub> stub(new UraniumHashService::Stub(channel));
+  return stub;
+}
+
+UraniumHashService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_HashGet_(UraniumHashService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashGetAll_(UraniumHashService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashGetAllFields_(UraniumHashService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashGetAllValues_(UraniumHashService_method_names[3], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashLength_(UraniumHashService_method_names[4], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashSet_(UraniumHashService_method_names[5], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashSetX_(UraniumHashService_method_names[6], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashRemove_(UraniumHashService_method_names[7], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashExists_(UraniumHashService_method_names[8], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HashRemoveAll_(UraniumHashService_method_names[9], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  {}
+
+::grpc::Status UraniumHashService::Stub::HashGet(::grpc::ClientContext* context, const ::uranium::api::HashGetRequest& request, ::uranium::api::HashGetResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashGet_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetResponse>* UraniumSchemalessService::Stub::AsyncHashGetRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetResponse>* UraniumHashService::Stub::AsyncHashGetRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetResponse>(channel_.get(), cq, rpcmethod_HashGet_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashGetAll(::grpc::ClientContext* context, const ::uranium::api::HashGetAllRequest& request, ::uranium::api::HashGetAllResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashGetAll(::grpc::ClientContext* context, const ::uranium::api::HashGetAllRequest& request, ::uranium::api::HashGetAllResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashGetAll_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllResponse>* UraniumSchemalessService::Stub::AsyncHashGetAllRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetAllRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllResponse>* UraniumHashService::Stub::AsyncHashGetAllRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetAllRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllResponse>(channel_.get(), cq, rpcmethod_HashGetAll_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashGetAllFields(::grpc::ClientContext* context, const ::uranium::api::HashGetAllFieldsRequest& request, ::uranium::api::HashGetAllFieldsResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashGetAllFields(::grpc::ClientContext* context, const ::uranium::api::HashGetAllFieldsRequest& request, ::uranium::api::HashGetAllFieldsResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashGetAllFields_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllFieldsResponse>* UraniumSchemalessService::Stub::AsyncHashGetAllFieldsRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetAllFieldsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllFieldsResponse>* UraniumHashService::Stub::AsyncHashGetAllFieldsRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetAllFieldsRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllFieldsResponse>(channel_.get(), cq, rpcmethod_HashGetAllFields_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashGetAllValues(::grpc::ClientContext* context, const ::uranium::api::HashGetAllValuesRequest& request, ::uranium::api::HashGetAllValuesResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashGetAllValues(::grpc::ClientContext* context, const ::uranium::api::HashGetAllValuesRequest& request, ::uranium::api::HashGetAllValuesResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashGetAllValues_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllValuesResponse>* UraniumSchemalessService::Stub::AsyncHashGetAllValuesRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetAllValuesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllValuesResponse>* UraniumHashService::Stub::AsyncHashGetAllValuesRaw(::grpc::ClientContext* context, const ::uranium::api::HashGetAllValuesRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashGetAllValuesResponse>(channel_.get(), cq, rpcmethod_HashGetAllValues_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashLength(::grpc::ClientContext* context, const ::uranium::api::HashLengthRequest& request, ::uranium::api::HashLengthResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashLength(::grpc::ClientContext* context, const ::uranium::api::HashLengthRequest& request, ::uranium::api::HashLengthResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashLength_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashLengthResponse>* UraniumSchemalessService::Stub::AsyncHashLengthRaw(::grpc::ClientContext* context, const ::uranium::api::HashLengthRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashLengthResponse>* UraniumHashService::Stub::AsyncHashLengthRaw(::grpc::ClientContext* context, const ::uranium::api::HashLengthRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashLengthResponse>(channel_.get(), cq, rpcmethod_HashLength_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashSet(::grpc::ClientContext* context, const ::uranium::api::HashSetRequest& request, ::uranium::api::HashSetResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashSet(::grpc::ClientContext* context, const ::uranium::api::HashSetRequest& request, ::uranium::api::HashSetResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashSet_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashSetResponse>* UraniumSchemalessService::Stub::AsyncHashSetRaw(::grpc::ClientContext* context, const ::uranium::api::HashSetRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashSetResponse>* UraniumHashService::Stub::AsyncHashSetRaw(::grpc::ClientContext* context, const ::uranium::api::HashSetRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashSetResponse>(channel_.get(), cq, rpcmethod_HashSet_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashSetX(::grpc::ClientContext* context, const ::uranium::api::HashSetXRequest& request, ::uranium::api::HashSetXResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashSetX(::grpc::ClientContext* context, const ::uranium::api::HashSetXRequest& request, ::uranium::api::HashSetXResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashSetX_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashSetXResponse>* UraniumSchemalessService::Stub::AsyncHashSetXRaw(::grpc::ClientContext* context, const ::uranium::api::HashSetXRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashSetXResponse>* UraniumHashService::Stub::AsyncHashSetXRaw(::grpc::ClientContext* context, const ::uranium::api::HashSetXRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashSetXResponse>(channel_.get(), cq, rpcmethod_HashSetX_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashRemove(::grpc::ClientContext* context, const ::uranium::api::HashRemoveRequest& request, ::uranium::api::HashRemoveResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashRemove(::grpc::ClientContext* context, const ::uranium::api::HashRemoveRequest& request, ::uranium::api::HashRemoveResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashRemove_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashRemoveResponse>* UraniumSchemalessService::Stub::AsyncHashRemoveRaw(::grpc::ClientContext* context, const ::uranium::api::HashRemoveRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashRemoveResponse>* UraniumHashService::Stub::AsyncHashRemoveRaw(::grpc::ClientContext* context, const ::uranium::api::HashRemoveRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashRemoveResponse>(channel_.get(), cq, rpcmethod_HashRemove_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashExists(::grpc::ClientContext* context, const ::uranium::api::HashExistsRequest& request, ::uranium::api::HashExistsResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashExists(::grpc::ClientContext* context, const ::uranium::api::HashExistsRequest& request, ::uranium::api::HashExistsResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashExists_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashExistsResponse>* UraniumSchemalessService::Stub::AsyncHashExistsRaw(::grpc::ClientContext* context, const ::uranium::api::HashExistsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashExistsResponse>* UraniumHashService::Stub::AsyncHashExistsRaw(::grpc::ClientContext* context, const ::uranium::api::HashExistsRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashExistsResponse>(channel_.get(), cq, rpcmethod_HashExists_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::HashRemoveAll(::grpc::ClientContext* context, const ::uranium::api::HashRemoveAllRequest& request, ::uranium::api::HashRemoveAllResponse* response) {
+::grpc::Status UraniumHashService::Stub::HashRemoveAll(::grpc::ClientContext* context, const ::uranium::api::HashRemoveAllRequest& request, ::uranium::api::HashRemoveAllResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_HashRemoveAll_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::HashRemoveAllResponse>* UraniumSchemalessService::Stub::AsyncHashRemoveAllRaw(::grpc::ClientContext* context, const ::uranium::api::HashRemoveAllRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::HashRemoveAllResponse>* UraniumHashService::Stub::AsyncHashRemoveAllRaw(::grpc::ClientContext* context, const ::uranium::api::HashRemoveAllRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::HashRemoveAllResponse>(channel_.get(), cq, rpcmethod_HashRemoveAll_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::SetAdd(::grpc::ClientContext* context, const ::uranium::api::SetAddRequest& request, ::uranium::api::SetAddResponse* response) {
+UraniumHashService::Service::Service() {
+  (void)UraniumHashService_method_names;
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[0],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashGetRequest, ::uranium::api::HashGetResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashGet), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[1],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashGetAllRequest, ::uranium::api::HashGetAllResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashGetAll), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[2],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashGetAllFieldsRequest, ::uranium::api::HashGetAllFieldsResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashGetAllFields), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[3],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashGetAllValuesRequest, ::uranium::api::HashGetAllValuesResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashGetAllValues), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[4],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashLengthRequest, ::uranium::api::HashLengthResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashLength), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[5],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashSetRequest, ::uranium::api::HashSetResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashSet), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[6],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashSetXRequest, ::uranium::api::HashSetXResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashSetX), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[7],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashRemoveRequest, ::uranium::api::HashRemoveResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashRemove), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[8],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashExistsRequest, ::uranium::api::HashExistsResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashExists), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
+      UraniumHashService_method_names[9],
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< UraniumHashService::Service, ::uranium::api::HashRemoveAllRequest, ::uranium::api::HashRemoveAllResponse>(
+          std::mem_fn(&UraniumHashService::Service::HashRemoveAll), this)));
+}
+
+UraniumHashService::Service::~Service() {
+}
+
+::grpc::Status UraniumHashService::Service::HashGet(::grpc::ServerContext* context, const ::uranium::api::HashGetRequest* request, ::uranium::api::HashGetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashGetAll(::grpc::ServerContext* context, const ::uranium::api::HashGetAllRequest* request, ::uranium::api::HashGetAllResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashGetAllFields(::grpc::ServerContext* context, const ::uranium::api::HashGetAllFieldsRequest* request, ::uranium::api::HashGetAllFieldsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashGetAllValues(::grpc::ServerContext* context, const ::uranium::api::HashGetAllValuesRequest* request, ::uranium::api::HashGetAllValuesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashLength(::grpc::ServerContext* context, const ::uranium::api::HashLengthRequest* request, ::uranium::api::HashLengthResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashSet(::grpc::ServerContext* context, const ::uranium::api::HashSetRequest* request, ::uranium::api::HashSetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashSetX(::grpc::ServerContext* context, const ::uranium::api::HashSetXRequest* request, ::uranium::api::HashSetXResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashRemove(::grpc::ServerContext* context, const ::uranium::api::HashRemoveRequest* request, ::uranium::api::HashRemoveResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashExists(::grpc::ServerContext* context, const ::uranium::api::HashExistsRequest* request, ::uranium::api::HashExistsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status UraniumHashService::Service::HashRemoveAll(::grpc::ServerContext* context, const ::uranium::api::HashRemoveAllRequest* request, ::uranium::api::HashRemoveAllResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
+static const char* UraniumSetService_method_names[] = {
+  "/uranium.api.UraniumSetService/SetAdd",
+  "/uranium.api.UraniumSetService/SetLength",
+  "/uranium.api.UraniumSetService/SetIsMember",
+  "/uranium.api.UraniumSetService/SetGetAll",
+  "/uranium.api.UraniumSetService/SetRemove",
+  "/uranium.api.UraniumSetService/SetRemoveAll",
+};
+
+std::unique_ptr< UraniumSetService::Stub> UraniumSetService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  std::unique_ptr< UraniumSetService::Stub> stub(new UraniumSetService::Stub(channel));
+  return stub;
+}
+
+UraniumSetService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_SetAdd_(UraniumSetService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetLength_(UraniumSetService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetIsMember_(UraniumSetService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetGetAll_(UraniumSetService_method_names[3], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetRemove_(UraniumSetService_method_names[4], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetRemoveAll_(UraniumSetService_method_names[5], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  {}
+
+::grpc::Status UraniumSetService::Stub::SetAdd(::grpc::ClientContext* context, const ::uranium::api::SetAddRequest& request, ::uranium::api::SetAddResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetAdd_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::SetAddResponse>* UraniumSchemalessService::Stub::AsyncSetAddRaw(::grpc::ClientContext* context, const ::uranium::api::SetAddRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::SetAddResponse>* UraniumSetService::Stub::AsyncSetAddRaw(::grpc::ClientContext* context, const ::uranium::api::SetAddRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::SetAddResponse>(channel_.get(), cq, rpcmethod_SetAdd_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::SetLength(::grpc::ClientContext* context, const ::uranium::api::SetLengthRequest& request, ::uranium::api::SetLengthResponse* response) {
+::grpc::Status UraniumSetService::Stub::SetLength(::grpc::ClientContext* context, const ::uranium::api::SetLengthRequest& request, ::uranium::api::SetLengthResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetLength_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::SetLengthResponse>* UraniumSchemalessService::Stub::AsyncSetLengthRaw(::grpc::ClientContext* context, const ::uranium::api::SetLengthRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::SetLengthResponse>* UraniumSetService::Stub::AsyncSetLengthRaw(::grpc::ClientContext* context, const ::uranium::api::SetLengthRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::SetLengthResponse>(channel_.get(), cq, rpcmethod_SetLength_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::SetIsMember(::grpc::ClientContext* context, const ::uranium::api::SetIsMemberRequest& request, ::uranium::api::SetIsMemberResponse* response) {
+::grpc::Status UraniumSetService::Stub::SetIsMember(::grpc::ClientContext* context, const ::uranium::api::SetIsMemberRequest& request, ::uranium::api::SetIsMemberResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetIsMember_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::SetIsMemberResponse>* UraniumSchemalessService::Stub::AsyncSetIsMemberRaw(::grpc::ClientContext* context, const ::uranium::api::SetIsMemberRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::SetIsMemberResponse>* UraniumSetService::Stub::AsyncSetIsMemberRaw(::grpc::ClientContext* context, const ::uranium::api::SetIsMemberRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::SetIsMemberResponse>(channel_.get(), cq, rpcmethod_SetIsMember_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::SetGetAll(::grpc::ClientContext* context, const ::uranium::api::SetGetAllRequest& request, ::uranium::api::SetGetAllResponse* response) {
+::grpc::Status UraniumSetService::Stub::SetGetAll(::grpc::ClientContext* context, const ::uranium::api::SetGetAllRequest& request, ::uranium::api::SetGetAllResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetGetAll_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::SetGetAllResponse>* UraniumSchemalessService::Stub::AsyncSetGetAllRaw(::grpc::ClientContext* context, const ::uranium::api::SetGetAllRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::SetGetAllResponse>* UraniumSetService::Stub::AsyncSetGetAllRaw(::grpc::ClientContext* context, const ::uranium::api::SetGetAllRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::SetGetAllResponse>(channel_.get(), cq, rpcmethod_SetGetAll_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::SetRemove(::grpc::ClientContext* context, const ::uranium::api::SetRemoveRequest& request, ::uranium::api::SetRemoveResponse* response) {
+::grpc::Status UraniumSetService::Stub::SetRemove(::grpc::ClientContext* context, const ::uranium::api::SetRemoveRequest& request, ::uranium::api::SetRemoveResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetRemove_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::SetRemoveResponse>* UraniumSchemalessService::Stub::AsyncSetRemoveRaw(::grpc::ClientContext* context, const ::uranium::api::SetRemoveRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::SetRemoveResponse>* UraniumSetService::Stub::AsyncSetRemoveRaw(::grpc::ClientContext* context, const ::uranium::api::SetRemoveRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::SetRemoveResponse>(channel_.get(), cq, rpcmethod_SetRemove_, context, request);
 }
 
-::grpc::Status UraniumSchemalessService::Stub::SetRemoveAll(::grpc::ClientContext* context, const ::uranium::api::SetRemoveAllRequest& request, ::uranium::api::SetRemoveAllResponse* response) {
+::grpc::Status UraniumSetService::Stub::SetRemoveAll(::grpc::ClientContext* context, const ::uranium::api::SetRemoveAllRequest& request, ::uranium::api::SetRemoveAllResponse* response) {
   return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetRemoveAll_, context, request, response);
 }
 
-::grpc::ClientAsyncResponseReader< ::uranium::api::SetRemoveAllResponse>* UraniumSchemalessService::Stub::AsyncSetRemoveAllRaw(::grpc::ClientContext* context, const ::uranium::api::SetRemoveAllRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::uranium::api::SetRemoveAllResponse>* UraniumSetService::Stub::AsyncSetRemoveAllRaw(::grpc::ClientContext* context, const ::uranium::api::SetRemoveAllRequest& request, ::grpc::CompletionQueue* cq) {
   return new ::grpc::ClientAsyncResponseReader< ::uranium::api::SetRemoveAllResponse>(channel_.get(), cq, rpcmethod_SetRemoveAll_, context, request);
 }
 
-UraniumSchemalessService::Service::Service() {
-  (void)UraniumSchemalessService_method_names;
+UraniumSetService::Service::Service() {
+  (void)UraniumSetService_method_names;
   AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[0],
+      UraniumSetService_method_names[0],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::KVGetRequest, ::uranium::api::KVGetResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::KVGet), this)));
+      new ::grpc::RpcMethodHandler< UraniumSetService::Service, ::uranium::api::SetAddRequest, ::uranium::api::SetAddResponse>(
+          std::mem_fn(&UraniumSetService::Service::SetAdd), this)));
   AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[1],
+      UraniumSetService_method_names[1],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::KVSetRequest, ::uranium::api::KVSetResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::KVSet), this)));
+      new ::grpc::RpcMethodHandler< UraniumSetService::Service, ::uranium::api::SetLengthRequest, ::uranium::api::SetLengthResponse>(
+          std::mem_fn(&UraniumSetService::Service::SetLength), this)));
   AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[2],
+      UraniumSetService_method_names[2],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::KVRemoveRequest, ::uranium::api::KVRemoveResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::KVRemove), this)));
+      new ::grpc::RpcMethodHandler< UraniumSetService::Service, ::uranium::api::SetIsMemberRequest, ::uranium::api::SetIsMemberResponse>(
+          std::mem_fn(&UraniumSetService::Service::SetIsMember), this)));
   AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[3],
+      UraniumSetService_method_names[3],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListLPushRequest, ::uranium::api::ListLPushResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListLPush), this)));
+      new ::grpc::RpcMethodHandler< UraniumSetService::Service, ::uranium::api::SetGetAllRequest, ::uranium::api::SetGetAllResponse>(
+          std::mem_fn(&UraniumSetService::Service::SetGetAll), this)));
   AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[4],
+      UraniumSetService_method_names[4],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListLPopRequest, ::uranium::api::ListLPopResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListLPop), this)));
+      new ::grpc::RpcMethodHandler< UraniumSetService::Service, ::uranium::api::SetRemoveRequest, ::uranium::api::SetRemoveResponse>(
+          std::mem_fn(&UraniumSetService::Service::SetRemove), this)));
   AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[5],
+      UraniumSetService_method_names[5],
       ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListRPushRequest, ::uranium::api::ListRPushResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListRPush), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[6],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListRPopRequest, ::uranium::api::ListRPopResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListRPop), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[7],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListLPushXRequest, ::uranium::api::ListLPushXResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListLPushX), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[8],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListRPushXRequest, ::uranium::api::ListRPushXResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListRPushX), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[9],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListIndexRequest, ::uranium::api::ListIndexResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListIndex), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[10],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListSetRequest, ::uranium::api::ListSetResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListSet), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[11],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListRangeRequest, ::uranium::api::ListRangeResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListRange), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[12],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListLengthRequest, ::uranium::api::ListLengthResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListLength), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[13],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::ListRemoveAllRequest, ::uranium::api::ListRemoveAllResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::ListRemoveAll), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[14],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashGetRequest, ::uranium::api::HashGetResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashGet), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[15],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashGetAllRequest, ::uranium::api::HashGetAllResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashGetAll), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[16],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashGetAllFieldsRequest, ::uranium::api::HashGetAllFieldsResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashGetAllFields), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[17],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashGetAllValuesRequest, ::uranium::api::HashGetAllValuesResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashGetAllValues), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[18],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashLengthRequest, ::uranium::api::HashLengthResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashLength), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[19],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashSetRequest, ::uranium::api::HashSetResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashSet), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[20],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashSetXRequest, ::uranium::api::HashSetXResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashSetX), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[21],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashRemoveRequest, ::uranium::api::HashRemoveResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashRemove), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[22],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashExistsRequest, ::uranium::api::HashExistsResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashExists), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[23],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::HashRemoveAllRequest, ::uranium::api::HashRemoveAllResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::HashRemoveAll), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[24],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::SetAddRequest, ::uranium::api::SetAddResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::SetAdd), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[25],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::SetLengthRequest, ::uranium::api::SetLengthResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::SetLength), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[26],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::SetIsMemberRequest, ::uranium::api::SetIsMemberResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::SetIsMember), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[27],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::SetGetAllRequest, ::uranium::api::SetGetAllResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::SetGetAll), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[28],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::SetRemoveRequest, ::uranium::api::SetRemoveResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::SetRemove), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
-      UraniumSchemalessService_method_names[29],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< UraniumSchemalessService::Service, ::uranium::api::SetRemoveAllRequest, ::uranium::api::SetRemoveAllResponse>(
-          std::mem_fn(&UraniumSchemalessService::Service::SetRemoveAll), this)));
+      new ::grpc::RpcMethodHandler< UraniumSetService::Service, ::uranium::api::SetRemoveAllRequest, ::uranium::api::SetRemoveAllResponse>(
+          std::mem_fn(&UraniumSetService::Service::SetRemoveAll), this)));
 }
 
-UraniumSchemalessService::Service::~Service() {
+UraniumSetService::Service::~Service() {
 }
 
-::grpc::Status UraniumSchemalessService::Service::KVGet(::grpc::ServerContext* context, const ::uranium::api::KVGetRequest* request, ::uranium::api::KVGetResponse* response) {
+::grpc::Status UraniumSetService::Service::SetAdd(::grpc::ServerContext* context, const ::uranium::api::SetAddRequest* request, ::uranium::api::SetAddResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumSchemalessService::Service::KVSet(::grpc::ServerContext* context, const ::uranium::api::KVSetRequest* request, ::uranium::api::KVSetResponse* response) {
+::grpc::Status UraniumSetService::Service::SetLength(::grpc::ServerContext* context, const ::uranium::api::SetLengthRequest* request, ::uranium::api::SetLengthResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumSchemalessService::Service::KVRemove(::grpc::ServerContext* context, const ::uranium::api::KVRemoveRequest* request, ::uranium::api::KVRemoveResponse* response) {
+::grpc::Status UraniumSetService::Service::SetIsMember(::grpc::ServerContext* context, const ::uranium::api::SetIsMemberRequest* request, ::uranium::api::SetIsMemberResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumSchemalessService::Service::ListLPush(::grpc::ServerContext* context, const ::uranium::api::ListLPushRequest* request, ::uranium::api::ListLPushResponse* response) {
+::grpc::Status UraniumSetService::Service::SetGetAll(::grpc::ServerContext* context, const ::uranium::api::SetGetAllRequest* request, ::uranium::api::SetGetAllResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumSchemalessService::Service::ListLPop(::grpc::ServerContext* context, const ::uranium::api::ListLPopRequest* request, ::uranium::api::ListLPopResponse* response) {
+::grpc::Status UraniumSetService::Service::SetRemove(::grpc::ServerContext* context, const ::uranium::api::SetRemoveRequest* request, ::uranium::api::SetRemoveResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status UraniumSchemalessService::Service::ListRPush(::grpc::ServerContext* context, const ::uranium::api::ListRPushRequest* request, ::uranium::api::ListRPushResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListRPop(::grpc::ServerContext* context, const ::uranium::api::ListRPopRequest* request, ::uranium::api::ListRPopResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListLPushX(::grpc::ServerContext* context, const ::uranium::api::ListLPushXRequest* request, ::uranium::api::ListLPushXResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListRPushX(::grpc::ServerContext* context, const ::uranium::api::ListRPushXRequest* request, ::uranium::api::ListRPushXResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListIndex(::grpc::ServerContext* context, const ::uranium::api::ListIndexRequest* request, ::uranium::api::ListIndexResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListSet(::grpc::ServerContext* context, const ::uranium::api::ListSetRequest* request, ::uranium::api::ListSetResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListRange(::grpc::ServerContext* context, const ::uranium::api::ListRangeRequest* request, ::uranium::api::ListRangeResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListLength(::grpc::ServerContext* context, const ::uranium::api::ListLengthRequest* request, ::uranium::api::ListLengthResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::ListRemoveAll(::grpc::ServerContext* context, const ::uranium::api::ListRemoveAllRequest* request, ::uranium::api::ListRemoveAllResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashGet(::grpc::ServerContext* context, const ::uranium::api::HashGetRequest* request, ::uranium::api::HashGetResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashGetAll(::grpc::ServerContext* context, const ::uranium::api::HashGetAllRequest* request, ::uranium::api::HashGetAllResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashGetAllFields(::grpc::ServerContext* context, const ::uranium::api::HashGetAllFieldsRequest* request, ::uranium::api::HashGetAllFieldsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashGetAllValues(::grpc::ServerContext* context, const ::uranium::api::HashGetAllValuesRequest* request, ::uranium::api::HashGetAllValuesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashLength(::grpc::ServerContext* context, const ::uranium::api::HashLengthRequest* request, ::uranium::api::HashLengthResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashSet(::grpc::ServerContext* context, const ::uranium::api::HashSetRequest* request, ::uranium::api::HashSetResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashSetX(::grpc::ServerContext* context, const ::uranium::api::HashSetXRequest* request, ::uranium::api::HashSetXResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashRemove(::grpc::ServerContext* context, const ::uranium::api::HashRemoveRequest* request, ::uranium::api::HashRemoveResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashExists(::grpc::ServerContext* context, const ::uranium::api::HashExistsRequest* request, ::uranium::api::HashExistsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::HashRemoveAll(::grpc::ServerContext* context, const ::uranium::api::HashRemoveAllRequest* request, ::uranium::api::HashRemoveAllResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::SetAdd(::grpc::ServerContext* context, const ::uranium::api::SetAddRequest* request, ::uranium::api::SetAddResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::SetLength(::grpc::ServerContext* context, const ::uranium::api::SetLengthRequest* request, ::uranium::api::SetLengthResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::SetIsMember(::grpc::ServerContext* context, const ::uranium::api::SetIsMemberRequest* request, ::uranium::api::SetIsMemberResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::SetGetAll(::grpc::ServerContext* context, const ::uranium::api::SetGetAllRequest* request, ::uranium::api::SetGetAllResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::SetRemove(::grpc::ServerContext* context, const ::uranium::api::SetRemoveRequest* request, ::uranium::api::SetRemoveResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status UraniumSchemalessService::Service::SetRemoveAll(::grpc::ServerContext* context, const ::uranium::api::SetRemoveAllRequest* request, ::uranium::api::SetRemoveAllResponse* response) {
+::grpc::Status UraniumSetService::Service::SetRemoveAll(::grpc::ServerContext* context, const ::uranium::api::SetRemoveAllRequest* request, ::uranium::api::SetRemoveAllResponse* response) {
   (void) context;
   (void) request;
   (void) response;

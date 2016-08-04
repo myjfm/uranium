@@ -687,11 +687,14 @@ class KVGetResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.KeyValue kvs = 2;
   int kvs_size() const;
@@ -710,8 +713,8 @@ class KVGetResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::KeyValue > kvs_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -872,18 +875,21 @@ class KVSetResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.KVSetResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -1044,18 +1050,21 @@ class KVRemoveResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.KVRemoveResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -1226,18 +1235,21 @@ class ListLPushResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.ListLPushResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -1395,11 +1407,14 @@ class ListLPopResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional .uranium.api.Value value = 2;
   bool has_value() const;
@@ -1415,8 +1430,8 @@ class ListLPopResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::uranium::api::Value* value_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -1587,18 +1602,21 @@ class ListRPushResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.ListRPushResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -1756,11 +1774,14 @@ class ListRPopResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional .uranium.api.Value value = 2;
   bool has_value() const;
@@ -1776,8 +1797,8 @@ class ListRPopResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::uranium::api::Value* value_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -1948,18 +1969,21 @@ class ListLPushXResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.ListLPushXResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -2130,18 +2154,21 @@ class ListRPushXResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.ListRPushXResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -2306,11 +2333,14 @@ class ListIndexResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional .uranium.api.Value value = 2;
   bool has_value() const;
@@ -2326,8 +2356,8 @@ class ListIndexResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::uranium::api::Value* value_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -2502,18 +2532,21 @@ class ListSetResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.ListSetResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -2685,11 +2718,14 @@ class ListRangeResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.Value values = 2;
   int values_size() const;
@@ -2708,8 +2744,8 @@ class ListRangeResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::Value > values_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -2867,11 +2903,14 @@ class ListLengthResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional int64 length = 2;
   void clear_length();
@@ -2884,8 +2923,8 @@ class ListLengthResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::int64 length_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -3043,18 +3082,21 @@ class ListRemoveAllResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.ListRemoveAllResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -3225,11 +3267,14 @@ class HashGetResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.FieldValue fvs = 2;
   int fvs_size() const;
@@ -3248,8 +3293,8 @@ class HashGetResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::FieldValue > fvs_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -3407,11 +3452,14 @@ class HashGetAllResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.FieldValue fvs = 2;
   int fvs_size() const;
@@ -3430,8 +3478,8 @@ class HashGetAllResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::FieldValue > fvs_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -3589,11 +3637,14 @@ class HashGetAllFieldsResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.Field fields = 2;
   int fields_size() const;
@@ -3612,8 +3663,8 @@ class HashGetAllFieldsResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::Field > fields_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -3771,11 +3822,14 @@ class HashGetAllValuesResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.Value values = 2;
   int values_size() const;
@@ -3794,8 +3848,8 @@ class HashGetAllValuesResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::Value > values_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -3953,11 +4007,14 @@ class HashLengthResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional int64 length = 2;
   void clear_length();
@@ -3970,8 +4027,8 @@ class HashLengthResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::int64 length_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -4142,18 +4199,21 @@ class HashSetResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.HashSetResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -4321,18 +4381,21 @@ class HashSetXResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.HashSetXResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -4503,18 +4566,21 @@ class HashRemoveResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.HashRemoveResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -4682,11 +4748,14 @@ class HashExistsResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional bool exists = 2;
   void clear_exists();
@@ -4699,7 +4768,7 @@ class HashExistsResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   bool exists_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
@@ -4858,18 +4927,21 @@ class HashRemoveAllResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.HashRemoveAllResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -5040,18 +5112,21 @@ class SetAddResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.SetAddResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -5209,11 +5284,14 @@ class SetLengthResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional int64 length = 2;
   void clear_length();
@@ -5226,8 +5304,8 @@ class SetLengthResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::int64 length_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -5392,11 +5470,14 @@ class SetIsMemberResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // optional bool yes = 2;
   void clear_yes();
@@ -5409,7 +5490,7 @@ class SetIsMemberResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   bool yes_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
@@ -5568,11 +5649,14 @@ class SetGetAllResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // repeated .uranium.api.Value values = 2;
   int values_size() const;
@@ -5591,8 +5675,8 @@ class SetGetAllResponse : public ::google::protobuf::Message {
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
+  ::uranium::common::Result* result_;
   ::google::protobuf::RepeatedPtrField< ::uranium::api::Value > values_;
-  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -5763,18 +5847,21 @@ class SetRemoveResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.SetRemoveResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -5932,18 +6019,21 @@ class SetRemoveAllResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .uranium.common.Status status = 1;
-  void clear_status();
-  static const int kStatusFieldNumber = 1;
-  ::uranium::common::Status status() const;
-  void set_status(::uranium::common::Status value);
+  // optional .uranium.common.Result result = 1;
+  bool has_result() const;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  const ::uranium::common::Result& result() const;
+  ::uranium::common::Result* mutable_result();
+  ::uranium::common::Result* release_result();
+  void set_allocated_result(::uranium::common::Result* result);
 
   // @@protoc_insertion_point(class_scope:uranium.api.SetRemoveAllResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  int status_;
+  ::uranium::common::Result* result_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_uranium_2eproto();
   friend void protobuf_AssignDesc_uranium_2eproto();
@@ -6336,18 +6426,42 @@ KVGetRequest::keys() const {
 
 // KVGetResponse
 
-// optional .uranium.common.Status status = 1;
-inline void KVGetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool KVGetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status KVGetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.KVGetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void KVGetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void KVGetResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& KVGetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.KVGetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* KVGetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.KVGetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.KVGetResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* KVGetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.KVGetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void KVGetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.KVGetResponse.result)
 }
 
 // repeated .uranium.api.KeyValue kvs = 2;
@@ -6456,18 +6570,42 @@ KVSetRequest::kvs() const {
 
 // KVSetResponse
 
-// optional .uranium.common.Status status = 1;
-inline void KVSetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool KVSetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status KVSetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.KVSetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void KVSetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void KVSetResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& KVSetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.KVSetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* KVSetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.KVSetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.KVSetResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* KVSetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.KVSetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void KVSetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.KVSetResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -6546,18 +6684,42 @@ KVRemoveRequest::keys() const {
 
 // KVRemoveResponse
 
-// optional .uranium.common.Status status = 1;
-inline void KVRemoveResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool KVRemoveResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status KVRemoveResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.KVRemoveResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void KVRemoveResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void KVRemoveResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& KVRemoveResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.KVRemoveResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* KVRemoveResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.KVRemoveResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.KVRemoveResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* KVRemoveResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.KVRemoveResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void KVRemoveResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.KVRemoveResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -6674,18 +6836,42 @@ ListLPushRequest::values() const {
 
 // ListLPushResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListLPushResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListLPushResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListLPushResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLPushResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListLPushResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListLPushResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListLPushResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLPushResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListLPushResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLPushResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLPushResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListLPushResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLPushResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListLPushResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLPushResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -6772,18 +6958,42 @@ inline void ListLPopRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // ListLPopResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListLPopResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListLPopResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListLPopResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLPopResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListLPopResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListLPopResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListLPopResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLPopResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListLPopResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLPopResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLPopResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListLPopResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLPopResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListLPopResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLPopResponse.result)
 }
 
 // optional .uranium.api.Value value = 2;
@@ -6938,18 +7148,42 @@ ListRPushRequest::values() const {
 
 // ListRPushResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListRPushResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListRPushResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListRPushResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRPushResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListRPushResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListRPushResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListRPushResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRPushResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListRPushResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRPushResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRPushResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListRPushResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRPushResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListRPushResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRPushResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -7036,18 +7270,42 @@ inline void ListRPopRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // ListRPopResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListRPopResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListRPopResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListRPopResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRPopResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListRPopResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListRPopResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListRPopResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRPopResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListRPopResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRPopResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRPopResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListRPopResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRPopResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListRPopResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRPopResponse.result)
 }
 
 // optional .uranium.api.Value value = 2;
@@ -7202,18 +7460,42 @@ ListLPushXRequest::values() const {
 
 // ListLPushXResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListLPushXResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListLPushXResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListLPushXResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLPushXResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListLPushXResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListLPushXResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListLPushXResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLPushXResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListLPushXResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLPushXResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLPushXResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListLPushXResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLPushXResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListLPushXResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLPushXResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -7330,18 +7612,42 @@ ListRPushXRequest::values() const {
 
 // ListRPushXResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListRPushXResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListRPushXResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListRPushXResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRPushXResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListRPushXResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListRPushXResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListRPushXResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRPushXResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListRPushXResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRPushXResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRPushXResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListRPushXResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRPushXResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListRPushXResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRPushXResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -7442,18 +7748,42 @@ inline void ListIndexRequest::set_index(::google::protobuf::int64 value) {
 
 // ListIndexResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListIndexResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListIndexResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListIndexResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListIndexResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListIndexResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListIndexResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListIndexResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListIndexResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListIndexResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListIndexResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListIndexResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListIndexResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListIndexResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListIndexResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListIndexResponse.result)
 }
 
 // optional .uranium.api.Value value = 2;
@@ -7630,18 +7960,42 @@ inline void ListSetRequest::set_allocated_value(::uranium::api::Value* value) {
 
 // ListSetResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListSetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListSetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListSetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListSetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListSetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListSetResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListSetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListSetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListSetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListSetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListSetResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListSetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListSetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListSetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListSetResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -7756,18 +8110,42 @@ inline void ListRangeRequest::set_end(::google::protobuf::int64 value) {
 
 // ListRangeResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListRangeResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListRangeResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListRangeResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRangeResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListRangeResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListRangeResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListRangeResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRangeResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListRangeResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRangeResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRangeResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListRangeResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRangeResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListRangeResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRangeResponse.result)
 }
 
 // repeated .uranium.api.Value values = 2;
@@ -7884,18 +8262,42 @@ inline void ListLengthRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // ListLengthResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListLengthResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListLengthResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListLengthResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListLengthResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListLengthResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListLengthResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListLengthResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListLengthResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListLengthResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListLengthResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListLengthResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListLengthResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListLengthResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListLengthResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListLengthResponse.result)
 }
 
 // optional int64 length = 2;
@@ -7996,18 +8398,42 @@ inline void ListRemoveAllRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // ListRemoveAllResponse
 
-// optional .uranium.common.Status status = 1;
-inline void ListRemoveAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool ListRemoveAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status ListRemoveAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.ListRemoveAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void ListRemoveAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void ListRemoveAllResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& ListRemoveAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.ListRemoveAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* ListRemoveAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.ListRemoveAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.ListRemoveAllResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* ListRemoveAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.ListRemoveAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void ListRemoveAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.ListRemoveAllResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -8124,18 +8550,42 @@ HashGetRequest::fields() const {
 
 // HashGetResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashGetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashGetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashGetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashGetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashGetResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashGetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashGetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashGetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashGetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetResponse.result)
 }
 
 // repeated .uranium.api.FieldValue fvs = 2;
@@ -8252,18 +8702,42 @@ inline void HashGetAllRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // HashGetAllResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashGetAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashGetAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashGetAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashGetAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashGetAllResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashGetAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashGetAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetAllResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashGetAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashGetAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetAllResponse.result)
 }
 
 // repeated .uranium.api.FieldValue fvs = 2;
@@ -8380,18 +8854,42 @@ inline void HashGetAllFieldsRequest::set_allocated_key(::uranium::api::Key* key)
 
 // HashGetAllFieldsResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashGetAllFieldsResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashGetAllFieldsResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashGetAllFieldsResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllFieldsResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashGetAllFieldsResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashGetAllFieldsResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashGetAllFieldsResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllFieldsResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashGetAllFieldsResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetAllFieldsResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetAllFieldsResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashGetAllFieldsResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetAllFieldsResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashGetAllFieldsResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetAllFieldsResponse.result)
 }
 
 // repeated .uranium.api.Field fields = 2;
@@ -8508,18 +9006,42 @@ inline void HashGetAllValuesRequest::set_allocated_key(::uranium::api::Key* key)
 
 // HashGetAllValuesResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashGetAllValuesResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashGetAllValuesResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashGetAllValuesResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllValuesResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashGetAllValuesResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashGetAllValuesResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashGetAllValuesResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashGetAllValuesResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashGetAllValuesResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashGetAllValuesResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashGetAllValuesResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashGetAllValuesResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashGetAllValuesResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashGetAllValuesResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashGetAllValuesResponse.result)
 }
 
 // repeated .uranium.api.Value values = 2;
@@ -8636,18 +9158,42 @@ inline void HashLengthRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // HashLengthResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashLengthResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashLengthResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashLengthResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashLengthResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashLengthResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashLengthResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashLengthResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashLengthResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashLengthResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashLengthResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashLengthResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashLengthResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashLengthResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashLengthResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashLengthResponse.result)
 }
 
 // optional int64 length = 2;
@@ -8778,18 +9324,42 @@ HashSetRequest::fvs() const {
 
 // HashSetResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashSetResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashSetResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashSetResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashSetResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashSetResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashSetResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashSetResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashSetResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashSetResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashSetResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashSetResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashSetResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashSetResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashSetResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashSetResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -8914,18 +9484,42 @@ inline void HashSetXRequest::set_allocated_fv(::uranium::api::FieldValue* fv) {
 
 // HashSetXResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashSetXResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashSetXResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashSetXResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashSetXResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashSetXResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashSetXResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashSetXResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashSetXResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashSetXResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashSetXResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashSetXResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashSetXResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashSetXResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashSetXResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashSetXResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -9042,18 +9636,42 @@ HashRemoveRequest::fields() const {
 
 // HashRemoveResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashRemoveResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashRemoveResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashRemoveResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashRemoveResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashRemoveResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashRemoveResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashRemoveResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashRemoveResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashRemoveResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashRemoveResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashRemoveResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashRemoveResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashRemoveResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -9178,18 +9796,42 @@ inline void HashExistsRequest::set_allocated_field(::uranium::api::Field* field)
 
 // HashExistsResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashExistsResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashExistsResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashExistsResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashExistsResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashExistsResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashExistsResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashExistsResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashExistsResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashExistsResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashExistsResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashExistsResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashExistsResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashExistsResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashExistsResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashExistsResponse.result)
 }
 
 // optional bool exists = 2;
@@ -9290,18 +9932,42 @@ inline void HashRemoveAllRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // HashRemoveAllResponse
 
-// optional .uranium.common.Status status = 1;
-inline void HashRemoveAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool HashRemoveAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status HashRemoveAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void HashRemoveAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void HashRemoveAllResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& HashRemoveAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.HashRemoveAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* HashRemoveAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.HashRemoveAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.HashRemoveAllResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* HashRemoveAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.HashRemoveAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void HashRemoveAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.HashRemoveAllResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -9418,18 +10084,42 @@ SetAddRequest::values() const {
 
 // SetAddResponse
 
-// optional .uranium.common.Status status = 1;
-inline void SetAddResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool SetAddResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status SetAddResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetAddResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void SetAddResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void SetAddResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& SetAddResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetAddResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* SetAddResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetAddResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetAddResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* SetAddResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetAddResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void SetAddResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetAddResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -9516,18 +10206,42 @@ inline void SetLengthRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // SetLengthResponse
 
-// optional .uranium.common.Status status = 1;
-inline void SetLengthResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool SetLengthResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status SetLengthResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetLengthResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void SetLengthResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void SetLengthResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& SetLengthResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetLengthResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* SetLengthResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetLengthResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetLengthResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* SetLengthResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetLengthResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void SetLengthResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetLengthResponse.result)
 }
 
 // optional int64 length = 2;
@@ -9642,18 +10356,42 @@ inline void SetIsMemberRequest::set_allocated_value(::uranium::api::Value* value
 
 // SetIsMemberResponse
 
-// optional .uranium.common.Status status = 1;
-inline void SetIsMemberResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool SetIsMemberResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status SetIsMemberResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetIsMemberResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void SetIsMemberResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void SetIsMemberResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& SetIsMemberResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetIsMemberResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* SetIsMemberResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetIsMemberResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetIsMemberResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* SetIsMemberResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetIsMemberResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void SetIsMemberResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetIsMemberResponse.result)
 }
 
 // optional bool yes = 2;
@@ -9754,18 +10492,42 @@ inline void SetGetAllRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // SetGetAllResponse
 
-// optional .uranium.common.Status status = 1;
-inline void SetGetAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool SetGetAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status SetGetAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetGetAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void SetGetAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void SetGetAllResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& SetGetAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetGetAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* SetGetAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetGetAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetGetAllResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* SetGetAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetGetAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void SetGetAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetGetAllResponse.result)
 }
 
 // repeated .uranium.api.Value values = 2;
@@ -9912,18 +10674,42 @@ SetRemoveRequest::values() const {
 
 // SetRemoveResponse
 
-// optional .uranium.common.Status status = 1;
-inline void SetRemoveResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool SetRemoveResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status SetRemoveResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void SetRemoveResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void SetRemoveResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& SetRemoveResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* SetRemoveResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetRemoveResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetRemoveResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* SetRemoveResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetRemoveResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void SetRemoveResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetRemoveResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -10010,18 +10796,42 @@ inline void SetRemoveAllRequest::set_allocated_key(::uranium::api::Key* key) {
 
 // SetRemoveAllResponse
 
-// optional .uranium.common.Status status = 1;
-inline void SetRemoveAllResponse::clear_status() {
-  status_ = 0;
+// optional .uranium.common.Result result = 1;
+inline bool SetRemoveAllResponse::has_result() const {
+  return !_is_default_instance_ && result_ != NULL;
 }
-inline ::uranium::common::Status SetRemoveAllResponse::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveAllResponse.status)
-  return static_cast< ::uranium::common::Status >(status_);
+inline void SetRemoveAllResponse::clear_result() {
+  if (GetArenaNoVirtual() == NULL && result_ != NULL) delete result_;
+  result_ = NULL;
 }
-inline void SetRemoveAllResponse::set_status(::uranium::common::Status value) {
+inline const ::uranium::common::Result& SetRemoveAllResponse::result() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetRemoveAllResponse.result)
+  return result_ != NULL ? *result_ : *default_instance_->result_;
+}
+inline ::uranium::common::Result* SetRemoveAllResponse::mutable_result() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetRemoveAllResponse.status)
+  if (result_ == NULL) {
+    result_ = new ::uranium::common::Result;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetRemoveAllResponse.result)
+  return result_;
+}
+inline ::uranium::common::Result* SetRemoveAllResponse::release_result() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetRemoveAllResponse.result)
+  
+  ::uranium::common::Result* temp = result_;
+  result_ = NULL;
+  return temp;
+}
+inline void SetRemoveAllResponse::set_allocated_result(::uranium::common::Result* result) {
+  delete result_;
+  result_ = result;
+  if (result) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetRemoveAllResponse.result)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

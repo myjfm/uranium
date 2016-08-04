@@ -2,7 +2,6 @@
 #define URANIUM_SERVER_URANIUM_SCHEMA_SERVICE_IMPL_H_
 
 #include <memory>
-
 #include "common/status.h"
 #include "db/table_manager.h"
 #include "network/cpp/uranium.grpc.pb.h"
@@ -30,5 +29,5 @@ class UraniumSchemaServiceImpl
 
 }  // namespace uranium
 
-#endif  // URANIUM_SERVER_URANIUM_SCHEMA_SERVICE_IMPL_H_
+#endif  // URANIUM_SERVER_URANIUM_SERVICE_IMPL_H_
 

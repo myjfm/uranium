@@ -72,8 +72,9 @@ void protobuf_AssignDesc_common_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableName, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableName, _is_default_instance_));
   Result_descriptor_ = file->message_type(1);
-  static const int Result_offsets_[1] = {
+  static const int Result_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Result, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Result, message_),
   };
   Result_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -191,22 +192,25 @@ void protobuf_AddDesc_common_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\014common.proto\022\016uranium.common\"\031\n\tTableN"
-    "ame\022\014\n\004name\030\001 \001(\t\"0\n\006Result\022&\n\006status\030\001 "
-    "\001(\0162\026.uranium.common.Status\"\032\n\nColumnNam"
-    "e\022\014\n\004name\030\001 \001(\t\"X\n\013ColumnValue\022\021\n\007intege"
-    "r\030\001 \001(\022H\000\022\r\n\003flt\030\002 \001(\002H\000\022\r\n\003dbl\030\003 \001(\001H\000\022"
-    "\017\n\005other\030\004 \001(\014H\000B\007\n\005value\"\272\001\n\020ColumnDefi"
-    "nation\022/\n\013column_name\030\001 \001(\0132\032.uranium.co"
-    "mmon.ColumnName\022/\n\013column_type\030\002 \001(\0162\032.u"
-    "ranium.common.ColumnType\0222\n\rdefault_valu"
-    "e\030\003 \001(\0132\033.uranium.common.ColumnValue\022\020\n\010"
-    "not_null\030\004 \001(\010*\'\n\tTableType\022\016\n\nSCHEMALES"
-    "S\020\000\022\n\n\006SCHEMA\020\001*G\n\006Status\022\006\n\002OK\020\000\022\022\n\016INT"
-    "ERNAL_ERROR\020\001\022\r\n\tNOT_FOUND\020\002\022\022\n\016ALREADY_"
-    "EXISTS\020\003*o\n\nColumnType\022\010\n\004BYTE\020\000\022\t\n\005SHOR"
-    "T\020\001\022\007\n\003INT\020\002\022\010\n\004LONG\020\003\022\t\n\005FLOAT\020\004\022\n\n\006DOU"
-    "BLE\020\005\022\n\n\006STRING\020\006\022\010\n\004DATE\020\007\022\014\n\010DATETIME\020"
-    "\010b\006proto3", 649);
+    "ame\022\014\n\004name\030\001 \001(\t\"A\n\006Result\022&\n\006status\030\001 "
+    "\001(\0162\026.uranium.common.Status\022\017\n\007message\030\002"
+    " \001(\t\"\032\n\nColumnName\022\014\n\004name\030\001 \001(\t\"X\n\013Colu"
+    "mnValue\022\021\n\007integer\030\001 \001(\022H\000\022\r\n\003flt\030\002 \001(\002H"
+    "\000\022\r\n\003dbl\030\003 \001(\001H\000\022\017\n\005other\030\004 \001(\014H\000B\007\n\005val"
+    "ue\"\272\001\n\020ColumnDefination\022/\n\013column_name\030\001"
+    " \001(\0132\032.uranium.common.ColumnName\022/\n\013colu"
+    "mn_type\030\002 \001(\0162\032.uranium.common.ColumnTyp"
+    "e\0222\n\rdefault_value\030\003 \001(\0132\033.uranium.commo"
+    "n.ColumnValue\022\020\n\010not_null\030\004 \001(\010*<\n\tTable"
+    "Type\022\006\n\002KV\020\000\022\010\n\004LIST\020\001\022\010\n\004HASH\020\002\022\007\n\003SET\020"
+    "\003\022\n\n\006SCHEMA\020\004*\246\001\n\006Status\022\006\n\002OK\020\000\022\022\n\016INTE"
+    "RNAL_ERROR\020\001\022\023\n\017TABLE_NOT_FOUND\020\002\022\021\n\rKEY"
+    "_NOT_FOUND\020\003\022\030\n\024TABLE_ALREADY_EXISTS\020\004\022\026"
+    "\n\022KEY_ALREADY_EXISTS\020\005\022\024\n\020INVALID_ARGUME"
+    "NT\020\006\022\020\n\014OUT_OF_RANGE\020\007*o\n\nColumnType\022\010\n\004"
+    "BYTE\020\000\022\t\n\005SHORT\020\001\022\007\n\003INT\020\002\022\010\n\004LONG\020\003\022\t\n\005"
+    "FLOAT\020\004\022\n\n\006DOUBLE\020\005\022\n\n\006STRING\020\006\022\010\n\004DATE\020"
+    "\007\022\014\n\010DATETIME\020\010b\006proto3", 783);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "common.proto", &protobuf_RegisterTypes);
   TableName::default_instance_ = new TableName();
@@ -237,6 +241,9 @@ bool TableType_IsValid(int value) {
   switch(value) {
     case 0:
     case 1:
+    case 2:
+    case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -253,6 +260,10 @@ bool Status_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
       return true;
     default:
       return false;
@@ -575,6 +586,7 @@ void TableName::clear_name() {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Result::kStatusFieldNumber;
+const int Result::kMessageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Result::Result()
@@ -597,8 +609,10 @@ Result::Result(const Result& from)
 
 void Result::SharedCtor() {
     _is_default_instance_ = false;
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   status_ = 0;
+  message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 Result::~Result() {
@@ -607,6 +621,7 @@ Result::~Result() {
 }
 
 void Result::SharedDtor() {
+  message_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -639,6 +654,7 @@ Result* Result::New(::google::protobuf::Arena* arena) const {
 void Result::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.common.Result)
   status_ = 0;
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 bool Result::MergePartialFromCodedStream(
@@ -659,6 +675,23 @@ bool Result::MergePartialFromCodedStream(
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
           set_status(static_cast< ::uranium::common::Status >(value));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_message;
+        break;
+      }
+
+      // optional string message = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_message:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_message()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->message().data(), this->message().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "uranium.common.Result.message"));
         } else {
           goto handle_unusual;
         }
@@ -696,6 +729,16 @@ void Result::SerializeWithCachedSizes(
       1, this->status(), output);
   }
 
+  // optional string message = 2;
+  if (this->message().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->message().data(), this->message().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "uranium.common.Result.message");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->message(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:uranium.common.Result)
 }
 
@@ -706,6 +749,17 @@ void Result::SerializeWithCachedSizes(
   if (this->status() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->status(), target);
+  }
+
+  // optional string message = 2;
+  if (this->message().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->message().data(), this->message().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "uranium.common.Result.message");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->message(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.common.Result)
@@ -720,6 +774,13 @@ int Result::ByteSize() const {
   if (this->status() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+  }
+
+  // optional string message = 2;
+  if (this->message().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->message());
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -749,6 +810,10 @@ void Result::MergeFrom(const Result& from) {
   if (from.status() != 0) {
     set_status(from.status());
   }
+  if (from.message().size() > 0) {
+
+    message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
+  }
 }
 
 void Result::CopyFrom(const ::google::protobuf::Message& from) {
@@ -776,6 +841,7 @@ void Result::Swap(Result* other) {
 }
 void Result::InternalSwap(Result* other) {
   std::swap(status_, other->status_);
+  message_.Swap(&other->message_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -803,6 +869,50 @@ void Result::clear_status() {
   
   status_ = value;
   // @@protoc_insertion_point(field_set:uranium.common.Result.status)
+}
+
+// optional string message = 2;
+void Result::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ const ::std::string& Result::message() const {
+  // @@protoc_insertion_point(field_get:uranium.common.Result.message)
+  return message_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void Result::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:uranium.common.Result.message)
+}
+ void Result::set_message(const char* value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:uranium.common.Result.message)
+}
+ void Result::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:uranium.common.Result.message)
+}
+ ::std::string* Result::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:uranium.common.Result.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* Result::release_message() {
+  // @@protoc_insertion_point(field_release:uranium.common.Result.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void Result::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:uranium.common.Result.message)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
