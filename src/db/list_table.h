@@ -6,6 +6,7 @@
 #define URANIUM_DB_LIST_TABLE_H_
 
 #include <rocksdb/db.h>
+#include <rocksdb/merge_operator.h>
 
 #include "common/coding.h"
 #include "common/status.h"
@@ -71,44 +72,62 @@ class ListTable : public Table {
     kSet    = 5,
   };
 
-  void MarshalLPushValues(
+  class ListMergeOperator : public rocksdb::MergeOperator {
+    virtual bool FullMergeV2(
+        const rocksdb::MergeOperator::MergeOperationInput &merge_in,
+        rocksdb::MergeOperator::MergeOperationOutput *merge_out) const override;
+
+    virtual bool PartialMerge(const rocksdb::Slice &key,
+                              const rocksdb::Slice &left_operand,
+                              const rocksdb::Slice &right_operand,
+                              std::string *new_value,
+                              rocksdb::Logger *logger) const override;
+    virtual const char* Name() const override {
+      return "List FLAT Merge";
+    }
+  };
+
+  static void MarshalLPushValues(
       const google::protobuf::RepeatedPtrField<api::Value>& values,
       std::string* result) {
     result->append(1, static_cast<char>(MergeType::kLPush));
     MarshalValues(values, result);
   }
 
-  void MarshalRPushValues(
+  static void MarshalRPushValues(
       const google::protobuf::RepeatedPtrField<api::Value>& values,
       std::string* result) {
     result->append(1, static_cast<char>(MergeType::kRPush));
     MarshalValues(values, result);
   }
 
-  void MarshalLPushXValues(
+  static void MarshalLPushXValues(
       const google::protobuf::RepeatedPtrField<api::Value>& values,
       std::string* result) {
     result->append(1, static_cast<char>(MergeType::kLPushX));
     MarshalValues(values, result);
   }
 
-  void MarshalRPushXValues(
+  static void MarshalRPushXValues(
       const google::protobuf::RepeatedPtrField<api::Value>& values,
       std::string* result) {
     result->append(1, static_cast<char>(MergeType::kRPushX));
     MarshalValues(values, result);
   }
 
-  void MarshalSetValue(const std::string& value, std::string* result) {
+  static void MarshalSetValue(const std::string& value,
+                              int64_t index,
+                              std::string* result) {
     result->append(1, static_cast<char>(MergeType::kSet));
+    PutVarint64(result, index);
     PutLengthPrefixedStringPiece(result, value);
   }
 
-  void MarshalValues(
+  static void MarshalValues(
       const google::protobuf::RepeatedPtrField<api::Value>& values,
       std::string* result);
 
-  void UnmarshalValues(const std::string& marshaled_value,
+  static void UnmarshalValues(const std::string& marshaled_value,
                        int64_t num,  // <0 means unmarshal all values
                        std::vector<StringPiece>* values);
 

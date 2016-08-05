@@ -22,8 +22,11 @@ Status ListTable::Init(const internal::TableOptions& config) {
     return Status::NotSupported("Not supported storage type");
   }
 
-  std::vector<rocksdb::ColumnFamilyDescriptor> cfds;
   rocksdb::Options opt;
+
+  opt.merge_operator.reset(new ListMergeOperator());
+
+  std::vector<rocksdb::ColumnFamilyDescriptor> cfds;
   cfds.push_back(rocksdb::ColumnFamilyDescriptor(
       rocksdb::kDefaultColumnFamilyName, opt));
   std::vector<rocksdb::ColumnFamilyHandle*> cfhs;
@@ -154,7 +157,7 @@ Status ListTable::Set(const std::string& key,
                       const std::string& value) {
   assert(db_);
   std::string marshaled_value;
-  MarshalSetValue(value, &marshaled_value);
+  MarshalSetValue(value, index, &marshaled_value);
   rocksdb::WriteBatch wb;
   wb.Merge(key, value);
   auto rs = db_->Write(rocksdb::WriteOptions(), &wb);
@@ -244,6 +247,135 @@ void ListTable::UnmarshalValues(const std::string& marshaled_value,
          (num-- > 0 || num < 0)) {
     values->push_back(output);
   }
+}
+
+bool ListTable::ListMergeOperator::FullMergeV2(
+    const MergeOperationInput &merge_in,
+    MergeOperationOutput *merge_out) const {
+  std::deque<StringPiece> cells;
+  if (merge_in.existing_value) {
+    StringPiece s(merge_in.existing_value->data(),
+                  merge_in.existing_value->size());
+    StringPiece cell;
+    while (GetLengthPrefixedStringPiece(&s, &cell)) {
+      cells.push_back(cell);
+    }
+  }
+  for (auto& operand : merge_in.operand_list) {
+    if (operand.size() < 1) {
+      return false;
+    }
+    MergeType merge_type = static_cast<MergeType>(operand[0]);
+    StringPiece o(operand.data() + 1, operand.size() - 1);
+    switch (merge_type) {
+      case MergeType::kLPush:
+      {
+        StringPiece tmp;
+        while (GetLengthPrefixedStringPiece(&o, &tmp)) {
+          cells.push_front(tmp);
+        }
+      }
+        break;
+      case MergeType::kRPush:
+      {
+        StringPiece tmp;
+        while (GetLengthPrefixedStringPiece(&o, &tmp)) {
+          cells.push_back(tmp);
+        }
+      }
+        break;
+      case MergeType::kLPushX:
+        if (cells.size() > 0) {
+          StringPiece tmp;
+          while (GetLengthPrefixedStringPiece(&o, &tmp)) {
+            cells.push_front(tmp);
+          }
+        }
+        break;
+      case MergeType::kRPushX:
+        if (cells.size() > 0) {
+          StringPiece tmp;
+          while (GetLengthPrefixedStringPiece(&o, &tmp)) {
+            cells.push_back(tmp);
+          }
+        }
+        break;
+      case MergeType::kSet:
+        if (cells.size() > 0) {
+          StringPiece tmp;
+          uint64_t index;
+          while (GetVarint64(&o, &index) &&
+                 GetLengthPrefixedStringPiece(&o, &tmp)) {
+            if (static_cast<size_t>(index) >= cells.size()) {
+              continue;
+            }
+            cells[static_cast<size_t>(index)] = tmp;
+          }
+        }
+        break;
+      default:
+        return false;
+    }
+  }
+  for (auto itr = cells.begin(); itr != cells.end(); ++itr) {
+    PutLengthPrefixedStringPiece(&(merge_out->new_value), *itr);
+  }
+  return true;
+}
+
+bool ListTable::ListMergeOperator::PartialMerge(
+    const rocksdb::Slice& key,
+    const rocksdb::Slice& left_operand,
+    const rocksdb::Slice& right_operand,
+    std::string* new_value,
+    rocksdb::Logger* logger) const {
+  if (left_operand.size() < 1 ||
+      right_operand.size() < 1||
+      (static_cast<MergeType>(left_operand[0]) !=
+       static_cast<MergeType>(right_operand[0]))) {
+    return false;
+  }
+  StringPiece tmp_left(left_operand.data() + 1, left_operand.size() - 1);
+  StringPiece tmp_right(right_operand.data() + 1, right_operand.size() - 1);
+  switch (static_cast<MergeType>(left_operand[0])) {
+    case MergeType::kLPush:
+    case MergeType::kRPush:
+    case MergeType::kLPushX:
+    case MergeType::kRPushX:
+      new_value->append(1, left_operand[0]);
+      new_value->append(tmp_left.data(), tmp_left.size());
+      new_value->append(tmp_right.data(), tmp_right.size());
+      return true;
+    case MergeType::kSet:
+      new_value->append(1, left_operand[0]);
+      {
+        std::map<int64_t, StringPiece> m;
+        uint64_t index;
+        StringPiece v;
+        while (GetVarint64(&tmp_left, &index) &&
+               GetLengthPrefixedStringPiece(&tmp_left, &v)) {
+          auto itr = m.find(static_cast<int64_t>(index));
+          if (itr == m.end()) {
+            m[static_cast<int64_t>(index)] = v;
+          }
+        }
+        while (GetVarint64(&tmp_right, &index) &&
+               GetLengthPrefixedStringPiece(&tmp_right, &v)) {
+          auto itr = m.find(static_cast<int64_t>(index));
+          if (itr == m.end()) {
+            m[static_cast<int64_t>(index)] = v;
+          }
+        }
+        for (auto& mm : m) {
+          PutVarint64(new_value, static_cast<uint64_t>(mm.first));
+          PutLengthPrefixedStringPiece(new_value, mm.second);
+        }
+      }
+      return true;
+    default:
+      break;
+  }
+  return false;
 }
 
 }  // namespace uranium

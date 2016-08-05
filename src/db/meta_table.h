@@ -8,12 +8,10 @@
 #include <memory>
 #include <vector>
 
+#include <rocksdb/db.h>
+
 #include "common/status.h"
 #include "network/cpp/uranium_internal.pb.h"
-
-namespace rocksdb {
-class DB;
-}
 
 namespace uranium {
 
