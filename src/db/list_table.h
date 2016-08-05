@@ -223,7 +223,7 @@ class ListTable : public Table {
       *length = static_cast<int64_t>(unmarshaled_values.size());
       return Status::OK();
     } else {
-      Status::Corruption("data corrupted");
+      return Status::Corruption("data corrupted");
     }
   }
 
@@ -288,7 +288,7 @@ class ListTable : public Table {
   }
 
   void UnmarshalValues(const std::string& marshaled_value,
-                       size_t num,  // <0 means unmarshal all values
+                       int64_t num,  // <0 means unmarshal all values
                        std::vector<StringPiece>* values) {
     StringPiece input(marshaled_value);
     StringPiece output;

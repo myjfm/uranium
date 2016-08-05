@@ -10,7 +10,6 @@
 #include <vector>
 
 #include "common/status.h"
-#include "common/string_utils.h"
 
 namespace uranium {
 
@@ -19,22 +18,7 @@ class DbPathInfo {
   DbPathInfo() = default;
   ~DbPathInfo() = default;
 
-  Status Init(const std::string& db_paths) {
-    auto db_paths_list = StringUtils::SplitByString(db_paths, ",");
-    if (db_paths_list.size() < 1) {
-      return Status::InvalidArgument("invalid db_paths");
-    }
-    for (auto& db_path : db_paths_list) {
-      if (db_path.size() > 0) {
-        if (db_path[db_path.size() - 1] != '/') {
-          db_path += "/";
-        }
-        db_paths_.push_back(db_path);
-        weighted_db_paths_[db_path] = 0;
-      }
-    }
-    return Status::OK();
-  }
+  Status Init(const std::string& db_paths);
 
   size_t GetDbPathNumber() {
     return db_paths_.size();
@@ -49,17 +33,7 @@ class DbPathInfo {
     return db_paths_;
   }
 
-  std::string GetLowestWeightPath() {
-    std::string result;
-    int weight = INT_MAX;
-    for (auto& weighted_path : weighted_db_paths_) {
-      if (weight > weighted_path.second) {
-        result = weighted_path.first;
-        weight = weighted_path.second;
-      }
-    }
-    return result;
-  }
+  std::string GetLowestWeightPath();
 
   void IncreasePathWeight(const std::string& path) {
     weighted_db_paths_[path]++;
