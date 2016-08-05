@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(uranium C CXX)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lpthread")
 
 find_library(GFLAGS NAMES libgflags.a PATHS /usr/local/lib)
 IF(NOT GFLAGS)
@@ -31,14 +31,14 @@ ELSE()
   MESSAGE(STATUS "grpc++ library: " ${GRPCPP})
 ENDIF()
 
-find_library(SSL NAMES libssl.a PATHS /usr/local/lib)
+find_library(SSL NAMES libssl.a PATHS /usr/local/lib /usr/lib64)
 IF(NOT SSL)
   MESSAGE(FATAL_ERROR "could not find ssl library")
 ELSE()
   MESSAGE(STATUS "ssl library: " ${SSL})
 ENDIF()
 
-find_library(CRYPTO NAMES libcrypto.a PATHS /usr/local/lib)
+find_library(CRYPTO NAMES libcrypto.a PATHS /usr/local/lib /usr/lib64)
 IF(NOT CRYPTO)
   MESSAGE(FATAL_ERROR "could not find crypto library")
 ELSE()
@@ -141,5 +141,5 @@ set(SOURCE_FILES
 
 add_executable(uranium ${SOURCE_FILES})
 set_target_properties(uranium PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(uranium ${SSL} ${CRYPTO} ${LIBZ} ${LZ4} ${SNAPPY} ${BZ2} ${GFLAGS} ${PROTOBUF} ${GRPC} ${GRPCPP} ${ROCKSDB})
+target_link_libraries(uranium ${SSL} ${CRYPTO} ${LIBZ} ${LZ4} ${SNAPPY} ${BZ2} ${GFLAGS} ${PROTOBUF} ${GRPCPP} ${GRPC} ${ROCKSDB})
 
