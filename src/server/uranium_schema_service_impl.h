@@ -3,10 +3,11 @@
 
 #include <memory>
 #include "common/status.h"
-#include "db/table_manager.h"
 #include "network/cpp/uranium.grpc.pb.h"
 
 namespace uranium {
+
+class TableManager;
 
 class UraniumSchemaServiceImpl
     : public api::UraniumSchemaService::Service {

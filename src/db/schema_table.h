@@ -21,20 +21,7 @@ class SchemaTable : public Table {
   SchemaTable(const SchemaTable&) = delete;
   SchemaTable& operator=(const SchemaTable&) = delete;
 
-  Status Init(const internal::TableOptions& config) override {
-    std::vector<rocksdb::ColumnFamilyDescriptor> cfds;
-    rocksdb::Options opt;
-    cfds.push_back(rocksdb::ColumnFamilyDescriptor(
-          rocksdb::kDefaultColumnFamilyName, opt));
-    std::vector<rocksdb::ColumnFamilyHandle*> cfhs;
-    std::string name =
-      config.table_path() + config.options().table_name().name();
-    rocksdb::Status s = rocksdb::DB::Open(opt, name, cfds, &cfhs, &db_);
-    if (!s.ok()) {
-      return Status(s);
-    }
-    return Status::OK();
-  }
+  Status Init(const internal::TableOptions& config) override;
 
   Status Close() override {
     if (db_) {

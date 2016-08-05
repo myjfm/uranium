@@ -99,11 +99,17 @@ set(SOURCE_FILES
   "src/db/db_path_info.h"
   "src/db/db_path_info.cc"
   "src/db/kv_table.h"
+  "src/db/kv_table.cc"
   "src/db/list_table.h"
+  "src/db/list_table.cc"
   "src/db/hash_table.h"
+  "src/db/hash_table.cc"
   "src/db/set_table.h"
+  "src/db/set_table.cc"
   "src/db/schema_table.h"
+  "src/db/schema_table.cc"
   "src/db/meta_table.h"
+  "src/db/meta_table.cc"
   "src/db/table_manager.h"
   "src/db/table_manager_impl.h"
   "src/db/table_manager_impl.cc"
@@ -121,11 +127,17 @@ set(SOURCE_FILES
   "src/network/cpp/uranium_internal.pb.h"
   "src/server/uranium.cc"
   "src/server/uranium_kv_service_impl.h"
+  "src/server/uranium_kv_service_impl.cc"
   "src/server/uranium_list_service_impl.h"
+  "src/server/uranium_list_service_impl.cc"
   "src/server/uranium_hash_service_impl.h"
+  "src/server/uranium_hash_service_impl.cc"
   "src/server/uranium_set_service_impl.h"
+  "src/server/uranium_set_service_impl.cc"
   "src/server/uranium_schema_service_impl.h"
-  "src/server/uranium_admin_service_impl.h")
+  "src/server/uranium_schema_service_impl.cc"
+  "src/server/uranium_admin_service_impl.h"
+  "src/server/uranium_admin_service_impl.cc")
 
 add_executable(uranium ${SOURCE_FILES})
 set_target_properties(uranium PROPERTIES LINKER_LANGUAGE CXX)

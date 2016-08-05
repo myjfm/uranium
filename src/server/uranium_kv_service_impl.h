@@ -4,10 +4,11 @@
 #include <memory>
 
 #include "common/status.h"
-#include "db/table_manager.h"
 #include "network/cpp/uranium.grpc.pb.h"
 
 namespace uranium {
+
+class TableManager;
 
 class UraniumKVServiceImpl
     : public api::UraniumKVService::Service {
@@ -26,48 +27,15 @@ class UraniumKVServiceImpl
 
   virtual grpc::Status KVGet(grpc::ServerContext* context,
                              const api::KVGetRequest* request,
-                             api::KVGetResponse* response) override {
-    auto table =
-        table_manager_->GetKVTable(request->table_name().name());
-    if (!table.get()) {
-      Status::TABLE_NOT_FOUND(response->mutable_result());
-      return grpc::Status::OK;
-    } else {
-      auto s = table->Get(request->keys(), response->mutable_kvs());
-      Status::RESULT(s, response->mutable_result());
-      return grpc::Status::OK;
-    }
-  }
+                             api::KVGetResponse* response) override;
 
   virtual grpc::Status KVSet(grpc::ServerContext* context,
                              const api::KVSetRequest* request,
-                             api::KVSetResponse* response) override {
-    auto table =
-        table_manager_->GetKVTable(request->table_name().name());
-    if (!table.get()) {
-      Status::TABLE_NOT_FOUND(response->mutable_result());
-      return grpc::Status::OK;
-    } else {
-      auto s = table->Set(request->kvs());
-      Status::RESULT(s, response->mutable_result());
-      return grpc::Status::OK;
-    }
-  }
+                             api::KVSetResponse* response) override;
 
   virtual grpc::Status KVRemove(grpc::ServerContext* context,
                                 const api::KVRemoveRequest* request,
-                                api::KVRemoveResponse* response) override {
-    auto table =
-        table_manager_->GetKVTable(request->table_name().name());
-    if (!table.get()) {
-      Status::TABLE_NOT_FOUND(response->mutable_result());
-      return grpc::Status::OK;
-    } else {
-      auto s = table->Remove(request->keys());
-      Status::RESULT(s, response->mutable_result());
-      return grpc::Status::OK;
-    }
-  }
+                                api::KVRemoveResponse* response) override;
 
  private:
   std::shared_ptr<TableManager> table_manager_;

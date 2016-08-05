@@ -4,10 +4,11 @@
 #include <memory>
 
 #include "common/status.h"
-#include "db/table_manager.h"
 #include "network/cpp/uranium.grpc.pb.h"
 
 namespace uranium {
+
+class TableManager;
 
 class UraniumSetServiceImpl
     : public api::UraniumSetService::Service {
@@ -26,41 +27,29 @@ class UraniumSetServiceImpl
 
   virtual grpc::Status SetAdd(grpc::ServerContext* context,
                               const api::SetAddRequest* request,
-                              api::SetAddResponse* response) override {
-    return grpc::Status::OK;
-  }
+                              api::SetAddResponse* response) override;
 
   virtual grpc::Status SetLength(grpc::ServerContext* context,
                                  const api::SetLengthRequest* request,
-                                 api::SetLengthResponse* response) override {
-    return grpc::Status::OK;
-  }
+                                 api::SetLengthResponse* response) override;
 
   virtual grpc::Status SetIsMember(
       grpc::ServerContext* context,
       const api::SetIsMemberRequest* request,
-      api::SetIsMemberResponse* response) override {
-    return grpc::Status::OK;
-  }
+      api::SetIsMemberResponse* response) override;
 
   virtual grpc::Status SetGetAll(grpc::ServerContext* context,
                                  const api::SetGetAllRequest* request,
-                                 api::SetGetAllResponse* response) override {
-    return grpc::Status::OK;
-  }
+                                 api::SetGetAllResponse* response) override;
 
   virtual grpc::Status SetRemove(grpc::ServerContext* context,
                                  const api::SetRemoveRequest* request,
-                                 api::SetRemoveResponse* response) override {
-    return grpc::Status::OK;
-  }
+                                 api::SetRemoveResponse* response) override;
 
   virtual grpc::Status SetRemoveAll(
       grpc::ServerContext* context,
       const api::SetRemoveAllRequest* request,
-      api::SetRemoveAllResponse* response) override {
-    return grpc::Status::OK;
-  }
+      api::SetRemoveAllResponse* response) override;
 
  private:
   std::shared_ptr<TableManager> table_manager_;
