@@ -7,6 +7,7 @@
 #define URANIUM_DB_SET_TABLE_H_
 
 #include <rocksdb/db.h>
+#include <rocksdb/merge_operator.h>
 
 #include "common/status.h"
 #include "table.h"
@@ -32,10 +33,48 @@ class SetTable : public Table {
     return Status::OK();
   }
 
- private:
+  Status Add(const std::string& key,
+             const google::protobuf::RepeatedPtrField<api::Value>& values);
 
+  Status Length(const std::string& key, int64_t* length);
+
+  Status IsMember(const std::string& key,
+                  const std::string& value,
+                  bool* yes);
+
+  Status GetAll(const std::string& key,
+                google::protobuf::RepeatedPtrField<api::Value>* values);
+
+  Status Remove(const std::string& key,
+                const google::protobuf::RepeatedPtrField<api::Value>& values);
+
+  Status RemoveAll(const std::string& key);
+
+ private:
   rocksdb::DB* db_ { nullptr };
   internal::TableOptions options_;
+  enum MergeType : uint8_t {
+    kNone   = 0,
+    kAdd    = 1,
+    kRemove = 2,
+  };
+
+  class SetMergeOperator : public rocksdb::MergeOperator {
+    virtual bool FullMergeV2(
+        const rocksdb::MergeOperator::MergeOperationInput &merge_in,
+        rocksdb::MergeOperator::MergeOperationOutput *merge_out) const override;
+
+    virtual bool PartialMerge(const rocksdb::Slice &key,
+                              const rocksdb::Slice &left_operand,
+                              const rocksdb::Slice &right_operand,
+                              std::string *new_value,
+                              rocksdb::Logger *logger) const override;
+    virtual const char* Name() const override {
+      return "Set FLAT Merge";
+    }
+  };
+
+
 };
 
 }  // namespace uranium

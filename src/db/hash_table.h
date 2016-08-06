@@ -8,7 +8,6 @@
 
 #include <rocksdb/db.h>
 #include <rocksdb/merge_operator.h>
-#include <rocksdb/write_batch.h>
 
 #include "common/status.h"
 #include "table.h"

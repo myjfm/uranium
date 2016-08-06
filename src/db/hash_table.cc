@@ -268,7 +268,7 @@ bool HashTable::HashMergeOperator::FullMergeV2(
     }
   }
   for (auto& operand : merge_in.operand_list) {
-    if (operand.size() < 1) {
+    if (operand.size() <= 1) {
       return false;
     }
     MergeType merge_type = static_cast<MergeType>(operand[0]);
@@ -328,8 +328,8 @@ bool HashTable::HashMergeOperator::PartialMerge(
     const rocksdb::Slice& right_operand,
     std::string* new_value,
     rocksdb::Logger* logger) const {
-  if (left_operand.size() < 1 ||
-      right_operand.size() < 1 ||
+  if (left_operand.size() <= 1 ||
+      right_operand.size() <= 1 ||
       (static_cast<MergeType>(left_operand[0]) !=
        static_cast<MergeType>(right_operand[0]))) {
     return false;

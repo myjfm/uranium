@@ -66,7 +66,7 @@ inline bool TableStatus_Parse(
 }
 // ===================================================================
 
-class TableOptions : public ::google::protobuf::Message {
+class TableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.internal.TableOptions) */ {
  public:
   TableOptions();
   virtual ~TableOptions();
@@ -100,7 +100,11 @@ class TableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -166,7 +170,7 @@ class TableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class TableOptionsList : public ::google::protobuf::Message {
+class TableOptionsList : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.internal.TableOptionsList) */ {
  public:
   TableOptionsList();
   virtual ~TableOptionsList();
@@ -200,7 +204,11 @@ class TableOptionsList : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();

@@ -33,6 +33,7 @@ const ::google::protobuf::EnumDescriptor* TableStatus_descriptor_ = NULL;
 }  // namespace
 
 
+void protobuf_AssignDesc_uranium_5finternal_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_uranium_5finternal_2eproto() {
   protobuf_AddDesc_uranium_5finternal_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -82,6 +83,7 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_uranium_5finternal_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -99,6 +101,7 @@ void protobuf_ShutdownFile_uranium_5finternal_2eproto() {
   delete TableOptionsList_reflection_;
 }
 
+void protobuf_AddDesc_uranium_5finternal_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_uranium_5finternal_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -145,16 +148,6 @@ bool TableStatus_IsValid(int value) {
       return false;
   }
 }
-
-
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
 
 
 // ===================================================================
@@ -342,8 +335,8 @@ void TableOptions::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.internal.TableOptions)
 }
 
-::google::protobuf::uint8* TableOptions::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* TableOptions::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.internal.TableOptions)
   // optional string table_path = 1;
   if (this->table_path().size() > 0) {
@@ -365,8 +358,8 @@ void TableOptions::SerializeWithCachedSizes(
   // optional .uranium.admin.TableOptions options = 3;
   if (this->has_options()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, *this->options_, target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->options_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.internal.TableOptions)
@@ -405,7 +398,9 @@ int TableOptions::ByteSize() const {
 
 void TableOptions::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.internal.TableOptions)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const TableOptions* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const TableOptions>(
           &from);
@@ -420,7 +415,9 @@ void TableOptions::MergeFrom(const ::google::protobuf::Message& from) {
 
 void TableOptions::MergeFrom(const TableOptions& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.internal.TableOptions)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.table_path().size() > 0) {
 
     table_path_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.table_path_);
@@ -701,14 +698,14 @@ void TableOptionsList::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.internal.TableOptionsList)
 }
 
-::google::protobuf::uint8* TableOptionsList::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* TableOptionsList::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.internal.TableOptionsList)
   // repeated .uranium.internal.TableOptions options_list = 1;
   for (unsigned int i = 0, n = this->options_list_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->options_list(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, this->options_list(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.internal.TableOptionsList)
@@ -735,7 +732,9 @@ int TableOptionsList::ByteSize() const {
 
 void TableOptionsList::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.internal.TableOptionsList)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const TableOptionsList* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const TableOptionsList>(
           &from);
@@ -750,7 +749,9 @@ void TableOptionsList::MergeFrom(const ::google::protobuf::Message& from) {
 
 void TableOptionsList::MergeFrom(const TableOptionsList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.internal.TableOptionsList)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   options_list_.MergeFrom(from.options_list_);
 }
 

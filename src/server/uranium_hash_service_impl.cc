@@ -19,14 +19,13 @@ grpc::Status UraniumHashServiceImpl::HashGet(grpc::ServerContext* context,
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     auto s = table->Get(request->key().key(),
                         request->fields(),
                         response->mutable_fvs());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashGetAll(
@@ -36,12 +35,11 @@ grpc::Status UraniumHashServiceImpl::HashGetAll(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     auto s = table->GetAll(request->key().key(), response->mutable_fvs());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashGetAllFields(
@@ -51,13 +49,12 @@ grpc::Status UraniumHashServiceImpl::HashGetAllFields(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     auto s = table->GetAllFields(request->key().key(),
                                  response->mutable_fields());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashGetAllValues(
@@ -67,13 +64,12 @@ grpc::Status UraniumHashServiceImpl::HashGetAllValues(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     auto s = table->GetAllValues(request->key().key(),
                                  response->mutable_values());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashLength(
@@ -83,13 +79,12 @@ grpc::Status UraniumHashServiceImpl::HashLength(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     int64_t length;
     auto s = table->Length(request->key().key(), &length);
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashSet(
@@ -99,13 +94,12 @@ grpc::Status UraniumHashServiceImpl::HashSet(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     int64_t length;
     auto s = table->Set(request->key().key(), request->fvs());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashSetX(
@@ -115,13 +109,12 @@ grpc::Status UraniumHashServiceImpl::HashSetX(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     int64_t length;
     auto s = table->SetX(request->key().key(), request->fv());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashRemove(
@@ -131,13 +124,12 @@ grpc::Status UraniumHashServiceImpl::HashRemove(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     int64_t length;
     auto s = table->Remove(request->key().key(), request->fields());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashExists(
@@ -147,13 +139,12 @@ grpc::Status UraniumHashServiceImpl::HashExists(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     bool exists;
     auto s = table->Exists(request->key().key(), request->field(), &exists);
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 grpc::Status UraniumHashServiceImpl::HashRemoveAll(
@@ -163,13 +154,12 @@ grpc::Status UraniumHashServiceImpl::HashRemoveAll(
   auto table = table_manager_->GetHashTable(request->table_name().name());
   if (!table.get()) {
     Status::TABLE_NOT_FOUND(response->mutable_result());
-    return grpc::Status::OK;
   } else {
     int64_t length;
     auto s = table->RemoveAll(request->key().key());
     Status::RESULT(s, response->mutable_result());
-    return grpc::Status::OK;
   }
+  return grpc::Status::OK;
 }
 
 }  // namespace uranium

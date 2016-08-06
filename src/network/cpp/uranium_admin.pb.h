@@ -73,7 +73,7 @@ inline bool StorageType_Parse(
 }
 // ===================================================================
 
-class TableOptions : public ::google::protobuf::Message {
+class TableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.TableOptions) */ {
  public:
   TableOptions();
   virtual ~TableOptions();
@@ -116,7 +116,11 @@ class TableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -235,7 +239,7 @@ class TableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class KVTableOptions : public ::google::protobuf::Message {
+class KVTableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.KVTableOptions) */ {
  public:
   KVTableOptions();
   virtual ~KVTableOptions();
@@ -269,7 +273,11 @@ class KVTableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -313,7 +321,7 @@ class KVTableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ListTableOptions : public ::google::protobuf::Message {
+class ListTableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.ListTableOptions) */ {
  public:
   ListTableOptions();
   virtual ~ListTableOptions();
@@ -347,7 +355,11 @@ class ListTableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -391,7 +403,7 @@ class ListTableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class HashTableOptions : public ::google::protobuf::Message {
+class HashTableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.HashTableOptions) */ {
  public:
   HashTableOptions();
   virtual ~HashTableOptions();
@@ -425,7 +437,11 @@ class HashTableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -469,7 +485,7 @@ class HashTableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SetTableOptions : public ::google::protobuf::Message {
+class SetTableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.SetTableOptions) */ {
  public:
   SetTableOptions();
   virtual ~SetTableOptions();
@@ -503,7 +519,11 @@ class SetTableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -547,7 +567,7 @@ class SetTableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SchemaTableOptions : public ::google::protobuf::Message {
+class SchemaTableOptions : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.SchemaTableOptions) */ {
  public:
   SchemaTableOptions();
   virtual ~SchemaTableOptions();
@@ -581,7 +601,11 @@ class SchemaTableOptions : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -638,7 +662,7 @@ class SchemaTableOptions : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class DropTableRequest : public ::google::protobuf::Message {
+class DropTableRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.DropTableRequest) */ {
  public:
   DropTableRequest();
   virtual ~DropTableRequest();
@@ -672,7 +696,11 @@ class DropTableRequest : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -726,7 +754,7 @@ class DropTableRequest : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class GetTableOptionsRequest : public ::google::protobuf::Message {
+class GetTableOptionsRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.GetTableOptionsRequest) */ {
  public:
   GetTableOptionsRequest();
   virtual ~GetTableOptionsRequest();
@@ -760,7 +788,11 @@ class GetTableOptionsRequest : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -814,7 +846,7 @@ class GetTableOptionsRequest : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class GetTableOptionsResponse : public ::google::protobuf::Message {
+class GetTableOptionsResponse : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:uranium.admin.GetTableOptionsResponse) */ {
  public:
   GetTableOptionsResponse();
   virtual ~GetTableOptionsResponse();
@@ -848,7 +880,11 @@ class GetTableOptionsResponse : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();

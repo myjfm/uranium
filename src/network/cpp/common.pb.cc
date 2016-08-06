@@ -50,6 +50,7 @@ const ::google::protobuf::EnumDescriptor* ColumnType_descriptor_ = NULL;
 }  // namespace
 
 
+void protobuf_AssignDesc_common_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_common_2eproto() {
   protobuf_AddDesc_common_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -154,6 +155,7 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_common_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -184,6 +186,7 @@ void protobuf_ShutdownFile_common_2eproto() {
   delete ColumnDefination_reflection_;
 }
 
+void protobuf_AddDesc_common_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_common_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -290,16 +293,6 @@ bool ColumnType_IsValid(int value) {
       return false;
   }
 }
-
-
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
 
 
 // ===================================================================
@@ -437,8 +430,8 @@ void TableName::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.common.TableName)
 }
 
-::google::protobuf::uint8* TableName::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* TableName::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.common.TableName)
   // optional string name = 1;
   if (this->name().size() > 0) {
@@ -474,7 +467,9 @@ int TableName::ByteSize() const {
 
 void TableName::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.common.TableName)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const TableName* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const TableName>(
           &from);
@@ -489,7 +484,9 @@ void TableName::MergeFrom(const ::google::protobuf::Message& from) {
 
 void TableName::MergeFrom(const TableName& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.common.TableName)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.name().size() > 0) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
@@ -742,8 +739,8 @@ void Result::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.common.Result)
 }
 
-::google::protobuf::uint8* Result::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Result::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.common.Result)
   // optional .uranium.common.Status status = 1;
   if (this->status() != 0) {
@@ -791,7 +788,9 @@ int Result::ByteSize() const {
 
 void Result::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.common.Result)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const Result* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const Result>(
           &from);
@@ -806,7 +805,9 @@ void Result::MergeFrom(const ::google::protobuf::Message& from) {
 
 void Result::MergeFrom(const Result& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.common.Result)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.status() != 0) {
     set_status(from.status());
   }
@@ -1052,8 +1053,8 @@ void ColumnName::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.common.ColumnName)
 }
 
-::google::protobuf::uint8* ColumnName::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ColumnName::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.common.ColumnName)
   // optional string name = 1;
   if (this->name().size() > 0) {
@@ -1089,7 +1090,9 @@ int ColumnName::ByteSize() const {
 
 void ColumnName::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.common.ColumnName)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ColumnName* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ColumnName>(
           &from);
@@ -1104,7 +1107,9 @@ void ColumnName::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ColumnName::MergeFrom(const ColumnName& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.common.ColumnName)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.name().size() > 0) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
@@ -1423,8 +1428,8 @@ void ColumnValue::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.common.ColumnValue)
 }
 
-::google::protobuf::uint8* ColumnValue::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ColumnValue::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.common.ColumnValue)
   // optional sint64 integer = 1;
   if (has_integer()) {
@@ -1493,7 +1498,9 @@ int ColumnValue::ByteSize() const {
 
 void ColumnValue::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.common.ColumnValue)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ColumnValue* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ColumnValue>(
           &from);
@@ -1508,7 +1515,9 @@ void ColumnValue::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ColumnValue::MergeFrom(const ColumnValue& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.common.ColumnValue)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   switch (from.value_case()) {
     case kInteger: {
       set_integer(from.integer());
@@ -1972,14 +1981,14 @@ void ColumnDefination::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.common.ColumnDefination)
 }
 
-::google::protobuf::uint8* ColumnDefination::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ColumnDefination::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.common.ColumnDefination)
   // optional .uranium.common.ColumnName column_name = 1;
   if (this->has_column_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->column_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->column_name_, false, target);
   }
 
   // optional .uranium.common.ColumnType column_type = 2;
@@ -1991,8 +2000,8 @@ void ColumnDefination::SerializeWithCachedSizes(
   // optional .uranium.common.ColumnValue default_value = 3;
   if (this->has_default_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, *this->default_value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->default_value_, false, target);
   }
 
   // optional bool not_null = 4;
@@ -2041,7 +2050,9 @@ int ColumnDefination::ByteSize() const {
 
 void ColumnDefination::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.common.ColumnDefination)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ColumnDefination* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ColumnDefination>(
           &from);
@@ -2056,7 +2067,9 @@ void ColumnDefination::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ColumnDefination::MergeFrom(const ColumnDefination& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.common.ColumnDefination)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_column_name()) {
     mutable_column_name()->::uranium::common::ColumnName::MergeFrom(from.column_name());
   }

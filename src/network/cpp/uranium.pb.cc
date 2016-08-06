@@ -221,6 +221,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_uranium_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_uranium_2eproto() {
   protobuf_AddDesc_uranium_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -1140,7 +1141,7 @@ void protobuf_AssignDesc_uranium_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetLengthResponse, _is_default_instance_));
   SetIsMemberRequest_descriptor_ = file->message_type(57);
   static const int SetIsMemberRequest_offsets_[3] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberRequest, status_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberRequest, table_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberRequest, key_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetIsMemberRequest, value_),
   };
@@ -1276,6 +1277,7 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_uranium_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -1545,6 +1547,7 @@ void protobuf_ShutdownFile_uranium_2eproto() {
   delete SetRemoveAllResponse_reflection_;
 }
 
+void protobuf_AddDesc_uranium_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_uranium_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -1685,88 +1688,88 @@ void protobuf_AddDesc_uranium_2eproto() {
     "mmon.TableName\022\035\n\003key\030\002 \001(\0132\020.uranium.ap"
     "i.Key\"K\n\021SetLengthResponse\022&\n\006result\030\001 \001"
     "(\0132\026.uranium.common.Result\022\016\n\006length\030\002 \001"
-    "(\003\"~\n\022SetIsMemberRequest\022&\n\006status\030\001 \001(\016"
-    "2\026.uranium.common.Status\022\035\n\003key\030\002 \001(\0132\020."
-    "uranium.api.Key\022!\n\005value\030\003 \001(\0132\022.uranium"
-    ".api.Value\"J\n\023SetIsMemberResponse\022&\n\006res"
-    "ult\030\001 \001(\0132\026.uranium.common.Result\022\013\n\003yes"
-    "\030\002 \001(\010\"`\n\020SetGetAllRequest\022-\n\ntable_name"
-    "\030\001 \001(\0132\031.uranium.common.TableName\022\035\n\003key"
-    "\030\002 \001(\0132\020.uranium.api.Key\"_\n\021SetGetAllRes"
+    "(\003\"\205\001\n\022SetIsMemberRequest\022-\n\ntable_name\030"
+    "\001 \001(\0132\031.uranium.common.TableName\022\035\n\003key\030"
+    "\002 \001(\0132\020.uranium.api.Key\022!\n\005value\030\003 \001(\0132\022"
+    ".uranium.api.Value\"J\n\023SetIsMemberRespons"
+    "e\022&\n\006result\030\001 \001(\0132\026.uranium.common.Resul"
+    "t\022\013\n\003yes\030\002 \001(\010\"`\n\020SetGetAllRequest\022-\n\nta"
+    "ble_name\030\001 \001(\0132\031.uranium.common.TableNam"
+    "e\022\035\n\003key\030\002 \001(\0132\020.uranium.api.Key\"_\n\021SetG"
+    "etAllResponse\022&\n\006result\030\001 \001(\0132\026.uranium."
+    "common.Result\022\"\n\006values\030\002 \003(\0132\022.uranium."
+    "api.Value\"\204\001\n\020SetRemoveRequest\022-\n\ntable_"
+    "name\030\001 \001(\0132\031.uranium.common.TableName\022\035\n"
+    "\003key\030\002 \001(\0132\020.uranium.api.Key\022\"\n\006values\030\003"
+    " \003(\0132\022.uranium.api.Value\";\n\021SetRemoveRes"
     "ponse\022&\n\006result\030\001 \001(\0132\026.uranium.common.R"
-    "esult\022\"\n\006values\030\002 \003(\0132\022.uranium.api.Valu"
-    "e\"\204\001\n\020SetRemoveRequest\022-\n\ntable_name\030\001 \001"
-    "(\0132\031.uranium.common.TableName\022\035\n\003key\030\002 \001"
-    "(\0132\020.uranium.api.Key\022\"\n\006values\030\003 \003(\0132\022.u"
-    "ranium.api.Value\";\n\021SetRemoveResponse\022&\n"
-    "\006result\030\001 \001(\0132\026.uranium.common.Result\"c\n"
-    "\023SetRemoveAllRequest\022-\n\ntable_name\030\001 \001(\013"
-    "2\031.uranium.common.TableName\022\035\n\003key\030\002 \001(\013"
-    "2\020.uranium.api.Key\">\n\024SetRemoveAllRespon"
-    "se\022&\n\006result\030\001 \001(\0132\026.uranium.common.Resu"
-    "lt2\341\001\n\020UraniumKVService\022@\n\005KVGet\022\031.urani"
-    "um.api.KVGetRequest\032\032.uranium.api.KVGetR"
-    "esponse\"\000\022@\n\005KVSet\022\031.uranium.api.KVSetRe"
-    "quest\032\032.uranium.api.KVSetResponse\"\000\022I\n\010K"
-    "VRemove\022\034.uranium.api.KVRemoveRequest\032\035."
-    "uranium.api.KVRemoveResponse\"\0002\367\006\n\022Urani"
-    "umListService\022L\n\tListLPush\022\035.uranium.api"
-    ".ListLPushRequest\032\036.uranium.api.ListLPus"
-    "hResponse\"\000\022I\n\010ListLPop\022\034.uranium.api.Li"
-    "stLPopRequest\032\035.uranium.api.ListLPopResp"
-    "onse\"\000\022L\n\tListRPush\022\035.uranium.api.ListRP"
-    "ushRequest\032\036.uranium.api.ListRPushRespon"
-    "se\"\000\022I\n\010ListRPop\022\034.uranium.api.ListRPopR"
-    "equest\032\035.uranium.api.ListRPopResponse\"\000\022"
-    "O\n\nListLPushX\022\036.uranium.api.ListLPushXRe"
-    "quest\032\037.uranium.api.ListLPushXResponse\"\000"
-    "\022O\n\nListRPushX\022\036.uranium.api.ListRPushXR"
-    "equest\032\037.uranium.api.ListRPushXResponse\""
-    "\000\022L\n\tListIndex\022\035.uranium.api.ListIndexRe"
-    "quest\032\036.uranium.api.ListIndexResponse\"\000\022"
-    "F\n\007ListSet\022\033.uranium.api.ListSetRequest\032"
-    "\034.uranium.api.ListSetResponse\"\000\022L\n\tListR"
-    "ange\022\035.uranium.api.ListRangeRequest\032\036.ur"
-    "anium.api.ListRangeResponse\"\000\022O\n\nListLen"
-    "gth\022\036.uranium.api.ListLengthRequest\032\037.ur"
-    "anium.api.ListLengthResponse\"\000\022X\n\rListRe"
-    "moveAll\022!.uranium.api.ListRemoveAllReque"
-    "st\032\".uranium.api.ListRemoveAllResponse\"\000"
-    "2\323\006\n\022UraniumHashService\022F\n\007HashGet\022\033.ura"
-    "nium.api.HashGetRequest\032\034.uranium.api.Ha"
-    "shGetResponse\"\000\022O\n\nHashGetAll\022\036.uranium."
-    "api.HashGetAllRequest\032\037.uranium.api.Hash"
-    "GetAllResponse\"\000\022a\n\020HashGetAllFields\022$.u"
-    "ranium.api.HashGetAllFieldsRequest\032%.ura"
-    "nium.api.HashGetAllFieldsResponse\"\000\022a\n\020H"
-    "ashGetAllValues\022$.uranium.api.HashGetAll"
-    "ValuesRequest\032%.uranium.api.HashGetAllVa"
-    "luesResponse\"\000\022O\n\nHashLength\022\036.uranium.a"
-    "pi.HashLengthRequest\032\037.uranium.api.HashL"
-    "engthResponse\"\000\022F\n\007HashSet\022\033.uranium.api"
-    ".HashSetRequest\032\034.uranium.api.HashSetRes"
-    "ponse\"\000\022I\n\010HashSetX\022\034.uranium.api.HashSe"
-    "tXRequest\032\035.uranium.api.HashSetXResponse"
-    "\"\000\022O\n\nHashRemove\022\036.uranium.api.HashRemov"
-    "eRequest\032\037.uranium.api.HashRemoveRespons"
-    "e\"\000\022O\n\nHashExists\022\036.uranium.api.HashExis"
-    "tsRequest\032\037.uranium.api.HashExistsRespon"
-    "se\"\000\022X\n\rHashRemoveAll\022!.uranium.api.Hash"
-    "RemoveAllRequest\032\".uranium.api.HashRemov"
-    "eAllResponse\"\0002\355\003\n\021UraniumSetService\022C\n\006"
-    "SetAdd\022\032.uranium.api.SetAddRequest\032\033.ura"
-    "nium.api.SetAddResponse\"\000\022L\n\tSetLength\022\035"
-    ".uranium.api.SetLengthRequest\032\036.uranium."
-    "api.SetLengthResponse\"\000\022R\n\013SetIsMember\022\037"
-    ".uranium.api.SetIsMemberRequest\032 .uraniu"
-    "m.api.SetIsMemberResponse\"\000\022L\n\tSetGetAll"
-    "\022\035.uranium.api.SetGetAllRequest\032\036.uraniu"
-    "m.api.SetGetAllResponse\"\000\022L\n\tSetRemove\022\035"
-    ".uranium.api.SetRemoveRequest\032\036.uranium."
-    "api.SetRemoveResponse\"\000\022U\n\014SetRemoveAll\022"
-    " .uranium.api.SetRemoveAllRequest\032!.uran"
-    "ium.api.SetRemoveAllResponse\"\0002\026\n\024Uraniu"
-    "mSchemaServiceb\006proto3", 8542);
+    "esult\"c\n\023SetRemoveAllRequest\022-\n\ntable_na"
+    "me\030\001 \001(\0132\031.uranium.common.TableName\022\035\n\003k"
+    "ey\030\002 \001(\0132\020.uranium.api.Key\">\n\024SetRemoveA"
+    "llResponse\022&\n\006result\030\001 \001(\0132\026.uranium.com"
+    "mon.Result2\341\001\n\020UraniumKVService\022@\n\005KVGet"
+    "\022\031.uranium.api.KVGetRequest\032\032.uranium.ap"
+    "i.KVGetResponse\"\000\022@\n\005KVSet\022\031.uranium.api"
+    ".KVSetRequest\032\032.uranium.api.KVSetRespons"
+    "e\"\000\022I\n\010KVRemove\022\034.uranium.api.KVRemoveRe"
+    "quest\032\035.uranium.api.KVRemoveResponse\"\0002\367"
+    "\006\n\022UraniumListService\022L\n\tListLPush\022\035.ura"
+    "nium.api.ListLPushRequest\032\036.uranium.api."
+    "ListLPushResponse\"\000\022I\n\010ListLPop\022\034.uraniu"
+    "m.api.ListLPopRequest\032\035.uranium.api.List"
+    "LPopResponse\"\000\022L\n\tListRPush\022\035.uranium.ap"
+    "i.ListRPushRequest\032\036.uranium.api.ListRPu"
+    "shResponse\"\000\022I\n\010ListRPop\022\034.uranium.api.L"
+    "istRPopRequest\032\035.uranium.api.ListRPopRes"
+    "ponse\"\000\022O\n\nListLPushX\022\036.uranium.api.List"
+    "LPushXRequest\032\037.uranium.api.ListLPushXRe"
+    "sponse\"\000\022O\n\nListRPushX\022\036.uranium.api.Lis"
+    "tRPushXRequest\032\037.uranium.api.ListRPushXR"
+    "esponse\"\000\022L\n\tListIndex\022\035.uranium.api.Lis"
+    "tIndexRequest\032\036.uranium.api.ListIndexRes"
+    "ponse\"\000\022F\n\007ListSet\022\033.uranium.api.ListSet"
+    "Request\032\034.uranium.api.ListSetResponse\"\000\022"
+    "L\n\tListRange\022\035.uranium.api.ListRangeRequ"
+    "est\032\036.uranium.api.ListRangeResponse\"\000\022O\n"
+    "\nListLength\022\036.uranium.api.ListLengthRequ"
+    "est\032\037.uranium.api.ListLengthResponse\"\000\022X"
+    "\n\rListRemoveAll\022!.uranium.api.ListRemove"
+    "AllRequest\032\".uranium.api.ListRemoveAllRe"
+    "sponse\"\0002\323\006\n\022UraniumHashService\022F\n\007HashG"
+    "et\022\033.uranium.api.HashGetRequest\032\034.uraniu"
+    "m.api.HashGetResponse\"\000\022O\n\nHashGetAll\022\036."
+    "uranium.api.HashGetAllRequest\032\037.uranium."
+    "api.HashGetAllResponse\"\000\022a\n\020HashGetAllFi"
+    "elds\022$.uranium.api.HashGetAllFieldsReque"
+    "st\032%.uranium.api.HashGetAllFieldsRespons"
+    "e\"\000\022a\n\020HashGetAllValues\022$.uranium.api.Ha"
+    "shGetAllValuesRequest\032%.uranium.api.Hash"
+    "GetAllValuesResponse\"\000\022O\n\nHashLength\022\036.u"
+    "ranium.api.HashLengthRequest\032\037.uranium.a"
+    "pi.HashLengthResponse\"\000\022F\n\007HashSet\022\033.ura"
+    "nium.api.HashSetRequest\032\034.uranium.api.Ha"
+    "shSetResponse\"\000\022I\n\010HashSetX\022\034.uranium.ap"
+    "i.HashSetXRequest\032\035.uranium.api.HashSetX"
+    "Response\"\000\022O\n\nHashRemove\022\036.uranium.api.H"
+    "ashRemoveRequest\032\037.uranium.api.HashRemov"
+    "eResponse\"\000\022O\n\nHashExists\022\036.uranium.api."
+    "HashExistsRequest\032\037.uranium.api.HashExis"
+    "tsResponse\"\000\022X\n\rHashRemoveAll\022!.uranium."
+    "api.HashRemoveAllRequest\032\".uranium.api.H"
+    "ashRemoveAllResponse\"\0002\355\003\n\021UraniumSetSer"
+    "vice\022C\n\006SetAdd\022\032.uranium.api.SetAddReque"
+    "st\032\033.uranium.api.SetAddResponse\"\000\022L\n\tSet"
+    "Length\022\035.uranium.api.SetLengthRequest\032\036."
+    "uranium.api.SetLengthResponse\"\000\022R\n\013SetIs"
+    "Member\022\037.uranium.api.SetIsMemberRequest\032"
+    " .uranium.api.SetIsMemberResponse\"\000\022L\n\tS"
+    "etGetAll\022\035.uranium.api.SetGetAllRequest\032"
+    "\036.uranium.api.SetGetAllResponse\"\000\022L\n\tSet"
+    "Remove\022\035.uranium.api.SetRemoveRequest\032\036."
+    "uranium.api.SetRemoveResponse\"\000\022U\n\014SetRe"
+    "moveAll\022 .uranium.api.SetRemoveAllReques"
+    "t\032!.uranium.api.SetRemoveAllResponse\"\0002\026"
+    "\n\024UraniumSchemaServiceb\006proto3", 8550);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "uranium.proto", &protobuf_RegisterTypes);
   Key::default_instance_ = new Key();
@@ -1909,16 +1912,6 @@ struct StaticDescriptorInitializer_uranium_2eproto {
   }
 } static_descriptor_initializer_uranium_2eproto_;
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2046,8 +2039,8 @@ void Key::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.Key)
 }
 
-::google::protobuf::uint8* Key::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Key::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.Key)
   // optional bytes key = 1;
   if (this->key().size() > 0) {
@@ -2079,7 +2072,9 @@ int Key::ByteSize() const {
 
 void Key::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.Key)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const Key* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const Key>(
           &from);
@@ -2094,7 +2089,9 @@ void Key::MergeFrom(const ::google::protobuf::Message& from) {
 
 void Key::MergeFrom(const Key& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.Key)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.key().size() > 0) {
 
     key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
@@ -2314,8 +2311,8 @@ void Value::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.Value)
 }
 
-::google::protobuf::uint8* Value::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Value::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.Value)
   // optional bytes value = 1;
   if (this->value().size() > 0) {
@@ -2347,7 +2344,9 @@ int Value::ByteSize() const {
 
 void Value::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.Value)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const Value* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const Value>(
           &from);
@@ -2362,7 +2361,9 @@ void Value::MergeFrom(const ::google::protobuf::Message& from) {
 
 void Value::MergeFrom(const Value& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.Value)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.value().size() > 0) {
 
     value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
@@ -2608,21 +2609,21 @@ void KeyValue::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KeyValue)
 }
 
-::google::protobuf::uint8* KeyValue::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KeyValue::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KeyValue)
   // optional .uranium.api.Key key = 1;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->key_, false, target);
   }
 
   // optional .uranium.api.Value value = 2;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KeyValue)
@@ -2655,7 +2656,9 @@ int KeyValue::ByteSize() const {
 
 void KeyValue::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KeyValue)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KeyValue* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KeyValue>(
           &from);
@@ -2670,7 +2673,9 @@ void KeyValue::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KeyValue::MergeFrom(const KeyValue& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KeyValue)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_key()) {
     mutable_key()->::uranium::api::Key::MergeFrom(from.key());
   }
@@ -2925,8 +2930,8 @@ void Field::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.Field)
 }
 
-::google::protobuf::uint8* Field::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Field::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.Field)
   // optional bytes field = 1;
   if (this->field().size() > 0) {
@@ -2958,7 +2963,9 @@ int Field::ByteSize() const {
 
 void Field::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.Field)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const Field* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const Field>(
           &from);
@@ -2973,7 +2980,9 @@ void Field::MergeFrom(const ::google::protobuf::Message& from) {
 
 void Field::MergeFrom(const Field& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.Field)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.field().size() > 0) {
 
     field_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.field_);
@@ -3219,21 +3228,21 @@ void FieldValue::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.FieldValue)
 }
 
-::google::protobuf::uint8* FieldValue::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* FieldValue::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.FieldValue)
   // optional .uranium.api.Field key = 1;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->key_, false, target);
   }
 
   // optional .uranium.api.Value value = 2;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.FieldValue)
@@ -3266,7 +3275,9 @@ int FieldValue::ByteSize() const {
 
 void FieldValue::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.FieldValue)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const FieldValue* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const FieldValue>(
           &from);
@@ -3281,7 +3292,9 @@ void FieldValue::MergeFrom(const ::google::protobuf::Message& from) {
 
 void FieldValue::MergeFrom(const FieldValue& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.FieldValue)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_key()) {
     mutable_key()->::uranium::api::Field::MergeFrom(from.key());
   }
@@ -3562,21 +3575,21 @@ void KVGetRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KVGetRequest)
 }
 
-::google::protobuf::uint8* KVGetRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KVGetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVGetRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // repeated .uranium.api.Key keys = 2;
   for (unsigned int i = 0, n = this->keys_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->keys(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->keys(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVGetRequest)
@@ -3610,7 +3623,9 @@ int KVGetRequest::ByteSize() const {
 
 void KVGetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KVGetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KVGetRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KVGetRequest>(
           &from);
@@ -3625,7 +3640,9 @@ void KVGetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KVGetRequest::MergeFrom(const KVGetRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVGetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   keys_.MergeFrom(from.keys_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -3896,21 +3913,21 @@ void KVGetResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KVGetResponse)
 }
 
-::google::protobuf::uint8* KVGetResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KVGetResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVGetResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.KeyValue kvs = 2;
   for (unsigned int i = 0, n = this->kvs_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->kvs(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->kvs(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVGetResponse)
@@ -3944,7 +3961,9 @@ int KVGetResponse::ByteSize() const {
 
 void KVGetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KVGetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KVGetResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KVGetResponse>(
           &from);
@@ -3959,7 +3978,9 @@ void KVGetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KVGetResponse::MergeFrom(const KVGetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVGetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   kvs_.MergeFrom(from.kvs_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -4230,21 +4251,21 @@ void KVSetRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KVSetRequest)
 }
 
-::google::protobuf::uint8* KVSetRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KVSetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVSetRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // repeated .uranium.api.KeyValue kvs = 2;
   for (unsigned int i = 0, n = this->kvs_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->kvs(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->kvs(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVSetRequest)
@@ -4278,7 +4299,9 @@ int KVSetRequest::ByteSize() const {
 
 void KVSetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KVSetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KVSetRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KVSetRequest>(
           &from);
@@ -4293,7 +4316,9 @@ void KVSetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KVSetRequest::MergeFrom(const KVSetRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVSetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   kvs_.MergeFrom(from.kvs_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -4539,14 +4564,14 @@ void KVSetResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KVSetResponse)
 }
 
-::google::protobuf::uint8* KVSetResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KVSetResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVSetResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVSetResponse)
@@ -4572,7 +4597,9 @@ int KVSetResponse::ByteSize() const {
 
 void KVSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KVSetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KVSetResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KVSetResponse>(
           &from);
@@ -4587,7 +4614,9 @@ void KVSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KVSetResponse::MergeFrom(const KVSetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVSetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -4826,21 +4855,21 @@ void KVRemoveRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KVRemoveRequest)
 }
 
-::google::protobuf::uint8* KVRemoveRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KVRemoveRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVRemoveRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // repeated .uranium.api.Key keys = 2;
   for (unsigned int i = 0, n = this->keys_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->keys(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->keys(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVRemoveRequest)
@@ -4874,7 +4903,9 @@ int KVRemoveRequest::ByteSize() const {
 
 void KVRemoveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KVRemoveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KVRemoveRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KVRemoveRequest>(
           &from);
@@ -4889,7 +4920,9 @@ void KVRemoveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KVRemoveRequest::MergeFrom(const KVRemoveRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVRemoveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   keys_.MergeFrom(from.keys_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -5135,14 +5168,14 @@ void KVRemoveResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.KVRemoveResponse)
 }
 
-::google::protobuf::uint8* KVRemoveResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* KVRemoveResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.KVRemoveResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.KVRemoveResponse)
@@ -5168,7 +5201,9 @@ int KVRemoveResponse::ByteSize() const {
 
 void KVRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.KVRemoveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const KVRemoveResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const KVRemoveResponse>(
           &from);
@@ -5183,7 +5218,9 @@ void KVRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void KVRemoveResponse::MergeFrom(const KVRemoveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.KVRemoveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -5447,28 +5484,28 @@ void ListLPushRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPushRequest)
 }
 
-::google::protobuf::uint8* ListLPushRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLPushRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPushRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Value values = 3;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPushRequest)
@@ -5509,7 +5546,9 @@ int ListLPushRequest::ByteSize() const {
 
 void ListLPushRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLPushRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLPushRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLPushRequest>(
           &from);
@@ -5524,7 +5563,9 @@ void ListLPushRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLPushRequest::MergeFrom(const ListLPushRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPushRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -5812,14 +5853,14 @@ void ListLPushResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPushResponse)
 }
 
-::google::protobuf::uint8* ListLPushResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLPushResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPushResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPushResponse)
@@ -5845,7 +5886,9 @@ int ListLPushResponse::ByteSize() const {
 
 void ListLPushResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLPushResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLPushResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLPushResponse>(
           &from);
@@ -5860,7 +5903,9 @@ void ListLPushResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLPushResponse::MergeFrom(const ListLPushResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPushResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -6099,21 +6144,21 @@ void ListLPopRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPopRequest)
 }
 
-::google::protobuf::uint8* ListLPopRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLPopRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPopRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPopRequest)
@@ -6146,7 +6191,9 @@ int ListLPopRequest::ByteSize() const {
 
 void ListLPopRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLPopRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLPopRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLPopRequest>(
           &from);
@@ -6161,7 +6208,9 @@ void ListLPopRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLPopRequest::MergeFrom(const ListLPopRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPopRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -6442,21 +6491,21 @@ void ListLPopResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPopResponse)
 }
 
-::google::protobuf::uint8* ListLPopResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLPopResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPopResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional .uranium.api.Value value = 2;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPopResponse)
@@ -6489,7 +6538,9 @@ int ListLPopResponse::ByteSize() const {
 
 void ListLPopResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLPopResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLPopResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLPopResponse>(
           &from);
@@ -6504,7 +6555,9 @@ void ListLPopResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLPopResponse::MergeFrom(const ListLPopResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPopResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -6810,28 +6863,28 @@ void ListRPushRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPushRequest)
 }
 
-::google::protobuf::uint8* ListRPushRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRPushRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPushRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Value values = 3;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPushRequest)
@@ -6872,7 +6925,9 @@ int ListRPushRequest::ByteSize() const {
 
 void ListRPushRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRPushRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRPushRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRPushRequest>(
           &from);
@@ -6887,7 +6942,9 @@ void ListRPushRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRPushRequest::MergeFrom(const ListRPushRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPushRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -7175,14 +7232,14 @@ void ListRPushResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPushResponse)
 }
 
-::google::protobuf::uint8* ListRPushResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRPushResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPushResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPushResponse)
@@ -7208,7 +7265,9 @@ int ListRPushResponse::ByteSize() const {
 
 void ListRPushResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRPushResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRPushResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRPushResponse>(
           &from);
@@ -7223,7 +7282,9 @@ void ListRPushResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRPushResponse::MergeFrom(const ListRPushResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPushResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -7462,21 +7523,21 @@ void ListRPopRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPopRequest)
 }
 
-::google::protobuf::uint8* ListRPopRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRPopRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPopRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPopRequest)
@@ -7509,7 +7570,9 @@ int ListRPopRequest::ByteSize() const {
 
 void ListRPopRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRPopRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRPopRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRPopRequest>(
           &from);
@@ -7524,7 +7587,9 @@ void ListRPopRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRPopRequest::MergeFrom(const ListRPopRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPopRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -7805,21 +7870,21 @@ void ListRPopResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPopResponse)
 }
 
-::google::protobuf::uint8* ListRPopResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRPopResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPopResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional .uranium.api.Value value = 2;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPopResponse)
@@ -7852,7 +7917,9 @@ int ListRPopResponse::ByteSize() const {
 
 void ListRPopResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRPopResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRPopResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRPopResponse>(
           &from);
@@ -7867,7 +7934,9 @@ void ListRPopResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRPopResponse::MergeFrom(const ListRPopResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPopResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -8173,28 +8242,28 @@ void ListLPushXRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPushXRequest)
 }
 
-::google::protobuf::uint8* ListLPushXRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLPushXRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPushXRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Value values = 3;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPushXRequest)
@@ -8235,7 +8304,9 @@ int ListLPushXRequest::ByteSize() const {
 
 void ListLPushXRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLPushXRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLPushXRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLPushXRequest>(
           &from);
@@ -8250,7 +8321,9 @@ void ListLPushXRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLPushXRequest::MergeFrom(const ListLPushXRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPushXRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -8538,14 +8611,14 @@ void ListLPushXResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLPushXResponse)
 }
 
-::google::protobuf::uint8* ListLPushXResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLPushXResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLPushXResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLPushXResponse)
@@ -8571,7 +8644,9 @@ int ListLPushXResponse::ByteSize() const {
 
 void ListLPushXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLPushXResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLPushXResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLPushXResponse>(
           &from);
@@ -8586,7 +8661,9 @@ void ListLPushXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLPushXResponse::MergeFrom(const ListLPushXResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLPushXResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -8850,28 +8927,28 @@ void ListRPushXRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPushXRequest)
 }
 
-::google::protobuf::uint8* ListRPushXRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRPushXRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPushXRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Value values = 3;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPushXRequest)
@@ -8912,7 +8989,9 @@ int ListRPushXRequest::ByteSize() const {
 
 void ListRPushXRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRPushXRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRPushXRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRPushXRequest>(
           &from);
@@ -8927,7 +9006,9 @@ void ListRPushXRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRPushXRequest::MergeFrom(const ListRPushXRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPushXRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -9215,14 +9296,14 @@ void ListRPushXResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRPushXResponse)
 }
 
-::google::protobuf::uint8* ListRPushXResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRPushXResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRPushXResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRPushXResponse)
@@ -9248,7 +9329,9 @@ int ListRPushXResponse::ByteSize() const {
 
 void ListRPushXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRPushXResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRPushXResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRPushXResponse>(
           &from);
@@ -9263,7 +9346,9 @@ void ListRPushXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRPushXResponse::MergeFrom(const ListRPushXResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRPushXResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -9525,21 +9610,21 @@ void ListIndexRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListIndexRequest)
 }
 
-::google::protobuf::uint8* ListIndexRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListIndexRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListIndexRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // optional int64 index = 3;
@@ -9584,7 +9669,9 @@ int ListIndexRequest::ByteSize() const {
 
 void ListIndexRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListIndexRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListIndexRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListIndexRequest>(
           &from);
@@ -9599,7 +9686,9 @@ void ListIndexRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListIndexRequest::MergeFrom(const ListIndexRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListIndexRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -9898,21 +9987,21 @@ void ListIndexResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListIndexResponse)
 }
 
-::google::protobuf::uint8* ListIndexResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListIndexResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListIndexResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional .uranium.api.Value value = 2;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListIndexResponse)
@@ -9945,7 +10034,9 @@ int ListIndexResponse::ByteSize() const {
 
 void ListIndexResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListIndexResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListIndexResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListIndexResponse>(
           &from);
@@ -9960,7 +10051,9 @@ void ListIndexResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListIndexResponse::MergeFrom(const ListIndexResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListIndexResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -10289,21 +10382,21 @@ void ListSetRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListSetRequest)
 }
 
-::google::protobuf::uint8* ListSetRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListSetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListSetRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // optional int64 index = 3;
@@ -10314,8 +10407,8 @@ void ListSetRequest::SerializeWithCachedSizes(
   // optional .uranium.api.Value value = 4;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListSetRequest)
@@ -10362,7 +10455,9 @@ int ListSetRequest::ByteSize() const {
 
 void ListSetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListSetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListSetRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListSetRequest>(
           &from);
@@ -10377,7 +10472,9 @@ void ListSetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListSetRequest::MergeFrom(const ListSetRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListSetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -10693,14 +10790,14 @@ void ListSetResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListSetResponse)
 }
 
-::google::protobuf::uint8* ListSetResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListSetResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListSetResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListSetResponse)
@@ -10726,7 +10823,9 @@ int ListSetResponse::ByteSize() const {
 
 void ListSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListSetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListSetResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListSetResponse>(
           &from);
@@ -10741,7 +10840,9 @@ void ListSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListSetResponse::MergeFrom(const ListSetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListSetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -11045,21 +11146,21 @@ void ListRangeRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRangeRequest)
 }
 
-::google::protobuf::uint8* ListRangeRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRangeRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRangeRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // optional int64 start = 3;
@@ -11116,7 +11217,9 @@ int ListRangeRequest::ByteSize() const {
 
 void ListRangeRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRangeRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRangeRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRangeRequest>(
           &from);
@@ -11131,7 +11234,9 @@ void ListRangeRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRangeRequest::MergeFrom(const ListRangeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRangeRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -11448,21 +11553,21 @@ void ListRangeResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRangeResponse)
 }
 
-::google::protobuf::uint8* ListRangeResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRangeResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRangeResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.Value values = 2;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRangeResponse)
@@ -11496,7 +11601,9 @@ int ListRangeResponse::ByteSize() const {
 
 void ListRangeResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRangeResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRangeResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRangeResponse>(
           &from);
@@ -11511,7 +11618,9 @@ void ListRangeResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRangeResponse::MergeFrom(const ListRangeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRangeResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -11782,21 +11891,21 @@ void ListLengthRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLengthRequest)
 }
 
-::google::protobuf::uint8* ListLengthRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLengthRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLengthRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListLengthRequest)
@@ -11829,7 +11938,9 @@ int ListLengthRequest::ByteSize() const {
 
 void ListLengthRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLengthRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLengthRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLengthRequest>(
           &from);
@@ -11844,7 +11955,9 @@ void ListLengthRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLengthRequest::MergeFrom(const ListLengthRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLengthRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -12123,14 +12236,14 @@ void ListLengthResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListLengthResponse)
 }
 
-::google::protobuf::uint8* ListLengthResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListLengthResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListLengthResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional int64 length = 2;
@@ -12168,7 +12281,9 @@ int ListLengthResponse::ByteSize() const {
 
 void ListLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListLengthResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListLengthResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListLengthResponse>(
           &from);
@@ -12183,7 +12298,9 @@ void ListLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListLengthResponse::MergeFrom(const ListLengthResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListLengthResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -12440,21 +12557,21 @@ void ListRemoveAllRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRemoveAllRequest)
 }
 
-::google::protobuf::uint8* ListRemoveAllRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRemoveAllRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRemoveAllRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRemoveAllRequest)
@@ -12487,7 +12604,9 @@ int ListRemoveAllRequest::ByteSize() const {
 
 void ListRemoveAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRemoveAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRemoveAllRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRemoveAllRequest>(
           &from);
@@ -12502,7 +12621,9 @@ void ListRemoveAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRemoveAllRequest::MergeFrom(const ListRemoveAllRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRemoveAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -12758,14 +12879,14 @@ void ListRemoveAllResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.ListRemoveAllResponse)
 }
 
-::google::protobuf::uint8* ListRemoveAllResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ListRemoveAllResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.ListRemoveAllResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.ListRemoveAllResponse)
@@ -12791,7 +12912,9 @@ int ListRemoveAllResponse::ByteSize() const {
 
 void ListRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.ListRemoveAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const ListRemoveAllResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const ListRemoveAllResponse>(
           &from);
@@ -12806,7 +12929,9 @@ void ListRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void ListRemoveAllResponse::MergeFrom(const ListRemoveAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.ListRemoveAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -13070,28 +13195,28 @@ void HashGetRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetRequest)
 }
 
-::google::protobuf::uint8* HashGetRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Field fields = 3;
   for (unsigned int i = 0, n = this->fields_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->fields(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->fields(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetRequest)
@@ -13132,7 +13257,9 @@ int HashGetRequest::ByteSize() const {
 
 void HashGetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetRequest>(
           &from);
@@ -13147,7 +13274,9 @@ void HashGetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashGetRequest::MergeFrom(const HashGetRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fields_.MergeFrom(from.fields_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -13460,21 +13589,21 @@ void HashGetResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetResponse)
 }
 
-::google::protobuf::uint8* HashGetResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
   for (unsigned int i = 0, n = this->fvs_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->fvs(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->fvs(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetResponse)
@@ -13508,7 +13637,9 @@ int HashGetResponse::ByteSize() const {
 
 void HashGetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetResponse>(
           &from);
@@ -13523,7 +13654,9 @@ void HashGetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashGetResponse::MergeFrom(const HashGetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fvs_.MergeFrom(from.fvs_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -13794,21 +13927,21 @@ void HashGetAllRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetAllRequest)
 }
 
-::google::protobuf::uint8* HashGetAllRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetAllRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetAllRequest)
@@ -13841,7 +13974,9 @@ int HashGetAllRequest::ByteSize() const {
 
 void HashGetAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetAllRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetAllRequest>(
           &from);
@@ -13856,7 +13991,9 @@ void HashGetAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashGetAllRequest::MergeFrom(const HashGetAllRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -14137,21 +14274,21 @@ void HashGetAllResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetAllResponse)
 }
 
-::google::protobuf::uint8* HashGetAllResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetAllResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.FieldValue fvs = 2;
   for (unsigned int i = 0, n = this->fvs_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->fvs(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->fvs(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetAllResponse)
@@ -14185,7 +14322,9 @@ int HashGetAllResponse::ByteSize() const {
 
 void HashGetAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetAllResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetAllResponse>(
           &from);
@@ -14200,7 +14339,9 @@ void HashGetAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashGetAllResponse::MergeFrom(const HashGetAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fvs_.MergeFrom(from.fvs_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -14471,21 +14612,21 @@ void HashGetAllFieldsRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetAllFieldsRequest)
 }
 
-::google::protobuf::uint8* HashGetAllFieldsRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetAllFieldsRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllFieldsRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetAllFieldsRequest)
@@ -14518,7 +14659,9 @@ int HashGetAllFieldsRequest::ByteSize() const {
 
 void HashGetAllFieldsRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetAllFieldsRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetAllFieldsRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetAllFieldsRequest>(
           &from);
@@ -14533,7 +14676,9 @@ void HashGetAllFieldsRequest::MergeFrom(const ::google::protobuf::Message& from)
 
 void HashGetAllFieldsRequest::MergeFrom(const HashGetAllFieldsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllFieldsRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -14814,21 +14959,21 @@ void HashGetAllFieldsResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetAllFieldsResponse)
 }
 
-::google::protobuf::uint8* HashGetAllFieldsResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetAllFieldsResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllFieldsResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.Field fields = 2;
   for (unsigned int i = 0, n = this->fields_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->fields(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->fields(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetAllFieldsResponse)
@@ -14862,7 +15007,9 @@ int HashGetAllFieldsResponse::ByteSize() const {
 
 void HashGetAllFieldsResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetAllFieldsResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetAllFieldsResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetAllFieldsResponse>(
           &from);
@@ -14877,7 +15024,9 @@ void HashGetAllFieldsResponse::MergeFrom(const ::google::protobuf::Message& from
 
 void HashGetAllFieldsResponse::MergeFrom(const HashGetAllFieldsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllFieldsResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fields_.MergeFrom(from.fields_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -15148,21 +15297,21 @@ void HashGetAllValuesRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetAllValuesRequest)
 }
 
-::google::protobuf::uint8* HashGetAllValuesRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetAllValuesRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllValuesRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetAllValuesRequest)
@@ -15195,7 +15344,9 @@ int HashGetAllValuesRequest::ByteSize() const {
 
 void HashGetAllValuesRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetAllValuesRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetAllValuesRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetAllValuesRequest>(
           &from);
@@ -15210,7 +15361,9 @@ void HashGetAllValuesRequest::MergeFrom(const ::google::protobuf::Message& from)
 
 void HashGetAllValuesRequest::MergeFrom(const HashGetAllValuesRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllValuesRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -15491,21 +15644,21 @@ void HashGetAllValuesResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashGetAllValuesResponse)
 }
 
-::google::protobuf::uint8* HashGetAllValuesResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashGetAllValuesResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashGetAllValuesResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.Value values = 2;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashGetAllValuesResponse)
@@ -15539,7 +15692,9 @@ int HashGetAllValuesResponse::ByteSize() const {
 
 void HashGetAllValuesResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashGetAllValuesResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashGetAllValuesResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashGetAllValuesResponse>(
           &from);
@@ -15554,7 +15709,9 @@ void HashGetAllValuesResponse::MergeFrom(const ::google::protobuf::Message& from
 
 void HashGetAllValuesResponse::MergeFrom(const HashGetAllValuesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashGetAllValuesResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -15825,21 +15982,21 @@ void HashLengthRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashLengthRequest)
 }
 
-::google::protobuf::uint8* HashLengthRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashLengthRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashLengthRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashLengthRequest)
@@ -15872,7 +16029,9 @@ int HashLengthRequest::ByteSize() const {
 
 void HashLengthRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashLengthRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashLengthRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashLengthRequest>(
           &from);
@@ -15887,7 +16046,9 @@ void HashLengthRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashLengthRequest::MergeFrom(const HashLengthRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashLengthRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -16166,14 +16327,14 @@ void HashLengthResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashLengthResponse)
 }
 
-::google::protobuf::uint8* HashLengthResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashLengthResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashLengthResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional int64 length = 2;
@@ -16211,7 +16372,9 @@ int HashLengthResponse::ByteSize() const {
 
 void HashLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashLengthResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashLengthResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashLengthResponse>(
           &from);
@@ -16226,7 +16389,9 @@ void HashLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashLengthResponse::MergeFrom(const HashLengthResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashLengthResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -16508,28 +16673,28 @@ void HashSetRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashSetRequest)
 }
 
-::google::protobuf::uint8* HashSetRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashSetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashSetRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.FieldValue fvs = 3;
   for (unsigned int i = 0, n = this->fvs_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->fvs(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->fvs(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashSetRequest)
@@ -16570,7 +16735,9 @@ int HashSetRequest::ByteSize() const {
 
 void HashSetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashSetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashSetRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashSetRequest>(
           &from);
@@ -16585,7 +16752,9 @@ void HashSetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashSetRequest::MergeFrom(const HashSetRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashSetRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fvs_.MergeFrom(from.fvs_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -16873,14 +17042,14 @@ void HashSetResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashSetResponse)
 }
 
-::google::protobuf::uint8* HashSetResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashSetResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashSetResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashSetResponse)
@@ -16906,7 +17075,9 @@ int HashSetResponse::ByteSize() const {
 
 void HashSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashSetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashSetResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashSetResponse>(
           &from);
@@ -16921,7 +17092,9 @@ void HashSetResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashSetResponse::MergeFrom(const HashSetResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashSetResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -17185,28 +17358,28 @@ void HashSetXRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashSetXRequest)
 }
 
-::google::protobuf::uint8* HashSetXRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashSetXRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashSetXRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // optional .uranium.api.FieldValue fv = 3;
   if (this->has_fv()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, *this->fv_, target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->fv_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashSetXRequest)
@@ -17246,7 +17419,9 @@ int HashSetXRequest::ByteSize() const {
 
 void HashSetXRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashSetXRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashSetXRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashSetXRequest>(
           &from);
@@ -17261,7 +17436,9 @@ void HashSetXRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashSetXRequest::MergeFrom(const HashSetXRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashSetXRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -17559,14 +17736,14 @@ void HashSetXResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashSetXResponse)
 }
 
-::google::protobuf::uint8* HashSetXResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashSetXResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashSetXResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashSetXResponse)
@@ -17592,7 +17769,9 @@ int HashSetXResponse::ByteSize() const {
 
 void HashSetXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashSetXResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashSetXResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashSetXResponse>(
           &from);
@@ -17607,7 +17786,9 @@ void HashSetXResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashSetXResponse::MergeFrom(const HashSetXResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashSetXResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -17871,28 +18052,28 @@ void HashRemoveRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashRemoveRequest)
 }
 
-::google::protobuf::uint8* HashRemoveRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashRemoveRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashRemoveRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Field fields = 3;
   for (unsigned int i = 0, n = this->fields_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->fields(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->fields(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashRemoveRequest)
@@ -17933,7 +18114,9 @@ int HashRemoveRequest::ByteSize() const {
 
 void HashRemoveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashRemoveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashRemoveRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashRemoveRequest>(
           &from);
@@ -17948,7 +18131,9 @@ void HashRemoveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashRemoveRequest::MergeFrom(const HashRemoveRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashRemoveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fields_.MergeFrom(from.fields_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -18236,14 +18421,14 @@ void HashRemoveResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashRemoveResponse)
 }
 
-::google::protobuf::uint8* HashRemoveResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashRemoveResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashRemoveResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashRemoveResponse)
@@ -18269,7 +18454,9 @@ int HashRemoveResponse::ByteSize() const {
 
 void HashRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashRemoveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashRemoveResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashRemoveResponse>(
           &from);
@@ -18284,7 +18471,9 @@ void HashRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashRemoveResponse::MergeFrom(const HashRemoveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashRemoveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -18548,28 +18737,28 @@ void HashExistsRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashExistsRequest)
 }
 
-::google::protobuf::uint8* HashExistsRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashExistsRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashExistsRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // optional .uranium.api.Field field = 3;
   if (this->has_field()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, *this->field_, target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->field_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashExistsRequest)
@@ -18609,7 +18798,9 @@ int HashExistsRequest::ByteSize() const {
 
 void HashExistsRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashExistsRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashExistsRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashExistsRequest>(
           &from);
@@ -18624,7 +18815,9 @@ void HashExistsRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashExistsRequest::MergeFrom(const HashExistsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashExistsRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -18945,14 +19138,14 @@ void HashExistsResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashExistsResponse)
 }
 
-::google::protobuf::uint8* HashExistsResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashExistsResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashExistsResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional bool exists = 2;
@@ -18988,7 +19181,9 @@ int HashExistsResponse::ByteSize() const {
 
 void HashExistsResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashExistsResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashExistsResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashExistsResponse>(
           &from);
@@ -19003,7 +19198,9 @@ void HashExistsResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashExistsResponse::MergeFrom(const HashExistsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashExistsResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -19260,21 +19457,21 @@ void HashRemoveAllRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashRemoveAllRequest)
 }
 
-::google::protobuf::uint8* HashRemoveAllRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashRemoveAllRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashRemoveAllRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashRemoveAllRequest)
@@ -19307,7 +19504,9 @@ int HashRemoveAllRequest::ByteSize() const {
 
 void HashRemoveAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashRemoveAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashRemoveAllRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashRemoveAllRequest>(
           &from);
@@ -19322,7 +19521,9 @@ void HashRemoveAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashRemoveAllRequest::MergeFrom(const HashRemoveAllRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashRemoveAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -19578,14 +19779,14 @@ void HashRemoveAllResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.HashRemoveAllResponse)
 }
 
-::google::protobuf::uint8* HashRemoveAllResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* HashRemoveAllResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.HashRemoveAllResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.HashRemoveAllResponse)
@@ -19611,7 +19812,9 @@ int HashRemoveAllResponse::ByteSize() const {
 
 void HashRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.HashRemoveAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const HashRemoveAllResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const HashRemoveAllResponse>(
           &from);
@@ -19626,7 +19829,9 @@ void HashRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HashRemoveAllResponse::MergeFrom(const HashRemoveAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.HashRemoveAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -19890,28 +20095,28 @@ void SetAddRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetAddRequest)
 }
 
-::google::protobuf::uint8* SetAddRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetAddRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetAddRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Value values = 3;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetAddRequest)
@@ -19952,7 +20157,9 @@ int SetAddRequest::ByteSize() const {
 
 void SetAddRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetAddRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetAddRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetAddRequest>(
           &from);
@@ -19967,7 +20174,9 @@ void SetAddRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetAddRequest::MergeFrom(const SetAddRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetAddRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -20255,14 +20464,14 @@ void SetAddResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetAddResponse)
 }
 
-::google::protobuf::uint8* SetAddResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetAddResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetAddResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetAddResponse)
@@ -20288,7 +20497,9 @@ int SetAddResponse::ByteSize() const {
 
 void SetAddResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetAddResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetAddResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetAddResponse>(
           &from);
@@ -20303,7 +20514,9 @@ void SetAddResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetAddResponse::MergeFrom(const SetAddResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetAddResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -20542,21 +20755,21 @@ void SetLengthRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetLengthRequest)
 }
 
-::google::protobuf::uint8* SetLengthRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetLengthRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetLengthRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetLengthRequest)
@@ -20589,7 +20802,9 @@ int SetLengthRequest::ByteSize() const {
 
 void SetLengthRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetLengthRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetLengthRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetLengthRequest>(
           &from);
@@ -20604,7 +20819,9 @@ void SetLengthRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetLengthRequest::MergeFrom(const SetLengthRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetLengthRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -20883,14 +21100,14 @@ void SetLengthResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetLengthResponse)
 }
 
-::google::protobuf::uint8* SetLengthResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetLengthResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetLengthResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional int64 length = 2;
@@ -20928,7 +21145,9 @@ int SetLengthResponse::ByteSize() const {
 
 void SetLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetLengthResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetLengthResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetLengthResponse>(
           &from);
@@ -20943,7 +21162,9 @@ void SetLengthResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetLengthResponse::MergeFrom(const SetLengthResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetLengthResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -21050,7 +21271,7 @@ void SetLengthResponse::clear_length() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SetIsMemberRequest::kStatusFieldNumber;
+const int SetIsMemberRequest::kTableNameFieldNumber;
 const int SetIsMemberRequest::kKeyFieldNumber;
 const int SetIsMemberRequest::kValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -21063,6 +21284,7 @@ SetIsMemberRequest::SetIsMemberRequest()
 
 void SetIsMemberRequest::InitAsDefaultInstance() {
   _is_default_instance_ = true;
+  table_name_ = const_cast< ::uranium::common::TableName*>(&::uranium::common::TableName::default_instance());
   key_ = const_cast< ::uranium::api::Key*>(&::uranium::api::Key::default_instance());
   value_ = const_cast< ::uranium::api::Value*>(&::uranium::api::Value::default_instance());
 }
@@ -21078,7 +21300,7 @@ SetIsMemberRequest::SetIsMemberRequest(const SetIsMemberRequest& from)
 void SetIsMemberRequest::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
-  status_ = 0;
+  table_name_ = NULL;
   key_ = NULL;
   value_ = NULL;
 }
@@ -21090,6 +21312,7 @@ SetIsMemberRequest::~SetIsMemberRequest() {
 
 void SetIsMemberRequest::SharedDtor() {
   if (this != default_instance_) {
+    delete table_name_;
     delete key_;
     delete value_;
   }
@@ -21122,7 +21345,8 @@ SetIsMemberRequest* SetIsMemberRequest::New(::google::protobuf::Arena* arena) co
 
 void SetIsMemberRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:uranium.api.SetIsMemberRequest)
-  status_ = 0;
+  if (GetArenaNoVirtual() == NULL && table_name_ != NULL) delete table_name_;
+  table_name_ = NULL;
   if (GetArenaNoVirtual() == NULL && key_ != NULL) delete key_;
   key_ = NULL;
   if (GetArenaNoVirtual() == NULL && value_ != NULL) delete value_;
@@ -21139,14 +21363,11 @@ bool SetIsMemberRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .uranium.common.Status status = 1;
+      // optional .uranium.common.TableName table_name = 1;
       case 1: {
-        if (tag == 8) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::uranium::common::Status >(value));
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_table_name()));
         } else {
           goto handle_unusual;
         }
@@ -21204,10 +21425,10 @@ failure:
 void SetIsMemberRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:uranium.api.SetIsMemberRequest)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
+  // optional .uranium.common.TableName table_name = 1;
+  if (this->has_table_name()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->table_name_, output);
   }
 
   // optional .uranium.api.Key key = 2;
@@ -21225,27 +21446,28 @@ void SetIsMemberRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetIsMemberRequest)
 }
 
-::google::protobuf::uint8* SetIsMemberRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetIsMemberRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetIsMemberRequest)
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+  // optional .uranium.common.TableName table_name = 1;
+  if (this->has_table_name()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // optional .uranium.api.Value value = 3;
   if (this->has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, *this->value_, target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->value_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetIsMemberRequest)
@@ -21256,10 +21478,11 @@ int SetIsMemberRequest::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:uranium.api.SetIsMemberRequest)
   int total_size = 0;
 
-  // optional .uranium.common.Status status = 1;
-  if (this->status() != 0) {
+  // optional .uranium.common.TableName table_name = 1;
+  if (this->has_table_name()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->table_name_);
   }
 
   // optional .uranium.api.Key key = 2;
@@ -21284,7 +21507,9 @@ int SetIsMemberRequest::ByteSize() const {
 
 void SetIsMemberRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetIsMemberRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetIsMemberRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetIsMemberRequest>(
           &from);
@@ -21299,9 +21524,11 @@ void SetIsMemberRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetIsMemberRequest::MergeFrom(const SetIsMemberRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetIsMemberRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from.status() != 0) {
-    set_status(from.status());
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.has_table_name()) {
+    mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
   if (from.has_key()) {
     mutable_key()->::uranium::api::Key::MergeFrom(from.key());
@@ -21335,7 +21562,7 @@ void SetIsMemberRequest::Swap(SetIsMemberRequest* other) {
   InternalSwap(other);
 }
 void SetIsMemberRequest::InternalSwap(SetIsMemberRequest* other) {
-  std::swap(status_, other->status_);
+  std::swap(table_name_, other->table_name_);
   std::swap(key_, other->key_);
   std::swap(value_, other->value_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -21353,18 +21580,42 @@ void SetIsMemberRequest::InternalSwap(SetIsMemberRequest* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SetIsMemberRequest
 
-// optional .uranium.common.Status status = 1;
-void SetIsMemberRequest::clear_status() {
-  status_ = 0;
+// optional .uranium.common.TableName table_name = 1;
+bool SetIsMemberRequest::has_table_name() const {
+  return !_is_default_instance_ && table_name_ != NULL;
 }
- ::uranium::common::Status SetIsMemberRequest::status() const {
-  // @@protoc_insertion_point(field_get:uranium.api.SetIsMemberRequest.status)
-  return static_cast< ::uranium::common::Status >(status_);
+void SetIsMemberRequest::clear_table_name() {
+  if (GetArenaNoVirtual() == NULL && table_name_ != NULL) delete table_name_;
+  table_name_ = NULL;
 }
- void SetIsMemberRequest::set_status(::uranium::common::Status value) {
+const ::uranium::common::TableName& SetIsMemberRequest::table_name() const {
+  // @@protoc_insertion_point(field_get:uranium.api.SetIsMemberRequest.table_name)
+  return table_name_ != NULL ? *table_name_ : *default_instance_->table_name_;
+}
+::uranium::common::TableName* SetIsMemberRequest::mutable_table_name() {
   
-  status_ = value;
-  // @@protoc_insertion_point(field_set:uranium.api.SetIsMemberRequest.status)
+  if (table_name_ == NULL) {
+    table_name_ = new ::uranium::common::TableName;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.api.SetIsMemberRequest.table_name)
+  return table_name_;
+}
+::uranium::common::TableName* SetIsMemberRequest::release_table_name() {
+  // @@protoc_insertion_point(field_release:uranium.api.SetIsMemberRequest.table_name)
+  
+  ::uranium::common::TableName* temp = table_name_;
+  table_name_ = NULL;
+  return temp;
+}
+void SetIsMemberRequest::set_allocated_table_name(::uranium::common::TableName* table_name) {
+  delete table_name_;
+  table_name_ = table_name;
+  if (table_name) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.api.SetIsMemberRequest.table_name)
 }
 
 // optional .uranium.api.Key key = 2;
@@ -21596,14 +21847,14 @@ void SetIsMemberResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetIsMemberResponse)
 }
 
-::google::protobuf::uint8* SetIsMemberResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetIsMemberResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetIsMemberResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // optional bool yes = 2;
@@ -21639,7 +21890,9 @@ int SetIsMemberResponse::ByteSize() const {
 
 void SetIsMemberResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetIsMemberResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetIsMemberResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetIsMemberResponse>(
           &from);
@@ -21654,7 +21907,9 @@ void SetIsMemberResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetIsMemberResponse::MergeFrom(const SetIsMemberResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetIsMemberResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -21911,21 +22166,21 @@ void SetGetAllRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetGetAllRequest)
 }
 
-::google::protobuf::uint8* SetGetAllRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetGetAllRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetGetAllRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetGetAllRequest)
@@ -21958,7 +22213,9 @@ int SetGetAllRequest::ByteSize() const {
 
 void SetGetAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetGetAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetGetAllRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetGetAllRequest>(
           &from);
@@ -21973,7 +22230,9 @@ void SetGetAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetGetAllRequest::MergeFrom(const SetGetAllRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetGetAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -22254,21 +22513,21 @@ void SetGetAllResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetGetAllResponse)
 }
 
-::google::protobuf::uint8* SetGetAllResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetGetAllResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetGetAllResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // repeated .uranium.api.Value values = 2;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetGetAllResponse)
@@ -22302,7 +22561,9 @@ int SetGetAllResponse::ByteSize() const {
 
 void SetGetAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetGetAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetGetAllResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetGetAllResponse>(
           &from);
@@ -22317,7 +22578,9 @@ void SetGetAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetGetAllResponse::MergeFrom(const SetGetAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetGetAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
@@ -22613,28 +22876,28 @@ void SetRemoveRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetRemoveRequest)
 }
 
-::google::protobuf::uint8* SetRemoveRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetRemoveRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetRemoveRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // repeated .uranium.api.Value values = 3;
   for (unsigned int i = 0, n = this->values_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->values(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, this->values(i), false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetRemoveRequest)
@@ -22675,7 +22938,9 @@ int SetRemoveRequest::ByteSize() const {
 
 void SetRemoveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetRemoveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetRemoveRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetRemoveRequest>(
           &from);
@@ -22690,7 +22955,9 @@ void SetRemoveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetRemoveRequest::MergeFrom(const SetRemoveRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetRemoveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   values_.MergeFrom(from.values_);
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
@@ -22978,14 +23245,14 @@ void SetRemoveResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetRemoveResponse)
 }
 
-::google::protobuf::uint8* SetRemoveResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetRemoveResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetRemoveResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetRemoveResponse)
@@ -23011,7 +23278,9 @@ int SetRemoveResponse::ByteSize() const {
 
 void SetRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetRemoveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetRemoveResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetRemoveResponse>(
           &from);
@@ -23026,7 +23295,9 @@ void SetRemoveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetRemoveResponse::MergeFrom(const SetRemoveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetRemoveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }
@@ -23265,21 +23536,21 @@ void SetRemoveAllRequest::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetRemoveAllRequest)
 }
 
-::google::protobuf::uint8* SetRemoveAllRequest::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetRemoveAllRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetRemoveAllRequest)
   // optional .uranium.common.TableName table_name = 1;
   if (this->has_table_name()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->table_name_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->table_name_, false, target);
   }
 
   // optional .uranium.api.Key key = 2;
   if (this->has_key()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, *this->key_, target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->key_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetRemoveAllRequest)
@@ -23312,7 +23583,9 @@ int SetRemoveAllRequest::ByteSize() const {
 
 void SetRemoveAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetRemoveAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetRemoveAllRequest* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetRemoveAllRequest>(
           &from);
@@ -23327,7 +23600,9 @@ void SetRemoveAllRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetRemoveAllRequest::MergeFrom(const SetRemoveAllRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetRemoveAllRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_table_name()) {
     mutable_table_name()->::uranium::common::TableName::MergeFrom(from.table_name());
   }
@@ -23583,14 +23858,14 @@ void SetRemoveAllResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:uranium.api.SetRemoveAllResponse)
 }
 
-::google::protobuf::uint8* SetRemoveAllResponse::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SetRemoveAllResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:uranium.api.SetRemoveAllResponse)
   // optional .uranium.common.Result result = 1;
   if (this->has_result()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, *this->result_, target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->result_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.api.SetRemoveAllResponse)
@@ -23616,7 +23891,9 @@ int SetRemoveAllResponse::ByteSize() const {
 
 void SetRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:uranium.api.SetRemoveAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   const SetRemoveAllResponse* source = 
       ::google::protobuf::internal::DynamicCastToGenerated<const SetRemoveAllResponse>(
           &from);
@@ -23631,7 +23908,9 @@ void SetRemoveAllResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void SetRemoveAllResponse::MergeFrom(const SetRemoveAllResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:uranium.api.SetRemoveAllResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from.has_result()) {
     mutable_result()->::uranium::common::Result::MergeFrom(from.result());
   }

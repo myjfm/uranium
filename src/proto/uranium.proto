@@ -436,9 +436,9 @@ message SetLengthResponse {
 }
 
 message SetIsMemberRequest {
-  common.Status status  = 1;
-  Key key               = 2;
-  Value value           = 3;
+  common.TableName table_name = 1;
+  Key key                     = 2;
+  Value value                 = 3;
 }
 message SetIsMemberResponse {
   common.Result result  = 1;
