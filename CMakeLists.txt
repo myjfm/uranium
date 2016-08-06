@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(uranium C CXX)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lpthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lpthread -g")
 
 find_library(GFLAGS NAMES libgflags.a PATHS /usr/local/lib)
 IF(NOT GFLAGS)

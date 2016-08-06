@@ -69,6 +69,12 @@ class MetaTable final {
                                admin::SchemaTableOptions* options);
 
  private:
+  Status LoadKVTables(std::vector<internal::TableOptions>* tables);
+  Status LoadListTables(std::vector<internal::TableOptions>* tables);
+  Status LoadHashTables(std::vector<internal::TableOptions>* tables);
+  Status LoadSetTables(std::vector<internal::TableOptions>* tables);
+  Status LoadSchemaTables(std::vector<internal::TableOptions>* tables);
+
   rocksdb::DB* db_ { nullptr };
 
   internal::TableOptionsList kv_table_options_list_;

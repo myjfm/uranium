@@ -14,7 +14,10 @@
 namespace uranium {
 
 Status MetaTable::Init(const std::string& path) {
-  auto s = rocksdb::DB::Open(rocksdb::Options(), path + "uranium.meta", &db_);
+  rocksdb::Options opt;
+  opt.create_if_missing = true;
+  opt.error_if_exists = false;
+  auto s = rocksdb::DB::Open(opt, path + "uranium.meta", &db_);
   if (!s.ok()) {
     return Status(s);
   }
@@ -23,89 +26,115 @@ Status MetaTable::Init(const std::string& path) {
 
 Status MetaTable::LoadAllTables(std::vector<internal::TableOptions>* tables) {
   assert(db_);
-  std::string str_kv_table_options_list;
+  auto s = LoadKVTables(tables);
+  if (!s.ok()) {
+    return s;
+  }
+
+  s = LoadListTables(tables);
+  if (!s.ok()) {
+    return s;
+  }
+
+  s = LoadHashTables(tables);
+  if (!s.ok()) {
+    return s;
+  }
+
+  s = LoadSetTables(tables);
+  if (!s.ok()) {
+    return s;
+  }
+
+  s = LoadSchemaTables(tables);
+  return s;
+}
+
+Status MetaTable::LoadKVTables(std::vector<internal::TableOptions>* tables) {
+  assert(db_);
+  std::string str_options_list;
+  auto rs = db_->Get(rocksdb::ReadOptions(), "kv_tables", &str_options_list);
+  if (rs.ok()) {
+    if (!kv_table_options_list_.ParseFromString(str_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0; i < kv_table_options_list_.options_list_size(); ++i) {
+      tables->push_back(kv_table_options_list_.options_list(i));
+    }
+  } else if (rs.IsNotFound()) {
+    return Status::OK();
+  }
+  return Status(rs);
+}
+
+Status MetaTable::LoadListTables(std::vector<internal::TableOptions>* tables) {
+  assert(db_);
+  std::string str_options_list;
+  auto rs = db_->Get(rocksdb::ReadOptions(), "list_tables", &str_options_list);
+  if (rs.ok()) {
+    if (!list_table_options_list_.ParseFromString(str_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0; i < list_table_options_list_.options_list_size(); ++i) {
+      tables->push_back(list_table_options_list_.options_list(i));
+    }
+  } else if (rs.IsNotFound()) {
+    return Status::OK();
+  }
+  return Status(rs);
+}
+
+Status MetaTable::LoadHashTables(std::vector<internal::TableOptions>* tables) {
+  assert(db_);
+  std::string str_options_list;
+  auto rs = db_->Get(rocksdb::ReadOptions(), "hash_tables", &str_options_list);
+  if (rs.ok()) {
+    if (!hash_table_options_list_.ParseFromString(str_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0; i < hash_table_options_list_.options_list_size(); ++i) {
+      tables->push_back(hash_table_options_list_.options_list(i));
+    }
+  } else if (rs.IsNotFound()) {
+    return Status::OK();
+  }
+  return Status(rs);
+}
+
+Status MetaTable::LoadSetTables(std::vector<internal::TableOptions>* tables) {
+  assert(db_);
+  std::string str_options_list;
+  auto rs = db_->Get(rocksdb::ReadOptions(), "set_tables", &str_options_list);
+  if (rs.ok()) {
+    if (!set_table_options_list_.ParseFromString(str_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0; i < set_table_options_list_.options_list_size(); ++i) {
+      tables->push_back(set_table_options_list_.options_list(i));
+    }
+  } else if (rs.IsNotFound()) {
+    return Status::OK();
+  }
+  return Status(rs);
+}
+
+Status MetaTable::LoadSchemaTables(std::vector<internal::TableOptions>* tables) {
+  assert(db_);
+  std::string str_options_list;
   auto rs = db_->Get(rocksdb::ReadOptions(),
-                     "kv_tables",
-                     &str_kv_table_options_list);
-  if (!rs.ok()) {
-    return Status(rs);
+                     "schema_tables",
+                     &str_options_list);
+  if (rs.ok()) {
+    if (!schema_table_options_list_.ParseFromString(str_options_list)) {
+      return Status::Corruption("meta db corrupts");
+    }
+    for (int i = 0; i < schema_table_options_list_.options_list_size(); ++i) {
+      tables->push_back(schema_table_options_list_.options_list(i));
+    }
+  } else if (rs.IsNotFound()) {
+    return Status::OK();
   }
-  if (!kv_table_options_list_.ParseFromString(
-      str_kv_table_options_list)) {
-    return Status::Corruption("meta db corrupts");
-  }
-  for (int i = 0;
-       i < kv_table_options_list_.options_list_size();
-       ++i) {
-    tables->push_back(kv_table_options_list_.options_list(i));
-  }
-
-  std::string str_list_table_options_list;
-  rs = db_->Get(rocksdb::ReadOptions(),
-                "list_tables",
-                &str_list_table_options_list);
-  if (!rs.ok()) {
-    return Status(rs);
-  }
-  if (!list_table_options_list_.ParseFromString(
-      str_list_table_options_list)) {
-    return Status::Corruption("meta db corrupts");
-  }
-  for (int i = 0;
-       i < list_table_options_list_.options_list_size();
-       ++i) {
-    tables->push_back(list_table_options_list_.options_list(i));
-  }
-
-  std::string str_hash_table_options_list;
-  rs = db_->Get(rocksdb::ReadOptions(),
-                "hash_tables",
-                &str_hash_table_options_list);
-  if (!rs.ok()) {
-    return Status(rs);
-  }
-  if (!hash_table_options_list_.ParseFromString(
-      str_hash_table_options_list)) {
-    return Status::Corruption("meta db corrupts");
-  }
-  for (int i = 0;
-       i < hash_table_options_list_.options_list_size();
-       ++i) {
-    tables->push_back(hash_table_options_list_.options_list(i));
-  }
-
-  std::string str_set_table_options_list;
-  rs = db_->Get(rocksdb::ReadOptions(),
-                "set_tables",
-                &str_set_table_options_list);
-  if (!rs.ok()) {
-    return Status(rs);
-  }
-  if (!set_table_options_list_.ParseFromString(
-      str_set_table_options_list)) {
-    return Status::Corruption("meta db corrupts");
-  }
-  for (int i = 0;
-       i < set_table_options_list_.options_list_size();
-       ++i) {
-    tables->push_back(set_table_options_list_.options_list(i));
-  }
-
-  std::string str_schema_table_options_list;
-  rs = db_->Get(rocksdb::ReadOptions(),
-                "schema_tables",
-                &str_schema_table_options_list);
-  if (!rs.ok()) {
-    return Status(rs);
-  }
-  if (!schema_table_options_list_.ParseFromString(
-      str_schema_table_options_list)) {
-    return Status::Corruption("meta db corrupts");
-  }
-  for (int i = 0; i < schema_table_options_list_.options_list_size(); ++i) {
-    tables->push_back(schema_table_options_list_.options_list(i));
-  }
-  return Status::OK();
+  return Status(rs);
 }
 
 Status MetaTable::CreateKVTable(const std::string& table_path,

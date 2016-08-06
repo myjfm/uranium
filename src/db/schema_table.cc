@@ -13,6 +13,9 @@ namespace uranium {
 Status SchemaTable::Init(const internal::TableOptions& config) {
   std::vector<rocksdb::ColumnFamilyDescriptor> cfds;
   rocksdb::Options opt;
+  opt.create_if_missing = true;
+  opt.error_if_exists = false;
+
   cfds.push_back(rocksdb::ColumnFamilyDescriptor(
       rocksdb::kDefaultColumnFamilyName, opt));
   std::vector<rocksdb::ColumnFamilyHandle*> cfhs;
