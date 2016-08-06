@@ -160,7 +160,7 @@ Status ListTable::Set(const std::string& key,
   std::string marshaled_value;
   MarshalSetValue(value, index, &marshaled_value);
   rocksdb::WriteBatch wb;
-  wb.Merge(key, value);
+  wb.Merge(key, marshaled_value);
   auto rs = db_->Write(rocksdb::WriteOptions(), &wb);
   return Status(rs);
 }
@@ -331,7 +331,7 @@ bool ListTable::ListMergeOperator::PartialMerge(
     std::string* new_value,
     rocksdb::Logger* logger) const {
   if (left_operand.size() < 1 ||
-      right_operand.size() < 1||
+      right_operand.size() < 1 ||
       (static_cast<MergeType>(left_operand[0]) !=
        static_cast<MergeType>(right_operand[0]))) {
     return false;
