@@ -9,7 +9,6 @@
 
 #include "common/status.h"
 #include "network/cpp/uranium_internal.pb.h"
-#include "kv_table.h"
 
 namespace uranium {
 
@@ -17,6 +16,7 @@ Status MetaTable::Init(const std::string& path) {
   rocksdb::Options opt;
   opt.create_if_missing = true;
   opt.error_if_exists = false;
+  opt.num_levels = 2;
   auto s = rocksdb::DB::Open(opt, path + "uranium.meta", &db_);
   if (!s.ok()) {
     return Status(s);
