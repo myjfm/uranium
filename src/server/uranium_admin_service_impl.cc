@@ -26,6 +26,7 @@ grpc::Status UraniumAdminServiceImpl::CreateTable(
         break;
       }
       s = table_manager_->CreateKVTable(request->table_name().name(),
+                                        request->common_table_options(),
                                         request->kv_table_options());
       break;
     case common::TableType::LIST:
@@ -35,6 +36,7 @@ grpc::Status UraniumAdminServiceImpl::CreateTable(
         break;
       }
       s = table_manager_->CreateListTable(request->table_name().name(),
+                                          request->common_table_options(),
                                           request->list_table_options());
       break;
     case common::TableType::HASH:
@@ -44,6 +46,7 @@ grpc::Status UraniumAdminServiceImpl::CreateTable(
         break;
       }
       s = table_manager_->CreateHashTable(request->table_name().name(),
+                                          request->common_table_options(),
                                           request->hash_table_options());
       break;
     case common::TableType::SET:
@@ -53,6 +56,7 @@ grpc::Status UraniumAdminServiceImpl::CreateTable(
         break;
       }
       s = table_manager_->CreateSetTable(request->table_name().name(),
+                                         request->common_table_options(),
                                          request->set_table_options());
       break;
     case common::TableType::SCHEMA:
@@ -62,6 +66,7 @@ grpc::Status UraniumAdminServiceImpl::CreateTable(
         break;
       }
       s = table_manager_->CreateSchemaTable(request->table_name().name(),
+                                            request->common_table_options(),
                                             request->schema_table_options());
       break;
     default:
@@ -85,6 +90,7 @@ grpc::Status UraniumAdminServiceImpl::UpdateTable(
         break;
       }
       s = table_manager_->UpdateKVTable(request->table_name().name(),
+                                        request->common_table_options(),
                                         request->kv_table_options());
       break;
     case common::TableType::LIST:
@@ -94,6 +100,7 @@ grpc::Status UraniumAdminServiceImpl::UpdateTable(
         break;
       }
       s = table_manager_->UpdateListTable(request->table_name().name(),
+                                          request->common_table_options(),
                                           request->list_table_options());
       break;
     case common::TableType::HASH:
@@ -103,6 +110,7 @@ grpc::Status UraniumAdminServiceImpl::UpdateTable(
         break;
       }
       s = table_manager_->UpdateHashTable(request->table_name().name(),
+                                          request->common_table_options(),
                                           request->hash_table_options());
       break;
     case common::TableType::SET:
@@ -112,6 +120,7 @@ grpc::Status UraniumAdminServiceImpl::UpdateTable(
         break;
       }
       s = table_manager_->UpdateSetTable(request->table_name().name(),
+                                         request->common_table_options(),
                                          request->set_table_options());
       break;
     case common::TableType::SCHEMA:
@@ -121,6 +130,7 @@ grpc::Status UraniumAdminServiceImpl::UpdateTable(
         break;
       }
       s = table_manager_->UpdateSchemaTable(request->table_name().name(),
+                                            request->common_table_options(),
                                             request->schema_table_options());
       break;
     default:
@@ -170,27 +180,27 @@ grpc::Status UraniumAdminServiceImpl::GetTableOptions(
     case common::TableType::KV:
       s = table_manager_->GetKVTableOptions(
           request->table_name().name(),
-          response->mutable_options()->mutable_kv_table_options());
+          response->mutable_options());
       break;
     case common::TableType::LIST:
       s = table_manager_->GetListTableOptions(
           request->table_name().name(),
-          response->mutable_options()->mutable_list_table_options());
+          response->mutable_options());
       break;
     case common::TableType::HASH:
       s = table_manager_->GetHashTableOptions(
           request->table_name().name(),
-          response->mutable_options()->mutable_hash_table_options());
+          response->mutable_options());
       break;
     case common::TableType::SET:
       s = table_manager_->GetSetTableOptions(
           request->table_name().name(),
-          response->mutable_options()->mutable_set_table_options());
+          response->mutable_options());
       break;
     case common::TableType::SCHEMA:
       s = table_manager_->GetSchemaTableOptions(
           request->table_name().name(),
-          response->mutable_options()->mutable_schema_table_options());
+          response->mutable_options());
       break;
     default:
       assert(false);

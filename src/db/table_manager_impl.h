@@ -65,35 +65,45 @@ class TableManagerImpl : public TableManager {
       const std::string& name) override;
 
   virtual Status CreateKVTable(const std::string& table_name,
+                               const admin::CommonTableOptions& common_options,
                                const admin::KVTableOptions& options) override;
   virtual Status CreateListTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::ListTableOptions& options) override;
 
   virtual Status CreateHashTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::HashTableOptions& options) override;
   virtual Status CreateSetTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::SetTableOptions& options) override;
 
   virtual Status CreateSchemaTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::SchemaTableOptions& options) override;
 
   virtual Status UpdateKVTable(const std::string& table_name,
+                               const admin::CommonTableOptions& common_options,
                                const admin::KVTableOptions& options) override;
   virtual Status UpdateListTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::ListTableOptions& options) override;
   virtual Status UpdateHashTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::HashTableOptions& options) override;
   virtual Status UpdateSetTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::SetTableOptions& options) override;
   virtual Status UpdateSchemaTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::SchemaTableOptions& options) override;
 
   virtual Status DropKVTable(const std::string& table_name) override;
@@ -103,19 +113,15 @@ class TableManagerImpl : public TableManager {
   virtual Status DropSchemaTable(const std::string& table_name) override;
 
   virtual Status GetKVTableOptions(const std::string& table_name,
-                                   admin::KVTableOptions* options) override;
-  virtual Status GetListTableOptions(
-      const std::string& table_name,
-      admin::ListTableOptions* options) override;
-  virtual Status GetHashTableOptions(
-      const std::string& table_name,
-      admin::HashTableOptions* options) override;
-  virtual Status GetSetTableOptions(
-      const std::string& table_name,
-      admin::SetTableOptions* options) override;
-  virtual Status GetSchemaTableOptions(
-      const std::string& table_name,
-      admin::SchemaTableOptions* options) override;
+                                   admin::TableOptions* options) override;
+  virtual Status GetListTableOptions(const std::string& table_name,
+                                     admin::TableOptions* options) override;
+  virtual Status GetHashTableOptions(const std::string& table_name,
+                                     admin::TableOptions* options) override;
+  virtual Status GetSetTableOptions(const std::string& table_name,
+                                    admin::TableOptions* options) override;
+  virtual Status GetSchemaTableOptions(const std::string& table_name,
+                                       admin::TableOptions* options) override;
 
  private:
   void CloseKVTables();

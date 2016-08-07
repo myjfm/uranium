@@ -43,29 +43,39 @@ class MetaTable final {
 
   Status CreateKVTable(const std::string& table_path,
                        const std::string& table_name,
+                       const admin::CommonTableOptions& common_options,
                        const admin::KVTableOptions& table_options);
   Status CreateListTable(const std::string& table_path,
                          const std::string& table_name,
+                         const admin::CommonTableOptions& common_options,
                          const admin::ListTableOptions& table_options);
   Status CreateHashTable(const std::string& table_path,
                          const std::string& table_name,
+                         const admin::CommonTableOptions& common_options,
                          const admin::HashTableOptions& table_options);
   Status CreateSetTable(const std::string& table_path,
                         const std::string& table_name,
+                        const admin::CommonTableOptions& common_options,
                         const admin::SetTableOptions& table_options);
   Status CreateSchemaTable(const std::string& table_path,
                            const std::string& table_name,
+                           const admin::CommonTableOptions& common_options,
                            const admin::SchemaTableOptions& table);
 
   Status GetKVTableOptions(const std::string& table_name,
+                           admin::CommonTableOptions* common_options,
                            admin::KVTableOptions* options);
   Status GetListTableOptions(const std::string& table_name,
+                             admin::CommonTableOptions* common_options,
                              admin::ListTableOptions* options);
   Status GetHashTableOptions(const std::string& table_name,
+                             admin::CommonTableOptions* common_options,
                              admin::HashTableOptions* options);
   Status GetSetTableOptions(const std::string& table_name,
+                            admin::CommonTableOptions* common_options,
                             admin::SetTableOptions* options);
   Status GetSchemaTableOptions(const std::string& table_name,
+                               admin::CommonTableOptions* common_options,
                                admin::SchemaTableOptions* options);
 
  private:

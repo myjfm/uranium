@@ -32,6 +32,9 @@ struct TableOptionsOneofInstance {
   const ::uranium::admin::SetTableOptions* set_table_options_;
   const ::uranium::admin::SchemaTableOptions* schema_table_options_;
 }* TableOptions_default_oneof_instance_ = NULL;
+const ::google::protobuf::Descriptor* CommonTableOptions_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CommonTableOptions_reflection_ = NULL;
 const ::google::protobuf::Descriptor* KVTableOptions_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   KVTableOptions_reflection_ = NULL;
@@ -57,6 +60,7 @@ const ::google::protobuf::Descriptor* GetTableOptionsResponse_descriptor_ = NULL
 const ::google::protobuf::internal::GeneratedMessageReflection*
   GetTableOptionsResponse_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* StorageType_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* RocksTableType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -69,9 +73,10 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       "uranium_admin.proto");
   GOOGLE_CHECK(file != NULL);
   TableOptions_descriptor_ = file->message_type(0);
-  static const int TableOptions_offsets_[8] = {
+  static const int TableOptions_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableOptions, table_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableOptions, table_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableOptions, common_table_options_),
     PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(TableOptions_default_oneof_instance_, kv_table_options_),
     PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(TableOptions_default_oneof_instance_, list_table_options_),
     PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(TableOptions_default_oneof_instance_, hash_table_options_),
@@ -92,7 +97,30 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(TableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TableOptions, _is_default_instance_));
-  KVTableOptions_descriptor_ = file->message_type(1);
+  CommonTableOptions_descriptor_ = file->message_type(1);
+  static const int CommonTableOptions_offsets_[9] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, rocks_table_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, num_levels_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, max_flush_threads_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, max_compaction_threads_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, mem_table_memory_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, mem_table_num_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, lru_cache_size_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, plain_encoding_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, fixed_prefix_transform_),
+  };
+  CommonTableOptions_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      CommonTableOptions_descriptor_,
+      CommonTableOptions::default_instance_,
+      CommonTableOptions_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(CommonTableOptions),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CommonTableOptions, _is_default_instance_));
+  KVTableOptions_descriptor_ = file->message_type(2);
   static const int KVTableOptions_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVTableOptions, type_),
   };
@@ -107,7 +135,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(KVTableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVTableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KVTableOptions, _is_default_instance_));
-  ListTableOptions_descriptor_ = file->message_type(2);
+  ListTableOptions_descriptor_ = file->message_type(3);
   static const int ListTableOptions_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListTableOptions, type_),
   };
@@ -122,7 +150,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(ListTableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListTableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ListTableOptions, _is_default_instance_));
-  HashTableOptions_descriptor_ = file->message_type(3);
+  HashTableOptions_descriptor_ = file->message_type(4);
   static const int HashTableOptions_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashTableOptions, type_),
   };
@@ -137,7 +165,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(HashTableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashTableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HashTableOptions, _is_default_instance_));
-  SetTableOptions_descriptor_ = file->message_type(4);
+  SetTableOptions_descriptor_ = file->message_type(5);
   static const int SetTableOptions_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetTableOptions, type_),
   };
@@ -152,7 +180,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(SetTableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetTableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetTableOptions, _is_default_instance_));
-  SchemaTableOptions_descriptor_ = file->message_type(5);
+  SchemaTableOptions_descriptor_ = file->message_type(6);
   static const int SchemaTableOptions_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SchemaTableOptions, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SchemaTableOptions, columns_),
@@ -168,7 +196,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(SchemaTableOptions),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SchemaTableOptions, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SchemaTableOptions, _is_default_instance_));
-  DropTableRequest_descriptor_ = file->message_type(6);
+  DropTableRequest_descriptor_ = file->message_type(7);
   static const int DropTableRequest_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DropTableRequest, table_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DropTableRequest, table_type_),
@@ -184,7 +212,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(DropTableRequest),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DropTableRequest, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DropTableRequest, _is_default_instance_));
-  GetTableOptionsRequest_descriptor_ = file->message_type(7);
+  GetTableOptionsRequest_descriptor_ = file->message_type(8);
   static const int GetTableOptionsRequest_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, table_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, table_type_),
@@ -200,7 +228,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       sizeof(GetTableOptionsRequest),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsRequest, _is_default_instance_));
-  GetTableOptionsResponse_descriptor_ = file->message_type(8);
+  GetTableOptionsResponse_descriptor_ = file->message_type(9);
   static const int GetTableOptionsResponse_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsResponse, result_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsResponse, options_),
@@ -217,6 +245,7 @@ void protobuf_AssignDesc_uranium_5fadmin_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsResponse, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetTableOptionsResponse, _is_default_instance_));
   StorageType_descriptor_ = file->enum_type(0);
+  RocksTableType_descriptor_ = file->enum_type(1);
 }
 
 namespace {
@@ -232,6 +261,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       TableOptions_descriptor_, &TableOptions::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      CommonTableOptions_descriptor_, &CommonTableOptions::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       KVTableOptions_descriptor_, &KVTableOptions::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -256,6 +287,8 @@ void protobuf_ShutdownFile_uranium_5fadmin_2eproto() {
   delete TableOptions::default_instance_;
   delete TableOptions_default_oneof_instance_;
   delete TableOptions_reflection_;
+  delete CommonTableOptions::default_instance_;
+  delete CommonTableOptions_reflection_;
   delete KVTableOptions::default_instance_;
   delete KVTableOptions_reflection_;
   delete ListTableOptions::default_instance_;
@@ -284,50 +317,61 @@ void protobuf_AddDesc_uranium_5fadmin_2eproto() {
   ::uranium::common::protobuf_AddDesc_common_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\023uranium_admin.proto\022\ruranium.admin\032\014co"
-    "mmon.proto\"\260\003\n\014TableOptions\022-\n\ntable_nam"
+    "mmon.proto\"\361\003\n\014TableOptions\022-\n\ntable_nam"
     "e\030\001 \001(\0132\031.uranium.common.TableName\022-\n\nta"
     "ble_type\030\002 \001(\0162\031.uranium.common.TableTyp"
-    "e\0229\n\020kv_table_options\030\003 \001(\0132\035.uranium.ad"
-    "min.KVTableOptionsH\000\022=\n\022list_table_optio"
-    "ns\030\004 \001(\0132\037.uranium.admin.ListTableOption"
-    "sH\000\022=\n\022hash_table_options\030\005 \001(\0132\037.uraniu"
-    "m.admin.HashTableOptionsH\000\022;\n\021set_table_"
-    "options\030\006 \001(\0132\036.uranium.admin.SetTableOp"
-    "tionsH\000\022A\n\024schema_table_options\030\007 \001(\0132!."
-    "uranium.admin.SchemaTableOptionsH\000B\t\n\007op"
-    "tions\":\n\016KVTableOptions\022(\n\004type\030\001 \001(\0162\032."
-    "uranium.admin.StorageType\"<\n\020ListTableOp"
-    "tions\022(\n\004type\030\001 \001(\0162\032.uranium.admin.Stor"
-    "ageType\"<\n\020HashTableOptions\022(\n\004type\030\001 \001("
-    "\0162\032.uranium.admin.StorageType\";\n\017SetTabl"
-    "eOptions\022(\n\004type\030\001 \001(\0162\032.uranium.admin.S"
-    "torageType\"q\n\022SchemaTableOptions\022(\n\004type"
-    "\030\001 \001(\0162\032.uranium.admin.StorageType\0221\n\007co"
-    "lumns\030\002 \003(\0132 .uranium.common.ColumnDefin"
-    "ation\"p\n\020DropTableRequest\022-\n\ntable_name\030"
-    "\001 \001(\0132\031.uranium.common.TableName\022-\n\ntabl"
-    "e_type\030\002 \001(\0162\031.uranium.common.TableType\""
-    "v\n\026GetTableOptionsRequest\022-\n\ntable_name\030"
-    "\001 \001(\0132\031.uranium.common.TableName\022-\n\ntabl"
-    "e_type\030\002 \001(\0162\031.uranium.common.TableType\""
-    "o\n\027GetTableOptionsResponse\022&\n\006result\030\001 \001"
-    "(\0132\026.uranium.common.Result\022,\n\007options\030\002 "
-    "\001(\0132\033.uranium.admin.TableOptions*\?\n\013Stor"
-    "ageType\022\010\n\004FLAT\020\000\022\024\n\020COLUMN_SEPARATED\020\001\022"
-    "\020\n\014COLUMN_GROUP\020\0022\315\002\n\023UraniumAdminServic"
-    "e\022D\n\013CreateTable\022\033.uranium.admin.TableOp"
-    "tions\032\026.uranium.common.Result\"\000\022D\n\013Updat"
-    "eTable\022\033.uranium.admin.TableOptions\032\026.ur"
-    "anium.common.Result\"\000\022F\n\tDropTable\022\037.ura"
-    "nium.admin.DropTableRequest\032\026.uranium.co"
-    "mmon.Result\"\000\022b\n\017GetTableOptions\022%.urani"
-    "um.admin.GetTableOptionsRequest\032&.uraniu"
-    "m.admin.GetTableOptionsResponse\"\000b\006proto"
-    "3", 1601);
+    "e\022\?\n\024common_table_options\030\003 \001(\0132!.uraniu"
+    "m.admin.CommonTableOptions\0229\n\020kv_table_o"
+    "ptions\030\004 \001(\0132\035.uranium.admin.KVTableOpti"
+    "onsH\000\022=\n\022list_table_options\030\005 \001(\0132\037.uran"
+    "ium.admin.ListTableOptionsH\000\022=\n\022hash_tab"
+    "le_options\030\006 \001(\0132\037.uranium.admin.HashTab"
+    "leOptionsH\000\022;\n\021set_table_options\030\007 \001(\0132\036"
+    ".uranium.admin.SetTableOptionsH\000\022A\n\024sche"
+    "ma_table_options\030\010 \001(\0132!.uranium.admin.S"
+    "chemaTableOptionsH\000B\t\n\007options\"\242\002\n\022Commo"
+    "nTableOptions\0227\n\020rocks_table_type\030\001 \001(\0162"
+    "\035.uranium.admin.RocksTableType\022\022\n\nnum_le"
+    "vels\030\002 \001(\005\022\031\n\021max_flush_threads\030\003 \001(\005\022\036\n"
+    "\026max_compaction_threads\030\004 \001(\005\022\030\n\020mem_tab"
+    "le_memory\030\005 \001(\003\022\025\n\rmem_table_num\030\006 \001(\003\022\026"
+    "\n\016lru_cache_size\030\007 \001(\003\022\033\n\023plain_encoding"
+    "_type\030\010 \001(\t\022\036\n\026fixed_prefix_transform\030\t "
+    "\001(\005\":\n\016KVTableOptions\022(\n\004type\030\001 \001(\0162\032.ur"
+    "anium.admin.StorageType\"<\n\020ListTableOpti"
+    "ons\022(\n\004type\030\001 \001(\0162\032.uranium.admin.Storag"
+    "eType\"<\n\020HashTableOptions\022(\n\004type\030\001 \001(\0162"
+    "\032.uranium.admin.StorageType\";\n\017SetTableO"
+    "ptions\022(\n\004type\030\001 \001(\0162\032.uranium.admin.Sto"
+    "rageType\"q\n\022SchemaTableOptions\022(\n\004type\030\001"
+    " \001(\0162\032.uranium.admin.StorageType\0221\n\007colu"
+    "mns\030\002 \003(\0132 .uranium.common.ColumnDefinat"
+    "ion\"p\n\020DropTableRequest\022-\n\ntable_name\030\001 "
+    "\001(\0132\031.uranium.common.TableName\022-\n\ntable_"
+    "type\030\002 \001(\0162\031.uranium.common.TableType\"v\n"
+    "\026GetTableOptionsRequest\022-\n\ntable_name\030\001 "
+    "\001(\0132\031.uranium.common.TableName\022-\n\ntable_"
+    "type\030\002 \001(\0162\031.uranium.common.TableType\"o\n"
+    "\027GetTableOptionsResponse\022&\n\006result\030\001 \001(\013"
+    "2\026.uranium.common.Result\022,\n\007options\030\002 \001("
+    "\0132\033.uranium.admin.TableOptions*\?\n\013Storag"
+    "eType\022\010\n\004FLAT\020\000\022\024\n\020COLUMN_SEPARATED\020\001\022\020\n"
+    "\014COLUMN_GROUP\020\002*,\n\016RocksTableType\022\017\n\013BLO"
+    "CK_BASED\020\000\022\t\n\005PLAIN\020\0012\315\002\n\023UraniumAdminSe"
+    "rvice\022D\n\013CreateTable\022\033.uranium.admin.Tab"
+    "leOptions\032\026.uranium.common.Result\"\000\022D\n\013U"
+    "pdateTable\022\033.uranium.admin.TableOptions\032"
+    "\026.uranium.common.Result\"\000\022F\n\tDropTable\022\037"
+    ".uranium.admin.DropTableRequest\032\026.uraniu"
+    "m.common.Result\"\000\022b\n\017GetTableOptions\022%.u"
+    "ranium.admin.GetTableOptionsRequest\032&.ur"
+    "anium.admin.GetTableOptionsResponse\"\000b\006p"
+    "roto3", 2005);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "uranium_admin.proto", &protobuf_RegisterTypes);
   TableOptions::default_instance_ = new TableOptions();
   TableOptions_default_oneof_instance_ = new TableOptionsOneofInstance();
+  CommonTableOptions::default_instance_ = new CommonTableOptions();
   KVTableOptions::default_instance_ = new KVTableOptions();
   ListTableOptions::default_instance_ = new ListTableOptions();
   HashTableOptions::default_instance_ = new HashTableOptions();
@@ -337,6 +381,7 @@ void protobuf_AddDesc_uranium_5fadmin_2eproto() {
   GetTableOptionsRequest::default_instance_ = new GetTableOptionsRequest();
   GetTableOptionsResponse::default_instance_ = new GetTableOptionsResponse();
   TableOptions::default_instance_->InitAsDefaultInstance();
+  CommonTableOptions::default_instance_->InitAsDefaultInstance();
   KVTableOptions::default_instance_->InitAsDefaultInstance();
   ListTableOptions::default_instance_->InitAsDefaultInstance();
   HashTableOptions::default_instance_->InitAsDefaultInstance();
@@ -369,12 +414,27 @@ bool StorageType_IsValid(int value) {
   }
 }
 
+const ::google::protobuf::EnumDescriptor* RocksTableType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return RocksTableType_descriptor_;
+}
+bool RocksTableType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TableOptions::kTableNameFieldNumber;
 const int TableOptions::kTableTypeFieldNumber;
+const int TableOptions::kCommonTableOptionsFieldNumber;
 const int TableOptions::kKvTableOptionsFieldNumber;
 const int TableOptions::kListTableOptionsFieldNumber;
 const int TableOptions::kHashTableOptionsFieldNumber;
@@ -391,6 +451,7 @@ TableOptions::TableOptions()
 void TableOptions::InitAsDefaultInstance() {
   _is_default_instance_ = true;
   table_name_ = const_cast< ::uranium::common::TableName*>(&::uranium::common::TableName::default_instance());
+  common_table_options_ = const_cast< ::uranium::admin::CommonTableOptions*>(&::uranium::admin::CommonTableOptions::default_instance());
   TableOptions_default_oneof_instance_->kv_table_options_ = const_cast< ::uranium::admin::KVTableOptions*>(&::uranium::admin::KVTableOptions::default_instance());
   TableOptions_default_oneof_instance_->list_table_options_ = const_cast< ::uranium::admin::ListTableOptions*>(&::uranium::admin::ListTableOptions::default_instance());
   TableOptions_default_oneof_instance_->hash_table_options_ = const_cast< ::uranium::admin::HashTableOptions*>(&::uranium::admin::HashTableOptions::default_instance());
@@ -411,6 +472,7 @@ void TableOptions::SharedCtor() {
   _cached_size_ = 0;
   table_name_ = NULL;
   table_type_ = 0;
+  common_table_options_ = NULL;
   clear_has_options();
 }
 
@@ -425,6 +487,7 @@ void TableOptions::SharedDtor() {
   }
   if (this != default_instance_) {
     delete table_name_;
+    delete common_table_options_;
   }
 }
 
@@ -489,6 +552,8 @@ void TableOptions::Clear() {
   if (GetArenaNoVirtual() == NULL && table_name_ != NULL) delete table_name_;
   table_name_ = NULL;
   table_type_ = 0;
+  if (GetArenaNoVirtual() == NULL && common_table_options_ != NULL) delete common_table_options_;
+  common_table_options_ = NULL;
   clear_options();
 }
 
@@ -526,65 +591,78 @@ bool TableOptions::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_kv_table_options;
+        if (input->ExpectTag(26)) goto parse_common_table_options;
         break;
       }
 
-      // optional .uranium.admin.KVTableOptions kv_table_options = 3;
+      // optional .uranium.admin.CommonTableOptions common_table_options = 3;
       case 3: {
         if (tag == 26) {
+         parse_common_table_options:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_common_table_options()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_kv_table_options;
+        break;
+      }
+
+      // optional .uranium.admin.KVTableOptions kv_table_options = 4;
+      case 4: {
+        if (tag == 34) {
          parse_kv_table_options:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_kv_table_options()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_list_table_options;
+        if (input->ExpectTag(42)) goto parse_list_table_options;
         break;
       }
 
-      // optional .uranium.admin.ListTableOptions list_table_options = 4;
-      case 4: {
-        if (tag == 34) {
+      // optional .uranium.admin.ListTableOptions list_table_options = 5;
+      case 5: {
+        if (tag == 42) {
          parse_list_table_options:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_list_table_options()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(42)) goto parse_hash_table_options;
+        if (input->ExpectTag(50)) goto parse_hash_table_options;
         break;
       }
 
-      // optional .uranium.admin.HashTableOptions hash_table_options = 5;
-      case 5: {
-        if (tag == 42) {
+      // optional .uranium.admin.HashTableOptions hash_table_options = 6;
+      case 6: {
+        if (tag == 50) {
          parse_hash_table_options:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_hash_table_options()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_set_table_options;
+        if (input->ExpectTag(58)) goto parse_set_table_options;
         break;
       }
 
-      // optional .uranium.admin.SetTableOptions set_table_options = 6;
-      case 6: {
-        if (tag == 50) {
+      // optional .uranium.admin.SetTableOptions set_table_options = 7;
+      case 7: {
+        if (tag == 58) {
          parse_set_table_options:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_set_table_options()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(58)) goto parse_schema_table_options;
+        if (input->ExpectTag(66)) goto parse_schema_table_options;
         break;
       }
 
-      // optional .uranium.admin.SchemaTableOptions schema_table_options = 7;
-      case 7: {
-        if (tag == 58) {
+      // optional .uranium.admin.SchemaTableOptions schema_table_options = 8;
+      case 8: {
+        if (tag == 66) {
          parse_schema_table_options:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_schema_table_options()));
@@ -631,34 +709,40 @@ void TableOptions::SerializeWithCachedSizes(
       2, this->table_type(), output);
   }
 
-  // optional .uranium.admin.KVTableOptions kv_table_options = 3;
+  // optional .uranium.admin.CommonTableOptions common_table_options = 3;
+  if (this->has_common_table_options()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, *this->common_table_options_, output);
+  }
+
+  // optional .uranium.admin.KVTableOptions kv_table_options = 4;
   if (has_kv_table_options()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *options_.kv_table_options_, output);
+      4, *options_.kv_table_options_, output);
   }
 
-  // optional .uranium.admin.ListTableOptions list_table_options = 4;
+  // optional .uranium.admin.ListTableOptions list_table_options = 5;
   if (has_list_table_options()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *options_.list_table_options_, output);
+      5, *options_.list_table_options_, output);
   }
 
-  // optional .uranium.admin.HashTableOptions hash_table_options = 5;
+  // optional .uranium.admin.HashTableOptions hash_table_options = 6;
   if (has_hash_table_options()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, *options_.hash_table_options_, output);
+      6, *options_.hash_table_options_, output);
   }
 
-  // optional .uranium.admin.SetTableOptions set_table_options = 6;
+  // optional .uranium.admin.SetTableOptions set_table_options = 7;
   if (has_set_table_options()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, *options_.set_table_options_, output);
+      7, *options_.set_table_options_, output);
   }
 
-  // optional .uranium.admin.SchemaTableOptions schema_table_options = 7;
+  // optional .uranium.admin.SchemaTableOptions schema_table_options = 8;
   if (has_schema_table_options()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, *options_.schema_table_options_, output);
+      8, *options_.schema_table_options_, output);
   }
 
   // @@protoc_insertion_point(serialize_end:uranium.admin.TableOptions)
@@ -680,39 +764,46 @@ void TableOptions::SerializeWithCachedSizes(
       2, this->table_type(), target);
   }
 
-  // optional .uranium.admin.KVTableOptions kv_table_options = 3;
+  // optional .uranium.admin.CommonTableOptions common_table_options = 3;
+  if (this->has_common_table_options()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->common_table_options_, false, target);
+  }
+
+  // optional .uranium.admin.KVTableOptions kv_table_options = 4;
   if (has_kv_table_options()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        3, *options_.kv_table_options_, false, target);
+        4, *options_.kv_table_options_, false, target);
   }
 
-  // optional .uranium.admin.ListTableOptions list_table_options = 4;
+  // optional .uranium.admin.ListTableOptions list_table_options = 5;
   if (has_list_table_options()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        4, *options_.list_table_options_, false, target);
+        5, *options_.list_table_options_, false, target);
   }
 
-  // optional .uranium.admin.HashTableOptions hash_table_options = 5;
+  // optional .uranium.admin.HashTableOptions hash_table_options = 6;
   if (has_hash_table_options()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        5, *options_.hash_table_options_, false, target);
+        6, *options_.hash_table_options_, false, target);
   }
 
-  // optional .uranium.admin.SetTableOptions set_table_options = 6;
+  // optional .uranium.admin.SetTableOptions set_table_options = 7;
   if (has_set_table_options()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        6, *options_.set_table_options_, false, target);
+        7, *options_.set_table_options_, false, target);
   }
 
-  // optional .uranium.admin.SchemaTableOptions schema_table_options = 7;
+  // optional .uranium.admin.SchemaTableOptions schema_table_options = 8;
   if (has_schema_table_options()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        7, *options_.schema_table_options_, false, target);
+        8, *options_.schema_table_options_, false, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:uranium.admin.TableOptions)
@@ -736,36 +827,43 @@ int TableOptions::ByteSize() const {
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->table_type());
   }
 
+  // optional .uranium.admin.CommonTableOptions common_table_options = 3;
+  if (this->has_common_table_options()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->common_table_options_);
+  }
+
   switch (options_case()) {
-    // optional .uranium.admin.KVTableOptions kv_table_options = 3;
+    // optional .uranium.admin.KVTableOptions kv_table_options = 4;
     case kKvTableOptions: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *options_.kv_table_options_);
       break;
     }
-    // optional .uranium.admin.ListTableOptions list_table_options = 4;
+    // optional .uranium.admin.ListTableOptions list_table_options = 5;
     case kListTableOptions: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *options_.list_table_options_);
       break;
     }
-    // optional .uranium.admin.HashTableOptions hash_table_options = 5;
+    // optional .uranium.admin.HashTableOptions hash_table_options = 6;
     case kHashTableOptions: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *options_.hash_table_options_);
       break;
     }
-    // optional .uranium.admin.SetTableOptions set_table_options = 6;
+    // optional .uranium.admin.SetTableOptions set_table_options = 7;
     case kSetTableOptions: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *options_.set_table_options_);
       break;
     }
-    // optional .uranium.admin.SchemaTableOptions schema_table_options = 7;
+    // optional .uranium.admin.SchemaTableOptions schema_table_options = 8;
     case kSchemaTableOptions: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -835,6 +933,9 @@ void TableOptions::MergeFrom(const TableOptions& from) {
   if (from.table_type() != 0) {
     set_table_type(from.table_type());
   }
+  if (from.has_common_table_options()) {
+    mutable_common_table_options()->::uranium::admin::CommonTableOptions::MergeFrom(from.common_table_options());
+  }
 }
 
 void TableOptions::CopyFrom(const ::google::protobuf::Message& from) {
@@ -863,6 +964,7 @@ void TableOptions::Swap(TableOptions* other) {
 void TableOptions::InternalSwap(TableOptions* other) {
   std::swap(table_name_, other->table_name_);
   std::swap(table_type_, other->table_type_);
+  std::swap(common_table_options_, other->common_table_options_);
   std::swap(options_, other->options_);
   std::swap(_oneof_case_[0], other->_oneof_case_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -932,7 +1034,45 @@ void TableOptions::clear_table_type() {
   // @@protoc_insertion_point(field_set:uranium.admin.TableOptions.table_type)
 }
 
-// optional .uranium.admin.KVTableOptions kv_table_options = 3;
+// optional .uranium.admin.CommonTableOptions common_table_options = 3;
+bool TableOptions::has_common_table_options() const {
+  return !_is_default_instance_ && common_table_options_ != NULL;
+}
+void TableOptions::clear_common_table_options() {
+  if (GetArenaNoVirtual() == NULL && common_table_options_ != NULL) delete common_table_options_;
+  common_table_options_ = NULL;
+}
+const ::uranium::admin::CommonTableOptions& TableOptions::common_table_options() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.TableOptions.common_table_options)
+  return common_table_options_ != NULL ? *common_table_options_ : *default_instance_->common_table_options_;
+}
+::uranium::admin::CommonTableOptions* TableOptions::mutable_common_table_options() {
+  
+  if (common_table_options_ == NULL) {
+    common_table_options_ = new ::uranium::admin::CommonTableOptions;
+  }
+  // @@protoc_insertion_point(field_mutable:uranium.admin.TableOptions.common_table_options)
+  return common_table_options_;
+}
+::uranium::admin::CommonTableOptions* TableOptions::release_common_table_options() {
+  // @@protoc_insertion_point(field_release:uranium.admin.TableOptions.common_table_options)
+  
+  ::uranium::admin::CommonTableOptions* temp = common_table_options_;
+  common_table_options_ = NULL;
+  return temp;
+}
+void TableOptions::set_allocated_common_table_options(::uranium::admin::CommonTableOptions* common_table_options) {
+  delete common_table_options_;
+  common_table_options_ = common_table_options;
+  if (common_table_options) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:uranium.admin.TableOptions.common_table_options)
+}
+
+// optional .uranium.admin.KVTableOptions kv_table_options = 4;
 bool TableOptions::has_kv_table_options() const {
   return options_case() == kKvTableOptions;
 }
@@ -980,7 +1120,7 @@ void TableOptions::set_allocated_kv_table_options(::uranium::admin::KVTableOptio
   // @@protoc_insertion_point(field_set_allocated:uranium.admin.TableOptions.kv_table_options)
 }
 
-// optional .uranium.admin.ListTableOptions list_table_options = 4;
+// optional .uranium.admin.ListTableOptions list_table_options = 5;
 bool TableOptions::has_list_table_options() const {
   return options_case() == kListTableOptions;
 }
@@ -1028,7 +1168,7 @@ void TableOptions::set_allocated_list_table_options(::uranium::admin::ListTableO
   // @@protoc_insertion_point(field_set_allocated:uranium.admin.TableOptions.list_table_options)
 }
 
-// optional .uranium.admin.HashTableOptions hash_table_options = 5;
+// optional .uranium.admin.HashTableOptions hash_table_options = 6;
 bool TableOptions::has_hash_table_options() const {
   return options_case() == kHashTableOptions;
 }
@@ -1076,7 +1216,7 @@ void TableOptions::set_allocated_hash_table_options(::uranium::admin::HashTableO
   // @@protoc_insertion_point(field_set_allocated:uranium.admin.TableOptions.hash_table_options)
 }
 
-// optional .uranium.admin.SetTableOptions set_table_options = 6;
+// optional .uranium.admin.SetTableOptions set_table_options = 7;
 bool TableOptions::has_set_table_options() const {
   return options_case() == kSetTableOptions;
 }
@@ -1124,7 +1264,7 @@ void TableOptions::set_allocated_set_table_options(::uranium::admin::SetTableOpt
   // @@protoc_insertion_point(field_set_allocated:uranium.admin.TableOptions.set_table_options)
 }
 
-// optional .uranium.admin.SchemaTableOptions schema_table_options = 7;
+// optional .uranium.admin.SchemaTableOptions schema_table_options = 8;
 bool TableOptions::has_schema_table_options() const {
   return options_case() == kSchemaTableOptions;
 }
@@ -1181,6 +1321,730 @@ void TableOptions::clear_has_options() {
 TableOptions::OptionsCase TableOptions::options_case() const {
   return TableOptions::OptionsCase(_oneof_case_[0]);
 }
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int CommonTableOptions::kRocksTableTypeFieldNumber;
+const int CommonTableOptions::kNumLevelsFieldNumber;
+const int CommonTableOptions::kMaxFlushThreadsFieldNumber;
+const int CommonTableOptions::kMaxCompactionThreadsFieldNumber;
+const int CommonTableOptions::kMemTableMemoryFieldNumber;
+const int CommonTableOptions::kMemTableNumFieldNumber;
+const int CommonTableOptions::kLruCacheSizeFieldNumber;
+const int CommonTableOptions::kPlainEncodingTypeFieldNumber;
+const int CommonTableOptions::kFixedPrefixTransformFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+CommonTableOptions::CommonTableOptions()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:uranium.admin.CommonTableOptions)
+}
+
+void CommonTableOptions::InitAsDefaultInstance() {
+  _is_default_instance_ = true;
+}
+
+CommonTableOptions::CommonTableOptions(const CommonTableOptions& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:uranium.admin.CommonTableOptions)
+}
+
+void CommonTableOptions::SharedCtor() {
+    _is_default_instance_ = false;
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  rocks_table_type_ = 0;
+  num_levels_ = 0;
+  max_flush_threads_ = 0;
+  max_compaction_threads_ = 0;
+  mem_table_memory_ = GOOGLE_LONGLONG(0);
+  mem_table_num_ = GOOGLE_LONGLONG(0);
+  lru_cache_size_ = GOOGLE_LONGLONG(0);
+  plain_encoding_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fixed_prefix_transform_ = 0;
+}
+
+CommonTableOptions::~CommonTableOptions() {
+  // @@protoc_insertion_point(destructor:uranium.admin.CommonTableOptions)
+  SharedDtor();
+}
+
+void CommonTableOptions::SharedDtor() {
+  plain_encoding_type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != default_instance_) {
+  }
+}
+
+void CommonTableOptions::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CommonTableOptions::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CommonTableOptions_descriptor_;
+}
+
+const CommonTableOptions& CommonTableOptions::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_uranium_5fadmin_2eproto();
+  return *default_instance_;
+}
+
+CommonTableOptions* CommonTableOptions::default_instance_ = NULL;
+
+CommonTableOptions* CommonTableOptions::New(::google::protobuf::Arena* arena) const {
+  CommonTableOptions* n = new CommonTableOptions;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void CommonTableOptions::Clear() {
+// @@protoc_insertion_point(message_clear_start:uranium.admin.CommonTableOptions)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(CommonTableOptions, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<CommonTableOptions*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(rocks_table_type_, lru_cache_size_);
+  plain_encoding_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fixed_prefix_transform_ = 0;
+
+#undef ZR_HELPER_
+#undef ZR_
+
+}
+
+bool CommonTableOptions::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:uranium.admin.CommonTableOptions)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .uranium.admin.RocksTableType rocks_table_type = 1;
+      case 1: {
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_rocks_table_type(static_cast< ::uranium::admin::RocksTableType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_num_levels;
+        break;
+      }
+
+      // optional int32 num_levels = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_num_levels:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &num_levels_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_max_flush_threads;
+        break;
+      }
+
+      // optional int32 max_flush_threads = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_max_flush_threads:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &max_flush_threads_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_max_compaction_threads;
+        break;
+      }
+
+      // optional int32 max_compaction_threads = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_max_compaction_threads:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &max_compaction_threads_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_mem_table_memory;
+        break;
+      }
+
+      // optional int64 mem_table_memory = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_mem_table_memory:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &mem_table_memory_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_mem_table_num;
+        break;
+      }
+
+      // optional int64 mem_table_num = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_mem_table_num:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &mem_table_num_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(56)) goto parse_lru_cache_size;
+        break;
+      }
+
+      // optional int64 lru_cache_size = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_lru_cache_size:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &lru_cache_size_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_plain_encoding_type;
+        break;
+      }
+
+      // optional string plain_encoding_type = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_plain_encoding_type:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_plain_encoding_type()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->plain_encoding_type().data(), this->plain_encoding_type().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "uranium.admin.CommonTableOptions.plain_encoding_type"));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(72)) goto parse_fixed_prefix_transform;
+        break;
+      }
+
+      // optional int32 fixed_prefix_transform = 9;
+      case 9: {
+        if (tag == 72) {
+         parse_fixed_prefix_transform:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &fixed_prefix_transform_)));
+
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:uranium.admin.CommonTableOptions)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:uranium.admin.CommonTableOptions)
+  return false;
+#undef DO_
+}
+
+void CommonTableOptions::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:uranium.admin.CommonTableOptions)
+  // optional .uranium.admin.RocksTableType rocks_table_type = 1;
+  if (this->rocks_table_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->rocks_table_type(), output);
+  }
+
+  // optional int32 num_levels = 2;
+  if (this->num_levels() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->num_levels(), output);
+  }
+
+  // optional int32 max_flush_threads = 3;
+  if (this->max_flush_threads() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->max_flush_threads(), output);
+  }
+
+  // optional int32 max_compaction_threads = 4;
+  if (this->max_compaction_threads() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->max_compaction_threads(), output);
+  }
+
+  // optional int64 mem_table_memory = 5;
+  if (this->mem_table_memory() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->mem_table_memory(), output);
+  }
+
+  // optional int64 mem_table_num = 6;
+  if (this->mem_table_num() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(6, this->mem_table_num(), output);
+  }
+
+  // optional int64 lru_cache_size = 7;
+  if (this->lru_cache_size() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(7, this->lru_cache_size(), output);
+  }
+
+  // optional string plain_encoding_type = 8;
+  if (this->plain_encoding_type().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plain_encoding_type().data(), this->plain_encoding_type().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "uranium.admin.CommonTableOptions.plain_encoding_type");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->plain_encoding_type(), output);
+  }
+
+  // optional int32 fixed_prefix_transform = 9;
+  if (this->fixed_prefix_transform() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->fixed_prefix_transform(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:uranium.admin.CommonTableOptions)
+}
+
+::google::protobuf::uint8* CommonTableOptions::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uranium.admin.CommonTableOptions)
+  // optional .uranium.admin.RocksTableType rocks_table_type = 1;
+  if (this->rocks_table_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->rocks_table_type(), target);
+  }
+
+  // optional int32 num_levels = 2;
+  if (this->num_levels() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->num_levels(), target);
+  }
+
+  // optional int32 max_flush_threads = 3;
+  if (this->max_flush_threads() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->max_flush_threads(), target);
+  }
+
+  // optional int32 max_compaction_threads = 4;
+  if (this->max_compaction_threads() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->max_compaction_threads(), target);
+  }
+
+  // optional int64 mem_table_memory = 5;
+  if (this->mem_table_memory() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->mem_table_memory(), target);
+  }
+
+  // optional int64 mem_table_num = 6;
+  if (this->mem_table_num() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(6, this->mem_table_num(), target);
+  }
+
+  // optional int64 lru_cache_size = 7;
+  if (this->lru_cache_size() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(7, this->lru_cache_size(), target);
+  }
+
+  // optional string plain_encoding_type = 8;
+  if (this->plain_encoding_type().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plain_encoding_type().data(), this->plain_encoding_type().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "uranium.admin.CommonTableOptions.plain_encoding_type");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->plain_encoding_type(), target);
+  }
+
+  // optional int32 fixed_prefix_transform = 9;
+  if (this->fixed_prefix_transform() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->fixed_prefix_transform(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:uranium.admin.CommonTableOptions)
+  return target;
+}
+
+int CommonTableOptions::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:uranium.admin.CommonTableOptions)
+  int total_size = 0;
+
+  // optional .uranium.admin.RocksTableType rocks_table_type = 1;
+  if (this->rocks_table_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->rocks_table_type());
+  }
+
+  // optional int32 num_levels = 2;
+  if (this->num_levels() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->num_levels());
+  }
+
+  // optional int32 max_flush_threads = 3;
+  if (this->max_flush_threads() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->max_flush_threads());
+  }
+
+  // optional int32 max_compaction_threads = 4;
+  if (this->max_compaction_threads() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->max_compaction_threads());
+  }
+
+  // optional int64 mem_table_memory = 5;
+  if (this->mem_table_memory() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->mem_table_memory());
+  }
+
+  // optional int64 mem_table_num = 6;
+  if (this->mem_table_num() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->mem_table_num());
+  }
+
+  // optional int64 lru_cache_size = 7;
+  if (this->lru_cache_size() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->lru_cache_size());
+  }
+
+  // optional string plain_encoding_type = 8;
+  if (this->plain_encoding_type().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->plain_encoding_type());
+  }
+
+  // optional int32 fixed_prefix_transform = 9;
+  if (this->fixed_prefix_transform() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->fixed_prefix_transform());
+  }
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CommonTableOptions::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:uranium.admin.CommonTableOptions)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const CommonTableOptions* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const CommonTableOptions>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:uranium.admin.CommonTableOptions)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:uranium.admin.CommonTableOptions)
+    MergeFrom(*source);
+  }
+}
+
+void CommonTableOptions::MergeFrom(const CommonTableOptions& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uranium.admin.CommonTableOptions)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  if (from.rocks_table_type() != 0) {
+    set_rocks_table_type(from.rocks_table_type());
+  }
+  if (from.num_levels() != 0) {
+    set_num_levels(from.num_levels());
+  }
+  if (from.max_flush_threads() != 0) {
+    set_max_flush_threads(from.max_flush_threads());
+  }
+  if (from.max_compaction_threads() != 0) {
+    set_max_compaction_threads(from.max_compaction_threads());
+  }
+  if (from.mem_table_memory() != 0) {
+    set_mem_table_memory(from.mem_table_memory());
+  }
+  if (from.mem_table_num() != 0) {
+    set_mem_table_num(from.mem_table_num());
+  }
+  if (from.lru_cache_size() != 0) {
+    set_lru_cache_size(from.lru_cache_size());
+  }
+  if (from.plain_encoding_type().size() > 0) {
+
+    plain_encoding_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_encoding_type_);
+  }
+  if (from.fixed_prefix_transform() != 0) {
+    set_fixed_prefix_transform(from.fixed_prefix_transform());
+  }
+}
+
+void CommonTableOptions::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:uranium.admin.CommonTableOptions)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CommonTableOptions::CopyFrom(const CommonTableOptions& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uranium.admin.CommonTableOptions)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CommonTableOptions::IsInitialized() const {
+
+  return true;
+}
+
+void CommonTableOptions::Swap(CommonTableOptions* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void CommonTableOptions::InternalSwap(CommonTableOptions* other) {
+  std::swap(rocks_table_type_, other->rocks_table_type_);
+  std::swap(num_levels_, other->num_levels_);
+  std::swap(max_flush_threads_, other->max_flush_threads_);
+  std::swap(max_compaction_threads_, other->max_compaction_threads_);
+  std::swap(mem_table_memory_, other->mem_table_memory_);
+  std::swap(mem_table_num_, other->mem_table_num_);
+  std::swap(lru_cache_size_, other->lru_cache_size_);
+  plain_encoding_type_.Swap(&other->plain_encoding_type_);
+  std::swap(fixed_prefix_transform_, other->fixed_prefix_transform_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata CommonTableOptions::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CommonTableOptions_descriptor_;
+  metadata.reflection = CommonTableOptions_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// CommonTableOptions
+
+// optional .uranium.admin.RocksTableType rocks_table_type = 1;
+void CommonTableOptions::clear_rocks_table_type() {
+  rocks_table_type_ = 0;
+}
+ ::uranium::admin::RocksTableType CommonTableOptions::rocks_table_type() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.rocks_table_type)
+  return static_cast< ::uranium::admin::RocksTableType >(rocks_table_type_);
+}
+ void CommonTableOptions::set_rocks_table_type(::uranium::admin::RocksTableType value) {
+  
+  rocks_table_type_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.rocks_table_type)
+}
+
+// optional int32 num_levels = 2;
+void CommonTableOptions::clear_num_levels() {
+  num_levels_ = 0;
+}
+ ::google::protobuf::int32 CommonTableOptions::num_levels() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.num_levels)
+  return num_levels_;
+}
+ void CommonTableOptions::set_num_levels(::google::protobuf::int32 value) {
+  
+  num_levels_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.num_levels)
+}
+
+// optional int32 max_flush_threads = 3;
+void CommonTableOptions::clear_max_flush_threads() {
+  max_flush_threads_ = 0;
+}
+ ::google::protobuf::int32 CommonTableOptions::max_flush_threads() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.max_flush_threads)
+  return max_flush_threads_;
+}
+ void CommonTableOptions::set_max_flush_threads(::google::protobuf::int32 value) {
+  
+  max_flush_threads_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.max_flush_threads)
+}
+
+// optional int32 max_compaction_threads = 4;
+void CommonTableOptions::clear_max_compaction_threads() {
+  max_compaction_threads_ = 0;
+}
+ ::google::protobuf::int32 CommonTableOptions::max_compaction_threads() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.max_compaction_threads)
+  return max_compaction_threads_;
+}
+ void CommonTableOptions::set_max_compaction_threads(::google::protobuf::int32 value) {
+  
+  max_compaction_threads_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.max_compaction_threads)
+}
+
+// optional int64 mem_table_memory = 5;
+void CommonTableOptions::clear_mem_table_memory() {
+  mem_table_memory_ = GOOGLE_LONGLONG(0);
+}
+ ::google::protobuf::int64 CommonTableOptions::mem_table_memory() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.mem_table_memory)
+  return mem_table_memory_;
+}
+ void CommonTableOptions::set_mem_table_memory(::google::protobuf::int64 value) {
+  
+  mem_table_memory_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.mem_table_memory)
+}
+
+// optional int64 mem_table_num = 6;
+void CommonTableOptions::clear_mem_table_num() {
+  mem_table_num_ = GOOGLE_LONGLONG(0);
+}
+ ::google::protobuf::int64 CommonTableOptions::mem_table_num() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.mem_table_num)
+  return mem_table_num_;
+}
+ void CommonTableOptions::set_mem_table_num(::google::protobuf::int64 value) {
+  
+  mem_table_num_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.mem_table_num)
+}
+
+// optional int64 lru_cache_size = 7;
+void CommonTableOptions::clear_lru_cache_size() {
+  lru_cache_size_ = GOOGLE_LONGLONG(0);
+}
+ ::google::protobuf::int64 CommonTableOptions::lru_cache_size() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.lru_cache_size)
+  return lru_cache_size_;
+}
+ void CommonTableOptions::set_lru_cache_size(::google::protobuf::int64 value) {
+  
+  lru_cache_size_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.lru_cache_size)
+}
+
+// optional string plain_encoding_type = 8;
+void CommonTableOptions::clear_plain_encoding_type() {
+  plain_encoding_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ const ::std::string& CommonTableOptions::plain_encoding_type() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.plain_encoding_type)
+  return plain_encoding_type_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void CommonTableOptions::set_plain_encoding_type(const ::std::string& value) {
+  
+  plain_encoding_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.plain_encoding_type)
+}
+ void CommonTableOptions::set_plain_encoding_type(const char* value) {
+  
+  plain_encoding_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:uranium.admin.CommonTableOptions.plain_encoding_type)
+}
+ void CommonTableOptions::set_plain_encoding_type(const char* value, size_t size) {
+  
+  plain_encoding_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:uranium.admin.CommonTableOptions.plain_encoding_type)
+}
+ ::std::string* CommonTableOptions::mutable_plain_encoding_type() {
+  
+  // @@protoc_insertion_point(field_mutable:uranium.admin.CommonTableOptions.plain_encoding_type)
+  return plain_encoding_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* CommonTableOptions::release_plain_encoding_type() {
+  // @@protoc_insertion_point(field_release:uranium.admin.CommonTableOptions.plain_encoding_type)
+  
+  return plain_encoding_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void CommonTableOptions::set_allocated_plain_encoding_type(::std::string* plain_encoding_type) {
+  if (plain_encoding_type != NULL) {
+    
+  } else {
+    
+  }
+  plain_encoding_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plain_encoding_type);
+  // @@protoc_insertion_point(field_set_allocated:uranium.admin.CommonTableOptions.plain_encoding_type)
+}
+
+// optional int32 fixed_prefix_transform = 9;
+void CommonTableOptions::clear_fixed_prefix_transform() {
+  fixed_prefix_transform_ = 0;
+}
+ ::google::protobuf::int32 CommonTableOptions::fixed_prefix_transform() const {
+  // @@protoc_insertion_point(field_get:uranium.admin.CommonTableOptions.fixed_prefix_transform)
+  return fixed_prefix_transform_;
+}
+ void CommonTableOptions::set_fixed_prefix_transform(::google::protobuf::int32 value) {
+  
+  fixed_prefix_transform_ = value;
+  // @@protoc_insertion_point(field_set:uranium.admin.CommonTableOptions.fixed_prefix_transform)
+}
+
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================

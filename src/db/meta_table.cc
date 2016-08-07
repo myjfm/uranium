@@ -118,7 +118,7 @@ Status MetaTable::LoadSetTables(std::vector<internal::TableOptions>* tables) {
   return Status(rs);
 }
 
-Status MetaTable::LoadSchemaTables(std::vector<internal::TableOptions>* tables) {
+Status MetaTable::LoadSchemaTables(std::vector<internal::TableOptions>* tables){
   assert(db_);
   std::string str_options_list;
   auto rs = db_->Get(rocksdb::ReadOptions(),
@@ -139,9 +139,12 @@ Status MetaTable::LoadSchemaTables(std::vector<internal::TableOptions>* tables) 
 
 Status MetaTable::CreateKVTable(const std::string& table_path,
                                 const std::string& table_name,
+                                const admin::CommonTableOptions& common_options,
                                 const admin::KVTableOptions& table_options) {
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::KV);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
+  admin_table_options.mutable_kv_table_options()->CopyFrom(table_options);
   admin_table_options.mutable_table_name()->set_name(table_name);
 
   internal::TableOptions internal_table_options;
@@ -167,9 +170,12 @@ Status MetaTable::CreateKVTable(const std::string& table_path,
 Status MetaTable::CreateListTable(
     const std::string& table_path,
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::ListTableOptions& table_options) {
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::LIST);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
+  admin_table_options.mutable_list_table_options()->CopyFrom(table_options);
   admin_table_options.mutable_table_name()->set_name(table_name);
 
   internal::TableOptions internal_table_options;
@@ -195,9 +201,12 @@ Status MetaTable::CreateListTable(
 Status MetaTable::CreateHashTable(
     const std::string& table_path,
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::HashTableOptions& table_options) {
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::HASH);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
+  admin_table_options.mutable_hash_table_options()->CopyFrom(table_options);
   admin_table_options.mutable_table_name()->set_name(table_name);
 
   internal::TableOptions internal_table_options;
@@ -220,11 +229,15 @@ Status MetaTable::CreateHashTable(
   return Status::OK();
 }
 
-Status MetaTable::CreateSetTable(const std::string& table_path,
-                                 const std::string& table_name,
-                                 const admin::SetTableOptions& table_options) {
+Status MetaTable::CreateSetTable(
+    const std::string& table_path,
+    const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
+    const admin::SetTableOptions& table_options) {
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::SET);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
+  admin_table_options.mutable_set_table_options()->CopyFrom(table_options);
   admin_table_options.mutable_table_name()->set_name(table_name);
 
   internal::TableOptions internal_table_options;
@@ -247,11 +260,15 @@ Status MetaTable::CreateSetTable(const std::string& table_path,
   return Status::OK();
 }
 
-Status MetaTable::CreateSchemaTable(const std::string& table_path,
-                                    const std::string& table_name,
-                                    const admin::SchemaTableOptions& table) {
+Status MetaTable::CreateSchemaTable(
+    const std::string& table_path,
+    const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
+    const admin::SchemaTableOptions& table_options) {
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::SCHEMA);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
+  admin_table_options.mutable_schema_table_options()->CopyFrom(table_options);
   admin_table_options.mutable_table_name()->set_name(table_name);
 
   internal::TableOptions internal_table_options;
@@ -271,16 +288,19 @@ Status MetaTable::CreateSchemaTable(const std::string& table_path,
   if (!rs.ok()) {
     return Status(rs);
   }
-  schema_table_options_list_.add_options_list()->CopyFrom(table);
+  schema_table_options_list_.add_options_list()->CopyFrom(
+      internal_table_options);
   return Status::OK();
 }
 
 Status MetaTable::GetKVTableOptions(const std::string& table_name,
+                                    admin::CommonTableOptions* common_options,
                                     admin::KVTableOptions* options) {
   for (auto itr = kv_table_options_list_.options_list().begin();
        itr != kv_table_options_list_.options_list().end();
        itr++) {
     if (itr->options().table_name().name() == table_name) {
+      common_options->CopyFrom(itr->options().common_table_options());
       options->CopyFrom(itr->options().kv_table_options());
       return Status::OK();
     }
@@ -289,11 +309,13 @@ Status MetaTable::GetKVTableOptions(const std::string& table_name,
 }
 
 Status MetaTable::GetListTableOptions(const std::string& table_name,
+                                      admin::CommonTableOptions* common_options,
                                       admin::ListTableOptions* options) {
   for (auto itr = list_table_options_list_.options_list().begin();
        itr != list_table_options_list_.options_list().end();
        itr++) {
     if (itr->options().table_name().name() == table_name) {
+      common_options->CopyFrom(itr->options().common_table_options());
       options->CopyFrom(itr->options().list_table_options());
       return Status::OK();
     }
@@ -302,11 +324,13 @@ Status MetaTable::GetListTableOptions(const std::string& table_name,
 }
 
 Status MetaTable::GetHashTableOptions(const std::string& table_name,
+                                      admin::CommonTableOptions* common_options,
                                       admin::HashTableOptions* options) {
   for (auto itr = hash_table_options_list_.options_list().begin();
        itr != hash_table_options_list_.options_list().end();
        itr++) {
     if (itr->options().table_name().name() == table_name) {
+      common_options->CopyFrom(itr->options().common_table_options());
       options->CopyFrom(itr->options().hash_table_options());
       return Status::OK();
     }
@@ -315,11 +339,13 @@ Status MetaTable::GetHashTableOptions(const std::string& table_name,
 }
 
 Status MetaTable::GetSetTableOptions(const std::string& table_name,
+                                     admin::CommonTableOptions* common_options,
                                      admin::SetTableOptions* options) {
   for (auto itr = set_table_options_list_.options_list().begin();
        itr != set_table_options_list_.options_list().end();
        itr++) {
     if (itr->options().table_name().name() == table_name) {
+      common_options->CopyFrom(itr->options().common_table_options());
       options->CopyFrom(itr->options().set_table_options());
       return Status::OK();
     }
@@ -327,12 +353,15 @@ Status MetaTable::GetSetTableOptions(const std::string& table_name,
   return Status::NotFound();
 }
 
-Status MetaTable::GetSchemaTableOptions(const std::string& table_name,
-                                        admin::SchemaTableOptions* options) {
+Status MetaTable::GetSchemaTableOptions(
+    const std::string& table_name,
+    admin::CommonTableOptions* common_options,
+    admin::SchemaTableOptions* options) {
   for (auto itr = schema_table_options_list_.options_list().begin();
        itr != schema_table_options_list_.options_list().end();
        itr++) {
     if (itr->options().table_name().name() == table_name) {
+      common_options->CopyFrom(itr->options().common_table_options());
       options->CopyFrom(itr->options().schema_table_options());
       return Status::OK();
     }

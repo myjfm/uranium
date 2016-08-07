@@ -17,12 +17,13 @@ service UraniumAdminService {
 message TableOptions {
   common.TableName table_name               = 1;
   common.TableType table_type               = 2;
+  CommonTableOptions common_table_options   = 3;
   oneof options {
-    KVTableOptions kv_table_options         = 3;
-    ListTableOptions list_table_options     = 4;
-    HashTableOptions hash_table_options     = 5;
-    SetTableOptions set_table_options       = 6;
-    SchemaTableOptions schema_table_options = 7;
+    KVTableOptions kv_table_options         = 4;
+    ListTableOptions list_table_options     = 5;
+    HashTableOptions hash_table_options     = 6;
+    SetTableOptions set_table_options       = 7;
+    SchemaTableOptions schema_table_options = 8;
   }
 }
 
@@ -30,6 +31,25 @@ enum StorageType {
   FLAT              = 0;
   COLUMN_SEPARATED  = 1;  // currently not supported
   COLUMN_GROUP      = 2;  // currently not supported
+}
+
+enum RocksTableType {
+  BLOCK_BASED = 0;
+  // for in memory database,
+  // you could use this type of table to obtain high performance like redis
+  PLAIN       = 1;
+}
+
+message CommonTableOptions {
+  RocksTableType rocks_table_type = 1;  // [default = BLOCK_BASED]
+  int32 num_levels                = 2;  // [default = 3]
+  int32 max_flush_threads         = 3;  // [default = 2]
+  int32 max_compaction_threads    = 4;  // [default = 2]
+  int64 mem_table_memory          = 5;  // [default = 1048576]
+  int64 mem_table_num             = 6;  // [default = 2]
+  int64 lru_cache_size            = 7;  // [default = 10485760]
+  string plain_encoding_type      = 8;  // [default = "plain"] only used for PLAIN table type
+  int32 fixed_prefix_transform    = 9;  // [default = 8] only used for PLAIN table type
 }
 
 message KVTableOptions {

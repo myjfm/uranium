@@ -172,11 +172,14 @@ std::shared_ptr<SchemaTable> TableManagerImpl::GetSchemaTable(
   return itr->second;
 }
 
-Status TableManagerImpl::CreateKVTable(const std::string& table_name,
-                                       const admin::KVTableOptions& options) {
+Status TableManagerImpl::CreateKVTable(
+    const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
+    const admin::KVTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::KV);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_kv_table_options()->CopyFrom(options);
   internal_table_options.mutable_options()->CopyFrom(admin_table_options);
 
@@ -190,7 +193,10 @@ Status TableManagerImpl::CreateKVTable(const std::string& table_name,
   if (GetKVTable(table_name).get()) {
     return Status::TableAlreadyExists("table already exists");
   }
-  auto s = meta_table_.CreateKVTable(table_path, table_name, options);
+  auto s = meta_table_.CreateKVTable(table_path,
+                                     table_name,
+                                     common_options,
+                                     options);
   if (!s.ok()) {
     return s;
   }
@@ -213,10 +219,12 @@ Status TableManagerImpl::CreateKVTable(const std::string& table_name,
 
 Status TableManagerImpl::CreateListTable(
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::ListTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::LIST);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_list_table_options()->CopyFrom(options);
   internal_table_options.mutable_options()->CopyFrom(admin_table_options);
 
@@ -230,7 +238,10 @@ Status TableManagerImpl::CreateListTable(
   if (GetListTable(table_name).get()) {
     return Status::TableAlreadyExists("table already exists");
   }
-  auto s = meta_table_.CreateListTable(table_path, table_name, options);
+  auto s = meta_table_.CreateListTable(table_path,
+                                       table_name,
+                                       common_options,
+                                       options);
   if (!s.ok()) {
     return s;
   }
@@ -253,10 +264,12 @@ Status TableManagerImpl::CreateListTable(
 
 Status TableManagerImpl::CreateHashTable(
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::HashTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::HASH);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_hash_table_options()->CopyFrom(options);
   internal_table_options.mutable_options()->CopyFrom(admin_table_options);
 
@@ -270,7 +283,10 @@ Status TableManagerImpl::CreateHashTable(
   if (GetHashTable(table_name).get()) {
     return Status::TableAlreadyExists("table already exists");
   }
-  auto s = meta_table_.CreateHashTable(table_path, table_name, options);
+  auto s = meta_table_.CreateHashTable(table_path,
+                                       table_name,
+                                       common_options,
+                                       options);
   if (!s.ok()) {
     return s;
   }
@@ -291,11 +307,14 @@ Status TableManagerImpl::CreateHashTable(
   return Status::OK();
 }
 
-Status TableManagerImpl::CreateSetTable(const std::string& table_name,
-                                        const admin::SetTableOptions& options) {
+Status TableManagerImpl::CreateSetTable(
+    const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
+    const admin::SetTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::SET);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_set_table_options()->CopyFrom(options);
   internal_table_options.mutable_options()->CopyFrom(admin_table_options);
 
@@ -309,7 +328,10 @@ Status TableManagerImpl::CreateSetTable(const std::string& table_name,
   if (GetSetTable(table_name).get()) {
     return Status::TableAlreadyExists("table already exists");
   }
-  auto s = meta_table_.CreateSetTable(table_path, table_name, options);
+  auto s = meta_table_.CreateSetTable(table_path,
+                                      table_name,
+                                      common_options,
+                                      options);
   if (!s.ok()) {
     return s;
   }
@@ -332,10 +354,12 @@ Status TableManagerImpl::CreateSetTable(const std::string& table_name,
 
 Status TableManagerImpl::CreateSchemaTable(
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::SchemaTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
   admin_table_options.set_table_type(common::TableType::SCHEMA);
+  admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_schema_table_options()->CopyFrom(options);
   internal_table_options.mutable_options()->CopyFrom(admin_table_options);
 
@@ -349,7 +373,10 @@ Status TableManagerImpl::CreateSchemaTable(
   if (GetSetTable(table_name).get()) {
     return Status::TableAlreadyExists("table already exists");
   }
-  auto s = meta_table_.CreateSchemaTable(table_path, table_name, options);
+  auto s = meta_table_.CreateSchemaTable(table_path,
+                                         table_name,
+                                         common_options,
+                                         options);
   if (!s.ok()) {
     return s;
   }
@@ -370,30 +397,37 @@ Status TableManagerImpl::CreateSchemaTable(
   return Status::OK();
 }
 
-Status TableManagerImpl::UpdateKVTable(const std::string& table_name,
-                                       const admin::KVTableOptions& options) {
+Status TableManagerImpl::UpdateKVTable(
+    const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
+    const admin::KVTableOptions& options) {
   return Status::NotSupported("update table is not yet supported");
 }
 
 Status TableManagerImpl::UpdateListTable(
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::ListTableOptions& options) {
   return Status::NotSupported("update table is not yet supported");
 }
 
 Status TableManagerImpl::UpdateHashTable(
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::HashTableOptions& options) {
   return Status::NotSupported("update table is not yet supported");
 }
 
-Status TableManagerImpl::UpdateSetTable(const std::string& table_name,
-                                        const admin::SetTableOptions& options) {
+Status TableManagerImpl::UpdateSetTable(
+    const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
+    const admin::SetTableOptions& options) {
   return Status::NotSupported("update table is not yet supported");
 }
 
 Status TableManagerImpl::UpdateSchemaTable(
     const std::string& table_name,
+    const admin::CommonTableOptions& common_options,
     const admin::SchemaTableOptions& options) {
   return Status::NotSupported("update table is not yet supported");
 }
@@ -418,30 +452,34 @@ Status TableManagerImpl::DropSchemaTable(const std::string& table_name){
   return Status::NotSupported("drop table is not yet supported");
 }
 
-Status TableManagerImpl::GetKVTableOptions(const std::string& table_name,
-                                           admin::KVTableOptions* options) {
+Status TableManagerImpl::GetKVTableOptions(
+    const std::string& table_name,
+    admin::TableOptions* options) {
   std::unique_lock<std::mutex> guard(table_admin_mutex_);
   return Status::OK();
 }
 
-Status TableManagerImpl::GetListTableOptions(const std::string& table_name,
-                                             admin::ListTableOptions* options) {
+Status TableManagerImpl::GetListTableOptions(
+    const std::string& table_name,
+    admin::TableOptions* options) {
   return Status::OK();
 }
 
-Status TableManagerImpl::GetHashTableOptions(const std::string& table_name,
-                                             admin::HashTableOptions* options) {
+Status TableManagerImpl::GetHashTableOptions(
+    const std::string& table_name,
+    admin::TableOptions* options) {
   return Status::OK();
 }
 
-Status TableManagerImpl::GetSetTableOptions(const std::string& table_name,
-                                            admin::SetTableOptions* options) {
+Status TableManagerImpl::GetSetTableOptions(
+    const std::string& table_name,
+    admin::TableOptions* options) {
   return Status::OK();
 }
 
 Status TableManagerImpl::GetSchemaTableOptions(
     const std::string& table_name,
-    admin::SchemaTableOptions* options) {
+    admin::TableOptions* options) {
   return Status::OK();
 }
 

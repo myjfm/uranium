@@ -38,27 +38,41 @@ class TableManager {
       const std::string& name) = 0;
 
   virtual Status CreateKVTable(const std::string& table_name,
+                               const admin::CommonTableOptions& common_options,
                                const admin::KVTableOptions& options) = 0;
-  virtual Status CreateListTable(const std::string& table_name,
-                                 const admin::ListTableOptions& options) = 0;
-  virtual Status CreateHashTable(const std::string& table_name,
-                                 const admin::HashTableOptions& options) = 0;
+  virtual Status CreateListTable(
+      const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
+      const admin::ListTableOptions& options) = 0;
+  virtual Status CreateHashTable(
+      const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
+      const admin::HashTableOptions& options) = 0;
   virtual Status CreateSetTable(const std::string& table_name,
+                                const admin::CommonTableOptions& common_options,
                                 const admin::SetTableOptions& options) = 0;
   virtual Status CreateSchemaTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::SchemaTableOptions& options) = 0;
 
   virtual Status UpdateKVTable(const std::string& table_name,
+                               const admin::CommonTableOptions& common_options,
                                const admin::KVTableOptions& options) = 0;
-  virtual Status UpdateListTable(const std::string& table_name,
-                                 const admin::ListTableOptions& options) = 0;
-  virtual Status UpdateHashTable(const std::string& table_name,
-                                 const admin::HashTableOptions& options) = 0;
+  virtual Status UpdateListTable(
+      const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
+      const admin::ListTableOptions& options) = 0;
+  virtual Status UpdateHashTable(
+      const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
+      const admin::HashTableOptions& options) = 0;
   virtual Status UpdateSetTable(const std::string& table_name,
+                                const admin::CommonTableOptions& common_options,
                                 const admin::SetTableOptions& options) = 0;
   virtual Status UpdateSchemaTable(
       const std::string& table_name,
+      const admin::CommonTableOptions& common_options,
       const admin::SchemaTableOptions& options) = 0;
 
   virtual Status DropKVTable(const std::string& table_name) = 0;
@@ -68,15 +82,15 @@ class TableManager {
   virtual Status DropSchemaTable(const std::string& table_name) = 0;
 
   virtual Status GetKVTableOptions(const std::string& table_name,
-                                   admin::KVTableOptions* options) = 0;
+                                   admin::TableOptions* options) = 0;
   virtual Status GetListTableOptions(const std::string& table_name,
-                                     admin::ListTableOptions* options) = 0;
+                                     admin::TableOptions* options) = 0;
   virtual Status GetHashTableOptions(const std::string& table_name,
-                                     admin::HashTableOptions* options) = 0;
+                                     admin::TableOptions* options) = 0;
   virtual Status GetSetTableOptions(const std::string& table_name,
-                                    admin::SetTableOptions* options) = 0;
+                                    admin::TableOptions* options) = 0;
   virtual Status GetSchemaTableOptions(const std::string& table_name,
-                                       admin::SchemaTableOptions* options) = 0;
+                                       admin::TableOptions* options) = 0;
 };
 
 }  // namespace uranium
