@@ -1,7 +1,6 @@
 // Copyright (c) 2016, myjfm(mwxjmmyjfm@gmail.com).  All rights reserved.
 // This source code is licensed under the BSD-style license found in the
-// LICENSE file in the root directory of this source tree. An additional grant
-// of patent rights can be found in the PATENTS file in the same directory.
+// LICENSE file in the root directory of this source tree.
 //
 #include "kv_table.h"
 
@@ -27,7 +26,6 @@ Status KVTable::Init(const internal::TableOptions& config) {
     return Status::NotSupported("Not supported storage type");
   }
 
-  std::vector<rocksdb::ColumnFamilyDescriptor> cfds;
   rocksdb::Options opt;
   opt.create_if_missing = true;
   opt.error_if_exists = false;
@@ -92,12 +90,10 @@ Status KVTable::Init(const internal::TableOptions& config) {
           rocksdb::NewBlockBasedTableFactory(block_based_table_options));
     }
   }
-  cfds.push_back(rocksdb::ColumnFamilyDescriptor(
-      rocksdb::kDefaultColumnFamilyName, opt));
-  std::vector<rocksdb::ColumnFamilyHandle*> cfhs;
+
   std::string name =
       config.table_path() + config.options().table_name().name();
-  rocksdb::Status s = rocksdb::DB::Open(opt, name, cfds, &cfhs, &db_);
+  auto s = rocksdb::DB::Open(opt, name, &db_);
   if (!s.ok()) {
     return Status(s);
   }
@@ -110,7 +106,8 @@ Status KVTable::Get(
     const google::protobuf::RepeatedPtrField<api::Key>& keys,
     google::protobuf::RepeatedPtrField<api::KeyValue>* values) {
   assert(db_);
-  std::vector<rocksdb::Slice> rocks_keys(keys.size());
+  std::vector<rocksdb::Slice> rocks_keys;
+  rocks_keys.reserve(keys.size());
   for (auto itr = keys.begin(); itr != keys.end(); ++itr) {
     rocks_keys.push_back(itr->key());
   }

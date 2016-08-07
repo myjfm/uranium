@@ -1,7 +1,6 @@
 // Copyright (c) 2016, myjfm(mwxjmmyjfm@gmail.com).  All rights reserved.
 // This source code is licensed under the BSD-style license found in the
-// LICENSE file in the root directory of this source tree. An additional grant
-// of patent rights can be found in the PATENTS file in the same directory.
+// LICENSE file in the root directory of this source tree.
 //
 // Copyright (c) 2013, Facebook, Inc.  All rights reserved.
 // This source code is licensed under the BSD-style license found in the
@@ -116,6 +115,10 @@ class Status final {
       case kTableAlreadyExists:
         result->set_status(common::Status::TABLE_ALREADY_EXISTS);
         result->set_message("table already exists");
+        break;
+      case kNotFound:
+        result->set_status(common::Status::KEY_NOT_FOUND);
+        result->set_message("key not found");
         break;
       default:
         result->set_status(common::Status::INTERNAL_ERROR);
@@ -248,6 +251,7 @@ class Status final {
   explicit Status(Code _code) : code_(_code), state_(nullptr) {}
   Status(Code _code, const StringPiece& msg, const StringPiece& msg2) {
     assert(code_ != kOk);
+    code_ = _code;
     const uint32_t len1 = static_cast<uint32_t>(msg.size());
     const uint32_t len2 = static_cast<uint32_t>(msg2.size());
     const uint32_t size = len1 + (len2 ? (2 + len2) : 0);

@@ -1,7 +1,6 @@
 // Copyright (c) 2016, myjfm(mwxjmmyjfm@gmail.com).  All rights reserved.
 // This source code is licensed under the BSD-style license found in the
-// LICENSE file in the root directory of this source tree. An additional grant
-// of patent rights can be found in the PATENTS file in the same directory.
+// LICENSE file in the root directory of this source tree.
 //
 #include "table_manager_impl.h"
 
@@ -178,6 +177,7 @@ Status TableManagerImpl::CreateKVTable(
     const admin::KVTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
+  admin_table_options.mutable_table_name()->mutable_name()->append(table_name);
   admin_table_options.set_table_type(common::TableType::KV);
   admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_kv_table_options()->CopyFrom(options);
@@ -223,6 +223,7 @@ Status TableManagerImpl::CreateListTable(
     const admin::ListTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
+  admin_table_options.mutable_table_name()->mutable_name()->append(table_name);
   admin_table_options.set_table_type(common::TableType::LIST);
   admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_list_table_options()->CopyFrom(options);
@@ -268,6 +269,7 @@ Status TableManagerImpl::CreateHashTable(
     const admin::HashTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
+  admin_table_options.mutable_table_name()->mutable_name()->append(table_name);
   admin_table_options.set_table_type(common::TableType::HASH);
   admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_hash_table_options()->CopyFrom(options);
@@ -313,6 +315,7 @@ Status TableManagerImpl::CreateSetTable(
     const admin::SetTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
+  admin_table_options.mutable_table_name()->mutable_name()->append(table_name);
   admin_table_options.set_table_type(common::TableType::SET);
   admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_set_table_options()->CopyFrom(options);
@@ -358,6 +361,7 @@ Status TableManagerImpl::CreateSchemaTable(
     const admin::SchemaTableOptions& options) {
   internal::TableOptions internal_table_options;
   admin::TableOptions admin_table_options;
+  admin_table_options.mutable_table_name()->mutable_name()->append(table_name);
   admin_table_options.set_table_type(common::TableType::SCHEMA);
   admin_table_options.mutable_common_table_options()->CopyFrom(common_options);
   admin_table_options.mutable_schema_table_options()->CopyFrom(options);
